@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Segnala una strada — StreetSmart</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  background: #0f0f0f;
+  color: #f0f0f0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.card {
+  background: #1a1a1a;
+  border-radius: 16px;
+  padding: 36px 32px;
+  max-width: 480px;
+  width: 100%;
+  border: 1px solid #2a2a2a;
+}
+.logo-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.dot { width: 12px; height: 12px; border-radius: 50%; }
+.brand { font-size: 13px; font-weight: 700; letter-spacing: 1px; color: #888; }
+h1 { font-size: 22px; font-weight: 800; margin-bottom: 6px; letter-spacing: -0.5px; }
+.sub { font-size: 14px; color: #888; margin-bottom: 28px; line-height: 1.5; }
+label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #666;
+  margin-bottom: 8px;
+  margin-top: 20px;
+}
+input, select, textarea {
+  width: 100%;
+  background: #111;
+  border: 1px solid #333;
+  border-radius: 10px;
+  color: #f0f0f0;
+  font-size: 15px;
+  padding: 13px 14px;
+  outline: none;
+  transition: border-color 0.2s;
+  font-family: inherit;
+}
+input:focus, select:focus, textarea:focus { border-color: #f4a261; }
+select option { background: #1a1a1a; }
+textarea { resize: none; height: 80px; }
+
+.colori { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-top: 4px; }
+.colore-btn {
+  border: none;
+  border-radius: 10px;
+  padding: 14px 6px 10px;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  transition: transform 0.15s, box-shadow 0.15s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.colore-btn:hover { transform: scale(1.05); }
+.colore-btn.selected {
+  transform: scale(1.08);
+  box-shadow: 0 0 0 3px #fff;
+}
+.colore-btn .dot-big {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+}
+.colore-btn span { font-size: 10px; font-weight: 700; }
+
+.btn-submit {
+  margin-top: 28px;
+  width: 100%;
+  background: #f4a261;
+  color: #0f0f0f;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-family: inherit;
+}
+.btn-submit:hover { background: #e8935a; }
+.btn-submit:disabled { background: #444; color: #888; cursor: not-allowed; }
+
+.disclaimer { margin-top: 14px; font-size: 11px; color: #444; text-align: center; }
+
+.success { display: none; text-align: center; padding: 20px 0; }
+.success h2 { font-size: 22px; margin-bottom: 10px; }
+.success p { color: #888; font-size: 14px; line-height: 1.6; }
+
+.error-msg { color: #e63946; font-size: 12px; margin-top: 6px; display: none; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="logo-bar">
+    <div class="dot" style="background:#1a1a1a;border:1px solid #555"></div>
+    <div class="dot" style="background:#e63946"></div>
+    <div class="dot" style="background:#f4a261"></div>
+    <div class="dot" style="background:#2a9d8f"></div>
+    <div class="dot" style="background:#457b9d"></div>
+    <span class="brand">STREETSMART</span>
+  </div>
+
+  <h1>Segnala una strada</h1>
+  <div class="sub">Conosci una strada pericolosa — o sicura — che dovrebbe essere nel database? Aggiungila.</div>
+
+  <form id="form" action="https://formspree.io/f/xlgookeg" method="POST">
+
+    <label>Nome della strada *</label>
+    <input type="text" name="strada" placeholder="Es. Via Merulana" required>
+
+    <label>Quartiere *</label>
+    <input type="text" name="quartiere" placeholder="Es. Esquilino" required>
+
+    <label>Municipio</label>
+    <select name="municipio">
+      <option value="">Seleziona</option>
+      <option>I — Centro Storico</option>
+      <option>II — Parioli / Flaminio</option>
+      <option>III — Montesacro</option>
+      <option>IV — Tiburtino</option>
+      <option>V — Prenestino</option>
+      <option>VI — Tor Bella Monaca</option>
+      <option>VII — Appio / Tuscolano</option>
+      <option>VIII — Ostia</option>
+      <option>IX — EUR</option>
+      <option>X — Ostia Lido</option>
+      <option>XI — Arvalia / Portuense</option>
+      <option>XII — Monteverde</option>
+      <option>XIII — Aurelia</option>
+      <option>XIV — Monte Mario</option>
+      <option>XV — Cassia / Flaminia</option>
+    </select>
+
+    <label>Classificazione *</label>
+    <div class="colori" id="colori">
+      <button type="button" class="colore-btn" data-value="nero" style="background:#1a1a1a;color:#fff;">
+        <div class="dot-big" style="background:#555;"></div>
+        <span>NERO</span>
+      </button>
+      <button type="button" class="colore-btn" data-value="rosso" style="background:#e6394622;color:#e63946;">
+        <div class="dot-big" style="background:#e63946;"></div>
+        <span>ROSSO</span>
+      </button>
+      <button type="button" class="colore-btn" data-value="giallo" style="background:#f4a26122;color:#f4a261;">
+        <div class="dot-big" style="background:#f4a261;"></div>
+        <span>GIALLO</span>
+      </button>
+      <button type="button" class="colore-btn" data-value="verde" style="background:#2a9d8f22;color:#2a9d8f;">
+        <div class="dot-big" style="background:#2a9d8f;"></div>
+        <span>VERDE</span>
+      </button>
+      <button type="button" class="colore-btn" data-value="blu" style="background:#457b9d22;color:#457b9d;">
+        <div class="dot-big" style="background:#457b9d;"></div>
+        <span>BLU</span>
+      </button>
+    </div>
+    <input type="hidden" name="classificazione" id="classificazione_input">
+    <div class="error-msg" id="color-error">Seleziona una classificazione</div>
+
+    <label>Perché questa classificazione?</label>
+    <textarea name="note" placeholder="Es. 4 corsie, nessuna ciclabile, traffico veloce..."></textarea>
+
+    <label>Il tuo Instagram</label>
+    <input type="text" name="instagram" placeholder="@tuonome">
+
+    <button type="submit" class="btn-submit" id="submit-btn">🚴 Invia segnalazione</button>
+    <div class="disclaimer">Ogni segnalazione viene verificata prima di entrare nel database.</div>
+  </form>
+
+  <div class="success" id="success">
+    <h2>✓ Segnalazione inviata.</h2>
+    <p>Grazie — la verificheremo e la aggiungeremo al database con il tuo nome.</p>
+    <p style="margin-top:16px;color:#f4a261;font-weight:700;">@streetsmart.nav</p>
+  </div>
+</div>
+
+<script>
+let selectedColor = null;
+
+document.querySelectorAll('.colore-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.colore-btn').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    selectedColor = btn.dataset.value;
+    document.getElementById('classificazione_input').value = selectedColor;
+    document.getElementById('color-error').style.display = 'none';
+  });
+});
+
+document.getElementById('form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  if (!selectedColor) {
+    document.getElementById('color-error').style.display = 'block';
+    return;
+  }
+  const btn = document.getElementById('submit-btn');
+  btn.disabled = true;
+  btn.textContent = 'Invio in corso...';
+  const data = new FormData(e.target);
+  const response = await fetch(e.target.action, {
+    method: 'POST',
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  });
+  if (response.ok) {
+    document.getElementById('form').style.display = 'none';
+    document.getElementById('success').style.display = 'block';
+  } else {
+    btn.disabled = false;
+    btn.textContent = '🚴 Invia segnalazione';
+    alert('Errore. Riprova o scrivici in DM @streetsmart.nav');
+  }
+});
+</script>
+</body>
+</html>

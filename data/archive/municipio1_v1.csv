@@ -1,0 +1,11 @@
+id,nome,quartiere,classificazione,score,note,ciclabile_presente,n_corsie,senso_unico,da_verificare
+SS-ROM-0001,Lungotevere Aventino,Aventino/Testaccio,verde,1,pista ciclabile presente separata dal traffico,si,4,no,no
+SS-ROM-0002,Lungotevere dei Mellini,Prati,nero,5,4 corsie veloci nessuna protezione,no,4,no,si
+SS-ROM-0003,Lungotevere della Vittoria,Prati,nero,5,4 corsie veloci nessuna protezione,no,4,no,si
+SS-ROM-0004,Lungotevere Marzio,Centro Storico,nero,5,4 corsie veloci nessuna protezione,no,4,no,si
+SS-ROM-0005,Lungotevere Castello,Prati,nero,5,4 corsie nessuna protezione,no,4,no,si
+SS-ROM-0006,Lungotevere Tor di Nona,Centro Storico,nero,5,4 corsie veloci nessuna protezione,no,4,no,si
+SS-ROM-0007,Lungotevere Sanzio,Trastevere,nero,5,4 corsie veloci nessuna protezione,no,4,no,si
+SS-ROM-0008,Lungotevere Raffaello Sanzio,Trastevere,nero,5,4 corsie veloci nessuna protezione,no,4,no,si
+SS-ROM-0009,Via dei Fori Imperiali (ciclabile),Centro Storico,verde,1,pista ciclabile separata lungo i fori,si,0,no,no
+SS-ROM-0010,Viale Trastevere,Trastevere,rosso,4,arteria trafficata 4 corsie nessuna ciclabile,no,4,no,si
