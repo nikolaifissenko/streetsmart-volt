@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="it">
 <head>
 <meta charset="UTF-8">
@@ -60,7 +60,7 @@ input:focus, select:focus, textarea:focus { border-color: #f4a261; }
 select option { background: #1a1a1a; }
 textarea { resize: none; height: 80px; }
 
-.colori { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-top: 4px; }
+.colori { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 4px; }
 .colore-btn {
   border: none;
   border-radius: 10px;
@@ -129,6 +129,8 @@ textarea { resize: none; height: 80px; }
 
   <form id="form" action="https://formspree.io/f/xlgookeg" method="POST">
 
+    <input type="hidden" name="form_type" value="segnalazione">
+
     <label>Nome della strada *</label>
     <input type="text" name="strada" placeholder="Es. Via Merulana" required>
 
@@ -177,12 +179,23 @@ textarea { resize: none; height: 80px; }
         <div class="dot-big" style="background:#457b9d;"></div>
         <span>BLU</span>
       </button>
+      <button type="button" class="colore-btn" data-value="verde-giallo" style="background:#8ab83a22;color:#8ab83a;">
+        <div class="dot-big" style="background:#8ab83a;"></div>
+        <span>V-GIALLO</span>
+      </button>
+      <button type="button" class="colore-btn" data-value="verde-blu" style="background:#2a9d8f22;color:#2a9d8f;">
+        <div class="dot-big" style="background:#2a9d8f;border:2px solid #457b9d;"></div>
+        <span>V-BLU</span>
+      </button>
     </div>
     <input type="hidden" name="classificazione" id="classificazione_input">
     <div class="error-msg" id="color-error">Seleziona una classificazione</div>
 
     <label>Perché questa classificazione?</label>
     <textarea name="note" placeholder="Es. 4 corsie, nessuna ciclabile, traffico veloce..."></textarea>
+
+    <label>Posizione (facoltativo)</label>
+    <input type="text" name="posizione" placeholder="Es. link Google Maps o coordinate">
 
     <label>Il tuo Instagram</label>
     <input type="text" name="instagram" placeholder="@tuonome">
