@@ -2,3 +2,6 @@
 .claude/
 *.DS_Store
 Thumbs.db
+# La cache geocoding VA tracciata (persiste tra i run GitHub Action)
+# Il GeoJSON prodotto VA tracciato (serve per GitHub Pages)
+

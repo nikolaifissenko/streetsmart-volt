@@ -1,0 +1,35 @@
+name: Build GeoJSON
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/master/streetsmart_roma_completo.csv'
+  workflow_dispatch:  # permette di avviare manualmente da GitHub
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write  # necessario per fare commit del GeoJSON
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run build.py
+        run: python scripts/build.py
+
+      - name: Commit e push GeoJSON aggiornato
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add dist/streetsmart_roma.geojson data/master/.geocode_cache.json
+          git diff --staged --quiet || git commit -m "Auto: aggiorna GeoJSON [skip ci]"
+          git push
