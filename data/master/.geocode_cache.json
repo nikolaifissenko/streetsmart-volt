@@ -1,0 +1,659 @@
+{
+  "Lungotevere Aventino|Aventino/Testaccio": null,
+  "Lungotevere dei Mellini|Prati": {
+    "lat": 41.9076983,
+    "lon": 12.4728616
+  },
+  "Lungotevere della Vittoria|Prati": null,
+  "Lungotevere Marzio|Centro Storico": null,
+  "Lungotevere Castello|Prati": {
+    "lat": 41.9029073,
+    "lon": 12.4698882
+  },
+  "Lungotevere Tor di Nona|Centro Storico": null,
+  "Lungotevere Sanzio|Trastevere": {
+    "lat": 41.8913031,
+    "lon": 12.471103
+  },
+  "Lungotevere Raffaello Sanzio|Trastevere": {
+    "lat": 41.8913031,
+    "lon": 12.471103
+  },
+  "Via dei Fori Imperiali (ciclabile)|Centro Storico": null,
+  "Viale Trastevere|Trastevere": {
+    "lat": 41.8870589,
+    "lon": 12.4723346
+  },
+  "Via Nazionale|Esquilino": null,
+  "Via Merulana|Esquilino/Celio": null,
+  "Corso Vittorio Emanuele II|Centro Storico": null,
+  "Via XX Settembre|Castro Pretorio": {
+    "lat": 41.9088558,
+    "lon": 12.5006287
+  },
+  "Via Cavour|Esquilino": null,
+  "Via Nomentana (tratto urbano)|Nomentano": null,
+  "Via Tiburtina (tratto urbano)|Tiburtino": null,
+  "Via Prenestina (tratto urbano)|Prenestino": null,
+  "Via Appia Nuova (tratto urbano)|Appio": null,
+  "Via Cola di Rienzo|Prati": {
+    "lat": 41.9071906,
+    "lon": 12.4620349
+  },
+  "Via del Corso|Centro Storico": null,
+  "Via Veneto|Ludovisi": {
+    "lat": 41.9089721,
+    "lon": 12.4886745
+  },
+  "Via Sistina|Trevi": null,
+  "Via Tritone|Trevi": {
+    "lat": 41.9031614,
+    "lon": 12.486873
+  },
+  "Via Barberini|Trevi": {
+    "lat": 41.9041329,
+    "lon": 12.490289
+  },
+  "Via delle Quattro Fontane|Trevi": {
+    "lat": 41.9026814,
+    "lon": 12.4894386
+  },
+  "Via Arenula|Centro Storico": null,
+  "Via del Plebiscito|Centro Storico": null,
+  "Piazza Venezia (confluenza)|Centro Storico": null,
+  "Via dei Fori Imperiali|Centro Storico": null,
+  "Via del Teatro di Marcello|Centro Storico": null,
+  "Viale delle Milizie|Prati": {
+    "lat": 41.9132075,
+    "lon": 12.4668858
+  },
+  "Via Candia|Prati": null,
+  "Via Crescenzio|Prati": {
+    "lat": 41.9054808,
+    "lon": 12.4672817
+  },
+  "Via Germanico|Prati": {
+    "lat": 41.9085295,
+    "lon": 12.461081
+  },
+  "Via Fabio Massimo|Prati": {
+    "lat": 41.908826,
+    "lon": 12.4622113
+  },
+  "Via Tacito|Prati": {
+    "lat": 41.9058244,
+    "lon": 12.468169
+  },
+  "Via Celimontana|Celio": {
+    "lat": 41.8884291,
+    "lon": 12.4964601
+  },
+  "Via della Navicella|Celio": {
+    "lat": 41.8837737,
+    "lon": 12.4963534
+  },
+  "Via Claudia|Celio": {
+    "lat": 41.8873166,
+    "lon": 12.4945853
+  },
+  "Via Madonna dei Monti|Rione Monti": {
+    "lat": 41.8943064,
+    "lon": 12.4898952
+  },
+  "Via Panisperna|Rione Monti": {
+    "lat": 41.8960312,
+    "lon": 12.4887611
+  },
+  "Via del Boschetto|Rione Monti": {
+    "lat": 41.8975008,
+    "lon": 12.4903598
+  },
+  "Via Urbana|Rione Monti": {
+    "lat": 41.8960953,
+    "lon": 12.493934
+  },
+  "Via Leonina|Rione Monti": {
+    "lat": 41.8946434,
+    "lon": 12.4911462
+  },
+  "Via della Lungaretta|Trastevere": {
+    "lat": 41.8896401,
+    "lon": 12.4716612
+  },
+  "Via della Scala|Trastevere": {
+    "lat": 41.8914929,
+    "lon": 12.4680141
+  },
+  "Via San Francesco a Ripa|Trastevere": null,
+  "Via Garibaldi|Trastevere/Gianicolo": null,
+  "Via della Lungara|Trastevere": {
+    "lat": 41.8971392,
+    "lon": 12.4640255
+  },
+  "Via Giulia|Centro Storico": null,
+  "Via dei Banchi Vecchi|Centro Storico": null,
+  "Via del Governo Vecchio|Centro Storico": {
+    "lat": 42.0935528,
+    "lon": 12.2704872
+  },
+  "Via della Conciliazione|Borgo": {
+    "lat": 41.9021825,
+    "lon": 12.461788
+  },
+  "Via Angelo Emo|Prati": null,
+  "Via Gregorio VII|Aurelio": {
+    "lat": 41.8956234,
+    "lon": 12.4485738
+  },
+  "Via Aurelia (tratto urbano)|Aurelio": null,
+  "Via di Porta Cavalleggeri|Borgo": null,
+  "Viale Aventino|Aventino": null,
+  "Ciclabile Testaccio (Via Marmorata/area)|Testaccio": null,
+  "Lungotevere ciclabile (tratto Villa Borghese)|Flaminio": null,
+  "Viale delle Terme di Caracalla (ciclabile)|Aventino": null,
+  "Piazza Navona|Centro Storico": null,
+  "Campo de Fiori|Centro Storico": null,
+  "Via del Pantheon|Centro Storico": null,
+  "Via della Rotonda|Centro Storico": null,
+  "Vicolo del Cinque|Trastevere": {
+    "lat": 41.8909413,
+    "lon": 12.4695833
+  },
+  "Piazza di Spagna (vicinanze)|Trevi": null,
+  "Via Condotti|Trevi": null,
+  "Via della Croce|Trevi": null,
+  "Via del Babuino|Trevi/Flaminio": null,
+  "Via Margutta|Flaminio": null,
+  "Via della Pace|Centro Storico": null,
+  "Vicolo della Moretta|Centro Storico": null,
+  "Via della Stelletta|Centro Storico": null,
+  "Piazza Farnese|Centro Storico": null,
+  "Via Giulia (tratto centrale)|Centro Storico": null,
+  "Via del Portico d'Ottavia|Ghetto": null,
+  "Via Santa Maria in Trastevere|Trastevere": null,
+  "Viale Parioli|Parioli": {
+    "lat": 41.923678,
+    "lon": 12.4909935
+  },
+  "Viale Liegi|Parioli": {
+    "lat": 41.9220907,
+    "lon": 12.4935545
+  },
+  "Viale Gorizia|Parioli": null,
+  "Viale Eritrea|Parioli": null,
+  "Via Salaria (tratto urbano)|Salario": null,
+  "Viale delle Belle Arti|Flaminio": {
+    "lat": 41.9189255,
+    "lon": 12.4726811
+  },
+  "Lungotevere Flaminio|Flaminio": {
+    "lat": 41.9268112,
+    "lon": 12.4612496
+  },
+  "Lungotevere Arnaldo da Brescia|Flaminio": {
+    "lat": 41.9124605,
+    "lon": 12.4725543
+  },
+  "Lungotevere Maresciallo Diaz|Prati/Flaminio": null,
+  "Via Flaminia (tratto urbano)|Flaminio": null,
+  "Viale Tiziano|Flaminio": null,
+  "Viale Maresciallo Pilsudski|Parioli": {
+    "lat": 41.9269342,
+    "lon": 12.4743841
+  },
+  "Via Po|Salario": {
+    "lat": 41.9173089,
+    "lon": 12.4990181
+  },
+  "Via Tagliamento|Salario": null,
+  "Via Nomentana (tratto Mun II)|Nomentano": null,
+  "Corso Trieste|Trieste": {
+    "lat": 41.9179312,
+    "lon": 12.5057681
+  },
+  "Via Tevere|Salario": null,
+  "Via Brenta|Salario": null,
+  "Via Adige|Salario": null,
+  "Via Arno|Salario": {
+    "lat": 41.9810863,
+    "lon": 12.5101192
+  },
+  "Via Sebino|Salario": null,
+  "Via Lario|Salario": null,
+  "Via Dora|Salario": null,
+  "Via Rubicone|Salario": null,
+  "Via Isonzo|Salario": null,
+  "Via Piave|Salario": null,
+  "Viale Romania|Parioli": {
+    "lat": 41.9244482,
+    "lon": 12.4928458
+  },
+  "Viale Pola|Parioli": null,
+  "Via Mercadante|Parioli": {
+    "lat": 41.9176452,
+    "lon": 12.4925996
+  },
+  "Via Paisiello|Parioli": {
+    "lat": 41.9162729,
+    "lon": 12.4940583
+  },
+  "Via Spontini|Parioli": {
+    "lat": 41.9184068,
+    "lon": 12.4940002
+  },
+  "Via Bellini|Parioli": {
+    "lat": 41.9210028,
+    "lon": 12.496559
+  },
+  "Via Donizetti|Parioli": {
+    "lat": 41.9170616,
+    "lon": 12.4949801
+  },
+  "Via Giuseppe Pisanelli|Parioli": null,
+  "Via Antonio Bosio|Parioli": null,
+  "Via Panama|Parioli": {
+    "lat": 41.9238363,
+    "lon": 12.5003106
+  },
+  "Via Prati Fiscali|Trionfale": null,
+  "Via dei Campi Sportivi|Flaminio": null,
+  "Via Reni|Flaminio": {
+    "lat": 41.9279085,
+    "lon": 12.4663583
+  },
+  "Via Masaccio|Flaminio": {
+    "lat": 41.9297651,
+    "lon": 12.4669008
+  },
+  "Villa Borghese (percorsi interni)|Flaminio/Parioli": null,
+  "Villa Ada (percorsi interni)|Salario": null,
+  "Parco della Rimembranza|Flaminio": null,
+  "Ciclabile Lungotevere Villa Borghese|Flaminio": null,
+  "Via del Vignola|Flaminio": null,
+  "Piazza Ungheria|Parioli": {
+    "lat": 41.9224661,
+    "lon": 12.4924596
+  },
+  "Piazza Euclide|Parioli": {
+    "lat": 41.9269867,
+    "lon": 12.4807215
+  },
+  "Via Antonelli|Parioli": {
+    "lat": 41.9240073,
+    "lon": 12.4846814
+  },
+  "Via Mangili|Parioli": {
+    "lat": 41.9192979,
+    "lon": 12.4822574
+  },
+  "Viale Bruno Buozzi|Parioli": {
+    "lat": 41.9199389,
+    "lon": 12.4794168
+  },
+  "Via Lima|Trieste": null,
+  "Via Reggio Calabria|Trieste": null,
+  "Via Alessandria|Trieste": {
+    "lat": 41.9145526,
+    "lon": 12.506719
+  },
+  "Viale Regina Margherita|Trieste": {
+    "lat": 41.9163995,
+    "lon": 12.502426
+  },
+  "Viale Jonio|Montesacro": null,
+  "Via Nomentana (tratto con ciclabile)|Montesacro": null,
+  "Via Nomentana (tratto senza ciclabile)|Tufello/Val Melaina": null,
+  "Via Salaria (tratto Mun III)|Fidene": null,
+  "Via dei Prati Fiscali|Tufello": null,
+  "Via Ugo Ojetti|Montesacro": null,
+  "Via Val Melaina|Val Melaina": {
+    "lat": 41.9559318,
+    "lon": 12.5295056
+  },
+  "Via Capraia|Tufello": null,
+  "Via Grotte di Gregna|Val Melaina": null,
+  "Via Amatrice|Tufello": null,
+  "Via Contigliano|Tufello": null,
+  "Via Monterotondo|Montesacro": null,
+  "Via Passo Corese|Montesacro": null,
+  "Via Monte Cervialto|Montesacro": null,
+  "Via Monte Giberto|Montesacro": null,
+  "Via Monte Ruggero|Montesacro": null,
+  "Via Monte Cervino|Montesacro": null,
+  "Via Monte Velino|Montesacro": null,
+  "Via Arseoli|Montesacro": null,
+  "Via Cures Sabini|Montesacro": null,
+  "Via Cantalupo Sabino|Montesacro": null,
+  "Via Farfa|Montesacro": null,
+  "Via Poggio Mirteto|Montesacro": null,
+  "Via Leonzio Pilato|Montesacro": null,
+  "Via Conca d'Oro|Tufello": null,
+  "Via Cagliari|Tufello": null,
+  "Via Palermo|Tufello": null,
+  "Via Catanzaro|Tufello": null,
+  "Via Potenza|Tufello": null,
+  "Via Reggio Emilia|Tufello": null,
+  "Via Vibo Valentia|Tufello": null,
+  "Via Lodi|Tufello": null,
+  "Via Cremona|Tufello": null,
+  "Via Brescia|Tufello": null,
+  "Via Mantova|Tufello": null,
+  "Via dei Monti Tiburtini|Fidene": null,
+  "Via Fidene|Fidene": null,
+  "Via Castel Giubileo|Fidene": null,
+  "Via Settebagni|Settebagni": {
+    "lat": 42.0080403,
+    "lon": 12.5196975
+  },
+  "Via di Casal Boccone|Val Melaina": {
+    "lat": 41.9529211,
+    "lon": 12.5361838
+  },
+  "Via Sacco Pastore|Tufello": null,
+  "Viale Adriatico|Montesacro": null,
+  "Viale Tirreno|Montesacro": null,
+  "Via Arlanda|Montesacro": null,
+  "Via Gargano|Montesacro": null,
+  "Via del Casale di San Basilio|Val Melaina": null,
+  "Parco delle Sabine (percorsi)|Montesacro": null,
+  "Viale America|EUR": {
+    "lat": 41.8283853,
+    "lon": 12.4726578
+  },
+  "Via delle Tre Fontane|EUR": {
+    "lat": 41.8379971,
+    "lon": 12.4781849
+  },
+  "Viale Artigianato|EUR": {
+    "lat": 41.835934,
+    "lon": 12.4770185
+  },
+  "Via Laurentina (Tre Fontane-Colombo)|EUR": null,
+  "Viale Marconi|Marconi": null,
+  "Lungotevere degli Inventori|Marconi": null,
+  "Via Grimaldi|Marconi": null,
+  "Via Quirino Majorana|Marconi": null,
+  "Viale dei Quattro Venti|Monteverde": {
+    "lat": 41.8811751,
+    "lon": 12.4586157
+  },
+  "Circonvallazione Gianicolense|Monteverde": {
+    "lat": 41.8706609,
+    "lon": 12.4564093
+  },
+  "Via Barrili|Monteverde Vecchio": null,
+  "Via Carini|Monteverde Vecchio": null,
+  "Via Poerio|Monteverde Vecchio": null,
+  "Via della Magliana|Magliana": {
+    "lat": 41.8228085,
+    "lon": 12.3892315
+  },
+  "Viale Egeo|EUR": {
+    "lat": 41.8271772,
+    "lon": 12.4544351
+  },
+  "Via dell'Oceano Indiano|EUR": null,
+  "Via Nomentana (ciclabile confermata)|Nomentano": null,
+  "Corso d'Italia (Porta Pia - P.za Fiume)|Salario": null,
+  "Villa Borghese (percorsi interni)|Flaminio": null,
+  "Viale Regina Elena|Policlinico": null,
+  "Via Tiburtina (tratto San Lorenzo)|San Lorenzo": null,
+  "Circonvallazione Tiburtina|San Lorenzo/Verano": null,
+  "Via di Santa Bibiana|Castro Pretorio": null,
+  "Via di Porta Maggiore|Esquilino": {
+    "lat": 41.8924871,
+    "lon": 12.5118263
+  },
+  "Via Prenestina (tratto Mun V)|Prenestino": null,
+  "Via Erasmo Gattamelata|Prenestino": {
+    "lat": 41.8869301,
+    "lon": 12.5364645
+  },
+  "Ciclabile della Piramide Cestia|Ostiense/Testaccio": null,
+  "Via Sampiero di Bastelica|Prenestino": {
+    "lat": 41.8907072,
+    "lon": 12.5392068
+  },
+  "Via Laurentina (tratto Vigna Murata)|Vigna Murata": null,
+  "Via Flaminia (tratto Tor di Quinto)|Tor di Quinto": null,
+  "Via Alfonso Torelli|Tiburtino": null,
+  "Via di Portonaccio|Prenestino": {
+    "lat": 41.8927334,
+    "lon": 12.5417393
+  },
+  "Via del Mandrione|Tuscolano/Pigneto": null,
+  "Via di Centocelle|Quadraro": {
+    "lat": 41.873833,
+    "lon": 12.5503608
+  },
+  "Via di Porta Furba|Tuscolano": {
+    "lat": 41.8725308,
+    "lon": 12.5409086
+  },
+  "Via di Tor Carbone|Quarto Miglio/Vigna Murata": null,
+  "Via di Grotta Perfetta|Ardeatino": {
+    "lat": 41.8390621,
+    "lon": 12.5060201
+  },
+  "Via della Moletta|Ostiense": {
+    "lat": 41.8689232,
+    "lon": 12.486312
+  },
+  "Piazza Attilio Pecile|Ostiense": {
+    "lat": 41.8686791,
+    "lon": 12.4860322
+  },
+  "Via Ciriaco d'Ancona|Ostiense": {
+    "lat": 41.8683183,
+    "lon": 12.4865594
+  },
+  "Via Girolamo Benzoni|Ostiense": {
+    "lat": 41.8692134,
+    "lon": 12.4843883
+  },
+  "Via Gaetano Casati|Ostiense": {
+    "lat": 41.8678129,
+    "lon": 12.48572
+  },
+  "Via Prospero Alpino|Ostiense": {
+    "lat": 41.8681062,
+    "lon": 12.4870404
+  },
+  "Circonvallazione Ostiense|Ostiense": {
+    "lat": 41.8668771,
+    "lon": 12.4888091
+  },
+  "Via di Santa Galla|Ostiense": {
+    "lat": 41.8681058,
+    "lon": 12.488483
+  },
+  "Piazza Giovanni da Verrazzano|Ostiense": {
+    "lat": 41.8687831,
+    "lon": 12.4883336
+  },
+  "Via Capitan Bavastro|Ostiense": {
+    "lat": 41.8692294,
+    "lon": 12.4951059
+  },
+  "Via Cristoforo Colombo (lato centro ciclabile)|Ostiense": null,
+  "Via Cristoforo Colombo (lato EUR)|Ostiense": null,
+  "Piazzale Numa Pompilio|Celio": {
+    "lat": 41.8799024,
+    "lon": 12.4962155
+  },
+  "Via Druso|Celio": {
+    "lat": 41.8809781,
+    "lon": 12.497091
+  },
+  "Piazza di Porta Metronia|Celio": {
+    "lat": 41.8824287,
+    "lon": 12.4979959
+  },
+  "Via dell'Amba Aradam|Celio": null,
+  "Piazza di San Giovanni in Laterano|San Giovanni": {
+    "lat": 41.8872243,
+    "lon": 12.5042124
+  },
+  "Via Emanuele Filiberto|San Giovanni": null,
+  "Via Statilia|Esquilino": {
+    "lat": 41.8908118,
+    "lon": 12.5128754
+  },
+  "Piazza di Porta Maggiore|Esquilino": {
+    "lat": 41.8908713,
+    "lon": 12.5141587
+  },
+  "Viale dello Scalo San Lorenzo (tratto ciclabile)|Tiburtino": null,
+  "Viale dello Scalo San Lorenzo (tratto trafficato)|San Lorenzo": null,
+  "Via dei Reti|San Lorenzo": {
+    "lat": 41.8983474,
+    "lon": 12.5186866
+  },
+  "Piazzale del Verano (ingresso cimitero)|San Lorenzo": null,
+  "Piazzale del Verano (svincolo)|San Lorenzo": null,
+  "Via Tiburtina (ciclabile cancellata lavori)|Nomentano/San Lorenzo": null,
+  "Viale Altiero Spinelli|Tiburtino": null,
+  "Circonvallazione della Stazione Tiburtina|Tiburtino": {
+    "lat": 41.9054864,
+    "lon": 12.5333522
+  },
+  "Viale dei Cavalieri di Vittorio Veneto|Villa Borghese": null,
+  "Via della Pineta Sacchetti|Monte Mario": null,
+  "Via Gregorio Settimo|Aurelio": {
+    "lat": 41.8978966,
+    "lon": 12.4508118
+  },
+  "Via Anastasio Secondo|Valle Aurelia": null,
+  "Viale Pico della Mirandola|Montagnola": {
+    "lat": 41.8461027,
+    "lon": 12.4860573
+  },
+  "Via Cristoforo Colombo (EUR autostrada urbana)|EUR": null,
+  "Via Cristoforo Colombo (EUR marciapiede)|EUR": null,
+  "Via Ardeatina|Ardeatino": {
+    "lat": 41.8614729,
+    "lon": 12.505148
+  },
+  "Via del Mare|Ostiense": {
+    "lat": 41.8452211,
+    "lon": 12.4703538
+  },
+  "Via Portuense (tratto Portuense)|Portuense": null,
+  "Via Portuense (tratto Trullo)|Trullo": null,
+  "Corso di Francia|Parioli": {
+    "lat": 41.9282157,
+    "lon": 12.4739559
+  },
+  "Viale del Muro Torto|Pinciano": {
+    "lat": 41.9093488,
+    "lon": 12.4872242
+  },
+  "Piazzale delle Provincie|Nomentano": {
+    "lat": 41.9094341,
+    "lon": 12.5211618
+  },
+  "Piazzale Aldo Moro|Nomentano": null,
+  "Via di San Gregorio (tratto Circo Massimo-Via Labicana)|Aventino": null,
+  "Via di San Gregorio (lato Fori ciclabile)|Aventino": null,
+  "Piazza di Porta Capena|Aventino": null,
+  "Viale della Piramide Cestia|Ostiense": null,
+  "Piazza di Porta San Paolo|Ostiense": null,
+  "Via Ostiense (tratto Porto Fluviale-Piazzale Ostiense)|Ostiense": null,
+  "Via Pellegrino Matteucci|Ostiense": {
+    "lat": 41.8722373,
+    "lon": 12.4809768
+  },
+  "Via dei Latini|Nomentano": null,
+  "Via dei Marsi|Nomentano": null,
+  "Via Giovanni Battista Tiepolo|Flaminio": {
+    "lat": 41.9239857,
+    "lon": 12.4693385
+  },
+  "Via Antonio Allegri da Correggio|Flaminio": {
+    "lat": 41.9228594,
+    "lon": 12.4697595
+  },
+  "Ponte della Musica Armando Trovajoli|Flaminio": {
+    "lat": 41.9265303,
+    "lon": 12.4598203
+  },
+  "Piazza Gentile da Fabriano|Flaminio": {
+    "lat": 41.9268687,
+    "lon": 12.4618571
+  },
+  "Via Guido Reni|Flaminio": {
+    "lat": 41.9279085,
+    "lon": 12.4663583
+  },
+  "Via Pier della Francesca|Flaminio": {
+    "lat": 41.9266739,
+    "lon": 12.4639673
+  },
+  "Via Andrea Bregno|Flaminio": {
+    "lat": 41.9267164,
+    "lon": 12.4632557
+  },
+  "Via Cesare Fracassini|Flaminio": {
+    "lat": 41.9235086,
+    "lon": 12.4699386
+  },
+  "Via Donatello|Flaminio": {
+    "lat": 41.9233034,
+    "lon": 12.4684005
+  },
+  "Via Giorgio Vasari|Flaminio": {
+    "lat": 41.9258097,
+    "lon": 12.4627251
+  },
+  "Via Luca Signorelli|Flaminio": {
+    "lat": 41.925517,
+    "lon": 12.4633369
+  },
+  "Via Francesco Milizia|Flaminio": {
+    "lat": 41.925279,
+    "lon": 12.463008
+  },
+  "Via Virginio Vespignani|Flaminio": {
+    "lat": 41.9250011,
+    "lon": 12.4637974
+  },
+  "Via Raffaele Stern|Flaminio": {
+    "lat": 41.9247199,
+    "lon": 12.4656638
+  },
+  "Via Masolino da Panicale|Flaminio": {
+    "lat": 41.9245436,
+    "lon": 12.4645372
+  },
+  "Via Girolamo Muziano|Flaminio": {
+    "lat": 41.9247873,
+    "lon": 12.4652294
+  },
+  "Piazza Perin del Vaga|Flaminio": {
+    "lat": 41.9250673,
+    "lon": 12.4647365
+  },
+  "Piazza Melozzo da Forli|Flaminio": {
+    "lat": 41.9256239,
+    "lon": 12.4645731
+  },
+  "Viale Etiopia|Trieste": {
+    "lat": 41.9326912,
+    "lon": 12.521947
+  },
+  "Via delle Valli|Montesacro": null,
+  "Via dei Prati Fiscali (tratto nero)|Tufello": null,
+  "Via Cavriglia|Val Melaina": {
+    "lat": 41.9483471,
+    "lon": 12.5140755
+  },
+  "Via Piero Foscari|Val Melaina": {
+    "lat": 41.9513859,
+    "lon": 12.5206317
+  },
+  "Via Torino|Esquilino": null,
+  "Via dell'Esquilino|Esquilino": {
+    "lat": 41.8980647,
+    "lon": 12.4995102
+  }
+}
