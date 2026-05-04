@@ -28,11 +28,12 @@ Sviluppato da Nikolai.
 Non modificare i CSV in data/municipio/ senza aggiornare il master.
 
 ## Stato Database
-- **202 strade** classificate totali
-- Municipio I: 82 strade (completato)
-- Municipio II: 57 strade (completato)
-- Municipio III: 47 strade (completato)
-- Municipio IX, XI, XII: segnalazioni Sentinelle integrate nel master
+- **297 strade** classificate totali
+- Municipio I: ~80 strade (completato)
+- Municipio II: ~80 strade (completato + segnalazioni Sentinelle)
+- Municipio III: ~50 strade (completato + segnalazioni Sentinelle)
+- Municipi IV, V, VII, VIII, IX, XI, XII, XIII, XIV, XV: segnalazioni Sentinelle integrate nel master
+- Ultimo ID usato: SS-ROM-0297
 
 ## Community Sentinelle
 - Form iscrizione: nikolaifissenko.github.io/Streetsmart-Sentille/sentinelle_form.html
