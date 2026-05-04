@@ -51,7 +51,10 @@ def geocode(nome, quartiere, cache):
     if key in cache:
         return cache[key]
 
-    query = f"{nome}, {quartiere}, Roma, Italia"
+    # Rimuove qualificatori tra parentesi: "Via X (tratto Y)" → "Via X"
+    import re
+    nome_clean = re.sub(r'\s*\(.*?\)', '', nome).strip()
+    query = f"{nome_clean}, {quartiere}, Roma, Italia"
     params = urllib.parse.urlencode({
         "q": query,
         "format": "json",
