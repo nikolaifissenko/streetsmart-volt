@@ -1,0 +1,171 @@
+data,ora,sentinella,strada,municipio,classificazione,note
+2026-04-29,14:21,Nikolai Fissenko,Piazzale Aldo Moro,II,rosso,
+2026-04-29,14:19,@Sim1_71,Via di San Gregorio (tratto Circo Massimo-Via Labicana),I,rosso,ciclabile assente traffico intenso e veloce
+2026-04-29,14:19,@Sim1_71,Via di San Gregorio (lato Fori),I,verde,ciclabile presente su marciapiede
+2026-04-29,14:18,@Sim1_71,Piazza di Porta Capena,I,rosso,ciclabile cancellata molti flussi veicolari intersecanti
+2026-04-29,14:17,@Sim1_71,Viale della Piramide Cestia,I,verde,ciclabile presente
+2026-04-29,14:17,@Sim1_71,Piazza di Porta San Paolo,I,nero,molti flussi veicolari intersecanti anche se presente ciclabile
+2026-04-29,14:16,@Sim1_71,Via Ostiense (tratto Porto Fluviale-Piazzale Ostiense),VIII,rosso,traffico intenso
+2026-04-29,14:15,@Sim1_71,Via Pellegrino Matteucci,VIII,giallo,
+2026-04-29,14:10,Nikolai.fissenko,Via dei Latini,II,giallo,
+2026-04-29,14:07,Nikolai.fissenko,Via dei Marsi,II,giallo,
+2026-04-30,08:08,@Sim1_71,Via Giovanni Battista Tiepolo,II,giallo,traffico locale
+2026-04-30,08:08,@Sim1_71,Via Antonio Allegri da Correggio,II,giallo,traffico locale
+2026-04-30,08:07,@Sim1_71,Ponte della Musica Armando Trovajoli,II,blu,ponte ciclopedonale
+2026-04-30,08:07,@Sim1_71,Piazza Gentile da Fabriano,II,giallo,traffico locale
+2026-04-30,08:06,@Sim1_71,Via Guido Reni,II,verde,nuova ciclabile GRAB
+2026-04-30,08:06,@Sim1_71,Via Pier della Francesca,II,giallo,traffico locale
+2026-04-30,08:06,@Sim1_71,Via Andrea Bregno,II,verde,traffico locale
+2026-04-30,08:05,@Sim1_71,Via Cesare Fracassini,II,rosso,strada molto trafficata
+2026-04-30,08:05,@Sim1_71,Via del Vignola,II,giallo,conferma esistente +1 testimonianza
+2026-04-30,08:05,@Sim1_71,Via Donatello,II,giallo,traffico locale
+2026-04-30,08:04,@Sim1_71,Via Giorgio Vasari,II,verde,scarso traffico locale strada senza uscita
+2026-04-30,08:04,@Sim1_71,Via Luca Signorelli,II,verde,scarso traffico locale
+2026-04-30,08:04,@Sim1_71,Via Francesco Milizia,II,verde,scarso traffico locale
+2026-04-30,08:03,@Sim1_71,Via Virginio Vespignani,II,giallo,traffico locale
+2026-04-30,08:03,@Sim1_71,Via Raffaele Stern,II,giallo,traffico locale
+2026-04-30,08:03,@Sim1_71,Via Masolino da Panicale,II,verde,scarso traffico locale
+2026-04-30,08:03,@Sim1_71,Via Girolamo Muziano,II,verde,scarso traffico locale
+2026-04-30,08:02,@Sim1_71,Piazza Perin del Vaga,II,blu,area pedonale
+2026-04-30,08:02,@Sim1_71,Piazza Melozzo da Forli,II,giallo,traffico locale
+2026-05-02,09:56,anonimo,Viale Etiopia,II,rosso,
+2026-05-02,09:55,Nikolai,Via delle Valli,III,rosso,
+2026-05-02,09:55,anonimo,Via dei Prati Fiscali (tratto nero),III,nero,
+2026-05-02,09:54,anonimo,Via Cavriglia,III,rosso,
+2026-05-02,09:54,anonimo,Via dei Prati Fiscali (tratto verde),III,verde,conferma SS-ROM-0141 +1 testimonianza
+2026-05-02,09:54,anonimo,Via Piero Foscari,III,giallo,
+2026-05-01,14:22,@hyperpigno,Via Nazionale,I,rosso,molto trafficata doppia fila perenne autobus allo slalom +1 testimonianza
+2026-05-01,14:21,anonimo,Via Nazionale,I,rosso,molto trafficata doppia fila perenne +1 testimonianza
+2026-05-01,14:20,@hyperpigno,Via Torino,I,giallo,senso unico tranquillo fino via Viminale poi trafficato per doppia fila
+2026-05-01,14:18,@hyperpigno,Via dell Esquilino,I,rosso,quasi sempre ipertrafficata nessuna ciclabile
+2026-05-06,15:15,@nomad_valentine,Via Casilina,VII,rosso,traffico veloce punto poco visibile sotto ponte
+2026-05-06,15:14,@nomad_valentine,Piazzale Labicano,VII,rosso,svincolo trafficato esperienza necessaria
+2026-05-06,15:12,@nomad_valentine,Viale Carlo Felice,I,giallo,poco traffico
+2026-05-06,15:11,@nomad_valentine,Via del Mandrione (tratto giallo),VII,giallo,poche macchine in alcuni tratti assenti
+2026-05-06,15:10,@luca.tentorio,Piazza Ippolito Nievo,XII,verde,
+2026-05-06,15:09,@nomad_valentine,Circonvallazione Casilina,V,rosso,stretta causa lavori macchine veloci
+2026-05-06,15:09,@luca.tentorio,Lungotevere di Pietra Papa,XI,verde,
+2026-05-06,15:09,@luca.tentorio,Lungotevere degli Inventori,XI,verde,conferma SS-ROM-0189 +1 testimonianza
+2026-05-06,15:08,@luca.tentorio,Via Gabriello Chiabrera,VIII,rosso,
+2026-05-06,15:08,@luca.tentorio,Via Silvio D Amico,VIII,giallo,
+2026-05-06,15:08,@luca.tentorio,Viale Leonardo da Vinci,VIII,giallo,
+2026-05-06,15:08,@nomad_valentine,Via Giovanni Brancaleone,V,giallo,poco traffico
+2026-05-06,15:08,@luca.tentorio,Via delle Tre Fontane (tratto verde),IX,verde,
+2026-05-06,15:07,@luca.tentorio,Viale Europa,IX,rosso,
+2026-05-06,15:07,@luca.tentorio,Via Cristoforo Colombo,IX,nero,conferma SS-ROM-0254
+2026-05-06,15:07,@nomad_valentine,Via Fanfulla da Lodi,V,giallo,poco traffico spazio per accostare
+2026-05-06,13:43,@smiorodno,Via Olevano Romano,V,giallo,no ciclabile strada tranquilla
+2026-05-06,13:41,@smiorodno,Via Anagni,V,rosso,abbastanza trafficata no ciclabile
+2026-05-06,13:40,@smiorodno,Viale della Primavera,V,rosso,trafficata no ciclabile
+2026-05-06,13:38,@smiorodno,Via Prenestina (tratto verde Centocelle),V,verde,ciclabile presente auto rare sopra
+2026-05-06,13:18,anonimo,Via Emanuele Filiberto,I,rosso,conferma SS-ROM-0238 +1 testimonianza
+2026-05-06,13:18,anonimo,Via Conte Verde,I,rosso,
+2026-05-06,13:17,anonimo,Piazza di Porta Maggiore,I,rosso,conferma SS-ROM-0240 +1 testimonianza
+2026-05-04,17:06,Nikolai,Via Tuscolana,VII,verde,ciclabile presente
+2026-05-12,05:49,@arthemis_gard,Circonvallazione Gianicolense,XII,rosso,due corsie doppia fila traffico veloce - conferma SS-ROM-0193 +1 testimonianza
+2026-05-12,05:48,@arthemis_gard,Via Francesco Siano,I,rosso,due corsie doppia fila traffico veloce
+2026-05-11,15:38,@hyperpigno,Via di Santa Croce in Gerusalemme,I,rosso,trafficata nessun arredo che impedisca doppia fila
+2026-05-11,15:36,@hyperpigno,Via San Quintino,I,giallo,senso unico doppia fila fondo irregolare
+2026-05-11,15:35,@hyperpigno,Viale Manzoni,I,rosso,traffico disordinato velocita oltre limiti nessuna ciclabile
+2026-05-11,15:33,@hyperpigno,Via Labicana,I,rosso,trafficata spesso molto trafficata nessuna ciclabile
+2026-05-11,15:31,@hyperpigno,Via dei Fori Imperiali,I,giallo,lavori terminati ciclabile dipinta ma velocita auto troppo alta - aggiornamento SS-ROM-0030
+2026-05-11,15:29,@hyperpigno,Piazza dei Santi Apostoli,I,giallo,senso unico senza ciclabile
+2026-05-11,15:29,@hyperpigno,Via di San Marcello,I,giallo,senso unico senza ciclabile
+2026-05-09,09:11,anonimo,Via Monte Cervialto,III,verde,aggiornamento SS-ROM-0150 giallo→verde
+2026-05-08,16:32,@Sim1_71,Via Peralba,III,giallo,traffico locale
+2026-05-08,16:31,@Sim1_71,Via Monte Altissimo,III,verde,traffico locale quasi nullo
+2026-05-08,16:30,@Sim1_71,Viale Carnaro,III,rosso,traffico intenso e veloce
+2026-05-08,16:29,@Sim1_71,Via Brennero,III,verde,traffico locale quasi nullo
+2026-05-08,00:08,Nikolai,Via del Corso,I,blu,aggiornamento SS-ROM-0021 rosso→blu
+2026-05-08,00:07,Nikolai,Via Antonio Canova,I,giallo,senso unico
+2026-05-08,00:07,Nikolai,Via del Babuino,I,blu,aggiornamento SS-ROM-0071 giallo→blu
+2026-05-08,00:07,Nikolai,Piazza di Spagna,I,blu,conferma SS-ROM-0068 +1 testimonianza
+2026-05-23,16:38,anonimo,Viale Pantelleria,III,rosso,
+2026-05-23,16:38,anonimo,Via Monte Bianco,III,rosso,
+2026-05-23,16:38,anonimo,Via Monginevra,III,rosso,
+2026-05-23,16:38,anonimo,Via Etna,III,giallo,
+2026-05-23,16:37,anonimo,Via Col di Nava,III,giallo,
+2026-05-23,16:37,anonimo,Via Brennero,III,giallo,conferma SS-ROM-0328 +1 testimonianza
+2026-05-23,16:37,anonimo,Viale Carnaro,III,rosso,conferma SS-ROM-0327 +1 testimonianza
+2026-05-23,16:37,anonimo,Viale Adriatico,III,rosso,conferma SS-ROM-0178 +1 testimonianza
+2026-05-23,16:37,anonimo,Via di Monte Sacro,III,giallo,
+2026-05-23,16:37,anonimo,Via di Pietralata,IV,rosso,
+2026-05-23,16:36,anonimo,Via Pietro Mascagni,II,giallo,
+2026-05-23,16:36,anonimo,Viale Somalia,II,rosso,
+2026-05-23,16:36,anonimo,Viale Libia,II,rosso,
+2026-05-23,16:35,anonimo,Via Pontina,IX,rosso,
+2026-05-23,16:35,anonimo,Viale dell Oceano Atlantico,IX,verde,
+2026-05-23,16:34,anonimo,Viale Tirreno,III,rosso,conferma SS-ROM-0179 +1 testimonianza
+2026-05-23,16:34,anonimo,Via Panama,II,rosso,aggiornamento SS-ROM-0118 giallo→rosso
+2026-05-23,16:34,anonimo,Via Salaria (Val Melaina),III,rosso,conferma SS-ROM-0140 +1 testimonianza
+2026-05-23,16:33,anonimo,Via Salaria (Castel Giubileo),III,rosso,
+2026-05-23,16:33,anonimo,Via Cortona,III,rosso,
+2026-05-23,16:33,anonimo,Via Altagnana,III,verde,
+2026-05-23,16:33,anonimo,Via Monte Giberto,III,rosso,aggiornamento SS-ROM-0151 giallo→rosso
+2026-05-23,16:33,anonimo,Via Monte Grimano,III,rosso,
+2026-05-23,16:32,anonimo,Via Alberto Lionello,III,verde,
+2026-05-23,16:31,anonimo,Viale Carmelo Bene,III,rosso,
+2026-05-23,16:31,anonimo,Via di Settebagni,III,rosso,2 segnalazioni
+2026-05-23,16:30,anonimo,Ponte Salario,III,rosso,
+2026-05-23,16:30,anonimo,Via Conca d Oro,III,rosso,conferma SS-ROM-0161 +1 testimonianza
+2026-05-23,16:30,anonimo,Via Val D Ala,III,verde,
+2026-05-23,16:29,anonimo,Via Val di Lanzo,III,rosso,trafficata
+2026-05-23,16:29,anonimo,Via Ugo Ojetti,III,rosso,conferma SS-ROM-0142 +1 testimonianza
+2026-05-23,16:28,anonimo,Viale Jonio,III,verde,aggiornamento SS-ROM-0137 rosso→verde ciclabile presente
+2026-05-23,16:27,anonimo,Via del Casale Giuliani,III,giallo,poco trafficata
+2026-05-23,16:26,anonimo,Piazza Conca d Oro,III,verde,ciclabile nuova attraversa la piazza
+2026-05-23,16:25,anonimo,Via Valle Martello,III,giallo,poco trafficata
+2026-05-23,16:25,anonimo,Via Val Sillaro,III,giallo,poco trafficata
+2026-05-23,16:24,anonimo,Via Val Varaita,III,giallo,poco trafficata
+2026-05-23,16:23,anonimo,Via Val Santerno,III,rosso,senso unico traffico intenso
+2026-05-23,15:32,anonimo,Ponte Testaccio,I,rosso,
+2026-05-23,15:31,anonimo,Via Galvani,I,rosso,
+2026-05-23,15:31,anonimo,Via Beniamino Franklin,I,verde,
+2026-05-23,15:31,anonimo,Lungotevere Testaccio,I,verde,
+2026-05-23,15:31,anonimo,Via Nicola Zabaglia,I,giallo,ciclabile inagibile
+2026-05-23,15:30,anonimo,Piazza di Santa Maria Liberatrice,I,giallo,
+2026-05-23,15:30,anonimo,Piazza Testaccio,I,blu,
+2026-05-23,13:03,anonimo,Lungotevere di Pietra Papa,XI,verde,conferma SS-ROM-0304 +1 testimonianza
+2026-05-23,13:03,anonimo,Lungotevere Vittorio Gassman,XI,rosso,
+2026-05-23,13:03,anonimo,Via Giuseppe Veronese,XI,rosso,
+2026-05-23,13:02,anonimo,Viale Guglielmo Marconi,XI,rosso,conferma SS-ROM-0212 +1 testimonianza
+2026-05-23,13:02,anonimo,Piazza della Radio,XI,rosso,
+2026-05-23,13:02,anonimo,Via Giuseppe Parini,XII,rosso,
+2026-05-23,13:02,anonimo,Lungotevere degli Anguillara,I,nero,
+2026-05-23,13:02,anonimo,Via del Teatro di Marcello,I,rosso,conferma SS-ROM-0031 +2 testimonianze
+2026-05-23,13:02,anonimo,Via Cavour,I,rosso,conferma SS-ROM-0015 +1 testimonianza
+2026-05-23,13:01,anonimo,Via Giovanni Lanza,I,rosso,
+2026-05-23,13:01,anonimo,Via Merulana,I,rosso,conferma SS-ROM-0012 +1 testimonianza
+2026-05-23,13:01,anonimo,Piazza Vittorio Emanuele II,I,rosso,
+2026-05-23,13:01,anonimo,Via Emanuele Filiberto,I,rosso,conferma SS-ROM-0238 +1 testimonianza
+2026-05-23,13:01,anonimo,Via Conte Verde,I,rosso,conferma SS-ROM-0316 +1 testimonianza
+2026-05-23,13:01,anonimo,Via Luigi Luzzatti,I,rosso,
+2026-05-23,13:01,anonimo,Via di Porta Maggiore,I,rosso,
+2026-05-23,13:01,anonimo,Corso Vittorio Emanuele II,I,rosso,conferma SS-ROM-0013 +1 testimonianza
+2026-05-22,21:41,anonimo,Piazza Sidney Sonnino,I,rosso,
+2026-05-22,21:41,anonimo,Via Arenula,I,rosso,conferma SS-ROM-0027 +1 testimonianza
+2026-05-22,11:55,anonimo,Via del Foro Italico,II,nero,
+2026-05-22,11:55,anonimo,Viale della Moschea,II,rosso,
+2026-05-22,11:54,anonimo,Via Guidubaldo del Monte,II,verde,
+2026-05-22,11:54,anonimo,Via Guido Reni,II,verde,conferma SS-ROM-0277 +1 testimonianza
+2026-05-22,11:54,anonimo,Via Luigi Settembrini,II,rosso,
+2026-05-22,11:53,anonimo,Viale Angelico,I,verde,
+2026-05-21,14:26,anonimo,Circonvallazione Cornelia,XIII,rosso,
+2026-05-21,14:26,anonimo,Via di Boccea (tratto nero),XIII,nero,
+2026-05-21,14:26,anonimo,Via Mattia Battistini,XIII,verde,
+2026-05-21,14:26,anonimo,Via Ennio Bonifazi,XIII,rosso,
+2026-05-21,14:26,anonimo,Via di Boccea (tratto rosso),XIII,rosso,
+2026-05-21,14:26,anonimo,Via Gelasio Secondo,XIII,giallo,
+2026-05-20,10:11,anonimo,Lungotevere dei Sangallo,I,nero,conferma SS-ROM-0385
+2026-05-20,10:11,anonimo,Corso Vittorio Emanuele II,I,rosso,conferma SS-ROM-0013 +1 testimonianza
+2026-05-20,10:10,anonimo,Via del Governo Vecchio,I,blu,conferma SS-ROM-0074 +1 testimonianza
+2026-05-14,13:10,anonimo,Viale del Muro Torto,II,nero,conferma SS-ROM-0261 +1 testimonianza
+2026-05-14,13:09,anonimo,Via Ennio Quirino Visconti,I,giallo,
+2026-05-14,13:09,anonimo,Piazza Adriana,I,rosso,
+2026-05-14,13:09,anonimo,Lungotevere Gianicolense,I,nero,
+2026-05-14,13:09,anonimo,Lungotevere dei Sangallo,I,nero,
+2026-05-12,15:59,anonimo,Via Nomentana (tratto Trieste),II,verde,
+2026-05-12,15:59,anonimo,Viale Ventuno Aprile,II,rosso,
+2026-05-12,15:59,anonimo,Viale delle Provincie,II,rosso,
+2026-05-12,15:59,anonimo,Via Catania,II,rosso,
+2026-05-12,15:59,anonimo,Viale Ippocrate,II,rosso,
