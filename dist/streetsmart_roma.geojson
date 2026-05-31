@@ -231,7 +231,7 @@
         "ciclabile": "no",
         "n_corsie": 2,
         "senso_unico": "no",
-        "n_testimonianze": 4,
+        "n_testimonianze": 5,
         "note": "trafficata 2 corsie nessuna ciclabile"
       }
     },
@@ -248,7 +248,7 @@
         "ciclabile": "no",
         "n_corsie": 4,
         "senso_unico": "no",
-        "n_testimonianze": 3,
+        "n_testimonianze": 4,
         "note": "arteria principale 4 corsie nessuna ciclabile"
       }
     },
@@ -288,7 +288,7 @@
         "ciclabile": "no",
         "n_corsie": 4,
         "senso_unico": "no",
-        "n_testimonianze": 3,
+        "n_testimonianze": 4,
         "note": "trafficata 4 corsie nessuna ciclabile"
       }
     },
@@ -391,13 +391,13 @@
         "nome": "Via del Corso",
         "quartiere": "Centro Storico",
         "municipio": "I",
-        "classificazione": "rosso",
-        "score": 4,
+        "classificazione": "blu",
+        "score": 2,
         "ciclabile": "no",
         "n_corsie": 2,
         "senso_unico": "no",
-        "n_testimonianze": 1,
-        "note": "trafficata ZTL parziale pedonale ore serali"
+        "n_testimonianze": 2,
+        "note": "ZTL pedonale confermata - segnalazione Nikolai"
       }
     },
     {
@@ -522,7 +522,7 @@
         "ciclabile": "no",
         "n_corsie": 4,
         "senso_unico": "no",
-        "n_testimonianze": 4,
+        "n_testimonianze": 5,
         "note": "arteria 4 corsie nessuna ciclabile"
       }
     },
@@ -568,13 +568,13 @@
         "nome": "Via dei Fori Imperiali",
         "quartiere": "Centro Storico",
         "municipio": "I",
-        "classificazione": "rosso",
-        "score": 4,
+        "classificazione": "giallo",
+        "score": 3,
         "ciclabile": "si",
         "n_corsie": 4,
         "senso_unico": "no",
-        "n_testimonianze": 3,
-        "note": "4 corsie rapide chiusa domenica - ciclabile laterale presente"
+        "n_testimonianze": 4,
+        "note": "lavori appena terminati ciclabile dipinta ma velocita auto troppo alta - segnalazione @hyperpigno"
       }
     },
     {
@@ -590,7 +590,7 @@
         "ciclabile": "no",
         "n_corsie": 2,
         "senso_unico": "no",
-        "n_testimonianze": 2,
+        "n_testimonianze": 4,
         "note": "trafficata curva pericolosa"
       }
     },
@@ -1222,6 +1222,40 @@
       "type": "Feature",
       "geometry": null,
       "properties": {
+        "id": "SS-ROM-0060",
+        "nome": "Lungotevere ciclabile (tratto Aventino-Ostiense)",
+        "quartiere": "Testaccio",
+        "municipio": "I",
+        "classificazione": "verde",
+        "score": 1,
+        "ciclabile": "si",
+        "n_corsie": 0,
+        "senso_unico": "no",
+        "n_testimonianze": 4,
+        "note": "pista ciclabile separata"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "id": "SS-ROM-0061",
+        "nome": "Pista ciclabile Villa Borghese",
+        "quartiere": "Flaminio/Parioli",
+        "municipio": "I",
+        "classificazione": "verde",
+        "score": 1,
+        "ciclabile": "si",
+        "n_corsie": 0,
+        "senso_unico": "no",
+        "n_testimonianze": 3,
+        "note": "percorso ciclabile interno al parco"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
         "id": "SS-ROM-0062",
         "nome": "Viale delle Terme di Caracalla (ciclabile)",
         "quartiere": "Aventino",
@@ -1232,7 +1266,7 @@
         "n_corsie": 0,
         "senso_unico": "no",
         "n_testimonianze": 2,
-        "note": "pista ciclabile presente"
+        "note": "pista ciclabile present"
       }
     },
     {
@@ -1257,7 +1291,7 @@
       "geometry": null,
       "properties": {
         "id": "SS-ROM-0064",
-        "nome": "Campo de Fiori",
+        "nome": "Campo de' Fiori",
         "quartiere": "Centro Storico",
         "municipio": "I",
         "classificazione": "blu",
@@ -1339,7 +1373,7 @@
         "ciclabile": "no",
         "n_corsie": 0,
         "senso_unico": "no",
-        "n_testimonianze": 4,
+        "n_testimonianze": 5,
         "note": "ZTL flusso pedonale molto alto"
       }
     },
@@ -1385,13 +1419,13 @@
         "nome": "Via del Babuino",
         "quartiere": "Trevi/Flaminio",
         "municipio": "I",
-        "classificazione": "giallo",
-        "score": 3,
+        "classificazione": "blu",
+        "score": 2,
         "ciclabile": "no",
         "n_corsie": 1,
         "senso_unico": "si",
-        "n_testimonianze": 1,
-        "note": "senso unico traffico contenuto"
+        "n_testimonianze": 2,
+        "note": "ZTL confermata - segnalazione Nikolai"
       }
     },
     {
@@ -1447,7 +1481,7 @@
         "ciclabile": "no",
         "n_corsie": 1,
         "senso_unico": "si",
-        "n_testimonianze": 2,
+        "n_testimonianze": 3,
         "note": "vicoletto storico pedonale misto"
       }
     },
@@ -2446,7 +2480,7 @@
         "n_corsie": 0,
         "senso_unico": "no",
         "n_testimonianze": 1,
-        "note": "piazza ZTL bassa velocita alto flusso pedoni"
+        "note": "piazza ZTL bassa velocità alto flusso pedoni"
       }
     },
     {
@@ -2469,7 +2503,7 @@
         "n_corsie": 0,
         "senso_unico": "no",
         "n_testimonianze": 1,
-        "note": "piazza ZTL bassa velocita"
+        "note": "piazza ZTL bassa velocità"
       }
     },
     {
@@ -2629,13 +2663,13 @@
         "nome": "Viale Jonio",
         "quartiere": "Montesacro",
         "municipio": "III",
-        "classificazione": "rosso",
-        "score": 4,
-        "ciclabile": "no",
+        "classificazione": "verde",
+        "score": 1,
+        "ciclabile": "si",
         "n_corsie": 4,
         "senso_unico": "no",
-        "n_testimonianze": 1,
-        "note": "arteria principale Montesacro 4 corsie nessuna ciclabile"
+        "n_testimonianze": 2,
+        "note": "ciclabile presente - aggiornamento segnalazione"
       }
     },
     {
@@ -2685,7 +2719,7 @@
         "ciclabile": "no",
         "n_corsie": 4,
         "senso_unico": "no",
-        "n_testimonianze": 1,
+        "n_testimonianze": 2,
         "note": "arteria radiale trafficata nessuna ciclabile"
       }
     },
@@ -2717,10 +2751,10 @@
         "classificazione": "rosso",
         "score": 4,
         "ciclabile": "no",
-        "n_corsie": 4,
+        "n_corsie": 2,
         "senso_unico": "no",
-        "n_testimonianze": 1,
-        "note": "arteria trafficata 4 corsie nessuna ciclabile"
+        "n_testimonianze": 2,
+        "note": "2 corsie trafficata nessuna ciclabile"
       }
     },
     {
@@ -2856,13 +2890,13 @@
         "nome": "Via Monte Cervialto",
         "quartiere": "Montesacro",
         "municipio": "III",
-        "classificazione": "giallo",
-        "score": 3,
+        "classificazione": "verde",
+        "score": 1,
         "ciclabile": "no",
         "n_corsie": 2,
         "senso_unico": "no",
-        "n_testimonianze": 1,
-        "note": "strada residenziale tranquilla"
+        "n_testimonianze": 2,
+        "note": "strada residenziale tranquilla traffico locale scarso - aggiornamento anonimo"
       }
     },
     {
@@ -2873,13 +2907,13 @@
         "nome": "Via Monte Giberto",
         "quartiere": "Montesacro",
         "municipio": "III",
-        "classificazione": "giallo",
-        "score": 3,
+        "classificazione": "rosso",
+        "score": 4,
         "ciclabile": "no",
-        "n_corsie": 1,
-        "senso_unico": "si",
-        "n_testimonianze": 1,
-        "note": "senso unico residenziale"
+        "n_corsie": 2,
+        "senso_unico": "no",
+        "n_testimonianze": 2,
+        "note": "trafficata nessuna ciclabile - aggiornamento"
       }
     },
     {
@@ -3048,7 +3082,7 @@
         "ciclabile": "no",
         "n_corsie": 2,
         "senso_unico": "no",
-        "n_testimonianze": 1,
+        "n_testimonianze": 2,
         "note": "trafficata 2 corsie nessuna ciclabile"
       }
     },
@@ -3349,7 +3383,7 @@
         "ciclabile": "no",
         "n_corsie": 4,
         "senso_unico": "no",
-        "n_testimonianze": 1,
+        "n_testimonianze": 2,
         "note": "arteria trafficata 4 corsie nessuna ciclabile"
       }
     },
@@ -3366,7 +3400,7 @@
         "ciclabile": "no",
         "n_corsie": 4,
         "senso_unico": "no",
-        "n_testimonianze": 1,
+        "n_testimonianze": 2,
         "note": "arteria trafficata 4 corsie nessuna ciclabile"
       }
     },
@@ -3554,7 +3588,7 @@
         "ciclabile": "si",
         "n_corsie": 0,
         "senso_unico": "no",
-        "n_testimonianze": 1,
+        "n_testimonianze": 2,
         "note": "ciclabile presente lungo il Tevere"
       }
     },
@@ -3634,8 +3668,8 @@
         "ciclabile": "no",
         "n_corsie": 4,
         "senso_unico": "no",
-        "n_testimonianze": 1,
-        "note": "arteria trafficata nessuna ciclabile"
+        "n_testimonianze": 2,
+        "note": "arteria trafficata nessuna ciclabile doppia fila traffico veloce"
       }
     },
     {
@@ -3740,7 +3774,7 @@
       "geometry": null,
       "properties": {
         "id": "SS-ROM-0199",
-        "nome": "Via dell'Oceano Indiano",
+        "nome": "Via dell Oceano Indiano",
         "quartiere": "EUR",
         "municipio": "IX",
         "classificazione": "verde",
@@ -3771,10 +3805,16 @@
     },
     {
       "type": "Feature",
-      "geometry": null,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.5002399,
+          41.9100038
+        ]
+      },
       "properties": {
         "id": "SS-ROM-0201",
-        "nome": "Corso d'Italia (Porta Pia - P.za Fiume)",
+        "nome": "Corso d Italia (Porta Pia - P.za Fiume)",
         "quartiere": "Salario",
         "municipio": "II",
         "classificazione": "rosso",
@@ -4537,8 +4577,8 @@
         "ciclabile": "no",
         "n_corsie": 4,
         "senso_unico": "no",
-        "n_testimonianze": 2,
-        "note": "traffico intenso - segnalazione @Sim1_71"
+        "n_testimonianze": 4,
+        "note": "traffico intenso"
       }
     },
     {
@@ -4583,7 +4623,7 @@
         "ciclabile": "no",
         "n_corsie": 0,
         "senso_unico": "no",
-        "n_testimonianze": 1,
+        "n_testimonianze": 2,
         "note": "molti flussi veicolari veloci che si incrociano"
       }
     },
@@ -4988,8 +5028,8 @@
         "ciclabile": "no",
         "n_corsie": 4,
         "senso_unico": "no",
-        "n_testimonianze": 1,
-        "note": "trappola mortale - segnalazione @metaiyo"
+        "n_testimonianze": 2,
+        "note": "trappola mortale"
       }
     },
     {
@@ -5302,8 +5342,8 @@
         "ciclabile": "si",
         "n_corsie": 0,
         "senso_unico": "no",
-        "n_testimonianze": 1,
-        "note": "nuova ciclabile GRAB - segnalazione @Sim1_71"
+        "n_testimonianze": 2,
+        "note": "nuova ciclabile GRAB confermata"
       }
     },
     {
@@ -5727,16 +5767,10 @@
     },
     {
       "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          12.4995102,
-          41.8980647
-        ]
-      },
+      "geometry": null,
       "properties": {
         "id": "SS-ROM-0297",
-        "nome": "Via dell'Esquilino",
+        "nome": "Via dell Esquilino",
         "quartiere": "Esquilino",
         "municipio": "I",
         "classificazione": "rosso",
@@ -5746,6 +5780,1980 @@
         "senso_unico": "no",
         "n_testimonianze": 1,
         "note": "ipertrafficata nessuna ciclabile - segnalazione @hyperpigno"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.5492521,
+          41.8776154
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0298",
+        "nome": "Via Casilina",
+        "quartiere": "Tuscolano",
+        "municipio": "VII",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "traffico veloce punto poco visibile sotto ponte - segnalazione @nomad_valentine"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "id": "SS-ROM-0299",
+        "nome": "Piazzale Labicano",
+        "quartiere": "Tuscolano",
+        "municipio": "VII",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 0,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "svincolo trafficato esperienza necessaria per incanalarsi - segnalazione @nomad_valentine"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "id": "SS-ROM-0300",
+        "nome": "Viale Carlo Felice",
+        "quartiere": "San Giovanni",
+        "municipio": "I",
+        "classificazione": "giallo",
+        "score": 3,
+        "ciclabile": "no",
+        "n_corsie": 2,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "poco traffico - segnalazione @nomad_valentine"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.531115,
+          41.8840024
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0301",
+        "nome": "Via del Mandrione (tratto giallo)",
+        "quartiere": "Tuscolano",
+        "municipio": "VII",
+        "classificazione": "giallo",
+        "score": 3,
+        "ciclabile": "no",
+        "n_corsie": 1,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "poche macchine in alcuni tratti assenti - segnalazione @nomad_valentine"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.4673457,
+          41.8811856
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0302",
+        "nome": "Piazza Ippolito Nievo",
+        "quartiere": "Monteverde",
+        "municipio": "XII",
+        "classificazione": "verde",
+        "score": 1,
+        "ciclabile": "si",
+        "n_corsie": 0,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "area verde bike friendly - segnalazione @luca.tentorio"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.527701,
+          41.8887783
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0303",
+        "nome": "Circonvallazione Casilina",
+        "quartiere": "Prenestino",
+        "municipio": "V",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "stretta causa lavori macchine veloci - segnalazione @nomad_valentine"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "id": "SS-ROM-0304",
+        "nome": "Lungotevere di Pietra Papa",
+        "quartiere": "Marconi",
+        "municipio": "XI",
+        "classificazione": "verde",
+        "score": 1,
+        "ciclabile": "si",
+        "n_corsie": 0,
+        "senso_unico": "no",
+        "n_testimonianze": 2,
+        "note": "pista ciclabile presente"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.4793471,
+          41.8541026
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0305",
+        "nome": "Via Gabriello Chiabrera",
+        "quartiere": "Ostiense",
+        "municipio": "VIII",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "arteria trafficata nessuna ciclabile - segnalazione @luca.tentorio"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.4770918,
+          41.8521547
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0306",
+        "nome": "Via Silvio D Amico",
+        "quartiere": "Ostiense",
+        "municipio": "VIII",
+        "classificazione": "giallo",
+        "score": 3,
+        "ciclabile": "no",
+        "n_corsie": 2,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "traffico contenuto - segnalazione @luca.tentorio"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.4804039,
+          41.8548399
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0307",
+        "nome": "Viale Leonardo da Vinci",
+        "quartiere": "Ostiense",
+        "municipio": "VIII",
+        "classificazione": "giallo",
+        "score": 3,
+        "ciclabile": "no",
+        "n_corsie": 2,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "traffico contenuto - segnalazione @luca.tentorio"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.5310572,
+          41.8893637
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0308",
+        "nome": "Via Giovanni Brancaleone",
+        "quartiere": "Prenestino",
+        "municipio": "V",
+        "classificazione": "giallo",
+        "score": 3,
+        "ciclabile": "no",
+        "n_corsie": 2,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "poco traffico - segnalazione @nomad_valentine"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.4763738,
+          41.8385275
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0309",
+        "nome": "Via delle Tre Fontane (tratto verde)",
+        "quartiere": "EUR",
+        "municipio": "IX",
+        "classificazione": "verde",
+        "score": 1,
+        "ciclabile": "si",
+        "n_corsie": 0,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "ciclabile presente su tratto specifico - segnalazione @luca.tentorio"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.4639859,
+          41.8323447
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0310",
+        "nome": "Viale Europa",
+        "quartiere": "EUR",
+        "municipio": "IX",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "arteria trafficata EUR nessuna ciclabile - segnalazione @luca.tentorio"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.5303144,
+          41.8897694
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0311",
+        "nome": "Via Fanfulla da Lodi",
+        "quartiere": "Prenestino",
+        "municipio": "V",
+        "classificazione": "giallo",
+        "score": 3,
+        "ciclabile": "no",
+        "n_corsie": 2,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "poco traffico spazio per accostare - segnalazione @nomad_valentine"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "id": "SS-ROM-0312",
+        "nome": "Via Olevano Romano",
+        "quartiere": "Centocelle",
+        "municipio": "V",
+        "classificazione": "giallo",
+        "score": 3,
+        "ciclabile": "no",
+        "n_corsie": 2,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "no ciclabile strada tranquilla - segnalazione @smiorodno"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.5581617,
+          41.8902434
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0313",
+        "nome": "Via Anagni",
+        "quartiere": "Centocelle",
+        "municipio": "V",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "abbastanza trafficata no ciclabile - segnalazione @smiorodno"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.5609555,
+          41.8828883
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0314",
+        "nome": "Viale della Primavera",
+        "quartiere": "Prenestino",
+        "municipio": "V",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "abbastanza trafficata no ciclabile - segnalazione @smiorodno"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.5728741,
+          41.8951392
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0315",
+        "nome": "Via Prenestina (tratto verde Centocelle)",
+        "quartiere": "Centocelle",
+        "municipio": "V",
+        "classificazione": "verde",
+        "score": 1,
+        "ciclabile": "si",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "ciclabile presente percorsa regolarmente auto rare sopra - segnalazione @smiorodno"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.5084495,
+          41.8922831
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0316",
+        "nome": "Via Conte Verde",
+        "quartiere": "Esquilino",
+        "municipio": "I",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 2,
+        "note": "arteria trafficata nessuna ciclabile"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.5242706,
+          41.8778747
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0317",
+        "nome": "Via Tuscolana",
+        "quartiere": "Tuscolano",
+        "municipio": "VII",
+        "classificazione": "verde",
+        "score": 1,
+        "ciclabile": "si",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "ciclabile presente - segnalazione Nikolai"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "id": "SS-ROM-0318",
+        "nome": "Via Francesco Siano",
+        "quartiere": "Esquilino",
+        "municipio": "I",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 2,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "due corsie doppia fila traffico veloce - segnalazione @arthemis_gard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "id": "SS-ROM-0319",
+        "nome": "Via di Santa Croce in Gerusalemme",
+        "quartiere": "San Giovanni",
+        "municipio": "I",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 2,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "trafficata nessun arredo che impedisca doppia fila o alta velocita - segnalazione @hyperpigno"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.5087191,
+          41.8901416
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0320",
+        "nome": "Via San Quintino",
+        "quartiere": "Esquilino",
+        "municipio": "I",
+        "classificazione": "giallo",
+        "score": 3,
+        "ciclabile": "no",
+        "n_corsie": 1,
+        "senso_unico": "si",
+        "n_testimonianze": 1,
+        "note": "senso unico non trafficato ma doppia fila fondo irregolare - segnalazione @hyperpigno"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "id": "SS-ROM-0321",
+        "nome": "Viale Manzoni",
+        "quartiere": "San Giovanni",
+        "municipio": "I",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "traffico disordinato velocita oltre limiti nessuna ciclabile - segnalazione @hyperpigno"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "id": "SS-ROM-0322",
+        "nome": "Via Labicana",
+        "quartiere": "Celio",
+        "municipio": "I",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "trafficata spesso molto trafficata nessuna ciclabile - segnalazione @hyperpigno"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "id": "SS-ROM-0323",
+        "nome": "Piazza dei Santi Apostoli",
+        "quartiere": "Centro Storico",
+        "municipio": "I",
+        "classificazione": "giallo",
+        "score": 3,
+        "ciclabile": "no",
+        "n_corsie": 1,
+        "senso_unico": "si",
+        "n_testimonianze": 1,
+        "note": "senso unico senza ciclabile - segnalazione @hyperpigno"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "id": "SS-ROM-0324",
+        "nome": "Via di San Marcello",
+        "quartiere": "Centro Storico",
+        "municipio": "I",
+        "classificazione": "giallo",
+        "score": 3,
+        "ciclabile": "no",
+        "n_corsie": 1,
+        "senso_unico": "si",
+        "n_testimonianze": 1,
+        "note": "senso unico senza ciclabile - segnalazione @hyperpigno"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "id": "SS-ROM-0325",
+        "nome": "Via Peralba",
+        "quartiere": "Montesacro",
+        "municipio": "III",
+        "classificazione": "giallo",
+        "score": 3,
+        "ciclabile": "no",
+        "n_corsie": 2,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "traffico locale - segnalazione @Sim1_71"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "id": "SS-ROM-0326",
+        "nome": "Via Monte Altissimo",
+        "quartiere": "Montesacro",
+        "municipio": "III",
+        "classificazione": "verde",
+        "score": 1,
+        "ciclabile": "no",
+        "n_corsie": 1,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "no ciclabile traffico locale quasi nullo - segnalazione @Sim1_71"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "id": "SS-ROM-0327",
+        "nome": "Viale Carnaro",
+        "quartiere": "Montesacro",
+        "municipio": "III",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 2,
+        "note": "traffico intenso e veloce"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "id": "SS-ROM-0328",
+        "nome": "Via Brennero",
+        "quartiere": "Montesacro",
+        "municipio": "III",
+        "classificazione": "verde",
+        "score": 1,
+        "ciclabile": "no",
+        "n_corsie": 1,
+        "senso_unico": "no",
+        "n_testimonianze": 2,
+        "note": "no ciclabile traffico locale quasi nullo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "id": "SS-ROM-0329",
+        "nome": "Via Antonio Canova",
+        "quartiere": "Flaminio",
+        "municipio": "I",
+        "classificazione": "giallo",
+        "score": 3,
+        "ciclabile": "no",
+        "n_corsie": 1,
+        "senso_unico": "si",
+        "n_testimonianze": 1,
+        "note": "senso unico - segnalazione Nikolai"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "id": "SS-ROM-0330",
+        "nome": "Viale Pantelleria",
+        "quartiere": "Montesacro",
+        "municipio": "III",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "arteria trafficata nessuna ciclabile"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "id": "SS-ROM-0331",
+        "nome": "Via Monte Bianco",
+        "quartiere": "Montesacro",
+        "municipio": "III",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "arteria trafficata nessuna ciclabile"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "id": "SS-ROM-0332",
+        "nome": "Via Monginevra",
+        "quartiere": "Montesacro",
+        "municipio": "III",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "arteria trafficata nessuna ciclabile"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "id": "SS-ROM-0333",
+        "nome": "Via Etna",
+        "quartiere": "Montesacro",
+        "municipio": "III",
+        "classificazione": "giallo",
+        "score": 3,
+        "ciclabile": "no",
+        "n_corsie": 2,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "poco trafficata"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "id": "SS-ROM-0334",
+        "nome": "Via Col di Nava",
+        "quartiere": "Montesacro",
+        "municipio": "III",
+        "classificazione": "giallo",
+        "score": 3,
+        "ciclabile": "no",
+        "n_corsie": 2,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "poco trafficata"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "id": "SS-ROM-0335",
+        "nome": "Via di Monte Sacro",
+        "quartiere": "Montesacro",
+        "municipio": "III",
+        "classificazione": "giallo",
+        "score": 3,
+        "ciclabile": "no",
+        "n_corsie": 2,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "poco trafficata"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.5341296,
+          41.9081358
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0336",
+        "nome": "Via di Pietralata",
+        "quartiere": "Tiburtino",
+        "municipio": "IV",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "arteria trafficata nessuna ciclabile"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.5158601,
+          41.9386533
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0337",
+        "nome": "Via Pietro Mascagni",
+        "quartiere": "Trieste",
+        "municipio": "II",
+        "classificazione": "giallo",
+        "score": 3,
+        "ciclabile": "no",
+        "n_corsie": 2,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "traffico contenuto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.5126153,
+          41.9356073
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0338",
+        "nome": "Viale Somalia",
+        "quartiere": "Trieste",
+        "municipio": "II",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "arteria trafficata nessuna ciclabile"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.5171433,
+          41.9298823
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0339",
+        "nome": "Viale Libia",
+        "quartiere": "Trieste",
+        "municipio": "II",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "arteria trafficata nessuna ciclabile"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "id": "SS-ROM-0340",
+        "nome": "Via Pontina",
+        "quartiere": "EUR",
+        "municipio": "IX",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "arteria trafficata quasi autostrada urbana"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.4656025,
+          41.8187697
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0341",
+        "nome": "Viale dell Oceano Atlantico",
+        "quartiere": "Fonte Ostiense",
+        "municipio": "IX",
+        "classificazione": "verde",
+        "score": 1,
+        "ciclabile": "si",
+        "n_corsie": 0,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "pista ciclabile presente"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.5067769,
+          41.9674131
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0342",
+        "nome": "Via Cortona",
+        "quartiere": "Castel Giubileo",
+        "municipio": "III",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "arteria trafficata nessuna ciclabile"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.5157511,
+          41.9771325
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0343",
+        "nome": "Via Altagnana",
+        "quartiere": "Castel Giubileo",
+        "municipio": "III",
+        "classificazione": "verde",
+        "score": 1,
+        "ciclabile": "no",
+        "n_corsie": 1,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "traffico locale scarso"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.520524,
+          41.978565
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0344",
+        "nome": "Via Monte Grimano",
+        "quartiere": "Castel Giubileo",
+        "municipio": "III",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "arteria trafficata nessuna ciclabile"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.5394398,
+          41.9750138
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0345",
+        "nome": "Via Alberto Lionello",
+        "quartiere": "Castel Giubileo",
+        "municipio": "III",
+        "classificazione": "verde",
+        "score": 1,
+        "ciclabile": "no",
+        "n_corsie": 1,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "traffico locale scarso"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.5204308,
+          41.9796319
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0346",
+        "nome": "Viale Carmelo Bene",
+        "quartiere": "Castel Giubileo",
+        "municipio": "III",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "arteria trafficata nessuna ciclabile"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.5485122,
+          41.9661334
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0347",
+        "nome": "Via di Settebagni",
+        "quartiere": "Casal Boccone",
+        "municipio": "III",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 2,
+        "note": "arteria trafficata nessuna ciclabile"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "id": "SS-ROM-0348",
+        "nome": "Ponte Salario",
+        "quartiere": "Montesacro",
+        "municipio": "III",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "ponte trafficato nessuna ciclabile"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "id": "SS-ROM-0349",
+        "nome": "Via Val D Ala",
+        "quartiere": "Montesacro",
+        "municipio": "III",
+        "classificazione": "verde",
+        "score": 1,
+        "ciclabile": "no",
+        "n_corsie": 1,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "traffico locale scarso"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "id": "SS-ROM-0350",
+        "nome": "Via Val di Lanzo",
+        "quartiere": "Montesacro",
+        "municipio": "III",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 2,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "trafficata nessuna ciclabile"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "id": "SS-ROM-0351",
+        "nome": "Via del Casale Giuliani",
+        "quartiere": "Montesacro",
+        "municipio": "III",
+        "classificazione": "giallo",
+        "score": 3,
+        "ciclabile": "no",
+        "n_corsie": 2,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "poco trafficata"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "id": "SS-ROM-0352",
+        "nome": "Piazza Conca d Oro",
+        "quartiere": "Montesacro",
+        "municipio": "III",
+        "classificazione": "verde",
+        "score": 1,
+        "ciclabile": "si",
+        "n_corsie": 0,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "ciclabile nuova attraversa la piazza"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "id": "SS-ROM-0353",
+        "nome": "Via Valle Martello",
+        "quartiere": "Montesacro",
+        "municipio": "III",
+        "classificazione": "giallo",
+        "score": 3,
+        "ciclabile": "no",
+        "n_corsie": 2,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "poco trafficata"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "id": "SS-ROM-0354",
+        "nome": "Via Val Sillaro",
+        "quartiere": "Montesacro",
+        "municipio": "III",
+        "classificazione": "giallo",
+        "score": 3,
+        "ciclabile": "no",
+        "n_corsie": 2,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "poco trafficata"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "id": "SS-ROM-0355",
+        "nome": "Via Val Varaita",
+        "quartiere": "Montesacro",
+        "municipio": "III",
+        "classificazione": "giallo",
+        "score": 3,
+        "ciclabile": "no",
+        "n_corsie": 2,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "poco trafficata"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "id": "SS-ROM-0356",
+        "nome": "Via Val Santerno",
+        "quartiere": "Montesacro",
+        "municipio": "III",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 1,
+        "senso_unico": "si",
+        "n_testimonianze": 1,
+        "note": "senso unico traffico intenso"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.4705324,
+          41.8754297
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0357",
+        "nome": "Ponte Testaccio",
+        "quartiere": "Testaccio",
+        "municipio": "I",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "arteria trafficata nessuna ciclabile"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.474894,
+          41.8770373
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0358",
+        "nome": "Via Galvani",
+        "quartiere": "Testaccio",
+        "municipio": "I",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "arteria trafficata nessuna ciclabile"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.4728716,
+          41.8779218
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0359",
+        "nome": "Via Beniamino Franklin",
+        "quartiere": "Testaccio",
+        "municipio": "I",
+        "classificazione": "verde",
+        "score": 1,
+        "ciclabile": "no",
+        "n_corsie": 1,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "traffico locale scarso"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.4733364,
+          41.8811331
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0360",
+        "nome": "Lungotevere Testaccio",
+        "quartiere": "Testaccio",
+        "municipio": "I",
+        "classificazione": "verde",
+        "score": 1,
+        "ciclabile": "si",
+        "n_corsie": 0,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "pista ciclabile presente"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.4771066,
+          41.8758151
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0361",
+        "nome": "Via Nicola Zabaglia",
+        "quartiere": "Testaccio",
+        "municipio": "I",
+        "classificazione": "giallo",
+        "score": 3,
+        "ciclabile": "no",
+        "n_corsie": 2,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "ciclabile inagibile traffico contenuto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.4753994,
+          41.8802877
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0362",
+        "nome": "Piazza di Santa Maria Liberatrice",
+        "quartiere": "Testaccio",
+        "municipio": "I",
+        "classificazione": "giallo",
+        "score": 3,
+        "ciclabile": "no",
+        "n_corsie": 2,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "traffico locale contenuto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.4770463,
+          41.8795559
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0363",
+        "nome": "Piazza Testaccio",
+        "quartiere": "Testaccio",
+        "municipio": "I",
+        "classificazione": "blu",
+        "score": 2,
+        "ciclabile": "no",
+        "n_corsie": 0,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "area pedonale"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "id": "SS-ROM-0364",
+        "nome": "Lungotevere Vittorio Gassman",
+        "quartiere": "Marconi",
+        "municipio": "XI",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "arteria trafficata nessuna ciclabile"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "id": "SS-ROM-0365",
+        "nome": "Via Giuseppe Veronese",
+        "quartiere": "Marconi",
+        "municipio": "XI",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "arteria trafficata nessuna ciclabile"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "id": "SS-ROM-0366",
+        "nome": "Piazza della Radio",
+        "quartiere": "Marconi",
+        "municipio": "XI",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "trafficata nessuna ciclabile"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.463862,
+          41.8734233
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0367",
+        "nome": "Via Giuseppe Parini",
+        "quartiere": "Monteverde",
+        "municipio": "XII",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "arteria trafficata nessuna ciclabile"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.4757239,
+          41.8900366
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0368",
+        "nome": "Lungotevere degli Anguillara",
+        "quartiere": "Trastevere",
+        "municipio": "I",
+        "classificazione": "nero",
+        "score": 5,
+        "ciclabile": "no",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "multicarreggiata pericolosissima"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "id": "SS-ROM-0369",
+        "nome": "Via Giovanni Lanza",
+        "quartiere": "Esquilino",
+        "municipio": "I",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "arteria trafficata nessuna ciclabile"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.5108438,
+          41.8915627
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0370",
+        "nome": "Via Luigi Luzzatti",
+        "quartiere": "Esquilino",
+        "municipio": "I",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "arteria trafficata nessuna ciclabile"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.5118263,
+          41.8924871
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0371",
+        "nome": "Via di Porta Maggiore",
+        "quartiere": "Esquilino",
+        "municipio": "I",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "arteria trafficata nessuna ciclabile"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.5043232,
+          41.8945791
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0372",
+        "nome": "Piazza Vittorio Emanuele II",
+        "quartiere": "Esquilino",
+        "municipio": "I",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 0,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "piazza trafficata caotica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.4741792,
+          41.8891469
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0373",
+        "nome": "Piazza Sidney Sonnino",
+        "quartiere": "Trastevere",
+        "municipio": "I",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 0,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "piazza trafficata nessuna ciclabile"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.5067188,
+          41.9378065
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0374",
+        "nome": "Via del Foro Italico",
+        "quartiere": "Parioli",
+        "municipio": "II",
+        "classificazione": "nero",
+        "score": 5,
+        "ciclabile": "no",
+        "n_corsie": 6,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "multicarreggiata ad alta velocita pericolosissima"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.4848002,
+          41.9301376
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0375",
+        "nome": "Viale della Moschea",
+        "quartiere": "Parioli",
+        "municipio": "II",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "arteria trafficata nessuna ciclabile"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.4793225,
+          41.9277672
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0376",
+        "nome": "Via Guidubaldo del Monte",
+        "quartiere": "Pinciano",
+        "municipio": "II",
+        "classificazione": "verde",
+        "score": 1,
+        "ciclabile": "no",
+        "n_corsie": 1,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "traffico locale scarso"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.4662978,
+          41.915163
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0377",
+        "nome": "Via Luigi Settembrini",
+        "quartiere": "Della Vittoria",
+        "municipio": "II",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "arteria trafficata nessuna ciclabile"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "id": "SS-ROM-0378",
+        "nome": "Viale Angelico",
+        "quartiere": "Prati",
+        "municipio": "I",
+        "classificazione": "verde",
+        "score": 1,
+        "ciclabile": "si",
+        "n_corsie": 0,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "pista ciclabile presente"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.4261098,
+          41.9009931
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0379",
+        "nome": "Circonvallazione Cornelia",
+        "quartiere": "Aurelio",
+        "municipio": "XIII",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "arteria trafficata nessuna ciclabile"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.4147268,
+          41.9032476
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0380",
+        "nome": "Via di Boccea (tratto nero)",
+        "quartiere": "Aurelio",
+        "municipio": "XIII",
+        "classificazione": "nero",
+        "score": 5,
+        "ciclabile": "no",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "multicarreggiata pericolosissima"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.4098831,
+          41.9044067
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0381",
+        "nome": "Via Mattia Battistini",
+        "quartiere": "Aurelio",
+        "municipio": "XIII",
+        "classificazione": "verde",
+        "score": 1,
+        "ciclabile": "si",
+        "n_corsie": 0,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "pista ciclabile presente"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "id": "SS-ROM-0382",
+        "nome": "Via Ennio Bonifazi",
+        "quartiere": "Aurelio",
+        "municipio": "XIII",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "arteria trafficata nessuna ciclabile"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.4147268,
+          41.9032476
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0383",
+        "nome": "Via di Boccea (tratto rosso)",
+        "quartiere": "Aurelio",
+        "municipio": "XIII",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "arteria trafficata nessuna ciclabile"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "id": "SS-ROM-0384",
+        "nome": "Via Gelasio Secondo",
+        "quartiere": "Aurelio",
+        "municipio": "XIII",
+        "classificazione": "giallo",
+        "score": 3,
+        "ciclabile": "no",
+        "n_corsie": 2,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "traffico contenuto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "id": "SS-ROM-0385",
+        "nome": "Lungotevere dei Sangallo",
+        "quartiere": "Prati",
+        "municipio": "I",
+        "classificazione": "nero",
+        "score": 5,
+        "ciclabile": "no",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "multicarreggiata pericolosissima"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.462841,
+          41.8989488
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0386",
+        "nome": "Lungotevere Gianicolense",
+        "quartiere": "Trastevere",
+        "municipio": "I",
+        "classificazione": "nero",
+        "score": 5,
+        "ciclabile": "no",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "multicarreggiata pericolosissima"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.4692237,
+          41.9074395
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0387",
+        "nome": "Via Ennio Quirino Visconti",
+        "quartiere": "Prati",
+        "municipio": "I",
+        "classificazione": "giallo",
+        "score": 3,
+        "ciclabile": "no",
+        "n_corsie": 1,
+        "senso_unico": "si",
+        "n_testimonianze": 1,
+        "note": "senso unico traffico contenuto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.4654527,
+          41.9047683
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0388",
+        "nome": "Piazza Adriana",
+        "quartiere": "Prati",
+        "municipio": "I",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 0,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "piazza trafficata caotica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.5159599,
+          41.9192736
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0389",
+        "nome": "Via Nomentana (tratto Trieste)",
+        "quartiere": "Trieste",
+        "municipio": "II",
+        "classificazione": "verde",
+        "score": 1,
+        "ciclabile": "si",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "ciclabile presente"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.5192051,
+          41.9201999
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0390",
+        "nome": "Viale Ventuno Aprile",
+        "quartiere": "Nomentano",
+        "municipio": "II",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "arteria trafficata nessuna ciclabile"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.520992,
+          41.9114054
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0391",
+        "nome": "Viale delle Provincie",
+        "quartiere": "Nomentano",
+        "municipio": "II",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "arteria trafficata nessuna ciclabile"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.518592,
+          41.9100521
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0392",
+        "nome": "Via Catania",
+        "quartiere": "Nomentano",
+        "municipio": "II",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "arteria trafficata nessuna ciclabile"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.5188257,
+          41.907824
+        ]
+      },
+      "properties": {
+        "id": "SS-ROM-0393",
+        "nome": "Viale Ippocrate",
+        "quartiere": "Nomentano",
+        "municipio": "II",
+        "classificazione": "rosso",
+        "score": 4,
+        "ciclabile": "no",
+        "n_corsie": 4,
+        "senso_unico": "no",
+        "n_testimonianze": 1,
+        "note": "arteria trafficata nessuna ciclabile"
       }
     }
   ]

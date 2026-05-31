@@ -655,5 +655,277 @@
   "Via dell'Esquilino|Esquilino": {
     "lat": 41.8980647,
     "lon": 12.4995102
+  },
+  "Lungotevere ciclabile (tratto Aventino-Ostiense)|Testaccio": null,
+  "Pista ciclabile Villa Borghese|Flaminio/Parioli": null,
+  "Campo de' Fiori|Centro Storico": null,
+  "Via dell Oceano Indiano|EUR": null,
+  "Corso d Italia (Porta Pia - P.za Fiume)|Salario": {
+    "lat": 41.9100038,
+    "lon": 12.5002399
+  },
+  "Via dell Esquilino|Esquilino": null,
+  "Via Casilina|Tuscolano": {
+    "lat": 41.8776154,
+    "lon": 12.5492521
+  },
+  "Piazzale Labicano|Tuscolano": null,
+  "Viale Carlo Felice|San Giovanni": null,
+  "Via del Mandrione (tratto giallo)|Tuscolano": {
+    "lat": 41.8840024,
+    "lon": 12.531115
+  },
+  "Piazza Ippolito Nievo|Monteverde": {
+    "lat": 41.8811856,
+    "lon": 12.4673457
+  },
+  "Circonvallazione Casilina|Prenestino": {
+    "lat": 41.8887783,
+    "lon": 12.527701
+  },
+  "Lungotevere di Pietra Papa|Marconi": null,
+  "Via Gabriello Chiabrera|Ostiense": {
+    "lat": 41.8541026,
+    "lon": 12.4793471
+  },
+  "Via Silvio D Amico|Ostiense": {
+    "lat": 41.8521547,
+    "lon": 12.4770918
+  },
+  "Viale Leonardo da Vinci|Ostiense": {
+    "lat": 41.8548399,
+    "lon": 12.4804039
+  },
+  "Via Giovanni Brancaleone|Prenestino": {
+    "lat": 41.8893637,
+    "lon": 12.5310572
+  },
+  "Via delle Tre Fontane (tratto verde)|EUR": {
+    "lat": 41.8385275,
+    "lon": 12.4763738
+  },
+  "Viale Europa|EUR": {
+    "lat": 41.8323447,
+    "lon": 12.4639859
+  },
+  "Via Fanfulla da Lodi|Prenestino": {
+    "lat": 41.8897694,
+    "lon": 12.5303144
+  },
+  "Via Olevano Romano|Centocelle": null,
+  "Via Anagni|Centocelle": {
+    "lat": 41.8902434,
+    "lon": 12.5581617
+  },
+  "Viale della Primavera|Prenestino": {
+    "lat": 41.8828883,
+    "lon": 12.5609555
+  },
+  "Via Prenestina (tratto verde Centocelle)|Centocelle": {
+    "lat": 41.8951392,
+    "lon": 12.5728741
+  },
+  "Via Conte Verde|Esquilino": {
+    "lat": 41.8922831,
+    "lon": 12.5084495
+  },
+  "Via Tuscolana|Tuscolano": {
+    "lat": 41.8778747,
+    "lon": 12.5242706
+  },
+  "Via Francesco Siano|Esquilino": null,
+  "Via di Santa Croce in Gerusalemme|San Giovanni": null,
+  "Via San Quintino|Esquilino": {
+    "lat": 41.8901416,
+    "lon": 12.5087191
+  },
+  "Viale Manzoni|San Giovanni": null,
+  "Via Labicana|Celio": null,
+  "Piazza dei Santi Apostoli|Centro Storico": null,
+  "Via di San Marcello|Centro Storico": null,
+  "Via Peralba|Montesacro": null,
+  "Via Monte Altissimo|Montesacro": null,
+  "Viale Carnaro|Montesacro": null,
+  "Via Brennero|Montesacro": null,
+  "Via Antonio Canova|Flaminio": null,
+  "Viale Pantelleria|Montesacro": null,
+  "Via Monte Bianco|Montesacro": null,
+  "Via Monginevra|Montesacro": null,
+  "Via Etna|Montesacro": null,
+  "Via Col di Nava|Montesacro": null,
+  "Via di Monte Sacro|Montesacro": null,
+  "Via di Pietralata|Tiburtino": {
+    "lat": 41.9081358,
+    "lon": 12.5341296
+  },
+  "Via Pietro Mascagni|Trieste": {
+    "lat": 41.9386533,
+    "lon": 12.5158601
+  },
+  "Viale Somalia|Trieste": {
+    "lat": 41.9356073,
+    "lon": 12.5126153
+  },
+  "Viale Libia|Trieste": {
+    "lat": 41.9298823,
+    "lon": 12.5171433
+  },
+  "Via Pontina|EUR": null,
+  "Viale dell Oceano Atlantico|Fonte Ostiense": {
+    "lat": 41.8187697,
+    "lon": 12.4656025
+  },
+  "Via Cortona|Castel Giubileo": {
+    "lat": 41.9674131,
+    "lon": 12.5067769
+  },
+  "Via Altagnana|Castel Giubileo": {
+    "lat": 41.9771325,
+    "lon": 12.5157511
+  },
+  "Via Monte Grimano|Castel Giubileo": {
+    "lat": 41.978565,
+    "lon": 12.520524
+  },
+  "Via Alberto Lionello|Castel Giubileo": {
+    "lat": 41.9750138,
+    "lon": 12.5394398
+  },
+  "Viale Carmelo Bene|Castel Giubileo": {
+    "lat": 41.9796319,
+    "lon": 12.5204308
+  },
+  "Via di Settebagni|Casal Boccone": {
+    "lat": 41.9661334,
+    "lon": 12.5485122
+  },
+  "Ponte Salario|Montesacro": null,
+  "Via Val D Ala|Montesacro": null,
+  "Via Val di Lanzo|Montesacro": null,
+  "Via del Casale Giuliani|Montesacro": null,
+  "Piazza Conca d Oro|Montesacro": null,
+  "Via Valle Martello|Montesacro": null,
+  "Via Val Sillaro|Montesacro": null,
+  "Via Val Varaita|Montesacro": null,
+  "Via Val Santerno|Montesacro": null,
+  "Ponte Testaccio|Testaccio": {
+    "lat": 41.8754297,
+    "lon": 12.4705324
+  },
+  "Via Galvani|Testaccio": {
+    "lat": 41.8770373,
+    "lon": 12.474894
+  },
+  "Via Beniamino Franklin|Testaccio": {
+    "lat": 41.8779218,
+    "lon": 12.4728716
+  },
+  "Lungotevere Testaccio|Testaccio": {
+    "lat": 41.8811331,
+    "lon": 12.4733364
+  },
+  "Via Nicola Zabaglia|Testaccio": {
+    "lat": 41.8758151,
+    "lon": 12.4771066
+  },
+  "Piazza di Santa Maria Liberatrice|Testaccio": {
+    "lat": 41.8802877,
+    "lon": 12.4753994
+  },
+  "Piazza Testaccio|Testaccio": {
+    "lat": 41.8795559,
+    "lon": 12.4770463
+  },
+  "Lungotevere Vittorio Gassman|Marconi": null,
+  "Via Giuseppe Veronese|Marconi": null,
+  "Piazza della Radio|Marconi": null,
+  "Via Giuseppe Parini|Monteverde": {
+    "lat": 41.8734233,
+    "lon": 12.463862
+  },
+  "Lungotevere degli Anguillara|Trastevere": {
+    "lat": 41.8900366,
+    "lon": 12.4757239
+  },
+  "Via Giovanni Lanza|Esquilino": null,
+  "Via Luigi Luzzatti|Esquilino": {
+    "lat": 41.8915627,
+    "lon": 12.5108438
+  },
+  "Piazza Vittorio Emanuele II|Esquilino": {
+    "lat": 41.8945791,
+    "lon": 12.5043232
+  },
+  "Piazza Sidney Sonnino|Trastevere": {
+    "lat": 41.8891469,
+    "lon": 12.4741792
+  },
+  "Via del Foro Italico|Parioli": {
+    "lat": 41.9378065,
+    "lon": 12.5067188
+  },
+  "Viale della Moschea|Parioli": {
+    "lat": 41.9301376,
+    "lon": 12.4848002
+  },
+  "Via Guidubaldo del Monte|Pinciano": {
+    "lat": 41.9277672,
+    "lon": 12.4793225
+  },
+  "Via Luigi Settembrini|Della Vittoria": {
+    "lat": 41.915163,
+    "lon": 12.4662978
+  },
+  "Viale Angelico|Prati": null,
+  "Circonvallazione Cornelia|Aurelio": {
+    "lat": 41.9009931,
+    "lon": 12.4261098
+  },
+  "Via di Boccea (tratto nero)|Aurelio": {
+    "lat": 41.9032476,
+    "lon": 12.4147268
+  },
+  "Via Mattia Battistini|Aurelio": {
+    "lat": 41.9044067,
+    "lon": 12.4098831
+  },
+  "Via Ennio Bonifazi|Aurelio": null,
+  "Via di Boccea (tratto rosso)|Aurelio": {
+    "lat": 41.9032476,
+    "lon": 12.4147268
+  },
+  "Via Gelasio Secondo|Aurelio": null,
+  "Lungotevere dei Sangallo|Prati": null,
+  "Lungotevere Gianicolense|Trastevere": {
+    "lat": 41.8989488,
+    "lon": 12.462841
+  },
+  "Via Ennio Quirino Visconti|Prati": {
+    "lat": 41.9074395,
+    "lon": 12.4692237
+  },
+  "Piazza Adriana|Prati": {
+    "lat": 41.9047683,
+    "lon": 12.4654527
+  },
+  "Via Nomentana (tratto Trieste)|Trieste": {
+    "lat": 41.9192736,
+    "lon": 12.5159599
+  },
+  "Viale Ventuno Aprile|Nomentano": {
+    "lat": 41.9201999,
+    "lon": 12.5192051
+  },
+  "Viale delle Provincie|Nomentano": {
+    "lat": 41.9114054,
+    "lon": 12.520992
+  },
+  "Via Catania|Nomentano": {
+    "lat": 41.9100521,
+    "lon": 12.518592
+  },
+  "Viale Ippocrate|Nomentano": {
+    "lat": 41.907824,
+    "lon": 12.5188257
   }
 }
