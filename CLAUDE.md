@@ -18,8 +18,8 @@ Sviluppato da Nikolai.
 
 ## Stack Tecnico
 - **Database**: CSV → target GeoJSON / API REST
-- **Schema colonne**: id, nome, quartiere, classificazione, score, note, ciclabile_presente, n_corsie, senso_unico, n_testimonianze, municipio
-- **ID formato**: SS-ROM-XXXX (ultimo usato: SS-ROM-0202)
+- **Schema colonne**: id, nome, quartiere, classificazione, score, note, ciclabile_presente, n_corsie, senso_unico, n_testimonianze, municipio, data_segnalazione
+- **ID formato**: SS-ROM-XXXX (ultimo usato: SS-ROM-0443)
 - **Hosting**: GitHub Pages — nikolaifissenko/Streetsmart-Sentille
 - **Form backend**: Formspree endpoint `xlgookeg`
 
@@ -28,12 +28,12 @@ Sviluppato da Nikolai.
 Non modificare i CSV in data/municipio/ senza aggiornare il master.
 
 ## Stato Database
-- **393 strade** classificate totali
+- **443 strade** classificate totali
 - Municipio I: ~80 strade (completato)
 - Municipio II: ~80 strade (completato + segnalazioni Sentinelle)
 - Municipio III: ~50 strade (completato + segnalazioni Sentinelle)
 - Municipi IV, V, VII, VIII, IX, XI, XII, XIII, XIV, XV: segnalazioni Sentinelle integrate nel master
-- Ultimo ID usato: SS-ROM-0393
+- Ultimo ID usato: SS-ROM-0443
 
 ## Community Sentinelle
 - Form iscrizione: nikolaifissenko.github.io/Streetsmart-Sentille/sentinelle_form.html
@@ -68,6 +68,6 @@ streetsmart/
 
 ## Workflow Aggiunta Strade
 1. Aggiungere righe a `data/master/streetsmart_roma_completo.csv`
-2. Incrementare ID da SS-ROM-0202
+2. Incrementare ID da SS-ROM-0443
 3. Aggiornare anche il CSV del municipio corrispondente in `data/municipio/`
-4. Aggiornare il contatore in questo file (riga "202 strade")
+4. Aggiornare il contatore in questo file (riga "443 strade")
