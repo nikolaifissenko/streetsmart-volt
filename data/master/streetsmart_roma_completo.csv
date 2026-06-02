@@ -392,3 +392,53 @@ SS-ROM-0390,Viale Ventuno Aprile,Nomentano,rosso,4,arteria trafficata nessuna ci
 SS-ROM-0391,Viale delle Provincie,Nomentano,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,1,II,
 SS-ROM-0392,Via Catania,Nomentano,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,1,II,
 SS-ROM-0393,Viale Ippocrate,Nomentano,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,1,II,
+SS-ROM-0394,Percorso Ciclopedonale Elettra Pollastrini,Municipio XIV,verde,1,segnalazione Sentinelle,si,,,1,XIV,2026-06-02
+SS-ROM-0395,Via Benedetto Quattordicesimo,Municipio XIII,verde,1,segnalazione Sentinelle,si,,,1,XIII,2026-06-02
+SS-ROM-0396,Piazza della Scala,Trastevere,blu,2,segnalazione Sentinelle,no,,,1,I,2026-06-02
+SS-ROM-0397,Piazza di San Pietro in Montorio,Trastevere,rosso,4,segnalazione Sentinelle,no,,,1,I,2026-06-02
+SS-ROM-0398,Via Angelo Tittoni,Trastevere,rosso,4,segnalazione Sentinelle,no,,,1,I,2026-06-02
+SS-ROM-0399,Piazza di San Cosimato,Trastevere,giallo,3,segnalazione Sentinelle,no,,,1,I,2026-06-02
+SS-ROM-0400,Viale di Trastevere,Trastevere,rosso,4,segnalazione Sentinelle,no,,,1,I,2026-06-02
+SS-ROM-0401,Via di San Francesco a Ripa,Trastevere,giallo,3,segnalazione Sentinelle - tratto centrale,no,,,1,I,2026-06-02
+SS-ROM-0402,Via di San Francesco a Ripa,Trastevere,blu,2,segnalazione Sentinelle - tratto nord,no,,,1,I,2026-06-02
+SS-ROM-0403,Piazza di San Calisto,Trastevere,blu,2,segnalazione Sentinelle,no,,,1,I,2026-06-02
+SS-ROM-0404,Piazza di Santa Maria in Trastevere,Trastevere,blu,2,segnalazione Sentinelle,no,,,1,I,2026-06-02
+SS-ROM-0405,Via della Renella,Trastevere,giallo,3,segnalazione Sentinelle,no,,,1,I,2026-06-02
+SS-ROM-0406,Via Garibaldi,Trastevere,blu,2,segnalazione Sentinelle,no,,,1,I,2026-06-02
+SS-ROM-0407,Piazza Santiago del Cile,Parioli,verde,1,segnalazione Sentinelle - area verde,si,,,1,II,2026-06-01
+SS-ROM-0408,Piazza Santiago del Cile,Parioli,rosso,4,segnalazione Sentinelle - carreggiata esterna,no,,,1,II,2026-06-01
+SS-ROM-0409,Viale Bruno Buozzi,Pinciano,giallo,3,segnalazione Sentinelle,no,,,1,II,2026-06-01
+SS-ROM-0410,Via Guido Reni,Flaminio,verde,1,segnalazione Sentinelle,si,,,1,II,2026-06-01
+SS-ROM-0411,Ponte della Musica Armando Trovajoli,Flaminio,blu,2,segnalazione Sentinelle,no,,,1,II,2026-06-01
+SS-ROM-0412,Viale Angelico,Prati,verde,1,segnalazione Sentinelle,si,,,1,I,2026-06-01
+SS-ROM-0413,Via Sabotino,Prati,verde,1,segnalazione Sentinelle,si,,,1,I,2026-06-01
+SS-ROM-0414,Via Podgora,Prati,rosso,4,segnalazione Sentinelle,no,,,1,I,2026-06-01
+SS-ROM-0415,Via Luisa di Savoia,Flaminio,rosso,4,segnalazione Sentinelle,no,,,1,II,2026-06-01
+SS-ROM-0416,Piazza del Popolo,Flaminio,blu,2,segnalazione Sentinelle,no,,,1,I,2026-06-01
+SS-ROM-0417,Via del Corso,Centro Storico,blu,2,segnalazione Sentinelle,no,,,1,I,2026-06-01
+SS-ROM-0418,Via Sistina,Trevi,giallo,3,segnalazione Sentinelle,no,,,1,I,2026-06-01
+SS-ROM-0419,Via Ludovisi,Ludovisi,giallo,3,segnalazione Sentinelle,no,,,1,I,2026-06-01
+SS-ROM-0420,Via Lazio,Ludovisi,giallo,3,segnalazione Sentinelle,no,,,1,I,2026-06-01
+SS-ROM-0421,Via Virginia Agnelli,Municipio XII,verde,1,segnalazione @gabimbo,si,,,1,XII,2026-05-31
+SS-ROM-0422,Via Celio Vibenna,Celio,verde,1,segnalazione Sentinelle,si,,,1,I,2026-05-30
+SS-ROM-0423,Piazzale Metronio,Appio Latino,rosso,4,segnalazione Sentinelle,no,,,1,VII,2026-05-30
+SS-ROM-0424,Via Gallia,Appio Latino,rosso,4,segnalazione Sentinelle,no,,,1,VII,2026-05-30
+SS-ROM-0425,Via Latina,Appio Latino,giallo,3,segnalazione Sentinelle,no,,,1,VII,2026-05-30
+SS-ROM-0426,Via Cesare Baronio,Appio Latino,rosso,4,segnalazione Sentinelle,no,,,1,VII,2026-05-30
+SS-ROM-0427,Via Appia Nuova,Appio Latino,rosso,4,segnalazione Sentinelle - tratto nord,no,,,1,VII,2026-05-30
+SS-ROM-0428,Via Appia Nuova,Appio Latino,rosso,4,segnalazione Sentinelle - tratto sud,no,,,1,VII,2026-05-30
+SS-ROM-0429,Via Tuscolana,Tuscolano,verde,1,segnalazione Sentinelle - tratto est,si,,,1,VII,2026-05-30
+SS-ROM-0430,Via Tuscolana,Tuscolano,verde,1,segnalazione Sentinelle - tratto ovest,si,,,1,VII,2026-05-30
+SS-ROM-0431,Via Adria,Tuscolano,verde,1,segnalazione Sentinelle,si,,,1,VII,2026-05-30
+SS-ROM-0432,Piazza Ragusa,Appio Latino,rosso,4,segnalazione Sentinelle,no,,,1,VII,2026-05-30
+SS-ROM-0433,Via Taranto,Appio Latino,rosso,4,segnalazione Sentinelle,no,,,1,VII,2026-05-30
+SS-ROM-0434,Piazza di Villa Fiorelli,Appio Latino,giallo,3,segnalazione Sentinelle - tratto pedonale,no,,,1,VII,2026-05-30
+SS-ROM-0435,Piazza di Villa Fiorelli,Appio Latino,rosso,4,segnalazione Sentinelle - tratto carrabile,no,,,1,VII,2026-05-30
+SS-ROM-0436,Piazza Lodi,Appio Latino,rosso,4,segnalazione Sentinelle,no,,,1,VII,2026-05-30
+SS-ROM-0437,Via Prenestina,Prenestino,verde,1,segnalazione Sentinelle,si,,,1,V,2026-05-30
+SS-ROM-0438,Via Casilina,Casilino,rosso,4,segnalazione Sentinelle,no,,,1,VII,2026-05-30
+SS-ROM-0439,Viale dello Scalo San Lorenzo,San Lorenzo,rosso,4,segnalazione Sentinelle,no,,,1,II,2026-05-30
+SS-ROM-0440,Via Vitellia,Municipio XII,rosso,4,segnalazione Sentinelle,no,,,1,XII,2026-05-29
+SS-ROM-0441,Via Pio Foà,Municipio XII,rosso,4,segnalazione Sentinelle - tratto nord,no,,,1,XII,2026-05-29
+SS-ROM-0442,Via Pio Foà,Municipio XII,giallo,3,segnalazione Sentinelle - tratto sud,no,,,1,XII,2026-05-29
+SS-ROM-0443,Via di Donna Olimpia,Municipio XII,rosso,4,segnalazione Sentinelle,no,,,1,XII,2026-05-28
