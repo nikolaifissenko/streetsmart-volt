@@ -35,6 +35,11 @@ Non modificare i CSV in data/municipio/ senza aggiornare il master.
 - Municipi IV, V, VII, VIII, IX, XI, XII, XIII, XIV, XV: segnalazioni Sentinelle integrate nel master
 - Ultimo ID usato: SS-ROM-0393
 
+## Monetizzazione (in corso)
+- Creato `docs/onepager_b2b.md`: pitch per operatori micromobilità (Lime/Dott/Tier) e Comune di Roma
+- Strategia: validare interesse commerciale prima di costruire API (no infrastruttura prematura)
+- Prossimi passi: identificare contatto target (Comune Mobilità o operatore), inviare one-pager, poi eventuale demo tecnica
+
 ## Community Sentinelle
 - Form iscrizione: nikolaifissenko.github.io/Streetsmart-Sentille/sentinelle_form.html
 - Form segnalazione: nikolaifissenko.github.io/Streetsmart-Sentille/segnalazione_form.html
