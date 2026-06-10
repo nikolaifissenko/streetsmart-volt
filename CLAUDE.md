@@ -27,6 +27,10 @@ Sviluppato da Nikolai.
 `data/master/streetsmart_roma_completo.csv` — source of truth.
 Non modificare i CSV in data/municipio/ senza aggiornare il master.
 
+## Export GeoJSON
+`streetsmart_roma.geojson` (root del repo, branch `main`) — export GeoJSON pubblico, servito via GitHub Pages:
+`https://nikolaifissenko.github.io/streetsmart-volt/streetsmart_roma.geojson`
+
 ## Stato Database
 - **393 strade** classificate totali
 - Municipio I: ~80 strade (completato)
