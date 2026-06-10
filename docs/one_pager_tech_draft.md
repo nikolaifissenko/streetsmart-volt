@@ -65,5 +65,5 @@ Non sono derivati solo da OSM o algoritmi: ogni strada è validata da residenti 
 
 ## Contatti
 - Instagram: **@streetsmart.nav**
-- Demo dati live: https://nikolaifissenko.github.io/streetsmart-volt/streetsmart_roma.geojson
+- Demo dati live: https://nikolaifissenko.github.io/Streetsmart-Sentille/streetsmart_roma.geojson
 - Email: nikolai.fissenko1@gmail.com
