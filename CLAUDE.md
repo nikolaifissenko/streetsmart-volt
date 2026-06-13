@@ -77,10 +77,23 @@ streetsmart/
 │       └── municipio1_v1.csv
 ├── web/
 │   ├── sentinelle_form.html
-│   └── segnalazione_form.html
+│   ├── segnalazione_form.html
+│   ├── mappa.html                   # mappa Leaflet del GeoJSON
+│   └── stato_sentinelle.html        # progresso community + stats
 ├── docs/
-│   └── pdf/                         # materiali presentazione
-└── scripts/                         # export GeoJSON, stats, API (futuro)
+│   ├── pdf/                         # materiali presentazione
+│   ├── stats.md / stats.json        # statistiche generate da scripts/stats.py
+│   └── one_pager_tech.md            # pitch B2B generato da scripts/generate_one_pager.py
+├── dist/
+│   ├── streetsmart_roma.geojson     # generato da scripts/build.py
+│   └── api/                         # snapshot JSON generati da scripts/export_api.py
+└── scripts/
+    ├── build.py                     # CSV -> GeoJSON (+ geocoding)
+    ├── validate.py                  # controllo integrità CSV
+    ├── stats.py                     # statistiche per docs/
+    ├── export_api.py                # snapshot JSON API statica
+    ├── generate_one_pager.py        # one-pager pitch da stats.json
+    └── import_segnalazioni.py       # converte export Formspree in righe CSV
 ```
 
 ## Workflow Aggiunta Strade
