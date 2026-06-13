@@ -42,6 +42,15 @@ Non modificare i CSV in data/municipio/ senza aggiornare il master.
 
 ## Social
 - Instagram: @streetsmart.nav — tono urban rebel, community building, italiano
+- Post con statistiche: usare i numeri da `docs/stats.json` / `docs/stats.md`
+  (generati da `scripts/stats.py`, sempre aggiornati)
+- Formato caption tipo:
+  - hook iniziale con emoji + numero shock (es. "433 STRADE MAPPATE")
+  - 2-4 bullet con percentuali chiave (% pericolose, % ciclabili, municipio peggiore)
+  - chiusura con CTA doppia: segnala una strada (link form segnalazione) +
+    unisciti alle Sentinelle (link form iscrizione, ricordare obiettivo 100)
+  - hashtag: #StreetSmart #Roma #ciclabili #micromobilità #datidiquartiere
+- Tono: diretto, dati come "prova", mai vittimista — invita all'azione
 
 ## Struttura Directory
 ```
