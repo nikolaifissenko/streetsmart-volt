@@ -1,0 +1,19 @@
+{
+  "municipio": "XV",
+  "count": 1,
+  "strade": [
+    {
+      "id": "SS-ROM-0213",
+      "nome": "Via Flaminia (tratto Tor di Quinto)",
+      "quartiere": "Tor di Quinto",
+      "municipio": "XV",
+      "classificazione": "rosso",
+      "score": 4,
+      "ciclabile_presente": "no",
+      "n_corsie": 4,
+      "senso_unico": "no",
+      "n_testimonianze": 1,
+      "note": "traffico veloce quasi autostrada marciapiede stretto e discontinuo - segnalazione @metaiyo"
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StreetSmart — Mappa pericolosità ciclistica Roma</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    html, body { margin: 0; padding: 0; height: 100%; font-family: -apple-system, Helvetica, Arial, sans-serif; }
+    #map { position: absolute; top: 56px; bottom: 0; left: 0; right: 0; }
+    header {
+      height: 56px; display: flex; align-items: center; justify-content: space-between;
+      padding: 0 16px; background: #111; color: #fff; box-sizing: border-box;
+    }
+    header h1 { font-size: 1.1rem; margin: 0; }
+    header h1 span { color: #ff5050; }
+    .legend {
+      position: absolute; bottom: 24px; right: 12px; z-index: 1000;
+      background: rgba(255,255,255,0.95); padding: 10px 14px; border-radius: 8px;
+      font-size: 0.85rem; box-shadow: 0 1px 4px rgba(0,0,0,0.3); line-height: 1.5;
+    }
+    .legend .dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Street<span>Smart</span> — Mappa Roma</h1>
+    <div id="counter" style="font-size:0.85rem;">caricamento…</div>
+  </header>
+  <div id="map"></div>
+
+  <div class="legend">
+    <div><span class="dot" style="background:#000"></span>nero — multicarreggiata alta velocità</div>
+    <div><span class="dot" style="background:#e53935"></span>rosso — trafficata senza ciclabile</div>
+    <div><span class="dot" style="background:#fdd835"></span>giallo — urbana tranquilla</div>
+    <div><span class="dot" style="background:#43a047"></span>verde — ciclabile presente</div>
+    <div><span class="dot" style="background:#1e88e5"></span>blu — ZTL / pedonale</div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    const COLORI = {
+      nero: '#000000',
+      rosso: '#e53935',
+      giallo: '#fdd835',
+      verde: '#43a047',
+      blu: '#1e88e5',
+      'verde-giallo': '#9e9d24',
+      'verde-blu': '#26a69a'
+    };
+
+    const map = L.map('map').setView([41.9028, 12.4964], 12);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    fetch('../dist/streetsmart_roma.geojson')
+      .then(r => r.json())
+      .then(geojson => {
+        let shown = 0;
+        const layer = L.geoJSON(geojson, {
+          filter: f => !!f.geometry,
+          pointToLayer: (feature, latlng) => {
+            shown++;
+            const cls = feature.properties.classificazione;
+            return L.circleMarker(latlng, {
+              radius: 6,
+              fillColor: COLORI[cls] || '#888',
+              color: '#333',
+              weight: 1,
+              opacity: 1,
+              fillOpacity: 0.85
+            });
+          },
+          onEachFeature: (feature, lyr) => {
+            const p = feature.properties;
+            lyr.bindPopup(
+              `<strong>${p.nome}</strong><br>` +
+              `${p.quartiere} — Municipio ${p.municipio}<br>` +
+              `Classificazione: <strong>${p.classificazione}</strong> (score ${p.score})<br>` +
+              (p.note ? `<em>${p.note}</em><br>` : '') +
+              `ID: ${p.id} — testimonianze: ${p.n_testimonianze}`
+            );
+          }
+        }).addTo(map);
+
+        document.getElementById('counter').textContent =
+          `${shown} / ${geojson.features.length} strade geolocalizzate`;
+      })
+      .catch(err => {
+        document.getElementById('counter').textContent = 'errore caricamento dati';
+        console.error(err);
+      });
+  </script>
+</body>
+</html>

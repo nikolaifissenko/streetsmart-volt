@@ -29,10 +29,16 @@ jobs:
       - name: Run build.py
         run: python scripts/build.py
 
-      - name: Commit e push GeoJSON aggiornato
+      - name: Run export_api.py
+        run: python scripts/export_api.py
+
+      - name: Run stats.py
+        run: python scripts/stats.py
+
+      - name: Commit e push GeoJSON/API/stats aggiornati
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add dist/streetsmart_roma.geojson data/master/.geocode_cache.json
-          git diff --staged --quiet || git commit -m "Auto: aggiorna GeoJSON [skip ci]"
+          git add dist/streetsmart_roma.geojson data/master/.geocode_cache.json dist/api docs/stats.md docs/stats.json
+          git diff --staged --quiet || git commit -m "Auto: aggiorna GeoJSON, API e stats [skip ci]"
           git push

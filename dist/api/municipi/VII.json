@@ -1,0 +1,110 @@
+{
+  "municipio": "VII",
+  "count": 8,
+  "strade": [
+    {
+      "id": "SS-ROM-0216",
+      "nome": "Via del Mandrione",
+      "quartiere": "Tuscolano/Pigneto",
+      "municipio": "VII",
+      "classificazione": "blu",
+      "score": 2,
+      "ciclabile_presente": "no",
+      "n_corsie": 1,
+      "senso_unico": "no",
+      "n_testimonianze": 1,
+      "note": "strada principalmente chiusa al traffico poco frequentata - segnalazione @metaiyo"
+    },
+    {
+      "id": "SS-ROM-0217",
+      "nome": "Via di Centocelle",
+      "quartiere": "Quadraro",
+      "municipio": "VII",
+      "classificazione": "rosso",
+      "score": 4,
+      "ciclabile_presente": "no",
+      "n_corsie": 4,
+      "senso_unico": "no",
+      "n_testimonianze": 1,
+      "note": "strada larga invoglia alla guida veloce no ciclabile - segnalazione @metaiyo"
+    },
+    {
+      "id": "SS-ROM-0218",
+      "nome": "Via di Porta Furba",
+      "quartiere": "Tuscolano",
+      "municipio": "VII",
+      "classificazione": "rosso",
+      "score": 4,
+      "ciclabile_presente": "no",
+      "n_corsie": 2,
+      "senso_unico": "no",
+      "n_testimonianze": 1,
+      "note": "strada stretta doppio senso no marciapiedi no piste invoglia alla velocita - segnalazione @metaiyo"
+    },
+    {
+      "id": "SS-ROM-0298",
+      "nome": "Via Casilina",
+      "quartiere": "Tuscolano",
+      "municipio": "VII",
+      "classificazione": "rosso",
+      "score": 4,
+      "ciclabile_presente": "no",
+      "n_corsie": 4,
+      "senso_unico": "no",
+      "n_testimonianze": 1,
+      "note": "traffico veloce punto poco visibile sotto ponte - segnalazione @nomad_valentine"
+    },
+    {
+      "id": "SS-ROM-0299",
+      "nome": "Piazzale Labicano",
+      "quartiere": "Tuscolano",
+      "municipio": "VII",
+      "classificazione": "rosso",
+      "score": 4,
+      "ciclabile_presente": "no",
+      "n_corsie": 0,
+      "senso_unico": "no",
+      "n_testimonianze": 1,
+      "note": "svincolo trafficato esperienza necessaria per incanalarsi - segnalazione @nomad_valentine"
+    },
+    {
+      "id": "SS-ROM-0301",
+      "nome": "Via del Mandrione (tratto giallo)",
+      "quartiere": "Tuscolano",
+      "municipio": "VII",
+      "classificazione": "giallo",
+      "score": 3,
+      "ciclabile_presente": "no",
+      "n_corsie": 1,
+      "senso_unico": "no",
+      "n_testimonianze": 1,
+      "note": "poche macchine in alcuni tratti assenti - segnalazione @nomad_valentine"
+    },
+    {
+      "id": "SS-ROM-0317",
+      "nome": "Via Tuscolana",
+      "quartiere": "Tuscolano",
+      "municipio": "VII",
+      "classificazione": "verde",
+      "score": 1,
+      "ciclabile_presente": "si",
+      "n_corsie": 4,
+      "senso_unico": "no",
+      "n_testimonianze": 1,
+      "note": "ciclabile presente - segnalazione Nikolai"
+    },
+    {
+      "id": "SS-ROM-0402",
+      "nome": "Piazza Armenia",
+      "quartiere": "Municipio VII",
+      "municipio": "VII",
+      "classificazione": "rosso",
+      "score": 4,
+      "ciclabile_presente": "no",
+      "n_corsie": 2,
+      "senso_unico": "no",
+      "n_testimonianze": 1,
+      "note": "segnalazione community Sentinelle"
+    }
+  ]
+}

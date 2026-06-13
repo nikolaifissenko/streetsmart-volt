@@ -1,0 +1,119 @@
+{
+  "generato_il": "2026-06-13",
+  "strade_totali": 433,
+  "distribuzione_classificazioni": {
+    "giallo": 152,
+    "rosso": 146,
+    "verde": 61,
+    "nero": 36,
+    "blu": 32,
+    "verde-blu": 4,
+    "verde-giallo": 2
+  },
+  "per_municipio": [
+    {
+      "municipio": "I",
+      "totale": 157,
+      "pericolose": 67,
+      "pct_pericolose": 42.7,
+      "ciclabili": 20,
+      "pct_ciclabili": 12.7
+    },
+    {
+      "municipio": "II",
+      "totale": 106,
+      "pericolose": 40,
+      "pct_pericolose": 37.7,
+      "ciclabili": 18,
+      "pct_ciclabili": 17.0
+    },
+    {
+      "municipio": "III",
+      "totale": 76,
+      "pericolose": 24,
+      "pct_pericolose": 31.6,
+      "ciclabili": 11,
+      "pct_ciclabili": 14.5
+    },
+    {
+      "municipio": "IV",
+      "totale": 5,
+      "pericolose": 3,
+      "pct_pericolose": 60.0,
+      "ciclabili": 0,
+      "pct_ciclabili": 0.0
+    },
+    {
+      "municipio": "V",
+      "totale": 12,
+      "pericolose": 6,
+      "pct_pericolose": 50.0,
+      "ciclabili": 1,
+      "pct_ciclabili": 8.3
+    },
+    {
+      "municipio": "VII",
+      "totale": 8,
+      "pericolose": 5,
+      "pct_pericolose": 62.5,
+      "ciclabili": 1,
+      "pct_ciclabili": 12.5
+    },
+    {
+      "municipio": "VIII",
+      "totale": 20,
+      "pericolose": 8,
+      "pct_pericolose": 40.0,
+      "ciclabili": 3,
+      "pct_ciclabili": 15.0
+    },
+    {
+      "municipio": "IX",
+      "totale": 13,
+      "pericolose": 6,
+      "pct_pericolose": 46.2,
+      "ciclabili": 5,
+      "pct_ciclabili": 38.5
+    },
+    {
+      "municipio": "XI",
+      "totale": 10,
+      "pericolose": 7,
+      "pct_pericolose": 70.0,
+      "ciclabili": 3,
+      "pct_ciclabili": 30.0
+    },
+    {
+      "municipio": "XII",
+      "totale": 11,
+      "pericolose": 7,
+      "pct_pericolose": 63.6,
+      "ciclabili": 1,
+      "pct_ciclabili": 9.1
+    },
+    {
+      "municipio": "XIII",
+      "totale": 12,
+      "pericolose": 8,
+      "pct_pericolose": 66.7,
+      "ciclabili": 3,
+      "pct_ciclabili": 25.0
+    },
+    {
+      "municipio": "XIV",
+      "totale": 2,
+      "pericolose": 0,
+      "pct_pericolose": 0.0,
+      "ciclabili": 1,
+      "pct_ciclabili": 50.0
+    },
+    {
+      "municipio": "XV",
+      "totale": 1,
+      "pericolose": 1,
+      "pct_pericolose": 100.0,
+      "ciclabili": 0,
+      "pct_ciclabili": 0.0
+    }
+  ]
+}

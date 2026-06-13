@@ -1,0 +1,32 @@
+{
+  "municipio": "XIV",
+  "count": 2,
+  "strade": [
+    {
+      "id": "SS-ROM-0250",
+      "nome": "Via della Pineta Sacchetti",
+      "quartiere": "Monte Mario",
+      "municipio": "XIV",
+      "classificazione": "giallo",
+      "score": 3,
+      "ciclabile_presente": "si",
+      "n_corsie": 2,
+      "senso_unico": "no",
+      "n_testimonianze": 1,
+      "note": "ciclabile presente ma al centro della carreggiata poco utile ne attrattiva - segnalazione @metaiyo"
+    },
+    {
+      "id": "SS-ROM-0412",
+      "nome": "Percorso Ciclopedonale Elettra Pollastrini",
+      "quartiere": "Municipio XIV",
+      "municipio": "XIV",
+      "classificazione": "verde",
+      "score": 1,
+      "ciclabile_presente": "si",
+      "n_corsie": 2,
+      "senso_unico": "no",
+      "n_testimonianze": 1,
+      "note": "segnalazione community Sentinelle"
+    }
+  ]
+}

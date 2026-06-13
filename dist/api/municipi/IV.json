@@ -1,0 +1,71 @@
+{
+  "municipio": "IV",
+  "count": 5,
+  "strade": [
+    {
+      "id": "SS-ROM-0214",
+      "nome": "Via Alfonso Torelli",
+      "quartiere": "Tiburtino",
+      "municipio": "IV",
+      "classificazione": "rosso",
+      "score": 4,
+      "ciclabile_presente": "no",
+      "n_corsie": 2,
+      "senso_unico": "no",
+      "n_testimonianze": 1,
+      "note": "invoglia alla guida veloce - segnalazione @metaiyo"
+    },
+    {
+      "id": "SS-ROM-0241",
+      "nome": "Viale dello Scalo San Lorenzo (tratto ciclabile)",
+      "quartiere": "Tiburtino",
+      "municipio": "IV",
+      "classificazione": "giallo",
+      "score": 3,
+      "ciclabile_presente": "si",
+      "n_corsie": 2,
+      "senso_unico": "si",
+      "n_testimonianze": 1,
+      "note": "breve tratto ciclabile non separata direzione Porta Maggiore - segnalazione @Sim1_71"
+    },
+    {
+      "id": "SS-ROM-0247",
+      "nome": "Viale Altiero Spinelli",
+      "quartiere": "Tiburtino",
+      "municipio": "IV",
+      "classificazione": "giallo",
+      "score": 3,
+      "ciclabile_presente": "no",
+      "n_corsie": 2,
+      "senso_unico": "no",
+      "n_testimonianze": 1,
+      "note": "traffico locale"
+    },
+    {
+      "id": "SS-ROM-0248",
+      "nome": "Circonvallazione della Stazione Tiburtina",
+      "quartiere": "Tiburtino",
+      "municipio": "IV",
+      "classificazione": "nero",
+      "score": 5,
+      "ciclabile_presente": "no",
+      "n_corsie": 4,
+      "senso_unico": "no",
+      "n_testimonianze": 2,
+      "note": "svincoli velocita elevate - segnalazione @Sim1_71"
+    },
+    {
+      "id": "SS-ROM-0336",
+      "nome": "Via di Pietralata",
+      "quartiere": "Tiburtino",
+      "municipio": "IV",
+      "classificazione": "rosso",
+      "score": 4,
+      "ciclabile_presente": "no",
+      "n_corsie": 4,
+      "senso_unico": "no",
+      "n_testimonianze": 1,
+      "note": "arteria trafficata nessuna ciclabile"
+    }
+  ]
+}
