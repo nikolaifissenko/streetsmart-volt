@@ -32,7 +32,7 @@ Non modificare i CSV in data/municipio/ senza aggiornare il master.
 - Municipio I: ~80 strade (completato)
 - Municipio II: ~80 strade (completato + segnalazioni Sentinelle)
 - Municipio III: ~50 strade (completato + segnalazioni Sentinelle)
-- Municipi IV, V, VII, VIII, IX, XI, XII, XIII, XIV, XV: segnalazioni Sentinelle integrate nel master
+- Municipi IV, V, VII, VIII, IX, XI, XII, XIII, XIV, XV: segnalazioni Sentinelle, CSV dedicati in data/municipio/
 - Ultimo ID usato: SS-ROM-0441
 
 ## Community Sentinelle
@@ -53,7 +53,17 @@ streetsmart/
 │   ├── municipio/
 │   │   ├── municipio1_final.csv
 │   │   ├── municipio2.csv
-│   │   └── municipio3.csv
+│   │   ├── municipio3.csv
+│   │   ├── municipio4.csv
+│   │   ├── municipio5.csv
+│   │   ├── municipio7.csv
+│   │   ├── municipio8.csv
+│   │   ├── municipio9.csv
+│   │   ├── municipio11.csv
+│   │   ├── municipio12.csv
+│   │   ├── municipio13.csv
+│   │   ├── municipio14.csv
+│   │   └── municipio15.csv
 │   └── archive/                     # vecchie versioni, non toccare
 │       └── municipio1_v1.csv
 ├── web/

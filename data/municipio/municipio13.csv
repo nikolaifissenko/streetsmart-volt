@@ -1,0 +1,13 @@
+id,nome,quartiere,classificazione,score,note,ciclabile_presente,n_corsie,senso_unico,n_testimonianze
+SS-ROM-0251,Via Gregorio Settimo,Aurelio,verde,1,ciclabile stretta ma presente non protetta da cordoli - segnalazione @metaiyo,si,2,no,1
+SS-ROM-0252,Via Anastasio Secondo,Valle Aurelia,nero,5,trappola mortale no marciapiede no ciclabile no preferenziale - segnalazione @metaiyo,no,2,no,1
+SS-ROM-0379,Circonvallazione Cornelia,Aurelio,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,1
+SS-ROM-0380,Via di Boccea (tratto nero),Aurelio,nero,5,multicarreggiata pericolosissima,no,4,no,1
+SS-ROM-0381,Via Mattia Battistini,Aurelio,verde,1,pista ciclabile presente,si,0,no,1
+SS-ROM-0382,Via Ennio Bonifazi,Aurelio,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,1
+SS-ROM-0383,Via di Boccea (tratto rosso),Aurelio,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,1
+SS-ROM-0384,Via Gelasio Secondo,Aurelio,giallo,3,traffico contenuto,no,2,no,1
+SS-ROM-0396,Via del Casale di San Pio Quinto,Municipio XIII,rosso,4,segnalazione community Sentinelle,no,2,no,1
+SS-ROM-0397,Via Bartolo da Sassoferrato,Municipio XIII,rosso,4,segnalazione community Sentinelle,no,2,no,1
+SS-ROM-0399,Via di Boccea,Municipio XIII,nero,5,segnalazione community Sentinelle,no,2,no,1
+SS-ROM-0413,Via Benedetto Quattordicesimo,Municipio XIII,verde,1,segnalazione community Sentinelle,si,2,no,1

@@ -1,0 +1,13 @@
+id,nome,quartiere,classificazione,score,note,ciclabile_presente,n_corsie,senso_unico,n_testimonianze
+SS-ROM-0208,Via Prenestina (tratto Mun V),Prenestino,rosso,4,corsia ciclabile spesso invasa da auto parcheggiate - segnalazione @hyperpigno,si,4,no,1
+SS-ROM-0209,Via Erasmo Gattamelata,Prenestino,giallo,3,senso unico senza ciclabile poco traffico fuori ore di punta - segnalazione @hyperpigno,no,1,si,1
+SS-ROM-0211,Via Sampiero di Bastelica,Prenestino,giallo,3,senso unico abbastanza trafficata nelle ore di punta ma gestibile - segnalazione @hyperpigno,no,1,si,1
+SS-ROM-0215,Via di Portonaccio,Prenestino,rosso,4,strada larga no pista no corsia preferenziale - segnalazione @metaiyo,no,4,no,1
+SS-ROM-0303,Circonvallazione Casilina,Prenestino,rosso,4,stretta causa lavori macchine veloci - segnalazione @nomad_valentine,no,4,no,1
+SS-ROM-0308,Via Giovanni Brancaleone,Prenestino,giallo,3,poco traffico - segnalazione @nomad_valentine,no,2,no,1
+SS-ROM-0311,Via Fanfulla da Lodi,Prenestino,giallo,3,poco traffico spazio per accostare - segnalazione @nomad_valentine,no,2,no,1
+SS-ROM-0312,Via Olevano Romano,Centocelle,giallo,3,no ciclabile strada tranquilla - segnalazione @smiorodno,no,2,no,1
+SS-ROM-0313,Via Anagni,Centocelle,rosso,4,abbastanza trafficata no ciclabile - segnalazione @smiorodno,no,4,no,1
+SS-ROM-0314,Viale della Primavera,Prenestino,rosso,4,abbastanza trafficata no ciclabile - segnalazione @smiorodno,no,4,no,1
+SS-ROM-0315,Via Prenestina (tratto verde Centocelle),Centocelle,verde,1,ciclabile presente percorsa regolarmente auto rare sopra - segnalazione @smiorodno,si,4,no,1
+SS-ROM-0408,Circonvallazione Casilina,Municipio V,nero,5,Corsia unica sorpassi azzardati e ravvicinati (segnalato da _light_rider),no,2,no,1

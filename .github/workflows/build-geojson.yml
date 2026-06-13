@@ -23,6 +23,9 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Run validate.py
+        run: python scripts/validate.py
+
       - name: Run build.py
         run: python scripts/build.py
 

@@ -1,0 +1,11 @@
+id,nome,quartiere,classificazione,score,note,ciclabile_presente,n_corsie,senso_unico,n_testimonianze
+SS-ROM-0188,Viale Marconi,Marconi,nero,5,multicarreggiata ad alta velocita pericolosissimo,no,4,no,1
+SS-ROM-0189,Lungotevere degli Inventori,Marconi,verde,1,ciclabile presente lungo il Tevere,si,0,no,2
+SS-ROM-0190,Via Grimaldi,Marconi,nero,5,multicarreggiata pericolosissima,no,4,no,1
+SS-ROM-0191,Via Quirino Majorana,Marconi,nero,5,multicarreggiata con cavalcavia pericolosissimo,no,4,no,1
+SS-ROM-0197,Via della Magliana,Magliana,verde,1,ciclabile presente,si,2,no,1
+SS-ROM-0258,Via Portuense (tratto Portuense),Portuense,rosso,4,strada larga traffico veloce - segnalazione @metaiyo,no,4,no,1
+SS-ROM-0304,Lungotevere di Pietra Papa,Marconi,verde,1,pista ciclabile presente,si,0,no,2
+SS-ROM-0364,Lungotevere Vittorio Gassman,Marconi,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,1
+SS-ROM-0365,Via Giuseppe Veronese,Marconi,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,1
+SS-ROM-0366,Piazza della Radio,Marconi,rosso,4,trafficata nessuna ciclabile,no,4,no,1

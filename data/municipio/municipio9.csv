@@ -1,0 +1,14 @@
+id,nome,quartiere,classificazione,score,note,ciclabile_presente,n_corsie,senso_unico,n_testimonianze
+SS-ROM-0184,Viale America,EUR,rosso,4,arteria trafficata EUR nessuna ciclabile,no,4,no,1
+SS-ROM-0185,Via delle Tre Fontane,EUR,rosso,4,trafficata nessuna ciclabile,no,2,no,1
+SS-ROM-0186,Viale Artigianato,EUR,giallo,3,strada secondaria EUR traffico contenuto,no,2,no,1
+SS-ROM-0187,Via Laurentina (Tre Fontane-Colombo),EUR,verde,1,ciclabile presente su questo tratto,si,4,no,1
+SS-ROM-0198,Viale Egeo,EUR,verde,1,ciclabile presente EUR,si,4,no,1
+SS-ROM-0199,Via dell Oceano Indiano,EUR,verde,1,ciclabile presente EUR,si,2,no,1
+SS-ROM-0212,Via Laurentina (tratto Vigna Murata),Vigna Murata,rosso,4,traffico velocissimo quasi autostrada - segnalazione @metaiyo,no,4,no,1
+SS-ROM-0254,Via Cristoforo Colombo (EUR autostrada urbana),EUR,nero,5,autostrada urbana no marciapiede no pista no corsia preferenziale - segnalazione @metaiyo,no,6,no,1
+SS-ROM-0255,Via Cristoforo Colombo (EUR marciapiede),EUR,giallo,3,passaggio possibile solo su marciapiede - segnalazione @metaiyo,no,0,no,1
+SS-ROM-0309,Via delle Tre Fontane (tratto verde),EUR,verde,1,ciclabile presente su tratto specifico - segnalazione @luca.tentorio,si,0,no,1
+SS-ROM-0310,Viale Europa,EUR,rosso,4,arteria trafficata EUR nessuna ciclabile - segnalazione @luca.tentorio,no,4,no,1
+SS-ROM-0340,Via Pontina,EUR,rosso,4,arteria trafficata quasi autostrada urbana,no,4,no,1
+SS-ROM-0341,Viale dell Oceano Atlantico,Fonte Ostiense,verde,1,pista ciclabile presente,si,0,no,1

@@ -1,0 +1,12 @@
+id,nome,quartiere,classificazione,score,note,ciclabile_presente,n_corsie,senso_unico,n_testimonianze
+SS-ROM-0192,Viale dei Quattro Venti,Monteverde,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,1
+SS-ROM-0193,Circonvallazione Gianicolense,Monteverde,rosso,4,arteria trafficata nessuna ciclabile doppia fila traffico veloce,no,4,no,2
+SS-ROM-0194,Via Barrili,Monteverde Vecchio,giallo,3,strada residenziale tranquilla,no,2,no,1
+SS-ROM-0195,Via Carini,Monteverde Vecchio,giallo,3,strada residenziale tranquilla,no,1,si,1
+SS-ROM-0196,Via Poerio,Monteverde Vecchio,giallo,3,strada residenziale senso unico,no,1,si,1
+SS-ROM-0259,Via Portuense (tratto Trullo),Trullo,nero,5,trappola mortale separa Trullo da Portuense - segnalazione @metaiyo,no,4,no,1
+SS-ROM-0302,Piazza Ippolito Nievo,Monteverde,verde,1,area verde bike friendly - segnalazione @luca.tentorio,si,0,no,1
+SS-ROM-0367,Via Giuseppe Parini,Monteverde,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,1
+SS-ROM-0394,Circonvallazione Gianicolense,Municipio XII,rosso,4,segnalazione community Sentinelle,no,2,no,1
+SS-ROM-0395,Via Leone Tredicesimo,Municipio XII,nero,5,segnalazione community Sentinelle,no,2,no,1
+SS-ROM-0398,Via di Boccea,Aurelio,rosso,4,segnalazione community Sentinelle,no,2,no,1

@@ -1,0 +1,6 @@
+id,nome,quartiere,classificazione,score,note,ciclabile_presente,n_corsie,senso_unico,n_testimonianze
+SS-ROM-0214,Via Alfonso Torelli,Tiburtino,rosso,4,invoglia alla guida veloce - segnalazione @metaiyo,no,2,no,1
+SS-ROM-0241,Viale dello Scalo San Lorenzo (tratto ciclabile),Tiburtino,giallo,3,breve tratto ciclabile non separata direzione Porta Maggiore - segnalazione @Sim1_71,si,2,si,1
+SS-ROM-0247,Viale Altiero Spinelli,Tiburtino,giallo,3,traffico locale,no,2,no,1
+SS-ROM-0248,Circonvallazione della Stazione Tiburtina,Tiburtino,nero,5,svincoli velocita elevate - segnalazione @Sim1_71,no,4,no,2
+SS-ROM-0336,Via di Pietralata,Tiburtino,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,1

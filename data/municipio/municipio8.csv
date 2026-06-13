@@ -1,0 +1,21 @@
+id,nome,quartiere,classificazione,score,note,ciclabile_presente,n_corsie,senso_unico,n_testimonianze
+SS-ROM-0219,Via di Tor Carbone,Quarto Miglio/Vigna Murata,rosso,4,no marciapiede no pista no lampioni invoglia alla guida veloce - segnalazione @metaiyo,no,2,no,1
+SS-ROM-0220,Via di Grotta Perfetta,Ardeatino,rosso,4,ciclabile che scompare nel traffico incrocio con Erminio Spalla pericoloso - segnalazione @mascarponsca,si,2,no,1
+SS-ROM-0221,Via della Moletta,Ostiense,giallo,3,traffico locale scarso - segnalazione @Sim1_71,no,2,no,1
+SS-ROM-0222,Piazza Attilio Pecile,Ostiense,verde,1,traffico locale piazza adibita a parcheggio - segnalazione @Sim1_71,no,0,no,1
+SS-ROM-0223,Via Ciriaco d'Ancona,Ostiense,verde,1,strada locale traffico quasi nullo - segnalazione @Sim1_71,no,1,no,1
+SS-ROM-0224,Via Girolamo Benzoni,Ostiense,giallo,3,traffico locale - segnalazione @Sim1_71,no,1,no,1
+SS-ROM-0225,Via Gaetano Casati,Ostiense,verde,1,strada privata senza uscita traffico locale - segnalazione @Sim1_71,no,1,no,1
+SS-ROM-0226,Via Prospero Alpino,Ostiense,giallo,3,traffico locale - segnalazione @Sim1_71,no,2,no,1
+SS-ROM-0227,Circonvallazione Ostiense,Ostiense,rosso,4,traffico intenso molte intersezioni - segnalazione @Sim1_71,no,4,no,1
+SS-ROM-0228,Via di Santa Galla,Ostiense,giallo,3,traffico locale - segnalazione @Sim1_71,no,2,no,1
+SS-ROM-0229,Piazza Giovanni da Verrazzano,Ostiense,giallo,3,traffico locale - segnalazione @Sim1_71,no,0,no,1
+SS-ROM-0230,Via Capitan Bavastro,Ostiense,giallo,3,traffico locale - segnalazione @Sim1_71,no,2,no,1
+SS-ROM-0253,Viale Pico della Mirandola,Montagnola,rosso,4,rettilineo a scorrimento veloce no ciclabile - segnalazione @metaiyo,no,4,no,1
+SS-ROM-0256,Via Ardeatina,Ardeatino,rosso,4,rettilineo largo traffico veloce - segnalazione @metaiyo,no,4,no,1
+SS-ROM-0257,Via del Mare,Ostiense,rosso,4,strada piccola ma con tendenza a traffico veloce - segnalazione @metaiyo,no,2,no,1
+SS-ROM-0269,Via Ostiense (tratto Porto Fluviale-Piazzale Ostiense),Ostiense,rosso,4,traffico intenso nessuna ciclabile - segnalazione @Sim1_71,no,4,no,1
+SS-ROM-0270,Via Pellegrino Matteucci,Ostiense,giallo,3,strada urbana traffico contenuto - segnalazione @Sim1_71,no,2,no,1
+SS-ROM-0305,Via Gabriello Chiabrera,Ostiense,rosso,4,arteria trafficata nessuna ciclabile - segnalazione @luca.tentorio,no,4,no,1
+SS-ROM-0306,Via Silvio D Amico,Ostiense,giallo,3,traffico contenuto - segnalazione @luca.tentorio,no,2,no,1
+SS-ROM-0307,Viale Leonardo da Vinci,Ostiense,giallo,3,traffico contenuto - segnalazione @luca.tentorio,no,2,no,1

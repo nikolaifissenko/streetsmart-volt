@@ -1,0 +1,9 @@
+id,nome,quartiere,classificazione,score,note,ciclabile_presente,n_corsie,senso_unico,n_testimonianze
+SS-ROM-0216,Via del Mandrione,Tuscolano/Pigneto,blu,2,strada principalmente chiusa al traffico poco frequentata - segnalazione @metaiyo,no,1,no,1
+SS-ROM-0217,Via di Centocelle,Quadraro,rosso,4,strada larga invoglia alla guida veloce no ciclabile - segnalazione @metaiyo,no,4,no,1
+SS-ROM-0218,Via di Porta Furba,Tuscolano,rosso,4,strada stretta doppio senso no marciapiedi no piste invoglia alla velocita - segnalazione @metaiyo,no,2,no,1
+SS-ROM-0298,Via Casilina,Tuscolano,rosso,4,traffico veloce punto poco visibile sotto ponte - segnalazione @nomad_valentine,no,4,no,1
+SS-ROM-0299,Piazzale Labicano,Tuscolano,rosso,4,svincolo trafficato esperienza necessaria per incanalarsi - segnalazione @nomad_valentine,no,0,no,1
+SS-ROM-0301,Via del Mandrione (tratto giallo),Tuscolano,giallo,3,poche macchine in alcuni tratti assenti - segnalazione @nomad_valentine,no,1,no,1
+SS-ROM-0317,Via Tuscolana,Tuscolano,verde,1,ciclabile presente - segnalazione Nikolai,si,4,no,1
+SS-ROM-0402,Piazza Armenia,Municipio VII,rosso,4,segnalazione community Sentinelle,no,2,no,1
