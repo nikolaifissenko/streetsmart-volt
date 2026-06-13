@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StreetSmart — Stato Community Sentinelle</title>
+  <style>
+    :root { --rosso: #e53935; --verde: #43a047; --nero: #111; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: -apple-system, Helvetica, Arial, sans-serif;
+      background: var(--nero); color: #fff; padding: 24px;
+    }
+    .wrap { max-width: 680px; margin: 0 auto; }
+    h1 { font-size: 1.6rem; margin-bottom: 4px; }
+    h1 span { color: var(--rosso); }
+    .subtitle { color: #aaa; margin-bottom: 32px; }
+    .card {
+      background: #1c1c1c; border-radius: 12px; padding: 20px; margin-bottom: 20px;
+    }
+    .card h2 { margin: 0 0 12px; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.05em; color: #ccc; }
+    .big { font-size: 2.4rem; font-weight: 700; }
+    .progress-track {
+      width: 100%; height: 16px; background: #333; border-radius: 8px; overflow: hidden; margin-top: 12px;
+    }
+    .progress-bar { height: 100%; background: var(--verde); transition: width 0.6s ease; }
+    .progress-label { margin-top: 8px; font-size: 0.9rem; color: #aaa; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid #333; }
+    th { color: #aaa; font-weight: 500; }
+    .pct-rosso { color: var(--rosso); font-weight: 600; }
+    .cta {
+      display: inline-block; margin-top: 8px; padding: 10px 18px; border-radius: 8px;
+      background: var(--rosso); color: #fff; text-decoration: none; font-weight: 600;
+    }
+    footer { color: #666; font-size: 0.8rem; margin-top: 32px; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Street<span>Smart</span> — Community Sentinelle</h1>
+    <div class="subtitle">Stato del database e progresso verso le 100 Sentinelle</div>
+
+    <div class="card">
+      <h2>Obiettivo Sentinelle</h2>
+      <div class="big" id="sentinelle-count">—</div>
+      <div class="progress-track"><div class="progress-bar" id="sentinelle-bar" style="width:0%"></div></div>
+      <div class="progress-label" id="sentinelle-label">in attesa di dati…</div>
+      <a class="cta" href="sentinelle_form.html">Diventa una Sentinella</a>
+    </div>
+
+    <div class="card">
+      <h2>Database StreetSmart</h2>
+      <div class="big" id="strade-count">—</div>
+      <div class="progress-label" id="strade-label">strade classificate a Roma</div>
+    </div>
+
+    <div class="card">
+      <h2>Per municipio</h2>
+      <table>
+        <thead>
+          <tr><th>Municipio</th><th>Strade</th><th>% pericolose</th><th>% ciclabili</th></tr>
+        </thead>
+        <tbody id="municipi-body">
+          <tr><td colspan="4">caricamento…</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>Hai visto una strada pericolosa?</h2>
+      <a class="cta" href="segnalazione_form.html">Segnala una strada</a>
+    </div>
+
+    <footer id="footer-note">StreetSmart — @streetsmart.nav</footer>
+  </div>
+
+  <script>
+    // Obiettivo community: aggiornare manualmente man mano che crescono le Sentinelle
+    const SENTINELLE_ATTUALI = 0;
+    const SENTINELLE_OBIETTIVO = 100;
+
+    function setSentinelle() {
+      document.getElementById('sentinelle-count').textContent =
+        `${SENTINELLE_ATTUALI} / ${SENTINELLE_OBIETTIVO}`;
+      const pct = Math.min(100, Math.round(100 * SENTINELLE_ATTUALI / SENTINELLE_OBIETTIVO));
+      document.getElementById('sentinelle-bar').style.width = pct + '%';
+      document.getElementById('sentinelle-label').textContent =
+        `${pct}% verso l'obiettivo — poi il database va alle istituzioni`;
+    }
+
+    setSentinelle();
+
+    fetch('../docs/stats.json')
+      .then(r => r.json())
+      .then(data => {
+        document.getElementById('strade-count').textContent = data.strade_totali;
+        document.getElementById('strade-label').textContent =
+          `strade classificate a Roma — aggiornato il ${data.generato_il}`;
+
+        const tbody = document.getElementById('municipi-body');
+        tbody.innerHTML = '';
+        data.per_municipio.forEach(m => {
+          const tr = document.createElement('tr');
+          tr.innerHTML =
+            `<td>Municipio ${m.municipio}</td>` +
+            `<td>${m.totale}</td>` +
+            `<td class="pct-rosso">${m.pct_pericolose.toFixed(1)}%</td>` +
+            `<td>${m.pct_ciclabili.toFixed(1)}%</td>`;
+          tbody.appendChild(tr);
+        });
+      })
+      .catch(err => {
+        document.getElementById('strade-count').textContent = 'n/d';
+        console.error(err);
+      });
+  </script>
+</body>
+</html>
