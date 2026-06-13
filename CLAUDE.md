@@ -28,7 +28,7 @@ Sviluppato da Nikolai.
 Non modificare i CSV in data/municipio/ senza aggiornare il master.
 
 ## Stato Database
-- **437 strade** classificate totali
+- **433 strade** classificate totali
 - Municipio I: ~80 strade (completato)
 - Municipio II: ~80 strade (completato + segnalazioni Sentinelle)
 - Municipio III: ~50 strade (completato + segnalazioni Sentinelle)
