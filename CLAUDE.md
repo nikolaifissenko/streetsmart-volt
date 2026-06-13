@@ -19,7 +19,7 @@ Sviluppato da Nikolai.
 ## Stack Tecnico
 - **Database**: CSV → target GeoJSON / API REST
 - **Schema colonne**: id, nome, quartiere, classificazione, score, note, ciclabile_presente, n_corsie, senso_unico, n_testimonianze, municipio
-- **ID formato**: SS-ROM-XXXX (ultimo usato: SS-ROM-0202)
+- **ID formato**: SS-ROM-XXXX (ultimo usato: SS-ROM-0437)
 - **Hosting**: GitHub Pages — nikolaifissenko/Streetsmart-Sentille
 - **Form backend**: Formspree endpoint `xlgookeg`
 
@@ -55,9 +55,7 @@ streetsmart/
 │   │   ├── municipio2.csv
 │   │   └── municipio3.csv
 │   └── archive/                     # vecchie versioni, non toccare
-│       ├── municipio1_v1.csv
-│       ├── municipio1_v2.csv
-│       └── municipio1_v3.csv
+│       └── municipio1_v1.csv
 ├── web/
 │   ├── sentinelle_form.html
 │   └── segnalazione_form.html
@@ -68,6 +66,6 @@ streetsmart/
 
 ## Workflow Aggiunta Strade
 1. Aggiungere righe a `data/master/streetsmart_roma_completo.csv`
-2. Incrementare ID da SS-ROM-0202
+2. Incrementare ID da SS-ROM-0437
 3. Aggiornare anche il CSV del municipio corrispondente in `data/municipio/`
-4. Aggiornare il contatore in questo file (riga "202 strade")
+4. Aggiornare il contatore in questo file (riga "437 strade")
