@@ -60,8 +60,8 @@ SS-ROM-0058,Via di Porta Cavalleggeri,Borgo,giallo,3,strada secondaria borgo vat
 SS-ROM-0059,Viale Aventino,Aventino,verde,1,pista ciclabile separata presente,si,4,no,1,I
 SS-ROM-0060,Ciclabile Testaccio (Via Marmorata/area),Testaccio,verde,1,pista ciclabile area Testaccio,si,0,no,3,I
 SS-ROM-0061,Lungotevere ciclabile (tratto Villa Borghese),Flaminio,verde,1,pista ciclabile separata lungo il Tevere,si,0,no,2,I
-SS-ROM-0060,Lungotevere ciclabile (tratto Aventino-Ostiense),Testaccio,verde,1,pista ciclabile separata,si,0,no,4,I
-SS-ROM-0061,Pista ciclabile Villa Borghese,Flaminio/Parioli,verde,1,percorso ciclabile interno al parco,si,0,no,3,I
+SS-ROM-0440,Lungotevere ciclabile (tratto Aventino-Ostiense),Testaccio,verde,1,pista ciclabile separata,si,0,no,4,I
+SS-ROM-0441,Pista ciclabile Villa Borghese,Flaminio/Parioli,verde,1,percorso ciclabile interno al parco,si,0,no,3,I
 SS-ROM-0062,Viale delle Terme di Caracalla (ciclabile),Aventino,verde,1,pista ciclabile present,si,0,no,2,I
 SS-ROM-0063,Piazza Navona,Centro Storico,blu,2,ZTL pedonale alto flusso turisti,no,0,no,3,I
 SS-ROM-0064,Campo de' Fiori,Centro Storico,blu,2,ZTL pedonale mercato mattina,no,0,no,1,I
@@ -123,7 +123,7 @@ SS-ROM-0121,Via Reni,Flaminio,giallo,3,senso unico area Flaminio,no,1,si,1,II
 SS-ROM-0122,Via Masaccio,Flaminio,giallo,3,senso unico residenziale Flaminio,no,1,si,1,II
 SS-ROM-0123,Villa Borghese (percorsi interni),Flaminio/Parioli,verde-blu,1,bike friendly ma alto flusso pedonale,si,0,no,2,II
 SS-ROM-0124,Villa Ada (percorsi interni),Salario,verde-blu,1,bike friendly ma alto flusso pedonale nei weekend,si,0,no,2,II
-SS-ROM-0125,Parco della Rimembranza,Flaminio,verde-blu,2,area verde bike friendly con pedoni,si,0,no,1,II
+SS-ROM-0125,Parco della Rimembranza,Flaminio,verde-blu,1,area verde bike friendly con pedoni,si,0,no,1,II
 SS-ROM-0126,Ciclabile Lungotevere Villa Borghese,Flaminio,verde,1,pista ciclabile separata lungo il Tevere,si,0,no,2,II
 SS-ROM-0127,Via del Vignola,Flaminio,giallo,3,senso unico tranquillo area Flaminio,no,1,si,2,II
 SS-ROM-0128,Piazza Ungheria,Parioli,blu,2,piazza ZTL bassa velocità alto flusso pedoni,no,0,no,1,II
