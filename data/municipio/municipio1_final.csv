@@ -81,3 +81,31 @@ SS-ROM-0079,Piazza Farnese,Centro Storico,blu,2,ZTL pedonale quasi completo,no,0
 SS-ROM-0080,Via Giulia (tratto centrale),Centro Storico,blu,2,ZTL traffico quasi assente,no,1,no,2
 SS-ROM-0081,Via del Portico d'Ottavia,Ghetto,blu,2,ZTL area ebraica flusso pedonale,no,1,no,1
 SS-ROM-0082,Via Santa Maria in Trastevere,Trastevere,blu,2,ZTL piazza pedonale turistica,no,0,no,2
+SS-ROM-0400,Piazza del Popolo,Municipio I,blu,2,segnalazione community Sentinelle,no,2,no,1
+SS-ROM-0401,Via Principe Eugenio,Municipio I,rosso,4,Carrefour dangereux (segnalato da Sophie),no,2,no,1
+SS-ROM-0403,Via Cilicia,Municipio I,nero,5,segnalazione community Sentinelle,no,2,no,1
+SS-ROM-0404,Via Guerrieri,Municipio I,giallo,3,segnalazione community Sentinelle,no,2,no,1
+SS-ROM-0405,Via Odoardo Beccari,Municipio I,rosso,4,Spesso seconda fila con conseguente restringimento carreggiata,no,2,no,1
+SS-ROM-0406,Via Ambrogio Contarini,Municipio I,giallo,3,segnalazione community Sentinelle,no,2,no,1
+SS-ROM-0407,Viale Marco Polo,Municipio I,rosso,4,Larga ma spesso mezzi in seconda fila,no,2,no,1
+SS-ROM-0409,Via di Porta Maggiore,Municipio I,rosso,4,segnalazione community Sentinelle,no,2,no,1
+SS-ROM-0410,Via Orazio Antinori,Municipio I,verde,1,segnalazione community Sentinelle,si,2,no,1
+SS-ROM-0411,Piazza di Santa Maria Liberatrice,Municipio I,giallo,3,segnalazione community Sentinelle,no,2,no,1
+SS-ROM-0414,Piazza della Scala,Municipio I,blu,2,segnalazione community Sentinelle,no,2,no,1
+SS-ROM-0415,Piazza di San Pietro in Montorio,Municipio I,rosso,4,segnalazione community Sentinelle,no,2,no,1
+SS-ROM-0416,Via Angelo Tittoni,Municipio I,rosso,4,segnalazione community Sentinelle,no,2,no,1
+SS-ROM-0417,Piazza di San Cosimato,Municipio I,giallo,3,segnalazione community Sentinelle,no,2,no,1
+SS-ROM-0418,Viale di Trastevere,Municipio I,rosso,4,segnalazione community Sentinelle,no,2,no,1
+SS-ROM-0419,Via di San Francesco a Ripa,Municipio I,giallo,3,segnalazione community Sentinelle,no,2,no,1
+SS-ROM-0420,Via di San Francesco a Ripa,Municipio I,blu,2,segnalazione community Sentinelle,no,2,no,1
+SS-ROM-0421,Piazza di San Calisto,Municipio I,blu,2,segnalazione community Sentinelle,no,2,no,1
+SS-ROM-0422,Piazza di Santa Maria in Trastevere,Municipio I,blu,2,segnalazione community Sentinelle,no,2,no,1
+SS-ROM-0423,Via della Renella,Municipio I,giallo,3,segnalazione community Sentinelle,no,2,no,1
+SS-ROM-0424,Via Garibaldi,Municipio I,blu,2,segnalazione community Sentinelle,no,2,no,1
+SS-ROM-0430,Viale Angelico,Municipio I,verde,1,segnalazione community Sentinelle,si,2,no,1
+SS-ROM-0431,Via Sabotino,Municipio I,verde,1,segnalazione community Sentinelle,si,2,no,1
+SS-ROM-0432,Via Podgora,Municipio I,rosso,4,segnalazione community Sentinelle,no,2,no,1
+SS-ROM-0434,Piazza del Popolo,Municipio I,blu,2,segnalazione community Sentinelle,no,2,no,1
+SS-ROM-0435,Via del Corso,Municipio I,blu,2,segnalazione community Sentinelle,no,2,no,1
+SS-ROM-0436,Via Sistina,Municipio I,giallo,3,segnalazione community Sentinelle,no,2,no,1
+SS-ROM-0437,Via Ludovisi,Municipio I,giallo,3,segnalazione community Sentinelle,no,2,no,1
