@@ -470,13 +470,10 @@ fetch('../streetsmart_roma.geojson')
   .then(r => r.json())
   .then(gj => {
     const total = gj.features.length;
-    const withGeom = gj.features.filter(f =>
-      f.geometry !== null &&
-      (f.geometry.type === 'LineString' || f.geometry.type === 'MultiLineString')
-    );
-    const withoutGeom = gj.features.filter(f =>
-      f.geometry === null || f.geometry.type === 'Point'
-    );
+    const withGeom = gj.features.filter(f => f.geometry !== null);
+    const withoutGeom = gj.features.filter(f => f.geometry === null);
+    const withLines = withGeom.filter(f => f.geometry.type === 'LineString' || f.geometry.type === 'MultiLineString');
+    const withPoints = withGeom.filter(f => f.geometry.type === 'Point');
 
     allMapped = withGeom;
 
@@ -489,18 +486,35 @@ fetch('../streetsmart_roma.geojson')
     // Init layer groups per classe
     Object.keys(COLORS).forEach(cls => { layersByClass[cls] = []; });
 
-    // Aggiungi solo le strade con geometria linea (no Point)
-    withGeom
-      .filter(f => f.geometry.type === 'LineString' || f.geometry.type === 'MultiLineString')
-      .forEach(f => {
-        const cls = f.properties.classificazione;
-        const layer = L.geoJSON(f, { style: styleFeature })
-          .bindPopup(makePopup(f.properties), { maxWidth: 280 });
-        layer.feature = f;
-        layer.eachLayer(sub => { sub.feature = f; });
-        layer.addTo(map);
-        layersByClass[cls].push(layer);
-      });
+    // Strade con geometria linea
+    withLines.forEach(f => {
+      const cls = f.properties.classificazione;
+      const layer = L.geoJSON(f, { style: styleFeature })
+        .bindPopup(makePopup(f.properties), { maxWidth: 280 });
+      layer.feature = f;
+      layer.eachLayer(sub => { sub.feature = f; });
+      layer.addTo(map);
+      layersByClass[cls].push(layer);
+    });
+
+    // Strade con solo punto (coordinate approssimative) — cerchio piccolo
+    withPoints.forEach(f => {
+      const cls = f.properties.classificazione;
+      const c = COLORS[cls] || COLORS['giallo'];
+      const [lng, lat] = f.geometry.coordinates;
+      const marker = L.circleMarker([lat, lng], {
+        radius: 5,
+        color: c.stroke,
+        weight: 2,
+        opacity: 0.7,
+        fillColor: c.fill,
+        fillOpacity: 0.3,
+        dashArray: '3,3',
+      }).bindPopup(makePopup(f.properties), { maxWidth: 280 });
+      marker.feature = f;
+      marker.addTo(map);
+      layersByClass[cls].push(marker);
+    });
 
     buildFilters(counts);
     buildStreetList(withGeom);
@@ -509,11 +523,12 @@ fetch('../streetsmart_roma.geojson')
     const danger = withGeom.filter(f => ['nero','rosso'].includes(f.properties.classificazione)).length;
     const safe = withGeom.filter(f => ['verde','verde-blu'].includes(f.properties.classificazione)).length;
     document.getElementById('stat-total').textContent = total;
-    document.getElementById('stat-mapped').textContent = withGeom.length;
+    document.getElementById('stat-mapped').textContent = withLines.length;
     document.getElementById('stat-danger').textContent = danger;
     document.getElementById('stat-safe').textContent = safe;
+    const missing = withoutGeom.length + withPoints.length;
     document.getElementById('no-geom-note').textContent =
-      withoutGeom.length ? `${withoutGeom.length} strade senza coordinate non visualizzate` : '';
+      missing ? `${withPoints.length} posizione approssimativa · ${withoutGeom.length} non localizzate` : '';
 
     // Fit bounds
     if (withGeom.length > 0) {
