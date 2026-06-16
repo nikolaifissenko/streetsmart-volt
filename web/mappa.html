@@ -243,35 +243,6 @@
     }
     .popup-id { font-size: 0.62rem; color: #C8BFB5; margin-top: 6px; }
 
-    /* ── STREET LABELS ── */
-    .street-label {
-      background: transparent;
-      border: none;
-      box-shadow: none;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.72rem;
-      font-weight: 600;
-      color: #2E2820;
-      white-space: nowrap;
-      pointer-events: none;
-    }
-    .street-label::before { display: none; }
-
-    .street-label-perm {
-      background: rgba(247,242,234,0.85);
-      border: none;
-      box-shadow: 0 1px 3px rgba(58,53,48,0.15);
-      border-radius: 3px;
-      padding: 1px 4px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.68rem;
-      font-weight: 600;
-      color: #2E2820;
-      white-space: nowrap;
-      pointer-events: none;
-    }
-    .street-label-perm::before { display: none; }
-
     /* ── MOBILE ── */
     @media (max-width: 600px) {
       .sidebar { display: none; }
@@ -404,15 +375,6 @@ function styleFeature(feature) {
   };
 }
 
-function midpointOfGeom(geom) {
-  if (!geom) return null;
-  let coords;
-  if (geom.type === 'LineString') coords = geom.coordinates;
-  else if (geom.type === 'MultiLineString') coords = geom.coordinates[0];
-  else return null;
-  const mid = coords[Math.floor(coords.length / 2)];
-  return [mid[1], mid[0]];
-}
 
 // ── FILTRI ───────────────────────────────────────────────────
 function buildFilters(counts) {
@@ -532,39 +494,12 @@ fetch('../streetsmart_roma.geojson')
       .filter(f => f.geometry.type === 'LineString' || f.geometry.type === 'MultiLineString')
       .forEach(f => {
         const cls = f.properties.classificazione;
-        const c = COLORS[cls] || COLORS['giallo'];
         const layer = L.geoJSON(f, { style: styleFeature })
-          .bindPopup(makePopup(f.properties), { maxWidth: 280 })
-          .bindTooltip(f.properties.nome, {
-            permanent: false,
-            direction: 'center',
-            className: 'street-label',
-            sticky: true,
-          });
+          .bindPopup(makePopup(f.properties), { maxWidth: 280 });
         layer.feature = f;
         layer.eachLayer(sub => { sub.feature = f; });
         layer.addTo(map);
         layersByClass[cls].push(layer);
-
-        // Label permanente visibile da zoom 14+
-        const mid = midpointOfGeom(f.geometry);
-        if (mid) {
-          const label = L.tooltip({
-            permanent: true,
-            direction: 'center',
-            className: 'street-label-perm',
-            opacity: 1,
-          })
-            .setContent(f.properties.nome)
-            .setLatLng(mid);
-          map.on('zoomend', () => {
-            if (map.getZoom() >= 14) {
-              label.addTo(map);
-            } else {
-              map.removeLayer(label);
-            }
-          });
-        }
       });
 
     buildFilters(counts);

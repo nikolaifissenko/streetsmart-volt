@@ -66,7 +66,7 @@ def overpass_batch(names):
     query = f"""
 [out:json][timeout:{OVERPASS_TIMEOUT}];
 (
-  way["name"~"{regex}"]["highway"]({ROME_BBOX});
+  way["name"~"{regex}",i]({ROME_BBOX});
 );
 out geom;
 """
