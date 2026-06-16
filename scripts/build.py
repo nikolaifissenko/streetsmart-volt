@@ -53,21 +53,20 @@ def clean_name(nome):
     return re.sub(r'\s*\(.*?\)', '', nome).strip()
 
 
+ROME_BBOX = "41.6,12.2,42.1,12.8"  # bounding box Roma
+
 def overpass_batch(names):
     """
     Fetcha le geometrie di più strade in una singola query Overpass.
     Ritorna dict {name: geometry} per le strade trovate.
     """
-    # Costruisce il filtro regex OR con i nomi
-    # Usa regex case-insensitive per sicurezza
     escaped = [re.escape(n) for n in names]
     regex = "^(" + "|".join(escaped) + ")$"
 
     query = f"""
 [out:json][timeout:{OVERPASS_TIMEOUT}];
-area["name"="Roma"]["boundary"="administrative"]["admin_level"="8"]->.roma;
 (
-  way["name"~"{regex}"]["highway"](area.roma);
+  way["name"~"{regex}"]["highway"]({ROME_BBOX});
 );
 out geom;
 """
