@@ -32,8 +32,8 @@ OVERPASS_URL = "https://overpass-api.de/api/interpreter"
 NOMINATIM_URL = "https://nominatim.openstreetmap.org/search"
 USER_AGENT = "StreetSmart-Build/3.0 (nikolaifissenko@github)"
 BATCH_SIZE = 20          # strade per query Overpass
-BATCH_DELAY = 5.0        # secondi tra batch Overpass
-NOM_DELAY = 1.5          # secondi tra chiamate Nominatim
+BATCH_DELAY = 8.0        # secondi tra batch Overpass
+NOM_DELAY = 2.5          # secondi tra chiamate Nominatim
 OVERPASS_TIMEOUT = 45    # secondi timeout query
 
 
