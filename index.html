@@ -2,10 +2,331 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="refresh" content="0; url=web/mappa.html" />
-  <title>StreetSmart Roma</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StreetSmart Roma — Mappa Pericolosità Ciclistica</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #EDE8DF;
+      color: #3A3530;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: #F7F2EA;
+      border-bottom: 1.5px solid #D5CBBF;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+      gap: 12px;
+      flex-wrap: wrap;
+      box-shadow: 0 1px 6px rgba(58,53,48,0.07);
+      z-index: 1000;
+    }
+    .logo { display: flex; align-items: baseline; gap: 10px; }
+    .logo-title { font-family: 'EB Garamond', serif; font-size: 1.4rem; font-weight: 700; color: #2E2820; letter-spacing: 0.02em; }
+    .logo-subtitle { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #A09080; }
+
+    .stats-bar { display: flex; gap: 20px; flex-wrap: wrap; }
+    .stat { display: flex; flex-direction: column; align-items: center; min-width: 40px; }
+    .stat-num { font-size: 1.05rem; font-weight: 700; color: #2E2820; line-height: 1; }
+    .stat-label { font-size: 0.62rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #A09080; margin-top: 2px; }
+
+    .main { display: flex; flex: 1; overflow: hidden; }
+
+    .sidebar {
+      width: 268px; flex-shrink: 0;
+      background: #F7F2EA; border-right: 1px solid #D5CBBF;
+      display: flex; flex-direction: column; overflow: hidden;
+    }
+    .sidebar-section { padding: 14px 16px; border-bottom: 1px solid #E8E1D8; }
+    .sidebar-section h3 { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #A09080; margin-bottom: 10px; }
+
+    .filters { display: flex; flex-direction: column; gap: 4px; }
+    .filter-item {
+      display: flex; align-items: center; gap: 8px;
+      cursor: pointer; padding: 5px 8px; border-radius: 8px;
+      transition: background 0.12s; font-size: 0.82rem; color: #3A3530; user-select: none;
+    }
+    .filter-item:hover { background: #EDE8DF; }
+    .filter-item input[type=checkbox] { display: none; }
+    .filter-swatch { width: 28px; height: 6px; border-radius: 3px; flex-shrink: 0; }
+    .filter-item.inactive { opacity: 0.35; }
+    .filter-label { flex: 1; font-weight: 400; }
+    .filter-count { font-size: 0.72rem; color: #A09080; font-weight: 500; }
+
+    .legend { display: flex; flex-direction: column; gap: 7px; }
+    .legend-row { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: #3A3530; }
+    .legend-swatch { width: 28px; height: 5px; border-radius: 3px; flex-shrink: 0; }
+    .legend-score { color: #A09080; font-size: 0.68rem; margin-left: auto; font-weight: 500; }
+
+    .street-list { flex: 1; overflow-y: auto; scrollbar-width: thin; scrollbar-color: #D5CBBF transparent; }
+    .street-item {
+      padding: 7px 16px; border-bottom: 1px solid #EDE8DF;
+      cursor: pointer; transition: background 0.1s;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .street-item:hover { background: #EDE8DF; }
+    .street-swatch { width: 20px; height: 4px; border-radius: 2px; flex-shrink: 0; }
+    .street-name { font-size: 0.8rem; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #2E2820; }
+    .street-q { font-size: 0.68rem; color: #A09080; white-space: nowrap; }
+    .no-geom-note { padding: 8px 16px; font-size: 0.7rem; color: #A09080; border-top: 1px solid #E8E1D8; }
+
+    #map { flex: 1; }
+
+    .leaflet-popup-content-wrapper {
+      background: #F7F2EA; border: 1.5px solid #D5CBBF; border-radius: 12px;
+      color: #3A3530; font-family: 'Inter', sans-serif;
+      box-shadow: 0 8px 32px rgba(58,53,48,0.14);
+    }
+    .leaflet-popup-tip { background: #D5CBBF; }
+    .leaflet-popup-close-button { color: #A09080 !important; font-size: 16px !important; }
+    .leaflet-popup-content { margin: 14px 16px; }
+
+    .popup-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 3px 8px; border-radius: 20px;
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; margin-bottom: 7px;
+    }
+    .popup-name { font-family: 'EB Garamond', serif; font-size: 1.1rem; font-weight: 700; color: #2E2820; line-height: 1.2; margin-bottom: 3px; }
+    .popup-where { font-size: 0.73rem; color: #A09080; font-weight: 500; margin-bottom: 10px; }
+    .popup-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 12px; font-size: 0.75rem; }
+    .popup-key { color: #A09080; font-weight: 500; }
+    .popup-val { color: #3A3530; font-weight: 600; }
+    .popup-note { margin-top: 8px; font-size: 0.75rem; color: #7A6F65; font-style: italic; border-top: 1px solid #E8E1D8; padding-top: 7px; line-height: 1.5; }
+    .popup-id { font-size: 0.62rem; color: #C8BFB5; margin-top: 6px; }
+
+    @media (max-width: 600px) { .sidebar { display: none; } }
+  </style>
 </head>
 <body>
-  <p>Reindirizzamento alla <a href="web/mappa.html">mappa</a>…</p>
+
+<header>
+  <div class="logo">
+    <span class="logo-title">StreetSmart</span>
+    <span class="logo-subtitle">Roma · Pericolosità Ciclistica</span>
+  </div>
+  <div class="stats-bar">
+    <div class="stat"><span class="stat-num" id="stat-total">—</span><span class="stat-label">strade</span></div>
+    <div class="stat"><span class="stat-num" id="stat-mapped">—</span><span class="stat-label">su mappa</span></div>
+    <div class="stat"><span class="stat-num" id="stat-danger">—</span><span class="stat-label">pericolose</span></div>
+    <div class="stat"><span class="stat-num" id="stat-safe">—</span><span class="stat-label">sicure</span></div>
+  </div>
+</header>
+
+<div class="main">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <h3>Filtra per classe</h3>
+      <div class="filters" id="filters"></div>
+    </div>
+    <div class="sidebar-section">
+      <h3>Legenda</h3>
+      <div class="legend">
+        <div class="legend-row"><div class="legend-swatch" style="background:#1a1a1a"></div><span>Nero — pericolosissimo</span><span class="legend-score">5/5</span></div>
+        <div class="legend-row"><div class="legend-swatch" style="background:#e53935"></div><span>Rosso — trafficato</span><span class="legend-score">4/5</span></div>
+        <div class="legend-row"><div class="legend-swatch" style="background:#e6940a"></div><span>Giallo — senza ciclabile</span><span class="legend-score">3/5</span></div>
+        <div class="legend-row"><div class="legend-swatch" style="background:#8c59c5"></div><span>Blu — ZTL / pedonale</span><span class="legend-score">2/5</span></div>
+        <div class="legend-row"><div class="legend-swatch" style="background:#27AE60"></div><span>Verde — ciclabile presente</span><span class="legend-score">1/5</span></div>
+      </div>
+    </div>
+    <div class="sidebar-section" style="flex:1;overflow:hidden;display:flex;flex-direction:column;padding-bottom:0;">
+      <h3>Strade su mappa</h3>
+      <div class="street-list" id="street-list"></div>
+    </div>
+    <div class="no-geom-note" id="no-geom-note"></div>
+  </aside>
+
+  <div id="map"></div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const COLORS = {
+  'nero':         { stroke: '#1a1a1a', fill: '#1a1a1a', weight: 5 },
+  'rosso':        { stroke: '#e53935', fill: '#e53935', weight: 4 },
+  'giallo':       { stroke: '#e6940a', fill: '#e6940a', weight: 3 },
+  'blu':          { stroke: '#8c59c5', fill: '#8c59c5', weight: 3 },
+  'verde-giallo': { stroke: '#27AE60', fill: '#27AE60', weight: 3 },
+  'verde-blu':    { stroke: '#27AE60', fill: '#27AE60', weight: 3 },
+  'verde':        { stroke: '#27AE60', fill: '#27AE60', weight: 4 },
+};
+
+const FILTER_CLASSES = ['nero', 'rosso', 'giallo', 'blu', 'verde'];
+const LABELS = {
+  'nero':  'Nero — pericolosissimo',
+  'rosso': 'Rosso — trafficato',
+  'giallo':'Giallo — senza ciclabile',
+  'blu':   'Blu — ZTL / pedonale',
+  'verde': 'Verde — ciclabile',
+};
+
+const map = L.map('map', { center: [41.9028, 12.4964], zoom: 12 });
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+  attribution: '© <a href="https://www.openstreetmap.org/">OpenStreetMap</a> © <a href="https://carto.com/">CARTO</a>',
+  subdomains: 'abcd', maxZoom: 19,
+}).addTo(map);
+
+let layersByClass = {};
+let activeFilters = new Set(Object.keys(COLORS));
+
+function makePopup(p) {
+  const c = COLORS[p.classificazione] || COLORS['giallo'];
+  return `
+    <div class="popup-tag" style="background:${c.stroke}22;color:${c.stroke};border:1.5px solid ${c.stroke}55">
+      <span style="width:8px;height:8px;border-radius:50%;background:${c.stroke};display:inline-block"></span>
+      ${(p.classificazione||'').toUpperCase()} &middot; score ${p.score}/5
+    </div>
+    <div class="popup-name">${p.nome}</div>
+    <div class="popup-where">${p.quartiere} &middot; Municipio ${p.municipio}</div>
+    <div class="popup-grid">
+      <span class="popup-key">Corsie</span><span class="popup-val">${p.n_corsie??'&mdash;'}</span>
+      <span class="popup-key">Senso unico</span><span class="popup-val">${p.senso_unico||'&mdash;'}</span>
+      <span class="popup-key">Ciclabile</span><span class="popup-val">${p.ciclabile||'&mdash;'}</span>
+      <span class="popup-key">Testimonianze</span><span class="popup-val">${p.n_testimonianze??'&mdash;'}</span>
+    </div>
+    ${p.note?`<div class="popup-note">${p.note}</div>`:''}
+    <div class="popup-id">${p.id}</div>
+  `;
+}
+
+function styleFeature(feature) {
+  const c = COLORS[feature.properties.classificazione] || COLORS['giallo'];
+  return { color: c.stroke, weight: c.weight, opacity: 0.9, fillOpacity: 0 };
+}
+
+function buildFilters(counts) {
+  const container = document.getElementById('filters');
+  container.innerHTML = '';
+  FILTER_CLASSES.forEach(cls => {
+    const c = COLORS[cls];
+    const aliasCount = Object.entries(COLORS)
+      .filter(([k,v]) => k !== cls && v.stroke === c.stroke)
+      .reduce((s,[k]) => s + (counts[k]||0), 0);
+    const total = (counts[cls]||0) + aliasCount;
+    const item = document.createElement('label');
+    item.className = 'filter-item';
+    item.innerHTML = `
+      <input type="checkbox" checked />
+      <div class="filter-swatch" style="background:${c.stroke}"></div>
+      <span class="filter-label">${LABELS[cls]}</span>
+      <span class="filter-count">${total}</span>
+    `;
+    item.addEventListener('click', e => {
+      e.preventDefault();
+      const isActive = activeFilters.has(cls);
+      Object.keys(COLORS).filter(k => COLORS[k].stroke === c.stroke).forEach(k => {
+        if (isActive) { activeFilters.delete(k); layersByClass[k]?.forEach(l => map.removeLayer(l)); }
+        else          { activeFilters.add(k);    layersByClass[k]?.forEach(l => l.addTo(map)); }
+      });
+      item.classList.toggle('inactive', isActive);
+    });
+    container.appendChild(item);
+  });
+}
+
+function buildStreetList(features) {
+  const list = document.getElementById('street-list');
+  list.innerHTML = '';
+  features.forEach(f => {
+    const p = f.properties;
+    const c = COLORS[p.classificazione] || COLORS['giallo'];
+    const item = document.createElement('div');
+    item.className = 'street-item';
+    item.innerHTML = `
+      <div class="street-swatch" style="background:${c.stroke}"></div>
+      <div style="overflow:hidden;flex:1">
+        <div class="street-name">${p.nome}</div>
+        <div class="street-q">${p.quartiere}</div>
+      </div>
+    `;
+    item.addEventListener('click', () => {
+      const g = f.geometry;
+      if (!g) return;
+      let center;
+      if (g.type === 'Point') center = [g.coordinates[1], g.coordinates[0]];
+      else if (g.type === 'LineString') { const m = g.coordinates[Math.floor(g.coordinates.length/2)]; center=[m[1],m[0]]; }
+      else if (g.type === 'MultiLineString') { const m = g.coordinates[0][Math.floor(g.coordinates[0].length/2)]; center=[m[1],m[0]]; }
+      if (center) map.setView(center, 16);
+      for (const l of (layersByClass[p.classificazione]||[])) {
+        if (l.feature?.properties?.id === p.id) { l.openPopup?.(); break; }
+      }
+    });
+    list.appendChild(item);
+  });
+}
+
+fetch('./streetsmart_roma.geojson')
+  .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+  .then(gj => {
+    const total = gj.features.length;
+    const withGeom = gj.features.filter(f => f.geometry !== null);
+    const withoutGeom = gj.features.filter(f => f.geometry === null);
+    const lines = withGeom.filter(f => f.geometry.type === 'LineString' || f.geometry.type === 'MultiLineString');
+    const pts = withGeom.filter(f => f.geometry.type === 'Point');
+
+    const counts = {};
+    withGeom.forEach(f => { const cls = f.properties.classificazione; counts[cls] = (counts[cls]||0)+1; });
+
+    Object.keys(COLORS).forEach(cls => { layersByClass[cls] = []; });
+
+    lines.forEach(f => {
+      const cls = f.properties.classificazione;
+      const layer = L.geoJSON(f, { style: styleFeature })
+        .bindPopup(makePopup(f.properties), { maxWidth: 280 });
+      layer.feature = f;
+      layer.eachLayer(sub => { sub.feature = f; });
+      layer.addTo(map);
+      layersByClass[cls].push(layer);
+    });
+
+    pts.forEach(f => {
+      const cls = f.properties.classificazione;
+      const c = COLORS[cls] || COLORS['giallo'];
+      const [lng, lat] = f.geometry.coordinates;
+      const marker = L.circleMarker([lat, lng], {
+        radius: 5, color: c.stroke, weight: 2,
+        opacity: 0.65, fillColor: c.fill, fillOpacity: 0.2, dashArray: '4,3',
+      }).bindPopup(makePopup(f.properties), { maxWidth: 280 });
+      marker.feature = f;
+      marker.addTo(map);
+      layersByClass[cls].push(marker);
+    });
+
+    buildFilters(counts);
+    buildStreetList(withGeom);
+
+    const danger = withGeom.filter(f => ['nero','rosso'].includes(f.properties.classificazione)).length;
+    const safe = withGeom.filter(f => ['verde','verde-blu','verde-giallo'].includes(f.properties.classificazione)).length;
+    document.getElementById('stat-total').textContent = total;
+    document.getElementById('stat-mapped').textContent = lines.length + pts.length;
+    document.getElementById('stat-danger').textContent = danger;
+    document.getElementById('stat-safe').textContent = safe;
+    document.getElementById('no-geom-note').textContent =
+      withoutGeom.length ? withoutGeom.length + ' strade non localizzate' : '';
+
+    const allCoords = [];
+    withGeom.forEach(f => {
+      const g = f.geometry;
+      if (g.type === 'Point') allCoords.push([g.coordinates[1], g.coordinates[0]]);
+      else if (g.type === 'LineString') g.coordinates.forEach(([ln,la]) => allCoords.push([la,ln]));
+      else if (g.type === 'MultiLineString') g.coordinates.forEach(seg => seg.forEach(([ln,la]) => allCoords.push([la,ln])));
+    });
+    if (allCoords.length) map.fitBounds(allCoords, { padding: [20,20] });
+  })
+  .catch(err => {
+    document.getElementById('map').innerHTML =
+      '<div style="padding:40px;color:#e53935;font-family:Inter,sans-serif;">Errore: ' + err.message + '</div>';
+  });
+</script>
 </body>
 </html>
