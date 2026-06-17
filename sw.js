@@ -1,4 +1,4 @@
-const CACHE_NAME = 'streetsmart-v3';
+const CACHE_NAME = 'streetsmart-v4';
 const ASSETS = [
   './',
   './index.html',

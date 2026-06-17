@@ -133,19 +133,28 @@
       -webkit-overflow-scrolling: touch;
       padding: 32px 20px 40px;
     }
-    #segnala-map {
-      flex-shrink: 0;
-      height: 40%;
-      min-height: 180px;
-      border-bottom: 2px solid #D5CBBF;
-    }
-    .segnala-selected {
+    .segnala-selected-bar {
       background: #F7F2EA; border-bottom: 1px solid #D5CBBF;
       padding: 10px 20px; flex-shrink: 0; display: flex;
       align-items: center; gap: 10px; font-size: 13px; color: #7A6F65;
       min-height: 40px;
     }
-    .segnala-selected strong { color: #2E2820; font-weight: 600; }
+    .segnala-selected-bar strong { color: #2E2820; font-weight: 600; }
+    .btn-segnala-popup {
+      display: block; width: 100%; margin-top: 10px; padding: 8px 0;
+      background: #C0392B; color: #fff; border: none; border-radius: 8px;
+      font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 600;
+      cursor: pointer; letter-spacing: 0.02em;
+    }
+    .btn-segnala-popup:active { background: #A93226; }
+    .btn-geolocate {
+      position: absolute; top: 10px; right: 10px; z-index: 1000;
+      width: 36px; height: 36px; border-radius: 50%;
+      background: #fff; border: 2px solid rgba(0,0,0,0.2);
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+    .btn-geolocate:active { background: #eee; }
     .segnala-form-wrap {
       flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch;
       padding: 24px 20px 40px;
@@ -349,20 +358,21 @@
     </div>
     <div class="no-geom-note" id="no-geom-note"></div>
   </aside>
-  <div id="map"></div>
+  <div id="map" style="position:relative;">
+    <button class="btn-geolocate" onclick="geolocateUser()" title="La mia posizione">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg>
+    </button>
+  </div>
 </div>
 
 <!-- ════════ SEGNALA VIEW ════════ -->
 <div class="view" id="view-segnala">
-  <div id="segnala-map"></div>
-  <div class="segnala-selected" id="segnala-selected">
-    <span style="font-size:11px;color:#A09080;">Tocca una strada sulla mappa per selezionarla, oppure compila manualmente</span>
-  </div>
+  <div class="segnala-selected-bar" id="segnala-selected-bar" style="display:none;"></div>
   <div class="segnala-form-wrap">
     <div class="form-card">
       <div class="form-eyebrow red">Segnalazione</div>
       <div class="form-title">Segnala una strada</div>
-      <div class="form-sub">Clicca una strada sulla mappa oppure compila i campi a mano.</div>
+      <div class="form-sub">Vai alla mappa, clicca una strada e premi "Segnala questa strada", oppure compila a mano.</div>
 
       <form id="form-segnala" action="https://formspree.io/f/mrernnwd" method="POST">
         <input type="hidden" name="form_type" value="segnalazione">
@@ -490,9 +500,7 @@
 <script>
 /* ── NAVIGATION ── */
 let mapInstance = null;
-let segnalaMap = null;
-let segnalaMapInited = false;
-let cachedGeoData = null;
+let userLocationMarker = null;
 
 function switchView(name) {
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
@@ -502,13 +510,6 @@ function switchView(name) {
 
   if (name === 'mappa' && mapInstance) {
     setTimeout(() => mapInstance.invalidateSize(), 50);
-  }
-  if (name === 'segnala') {
-    if (!segnalaMapInited && cachedGeoData) {
-      initSegnalaMap(cachedGeoData);
-    } else if (segnalaMap) {
-      setTimeout(() => segnalaMap.invalidateSize(), 50);
-    }
   }
 
   history.replaceState(null, '', '#' + name);
@@ -552,6 +553,7 @@ let activeFilters = new Set(Object.keys(COLORS));
 
 function makePopup(p) {
   const c = COLORS[p.classificazione] || COLORS['giallo'];
+  const dataAttr = 'data-nome="' + (p.nome||'').replace(/"/g,'&quot;') + '" data-quartiere="' + (p.quartiere||'').replace(/"/g,'&quot;') + '" data-municipio="' + (p.municipio||'') + '" data-classificazione="' + (p.classificazione||'') + '"';
   return `
     <div class="popup-tag" style="background:${c.stroke}22;color:${c.stroke};border:1.5px solid ${c.stroke}55">
       <span style="width:8px;height:8px;border-radius:50%;background:${c.stroke};display:inline-block"></span>
@@ -567,6 +569,7 @@ function makePopup(p) {
     </div>
     ${p.note?`<div class="popup-note">${p.note}</div>`:''}
     <div class="popup-id">${p.id}</div>
+    <button class="btn-segnala-popup" onclick="segnalaDaPopup(this)" ${dataAttr}>Segnala questa strada</button>
   `;
 }
 
@@ -636,60 +639,42 @@ function buildStreetList(features) {
   });
 }
 
-function initSegnalaMap(data) {
-  if (segnalaMapInited) return;
-  segnalaMapInited = true;
+function segnalaDaPopup(btn) {
+  const nome = btn.getAttribute('data-nome') || '';
+  const quartiere = btn.getAttribute('data-quartiere') || '';
+  const municipio = btn.getAttribute('data-municipio') || '';
+  const classificazione = btn.getAttribute('data-classificazione') || '';
 
-  segnalaMap = L.map('segnala-map', { center: [41.9028, 12.4964], zoom: 12 });
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; OSM &copy; CARTO', subdomains: 'abcd', maxZoom: 19,
-  }).addTo(segnalaMap);
+  document.getElementById('segnala-strada').value = nome;
+  document.getElementById('segnala-quartiere').value = quartiere;
 
-  let segnalaHighlight = null;
-
-  function onStreetClick(f) {
-    const p = f.properties;
-    document.getElementById('segnala-strada').value = p.nome || '';
-    document.getElementById('segnala-quartiere').value = p.quartiere || '';
-    const munSelect = document.getElementById('segnala-municipio');
-    if (p.municipio) {
-      for (const opt of munSelect.options) {
-        if (opt.text.startsWith(p.municipio)) { munSelect.value = opt.value; break; }
-      }
+  const munSelect = document.getElementById('segnala-municipio');
+  if (municipio) {
+    for (const opt of munSelect.options) {
+      if (opt.text.startsWith(municipio)) { munSelect.value = opt.value; break; }
     }
-    const c = COLORS[p.classificazione] || COLORS['giallo'];
-    document.getElementById('segnala-selected').innerHTML =
-      '<strong>' + p.nome + '</strong> &middot; ' + p.quartiere +
-      (p.classificazione ? ' &middot; <span style="color:' + c.stroke + '">' + p.classificazione.toUpperCase() + '</span>' : '');
-
-    if (segnalaHighlight) segnalaMap.removeLayer(segnalaHighlight);
-    segnalaHighlight = L.geoJSON(f, {
-      style: { color: '#C0392B', weight: 6, opacity: 1, dashArray: '8,4' },
-      pointToLayer: (feat, ll) => L.circleMarker(ll, { radius: 10, color: '#C0392B', weight: 3, fillOpacity: 0.3 })
-    }).addTo(segnalaMap);
-
-    document.querySelector('.segnala-form-wrap').scrollTop = 0;
   }
 
-  data.lines.forEach(f => {
-    const c = COLORS[f.properties.classificazione] || COLORS['giallo'];
-    L.geoJSON(f, {
-      style: { color: c.stroke, weight: 8, opacity: 0.7 },
-      onEachFeature: (feat, layer) => { layer.on('click', () => onStreetClick(f)); }
-    }).addTo(segnalaMap);
-  });
+  const c = COLORS[classificazione] || COLORS['giallo'];
+  const bar = document.getElementById('segnala-selected-bar');
+  bar.style.display = 'flex';
+  bar.innerHTML = '<strong>' + nome + '</strong> &middot; ' + quartiere +
+    (classificazione ? ' &middot; <span style="color:' + c.stroke + '">' + classificazione.toUpperCase() + '</span>' : '');
 
-  data.pts.forEach(f => {
-    const cls = f.properties.classificazione;
-    const c = COLORS[cls] || COLORS['giallo'];
-    const [lng, lat] = f.geometry.coordinates;
-    L.circleMarker([lat, lng], {
-      radius: 8, color: c.stroke, weight: 3, opacity: 0.7,
-      fillColor: c.fill, fillOpacity: 0.3,
-    }).on('click', () => onStreetClick(f)).addTo(segnalaMap);
-  });
+  mapInstance.closePopup();
+  switchView('segnala');
+}
 
-  if (data.allCoords.length) segnalaMap.fitBounds(data.allCoords, { padding: [20,20] });
+function geolocateUser() {
+  if (!navigator.geolocation) return alert('Geolocalizzazione non supportata');
+  navigator.geolocation.getCurrentPosition(pos => {
+    const latlng = [pos.coords.latitude, pos.coords.longitude];
+    mapInstance.setView(latlng, 16);
+    if (userLocationMarker) mapInstance.removeLayer(userLocationMarker);
+    userLocationMarker = L.circleMarker(latlng, {
+      radius: 8, color: '#4285F4', weight: 2, fillColor: '#4285F4', fillOpacity: 0.5,
+    }).addTo(mapInstance).bindPopup('La tua posizione').openPopup();
+  }, () => alert('Impossibile ottenere la posizione'));
 }
 
 fetch('./streetsmart_roma.geojson')
@@ -750,11 +735,6 @@ fetch('./streetsmart_roma.geojson')
     });
     if (allCoords.length) mapInstance.fitBounds(allCoords, { padding: [20,20] });
 
-    cachedGeoData = { lines, pts, allCoords };
-
-    if (document.getElementById('view-segnala').classList.contains('active')) {
-      initSegnalaMap(cachedGeoData);
-    }
   })
   .catch(err => {
     document.getElementById('map').innerHTML =
