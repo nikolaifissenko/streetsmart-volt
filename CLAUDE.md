@@ -19,8 +19,9 @@ Sviluppato da Nikolai.
 ## Stack Tecnico
 - **Database**: CSV → target GeoJSON / API REST
 - **Schema colonne**: id, nome, quartiere, classificazione, score, note, ciclabile_presente, n_corsie, senso_unico, n_testimonianze, municipio
-- **ID formato**: SS-ROM-XXXX (ultimo usato: SS-ROM-0202)
-- **Hosting**: GitHub Pages — nikolaifissenko/Streetsmart-Sentille
+- **ID formato**: SS-ROM-XXXX (ultimo usato: SS-ROM-0393)
+- **Hosting**: GitHub Pages — nikolaifissenko/streetsmart-volt
+- **Mappa live**: https://nikolaifissenko.github.io/streetsmart-volt/
 - **Form backend**: Formspree endpoint `xlgookeg`
 
 ## File Master
@@ -66,8 +67,19 @@ streetsmart/
 └── scripts/                         # export GeoJSON, stats, API (futuro)
 ```
 
+## Mappa Web Interattiva
+- **File principale**: `index.html` (root) — mappa Leaflet.js con CartoDB Positron Light tiles
+- **GeoJSON**: `streetsmart_roma.geojson` (root) — generato da `scripts/build.py`
+- **Brand**: palette travertino (#EDE8DF background), font EB Garamond + Inter
+- **Colori mappa**: nero=#1a1a1a, rosso=#e53935, giallo=#e6940a, blu=#1976D2, verde=#27AE60
+- **Copertura**: 307 LineString reali (Overpass) + 59 Point fallback (Nominatim) + 27 non trovate
+- **Cache geocode**: `data/master/.geocode_cache.json` (chiavi `v3|nome_clean`)
+- **Build**: `python scripts/build.py` — batch Overpass + Nominatim fallback → GeoJSON
+- **Filtri mappa**: 5 classi (nero, rosso, giallo, blu, verde); verde-giallo e verde-blu mappati a verde
+
 ## Workflow Aggiunta Strade
 1. Aggiungere righe a `data/master/streetsmart_roma_completo.csv`
-2. Incrementare ID da SS-ROM-0202
+2. Incrementare ID da SS-ROM-0393
 3. Aggiornare anche il CSV del municipio corrispondente in `data/municipio/`
-4. Aggiornare il contatore in questo file (riga "202 strade")
+4. Eseguire `python scripts/build.py` per rigenerare il GeoJSON
+5. Committare e pushare su main per deploy GitHub Pages
