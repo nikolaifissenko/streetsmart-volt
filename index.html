@@ -672,8 +672,9 @@ function initSegnalaMap(data) {
   }
 
   data.lines.forEach(f => {
+    const c = COLORS[f.properties.classificazione] || COLORS['giallo'];
     L.geoJSON(f, {
-      style: styleFeature,
+      style: { color: c.stroke, weight: 8, opacity: 0.7 },
       onEachFeature: (feat, layer) => { layer.on('click', () => onStreetClick(f)); }
     }).addTo(segnalaMap);
   });
@@ -683,8 +684,8 @@ function initSegnalaMap(data) {
     const c = COLORS[cls] || COLORS['giallo'];
     const [lng, lat] = f.geometry.coordinates;
     L.circleMarker([lat, lng], {
-      radius: 5, color: c.stroke, weight: 2, opacity: 0.65,
-      fillColor: c.fill, fillOpacity: 0.2, dashArray: '4,3',
+      radius: 8, color: c.stroke, weight: 3, opacity: 0.7,
+      fillColor: c.fill, fillOpacity: 0.3,
     }).on('click', () => onStreetClick(f)).addTo(segnalaMap);
   });
 
