@@ -62,22 +62,31 @@ streetsmart/
 │       ├── municipio1_v2.csv
 │       └── municipio1_v3.csv
 ├── manifest.json                    # PWA manifest
-├── sw.js                            # service worker
+├── sw.js                            # service worker (cache v7)
+├── icon-192.png                     # icona PWA 192x192
+├── icon-512.png                     # icona PWA 512x512
+├── streetsmart_roma.geojson         # GeoJSON generato da build.py
 ├── web/
 │   ├── sentinelle_form.html         # legacy (ora in index.html #sentinelle)
 │   └── segnalazione_form.html       # legacy (ora in index.html #segnala)
 ├── docs/
 │   └── pdf/                         # materiali presentazione
-└── scripts/                         # export GeoJSON, stats, API (futuro)
+└── scripts/
+    ├── build.py                     # genera GeoJSON da CSV master
+    └── gen_icons.py                 # genera icone PNG con Pillow
 ```
 
 ## PWA Unificata
 - **File principale**: `index.html` (root) — PWA con 3 view: Mappa, Segnala, Sentinelle
-- **Navigazione**: bottom nav bar con 3 tab, deep linking via hash (#mappa, #segnala, #sentinelle)
-- **manifest.json**: configurazione PWA (installabile su home screen)
-- **sw.js**: service worker network-first con caching offline
-- **Mappa**: Leaflet.js con CartoDB Positron Light tiles
+- **Navigazione**: top tab nav con 3 tab (Mappa, Segnala, Sentinelle), deep linking via hash (#mappa, #segnala, #sentinelle)
+- **manifest.json**: configurazione PWA (installabile su home screen) con icone PNG 192x192 e 512x512
+- **sw.js**: service worker network-first con caching offline (cache attuale: `streetsmart-v7`)
+- **Mappa principale**: Leaflet.js con CartoDB Positron Light tiles, `tap: false` per compatibilità mobile
+- **Mappa segnala**: seconda mappa Leaflet nella tab Segnala — click su strada compila form automaticamente, geolocalizzazione automatica, lazy-init quando si apre la tab
+- **Popup mappa**: ogni strada ha bottone "Segnala questa strada" che compila form e switcha tab
+- **Geolocalizzazione**: bottone sulla mappa principale + auto-geolocalizzazione nella mappa segnala
 - **GeoJSON**: `streetsmart_roma.geojson` (root) — generato da `scripts/build.py`
+- **Icone**: `icon-192.png` e `icon-512.png` generati da `scripts/gen_icons.py` (Pillow)
 - **Brand**: palette travertino (#EDE8DF background), font EB Garamond + Inter
 - **Colori mappa**: nero=#1a1a1a, rosso=#e53935, giallo=#e6940a, blu=#1976D2, verde=#27AE60
 - **Copertura**: 357 LineString reali (Overpass) + 62 Point fallback (Nominatim) + 27 non trovate
