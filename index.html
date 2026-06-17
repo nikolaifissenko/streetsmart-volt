@@ -10,7 +10,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="apple-mobile-web-app-title" content="StreetSmart" />
   <link rel="manifest" href="manifest.json" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='18' stroke='%233A3530' stroke-width='2' fill='%23F7F2EA'/%3E%3Ccircle cx='20' cy='20' r='3' fill='%233A3530'/%3E%3Cpolygon points='20,3 21.5,7 25.5,7 22.5,9.5 23.5,13.5 20,11 16.5,13.5 17.5,9.5 14.5,7 18.5,7' fill='%2327AE60'/%3E%3C/svg%3E" />
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
@@ -52,7 +53,7 @@
     .stat-label { font-size: 0.62rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #A09080; margin-top: 2px; }
 
     /* ── VIEWS ── */
-    .view { display: none; flex: 1; overflow: hidden; }
+    .view { display: none; flex: 1; overflow: hidden; min-height: 0; }
     .view.active { display: flex; }
 
     /* ── MAP VIEW ── */
@@ -125,6 +126,7 @@
       flex-direction: column;
       align-items: center;
       overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
       padding: 32px 20px 40px;
     }
 
@@ -227,21 +229,22 @@
     .counter-bar { flex: 1; height: 6px; background: #DDD6CA; border-radius: 10px; overflow: hidden; }
     .counter-fill { height: 100%; background: #27AE60; border-radius: 10px; width: 34%; }
 
-    /* ── BOTTOM NAV ── */
-    .bottom-nav {
-      display: flex; background: #F7F2EA; border-top: 1.5px solid #D5CBBF;
-      flex-shrink: 0; z-index: 1000;
-      padding-bottom: env(safe-area-inset-bottom, 0);
+    /* ── TOP TAB NAV ── */
+    .tab-nav {
+      display: flex; background: #F7F2EA; border-bottom: 1.5px solid #D5CBBF;
+      flex-shrink: 0; z-index: 999;
     }
     .nav-item {
-      flex: 1; display: flex; flex-direction: column; align-items: center;
-      gap: 3px; padding: 10px 0 8px; cursor: pointer; border: none; background: none;
-      color: #A09080; font-size: 10px; font-weight: 600; letter-spacing: 0.06em;
-      font-family: 'Inter', sans-serif; transition: color 0.15s;
+      flex: 1; display: flex; align-items: center; justify-content: center;
+      gap: 6px; padding: 12px 0; cursor: pointer; border: none; background: none;
+      color: #A09080; font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-family: 'Inter', sans-serif; transition: color 0.15s, border-color 0.15s;
+      border-bottom: 2.5px solid transparent; margin-bottom: -1.5px;
     }
     .nav-item:hover { color: #3A3530; }
-    .nav-item.active { color: #3A3530; }
-    .nav-item svg { width: 22px; height: 22px; }
+    .nav-item.active { color: #3A3530; border-bottom-color: #3A3530; }
+    .nav-item svg { width: 16px; height: 16px; }
 
     /* ── MOBILE ── */
     @media (max-width: 600px) {
@@ -276,6 +279,30 @@
     <div class="stat"><span class="stat-num" id="stat-safe">—</span><span class="stat-label">sicure</span></div>
   </div>
 </header>
+
+<!-- ════════ TOP TAB NAV ════════ -->
+<nav class="tab-nav">
+  <button class="nav-item active" data-view="mappa">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/>
+      <line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/>
+    </svg>
+    Mappa
+  </button>
+  <button class="nav-item" data-view="segnala">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+      <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+    </svg>
+    Segnala
+  </button>
+  <button class="nav-item" data-view="sentinelle">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+    </svg>
+    Sentinelle
+  </button>
+</nav>
 
 <!-- ════════ MAPPA VIEW ════════ -->
 <div class="view active" id="view-mappa">
@@ -434,29 +461,6 @@
 </div>
 
 <!-- ════════ BOTTOM NAV ════════ -->
-<nav class="bottom-nav">
-  <button class="nav-item active" data-view="mappa">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/>
-      <line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/>
-    </svg>
-    <span>Mappa</span>
-  </button>
-  <button class="nav-item" data-view="segnala">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
-      <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
-    </svg>
-    <span>Segnala</span>
-  </button>
-  <button class="nav-item" data-view="sentinelle">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-    </svg>
-    <span>Sentinelle</span>
-  </button>
-</nav>
-
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 /* ── NAVIGATION ── */
