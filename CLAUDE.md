@@ -18,7 +18,7 @@ Sviluppato da Nikolai.
 
 ## Stack Tecnico
 - **Database**: CSV → target GeoJSON / API REST
-- **Schema colonne**: id, nome, quartiere, classificazione, score, note, ciclabile_presente, n_corsie, senso_unico, n_testimonianze, municipio
+- **Schema colonne**: id, nome, quartiere, classificazione, score, note, ciclabile_presente, n_corsie, senso_unico, n_testimonianze, municipio, data_segnalazione
 - **ID formato**: SS-ROM-XXXX (ultimo usato: SS-ROM-0393)
 - **Hosting**: GitHub Pages — nikolaifissenko/streetsmart-volt
 - **Mappa live**: https://nikolaifissenko.github.io/streetsmart-volt/
