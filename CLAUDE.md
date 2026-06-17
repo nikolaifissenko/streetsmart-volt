@@ -72,14 +72,14 @@ streetsmart/
 - **GeoJSON**: `streetsmart_roma.geojson` (root) — generato da `scripts/build.py`
 - **Brand**: palette travertino (#EDE8DF background), font EB Garamond + Inter
 - **Colori mappa**: nero=#1a1a1a, rosso=#e53935, giallo=#e6940a, blu=#1976D2, verde=#27AE60
-- **Copertura**: 307 LineString reali (Overpass) + 59 Point fallback (Nominatim) + 27 non trovate
+- **Copertura**: 357 LineString reali (Overpass) + 62 Point fallback (Nominatim) + 27 non trovate
 - **Cache geocode**: `data/master/.geocode_cache.json` (chiavi `v3|nome_clean`)
 - **Build**: `python scripts/build.py` — batch Overpass + Nominatim fallback → GeoJSON
 - **Filtri mappa**: 5 classi (nero, rosso, giallo, blu, verde); verde-giallo e verde-blu mappati a verde
 
 ## Workflow Aggiunta Strade
 1. Aggiungere righe a `data/master/streetsmart_roma_completo.csv`
-2. Incrementare ID da SS-ROM-0393
+2. Incrementare ID da SS-ROM-0446
 3. Aggiornare anche il CSV del municipio corrispondente in `data/municipio/`
 4. Eseguire `python scripts/build.py` per rigenerare il GeoJSON
 5. Committare e pushare su main per deploy GitHub Pages
