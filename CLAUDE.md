@@ -23,6 +23,9 @@ Sviluppato da Nikolai.
 - **Hosting**: GitHub Pages — nikolaifissenko/streetsmart-volt
 - **Mappa live**: https://nikolaifissenko.github.io/streetsmart-volt/
 - **Form backend**: Formspree endpoint `xlgookeg`
+- **PWA**: manifest.json + sw.js (offline caching), installabile su mobile
+- **Logo**: `streetsmart_logo.png` (root) — ruota bici con stella 4 colori
+- **Icone PWA**: `icons/icon-192.png`, `icons/icon-512.png` — generate da `scripts/generate_icons.py`
 
 ## File Master
 `data/master/streetsmart_roma_completo.csv` — source of truth.
@@ -62,9 +65,17 @@ streetsmart/
 ├── web/
 │   ├── sentinelle_form.html
 │   └── segnalazione_form.html
+├── icons/
+│   ├── icon-192.png                 # PWA icon 192x192
+│   └── icon-512.png                 # PWA icon 512x512
+├── manifest.json                    # PWA manifest
+├── sw.js                            # Service worker (offline cache)
+├── streetsmart_logo.png             # Logo ufficiale
 ├── docs/
 │   └── pdf/                         # materiali presentazione
-└── scripts/                         # export GeoJSON, stats, API (futuro)
+└── scripts/
+    ├── build.py                     # export GeoJSON
+    └── generate_icons.py            # genera icone PWA da logo.png
 ```
 
 ## Mappa Web Interattiva
@@ -76,6 +87,8 @@ streetsmart/
 - **Cache geocode**: `data/master/.geocode_cache.json` (chiavi `v3|nome_clean`)
 - **Build**: `python scripts/build.py` — batch Overpass + Nominatim fallback → GeoJSON
 - **Filtri mappa**: 5 classi (nero, rosso, giallo, blu, verde); verde-giallo e verde-blu mappati a verde
+- **Mobile**: pannello bottom-sheet con filtri chip + legenda compatta (≤700px)
+- **PWA**: installabile, offline-first (cache HTML, GeoJSON, Leaflet, font)
 
 ## Workflow Aggiunta Strade
 1. Aggiungere righe a `data/master/streetsmart_roma_completo.csv`
