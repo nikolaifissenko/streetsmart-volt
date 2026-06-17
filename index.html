@@ -171,6 +171,29 @@
       }
       .mobile-legend-item { display: flex; align-items: center; gap: 5px; }
       .mobile-legend-swatch { width: 18px; height: 4px; border-radius: 2px; }
+
+      .mobile-tabs {
+        display: flex; border-bottom: 1px solid #E8E1D8; flex-shrink: 0;
+      }
+      .mobile-tab {
+        flex: 1; padding: 8px; text-align: center;
+        font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em;
+        text-transform: uppercase; color: #A09080;
+        cursor: pointer; border-bottom: 2px solid transparent;
+        transition: color 0.15s, border-color 0.15s;
+      }
+      .mobile-tab.active { color: #2E2820; border-bottom-color: #2E2820; }
+
+      .mobile-tab-content { display: none; overflow-y: auto; flex: 1; }
+      .mobile-tab-content.active { display: block; }
+
+      .mobile-street-list { max-height: 35vh; overflow-y: auto; }
+      .mobile-street-item {
+        display: flex; align-items: center; gap: 8px;
+        padding: 8px 14px; border-bottom: 1px solid #EDE8DF;
+        cursor: pointer;
+      }
+      .mobile-street-item:active { background: #EDE8DF; }
     }
     @media (min-width: 701px) {
       .mobile-panel { display: none !important; }
@@ -221,16 +244,25 @@
 <div class="mobile-panel collapsed" id="mobile-panel">
   <div class="mobile-handle" id="mobile-handle">
     <div class="mobile-handle-bar"></div>
-    <span class="mobile-handle-label">Filtri & Legenda</span>
+    <span class="mobile-handle-label">Filtri & Strade</span>
     <div class="mobile-handle-bar"></div>
   </div>
-  <div class="mobile-filters" id="mobile-filters"></div>
-  <div class="mobile-legend">
-    <div class="mobile-legend-item"><div class="mobile-legend-swatch" style="background:#1a1a1a"></div>Nero 5/5</div>
-    <div class="mobile-legend-item"><div class="mobile-legend-swatch" style="background:#e53935"></div>Rosso 4/5</div>
-    <div class="mobile-legend-item"><div class="mobile-legend-swatch" style="background:#e6940a"></div>Giallo 3/5</div>
-    <div class="mobile-legend-item"><div class="mobile-legend-swatch" style="background:#1976D2"></div>Blu 2/5</div>
-    <div class="mobile-legend-item"><div class="mobile-legend-swatch" style="background:#27AE60"></div>Verde 1/5</div>
+  <div class="mobile-tabs">
+    <div class="mobile-tab active" data-tab="filtri">Filtri</div>
+    <div class="mobile-tab" data-tab="strade">Strade</div>
+  </div>
+  <div class="mobile-tab-content active" id="mobile-tab-filtri">
+    <div class="mobile-filters" id="mobile-filters"></div>
+    <div class="mobile-legend">
+      <div class="mobile-legend-item"><div class="mobile-legend-swatch" style="background:#1a1a1a"></div>Nero 5/5</div>
+      <div class="mobile-legend-item"><div class="mobile-legend-swatch" style="background:#e53935"></div>Rosso 4/5</div>
+      <div class="mobile-legend-item"><div class="mobile-legend-swatch" style="background:#e6940a"></div>Giallo 3/5</div>
+      <div class="mobile-legend-item"><div class="mobile-legend-swatch" style="background:#1976D2"></div>Blu 2/5</div>
+      <div class="mobile-legend-item"><div class="mobile-legend-swatch" style="background:#27AE60"></div>Verde 1/5</div>
+    </div>
+  </div>
+  <div class="mobile-tab-content" id="mobile-tab-strade">
+    <div class="mobile-street-list" id="mobile-street-list"></div>
   </div>
 </div>
 
@@ -415,6 +447,17 @@ fetch('./streetsmart_roma.geojson')
     if (panel && handle) {
       handle.addEventListener('click', () => panel.classList.toggle('collapsed'));
 
+      // Tabs
+      document.querySelectorAll('.mobile-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          document.querySelectorAll('.mobile-tab').forEach(t => t.classList.remove('active'));
+          document.querySelectorAll('.mobile-tab-content').forEach(c => c.classList.remove('active'));
+          tab.classList.add('active');
+          document.getElementById('mobile-tab-' + tab.dataset.tab).classList.add('active');
+        });
+      });
+
+      // Filter chips
       const mf = document.getElementById('mobile-filters');
       FILTER_CLASSES.forEach(cls => {
         const c = COLORS[cls];
@@ -428,7 +471,6 @@ fetch('./streetsmart_roma.geojson')
             else          { activeFilters.add(k);    layersByClass[k]?.forEach(l => l.addTo(map)); }
           });
           chip.classList.toggle('inactive', isActive);
-          // sync desktop filter
           const desktopItems = document.querySelectorAll('#filters .filter-item');
           desktopItems.forEach(item => {
             if (item.querySelector('.filter-label')?.textContent === LABELS[cls]) {
@@ -437,6 +479,36 @@ fetch('./streetsmart_roma.geojson')
           });
         });
         mf.appendChild(chip);
+      });
+
+      // Mobile street list
+      const msl = document.getElementById('mobile-street-list');
+      gj.features.filter(f => f.geometry !== null).forEach(f => {
+        const p = f.properties;
+        const c = COLORS[p.classificazione] || COLORS['giallo'];
+        const item = document.createElement('div');
+        item.className = 'mobile-street-item';
+        item.innerHTML = `
+          <div class="street-swatch" style="background:${c.stroke}"></div>
+          <div style="overflow:hidden;flex:1">
+            <div class="street-name">${p.nome}</div>
+            <div class="street-q">${p.quartiere}</div>
+          </div>
+        `;
+        item.addEventListener('click', () => {
+          const g = f.geometry;
+          if (!g) return;
+          let center;
+          if (g.type === 'Point') center = [g.coordinates[1], g.coordinates[0]];
+          else if (g.type === 'LineString') { const m = g.coordinates[Math.floor(g.coordinates.length/2)]; center=[m[1],m[0]]; }
+          else if (g.type === 'MultiLineString') { const m = g.coordinates[0][Math.floor(g.coordinates[0].length/2)]; center=[m[1],m[0]]; }
+          if (center) map.setView(center, 16);
+          panel.classList.add('collapsed');
+          for (const l of (layersByClass[p.classificazione]||[])) {
+            if (l.feature?.properties?.id === p.id) { l.openPopup?.(); break; }
+          }
+        });
+        msl.appendChild(item);
       });
     }
   })
