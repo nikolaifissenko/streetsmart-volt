@@ -595,7 +595,7 @@ function makePopup(p) {
 
 function styleFeature(feature) {
   const c = COLORS[feature.properties.classificazione] || COLORS['giallo'];
-  return { color: c.stroke, weight: c.weight, opacity: 0.9, fillOpacity: 0 };
+  return { color: c.stroke, weight: Math.max(c.weight, 6), opacity: 0.85 };
 }
 
 function buildFilters(counts) {
@@ -791,8 +791,8 @@ fetch('./streetsmart_roma.geojson')
       const c = COLORS[cls] || COLORS['giallo'];
       const [lng, lat] = f.geometry.coordinates;
       const marker = L.circleMarker([lat, lng], {
-        radius: 5, color: c.stroke, weight: 2,
-        opacity: 0.65, fillColor: c.fill, fillOpacity: 0.2, dashArray: '4,3',
+        radius: 8, color: c.stroke, weight: 3,
+        opacity: 0.65, fillColor: c.fill, fillOpacity: 0.3, dashArray: '4,3',
       }).bindPopup(makePopup(f.properties), { maxWidth: 280 });
       marker.feature = f;
       marker.addTo(mapInstance);
@@ -890,8 +890,13 @@ document.getElementById('form-sentinelle').addEventListener('submit', async func
 
 /* ── SERVICE WORKER ── */
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js').catch(() => {});
+  navigator.serviceWorker.getRegistrations().then(regs => {
+    regs.forEach(r => r.unregister());
+  }).then(() => {
+    navigator.serviceWorker.register('./sw.js');
+  }).catch(() => {});
 }
+console.log('StreetSmart v6');
 </script>
 </body>
 </html>
