@@ -19,9 +19,9 @@ SS-ROM-0017,Via Tiburtina (tratto urbano),Tiburtino,rosso,4,arteria radiale traf
 SS-ROM-0018,Via Prenestina (tratto urbano),Prenestino,verde,1,arteria radiale trafficata,si,4,no,1,I,
 SS-ROM-0019,Via Appia Nuova (tratto urbano),Appio,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,1,I,
 SS-ROM-0020,Via Cola di Rienzo,Prati,rosso,4,commerciale trafficata 4 corsie,no,4,no,1,I,
-SS-ROM-0021,Via del Corso,Centro Storico,blu,2,ZTL pedonale confermata - segnalazione Nikolai,no,2,no,2,I,
+SS-ROM-0021,Via del Corso,Centro Storico,blu,2,ZTL pedonale confermata - segnalazione Nikolai,no,2,no,3,I,2026-06-01
 SS-ROM-0022,Via Veneto,Ludovisi,rosso,4,trafficata 4 corsie nessuna ciclabile,no,4,no,3,I,
-SS-ROM-0023,Via Sistina,Trevi,rosso,4,trafficata 2 corsie ripida nessuna ciclabile,no,2,no,3,I,
+SS-ROM-0023,Via Sistina,Trevi,giallo,3,segnalazione giallo - strada urbana,no,2,no,4,I,2026-06-01
 SS-ROM-0024,Via Tritone,Trevi,rosso,4,trafficata 4 corsie nessuna ciclabile,no,4,no,1,I,
 SS-ROM-0025,Via Barberini,Trevi,rosso,4,trafficata 2 corsie nessuna ciclabile,no,2,no,3,I,
 SS-ROM-0026,Via delle Quattro Fontane,Trevi,rosso,4,trafficata 2 corsie nessuna ciclabile,no,2,no,1,I,
@@ -47,7 +47,7 @@ SS-ROM-0045,Via Leonina,Rione Monti,giallo,3,senso unico Monti traffico contenut
 SS-ROM-0046,Via della Lungaretta,Trastevere,giallo,3,senso unico Trastevere traffico contenuto,no,1,si,1,I,
 SS-ROM-0047,Via della Scala,Trastevere,giallo,3,senso unico Trastevere,no,1,si,2,I,
 SS-ROM-0048,Via San Francesco a Ripa,Trastevere,giallo,3,2 corsie traffico contenuto,no,2,no,1,I,
-SS-ROM-0049,Via Garibaldi,Trastevere/Gianicolo,giallo,3,salita ripida traffico contenuto,no,2,no,2,I,
+SS-ROM-0049,Via Garibaldi,Trastevere/Gianicolo,blu,2,ZTL - segnalazione sentinella,no,2,no,3,I,2026-06-02
 SS-ROM-0050,Via della Lungara,Trastevere,giallo,3,2 corsie traffico contenuto lungo mura,no,2,no,2,I,
 SS-ROM-0051,Via Giulia,Centro Storico,giallo,3,storica traffico contenuto,no,2,no,3,I,
 SS-ROM-0052,Via dei Banchi Vecchi,Centro Storico,giallo,3,senso unico storico,no,1,si,2,I,
@@ -130,7 +130,7 @@ SS-ROM-0128,Piazza Ungheria,Parioli,blu,2,piazza ZTL bassa velocità alto flusso
 SS-ROM-0129,Piazza Euclide,Parioli,blu,2,piazza ZTL bassa velocità,no,0,no,1,II,
 SS-ROM-0130,Via Antonelli,Parioli,giallo,3,senso unico residenziale,no,1,si,1,II,
 SS-ROM-0131,Via Mangili,Parioli,giallo,3,senso unico residenziale Parioli,no,1,si,1,II,
-SS-ROM-0132,Viale Bruno Buozzi,Parioli,rosso,4,arteria trafficata 4 corsie nessuna ciclabile,no,4,no,1,II,
+SS-ROM-0132,Viale Bruno Buozzi,Parioli,giallo,3,segnalazione giallo - strada urbana tranquilla,no,4,no,2,II,2026-06-01
 SS-ROM-0133,Via Lima,Trieste,giallo,3,strada urbana traffico contenuto,no,2,no,1,II,
 SS-ROM-0134,Via Reggio Calabria,Trieste,giallo,3,senso unico residenziale,no,1,si,1,II,
 SS-ROM-0135,Via Alessandria,Trieste,rosso,4,trafficata 2 corsie nessuna ciclabile,no,2,no,1,II,
@@ -273,9 +273,9 @@ SS-ROM-0271,Via dei Latini,Nomentano,giallo,3,strada urbana traffico contenuto -
 SS-ROM-0272,Via dei Marsi,Nomentano,giallo,3,strada urbana traffico contenuto - segnalazione Nikolai.fissenko,no,2,no,1,II,
 SS-ROM-0273,Via Giovanni Battista Tiepolo,Flaminio,giallo,3,traffico locale - segnalazione @Sim1_71,no,2,no,1,II,
 SS-ROM-0274,Via Antonio Allegri da Correggio,Flaminio,giallo,3,traffico locale - segnalazione @Sim1_71,no,2,no,1,II,
-SS-ROM-0275,Ponte della Musica Armando Trovajoli,Flaminio,blu,2,ponte ciclopedonale - segnalazione @Sim1_71,no,0,no,1,II,
+SS-ROM-0275,Ponte della Musica Armando Trovajoli,Flaminio,blu,2,ponte ciclopedonale - segnalazione @Sim1_71,no,0,no,2,II,2026-06-01
 SS-ROM-0276,Piazza Gentile da Fabriano,Flaminio,giallo,3,traffico locale - segnalazione @Sim1_71,no,2,no,1,II,
-SS-ROM-0277,Via Guido Reni,Flaminio,verde,1,nuova ciclabile GRAB confermata,si,0,no,2,II,
+SS-ROM-0277,Via Guido Reni,Flaminio,verde,1,nuova ciclabile GRAB confermata,si,0,no,3,II,2026-06-01
 SS-ROM-0278,Via Pier della Francesca,Flaminio,giallo,3,traffico locale - segnalazione @Sim1_71,no,2,no,1,II,
 SS-ROM-0279,Via Andrea Bregno,Flaminio,verde,1,traffico locale scarso - segnalazione @Sim1_71,si,0,no,1,II,
 SS-ROM-0280,Via Cesare Fracassini,Flaminio,rosso,4,strada molto trafficata - segnalazione @Sim1_71,no,4,no,1,II,
@@ -376,7 +376,7 @@ SS-ROM-0374,Via del Foro Italico,Parioli,nero,5,multicarreggiata ad alta velocit
 SS-ROM-0375,Viale della Moschea,Parioli,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,1,II,
 SS-ROM-0376,Via Guidubaldo del Monte,Pinciano,verde,1,traffico locale scarso,no,1,no,1,II,
 SS-ROM-0377,Via Luigi Settembrini,Della Vittoria,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,1,II,
-SS-ROM-0378,Viale Angelico,Prati,verde,1,pista ciclabile presente,si,0,no,1,I,
+SS-ROM-0378,Viale Angelico,Prati,verde,1,pista ciclabile presente,si,0,no,2,I,2026-06-01
 SS-ROM-0379,Circonvallazione Cornelia,Aurelio,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,1,XIII,
 SS-ROM-0380,Via di Boccea (tratto nero),Aurelio,nero,5,multicarreggiata pericolosissima,no,4,no,1,XIII,
 SS-ROM-0381,Via Mattia Battistini,Aurelio,verde,1,pista ciclabile presente,si,0,no,1,XIII,
@@ -392,3 +392,10 @@ SS-ROM-0390,Viale Ventuno Aprile,Nomentano,rosso,4,arteria trafficata nessuna ci
 SS-ROM-0391,Viale delle Provincie,Nomentano,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,1,II,
 SS-ROM-0392,Via Catania,Nomentano,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,1,II,
 SS-ROM-0393,Viale Ippocrate,Nomentano,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,1,II,
+SS-ROM-0394,Via della Renella,Trastevere,giallo,3,strada urbana tranquilla senza ciclabile,no,2,no,1,I,2026-06-02
+SS-ROM-0395,Piazza Santiago del Cile,Parioli,rosso,4,segnalazioni contrastanti verde/rosso,no,2,no,2,II,2026-06-01
+SS-ROM-0396,Via Sabotino,Prati,verde,1,pista ciclabile presente,si,2,no,1,I,2026-06-01
+SS-ROM-0397,Via Podgora,Prati,rosso,4,arteria trafficata nessuna ciclabile,no,2,no,1,I,2026-06-01
+SS-ROM-0398,Via Luisa di Savoia,Flaminio,rosso,4,arteria trafficata nessuna ciclabile,no,2,no,1,II,2026-06-01
+SS-ROM-0399,Piazza del Popolo,Centro Storico,blu,2,ZTL pedonale,no,0,no,1,I,2026-06-01
+SS-ROM-0400,Via Ludovisi,Ludovisi,giallo,3,strada urbana tranquilla senza ciclabile,no,2,no,1,I,2026-06-02
