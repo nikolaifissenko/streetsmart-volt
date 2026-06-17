@@ -19,7 +19,7 @@ Sviluppato da Nikolai.
 ## Stack Tecnico
 - **Database**: CSV → target GeoJSON / API REST
 - **Schema colonne**: id, nome, quartiere, classificazione, score, note, ciclabile_presente, n_corsie, senso_unico, n_testimonianze, municipio, data_segnalazione
-- **ID formato**: SS-ROM-XXXX (ultimo usato: SS-ROM-0400)
+- **ID formato**: SS-ROM-XXXX (ultimo usato: SS-ROM-0446)
 - **Hosting**: GitHub Pages — nikolaifissenko/streetsmart-volt
 - **Mappa live**: https://nikolaifissenko.github.io/streetsmart-volt/
 - **Form backend**: Formspree endpoint `xlgookeg`
@@ -29,12 +29,12 @@ Sviluppato da Nikolai.
 Non modificare i CSV in data/municipio/ senza aggiornare il master.
 
 ## Stato Database
-- **400 strade** classificate totali
+- **446 strade** classificate totali
 - Municipio I: ~80 strade (completato)
 - Municipio II: ~80 strade (completato + segnalazioni Sentinelle)
 - Municipio III: ~50 strade (completato + segnalazioni Sentinelle)
 - Municipi IV, V, VII, VIII, IX, XI, XII, XIII, XIV, XV: segnalazioni Sentinelle integrate nel master
-- Ultimo ID usato: SS-ROM-0400
+- Ultimo ID usato: SS-ROM-0446
 
 ## Community Sentinelle
 - Form iscrizione: nikolaifissenko.github.io/Streetsmart-Sentille/sentinelle_form.html

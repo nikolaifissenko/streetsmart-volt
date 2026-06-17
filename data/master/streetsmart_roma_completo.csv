@@ -11,7 +11,7 @@ SS-ROM-0009,Via dei Fori Imperiali (ciclabile),Centro Storico,verde,1,pista cicl
 SS-ROM-0010,Viale Trastevere,Trastevere,rosso,4,arteria trafficata 4 corsie nessuna ciclabile,no,4,no,1,I,
 SS-ROM-0011,Via Nazionale,Esquilino,rosso,4,arteria trafficata 2-4 corsie nessuna ciclabile doppia fila perenne,no,4,no,6,I,
 SS-ROM-0012,Via Merulana,Esquilino/Celio,rosso,4,trafficata 2 corsie nessuna ciclabile,no,2,no,5,I,
-SS-ROM-0013,Corso Vittorio Emanuele II,Centro Storico,rosso,4,arteria principale 4 corsie nessuna ciclabile,no,4,no,4,I,
+SS-ROM-0013,Corso Vittorio Emanuele II,Centro Storico,rosso,4,arteria principale 4 corsie nessuna ciclabile,no,4,no,5,I,2026-06-16
 SS-ROM-0014,Via XX Settembre,Castro Pretorio,rosso,4,trafficata 4 corsie nessuna ciclabile,no,4,no,1,I,
 SS-ROM-0015,Via Cavour,Esquilino,rosso,4,trafficata 4 corsie nessuna ciclabile,no,4,no,4,I,
 SS-ROM-0016,Via Nomentana (tratto urbano),Nomentano,verde,1,arteria radiale trafficata,si,4,no,2,I,
@@ -30,9 +30,9 @@ SS-ROM-0028,Via del Plebiscito,Centro Storico,rosso,4,trafficata nessuna ciclabi
 SS-ROM-0029,Piazza Venezia (confluenza),Centro Storico,rosso,4,hub traffico nessuna protezione ciclisti,no,0,no,4,I,
 SS-ROM-0030,Via dei Fori Imperiali,Centro Storico,giallo,3,lavori appena terminati ciclabile dipinta ma velocita auto troppo alta - segnalazione @hyperpigno,si,4,no,4,I,
 SS-ROM-0031,Via del Teatro di Marcello,Centro Storico,rosso,4,trafficata curva pericolosa,no,2,no,4,I,
-SS-ROM-0032,Viale delle Milizie,Prati,rosso,4,4 corsie trafficata nessuna ciclabile,no,4,no,1,I,
+SS-ROM-0032,Viale delle Milizie,Prati,rosso,4,4 corsie trafficata nessuna ciclabile,no,4,no,2,I,2026-06-16
 SS-ROM-0033,Via Candia,Prati,giallo,3,strada urbana senso unico traffico medio,no,2,si,2,I,
-SS-ROM-0034,Via Crescenzio,Prati,giallo,3,strada urbana 2 corsie traffico contenuto,no,2,no,3,I,
+SS-ROM-0034,Via Crescenzio,Prati,giallo,3,strada urbana 2 corsie traffico contenuto,no,2,no,4,I,2026-06-16
 SS-ROM-0035,Via Germanico,Prati,giallo,3,senso unico residenziale,no,1,si,2,I,
 SS-ROM-0036,Via Fabio Massimo,Prati,giallo,3,senso unico residenziale Prati,no,1,si,1,I,
 SS-ROM-0037,Via Tacito,Prati,giallo,3,senso unico residenziale Prati,no,1,si,1,I,
@@ -51,7 +51,7 @@ SS-ROM-0049,Via Garibaldi,Trastevere/Gianicolo,blu,2,ZTL - segnalazione sentinel
 SS-ROM-0050,Via della Lungara,Trastevere,giallo,3,2 corsie traffico contenuto lungo mura,no,2,no,2,I,
 SS-ROM-0051,Via Giulia,Centro Storico,giallo,3,storica traffico contenuto,no,2,no,3,I,
 SS-ROM-0052,Via dei Banchi Vecchi,Centro Storico,giallo,3,senso unico storico,no,1,si,2,I,
-SS-ROM-0053,Via del Governo Vecchio,Centro Storico,giallo,3,senso unico storico traffico contenuto,no,1,si,1,I,
+SS-ROM-0053,Via del Governo Vecchio,Centro Storico,giallo,3,senso unico storico traffico contenuto,no,1,si,2,I,2026-06-16
 SS-ROM-0054,Via della Conciliazione,Borgo,giallo,3,larga ma traffico parzialmente controllato,no,4,no,4,I,
 SS-ROM-0055,Via Angelo Emo,Prati,giallo,3,senso unico residenziale,no,1,si,2,I,
 SS-ROM-0056,Via Gregorio VII,Aurelio,giallo,3,trafficata ma senso unico tratti,no,2,no,3,I,
@@ -71,10 +71,10 @@ SS-ROM-0067,Vicolo del Cinque,Trastevere,blu,2,vicoletto ZTL alto flusso pedoni 
 SS-ROM-0068,Piazza di Spagna (vicinanze),Trevi,blu,2,ZTL flusso pedonale molto alto,no,0,no,5,I,
 SS-ROM-0069,Via Condotti,Trevi,blu,2,ZTL pedonale shopping lusso,no,1,no,1,I,
 SS-ROM-0070,Via della Croce,Trevi,blu,2,ZTL pedonale traffico misto,no,1,si,2,I,
-SS-ROM-0071,Via del Babuino,Trevi/Flaminio,blu,2,ZTL confermata - segnalazione Nikolai,no,1,si,2,I,
+SS-ROM-0071,Via del Babuino,Trevi/Flaminio,blu,2,ZTL confermata - segnalazione Nikolai,no,1,si,3,I,2026-06-16
 SS-ROM-0072,Via Margutta,Flaminio,blu,2,strada privata/residenziale quasi pedonale,no,1,no,1,I,
 SS-ROM-0073,Via della Pace,Centro Storico,blu,2,vicoletto ZTL flusso pedonale,no,1,si,1,I,
-SS-ROM-0074,Via del Governo Vecchio,Centro Storico,blu,2,vicoletto storico pedonale misto,no,1,si,3,I,
+SS-ROM-0074,Via del Governo Vecchio,Centro Storico,blu,2,vicoletto storico pedonale misto,no,1,si,4,I,2026-06-16
 SS-ROM-0075,Vicolo della Moretta,Centro Storico,blu,2,vicoletto ZTL centro,no,1,si,2,I,
 SS-ROM-0076,Via della Stelletta,Centro Storico,blu,2,vicoletto ZTL centro,no,1,si,2,I,
 SS-ROM-0077,Piazza Farnese,Centro Storico,blu,2,ZTL pedonale quasi completo,no,0,no,4,I,
@@ -85,7 +85,7 @@ SS-ROM-0083,Viale Parioli,Parioli,rosso,4,arteria trafficata 4 corsie con tratto
 SS-ROM-0084,Viale Liegi,Parioli,rosso,4,arteria trafficata 4 corsie nessuna ciclabile,no,4,no,1,II,
 SS-ROM-0085,Viale Gorizia,Parioli,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,1,II,
 SS-ROM-0086,Viale Eritrea,Parioli,rosso,4,arteria trafficata 4 corsie nessuna ciclabile,no,4,no,1,II,
-SS-ROM-0087,Via Salaria (tratto urbano),Salario,rosso,4,arteria radiale trafficata nessuna ciclabile,no,4,no,1,II,
+SS-ROM-0087,Via Salaria (tratto urbano),Salario,rosso,4,arteria radiale trafficata nessuna ciclabile,no,4,no,2,II,2026-06-16
 SS-ROM-0088,Viale delle Belle Arti,Flaminio,verde-giallo,2,ciclabile presente sul marciapiede ma inadeguata,si,4,no,1,II,
 SS-ROM-0089,Lungotevere Flaminio,Flaminio,verde-giallo,2,ciclabile sul marciapiede inadeguata e discontinua,si,4,no,1,II,
 SS-ROM-0090,Lungotevere Arnaldo da Brescia,Flaminio,nero,5,4 corsie veloci nessuna protezione,no,4,no,1,II,
@@ -95,7 +95,7 @@ SS-ROM-0093,Viale Tiziano,Flaminio,rosso,4,arteria sportiva trafficata nessuna c
 SS-ROM-0094,Viale Maresciallo Pilsudski,Parioli,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,1,II,
 SS-ROM-0095,Via Po,Salario,rosso,4,trafficata 2 corsie nessuna ciclabile,no,2,no,1,II,
 SS-ROM-0096,Via Tagliamento,Salario,rosso,4,trafficata 2 corsie nessuna ciclabile,no,2,no,1,II,
-SS-ROM-0097,Via Nomentana (tratto Mun II),Nomentano,rosso,4,arteria radiale trafficata,no,4,no,1,II,
+SS-ROM-0097,Via Nomentana (tratto Mun II),Nomentano,rosso,4,arteria radiale trafficata,no,4,no,2,II,2026-06-16
 SS-ROM-0098,Corso Trieste,Trieste,rosso,4,arteria trafficata 4 corsie nessuna ciclabile,no,4,no,1,II,
 SS-ROM-0099,Via Tevere,Salario,giallo,3,strada urbana 2 corsie traffico contenuto,no,2,no,1,II,
 SS-ROM-0100,Via Brenta,Salario,giallo,3,strada urbana traffico contenuto,no,2,no,1,II,
@@ -114,10 +114,10 @@ SS-ROM-0112,Via Paisiello,Parioli,giallo,3,senso unico residenziale Parioli,no,1
 SS-ROM-0113,Via Spontini,Parioli,giallo,3,senso unico residenziale Parioli,no,1,si,1,II,
 SS-ROM-0114,Via Bellini,Parioli,giallo,3,senso unico residenziale Parioli,no,1,si,1,II,
 SS-ROM-0115,Via Donizetti,Parioli,giallo,3,senso unico residenziale Parioli,no,1,si,1,II,
-SS-ROM-0116,Via Giuseppe Pisanelli,Parioli,giallo,3,strada tranquilla residenziale,no,2,no,1,II,
+SS-ROM-0116,Via Giuseppe Pisanelli,Parioli,rosso,4,arteria trafficata - segnalazione sentinella,no,2,no,2,II,2026-06-16
 SS-ROM-0117,Via Antonio Bosio,Parioli,giallo,3,senso unico residenziale,no,1,si,1,II,
 SS-ROM-0118,Via Panama,Parioli,giallo,3,strada residenziale traffico contenuto,no,2,no,1,II,
-SS-ROM-0119,Via Prati Fiscali,Trionfale,giallo,3,strada urbana traffico contenuto,no,2,no,1,II,
+SS-ROM-0119,Via Prati Fiscali,Trionfale,giallo,3,strada urbana traffico contenuto,no,2,no,2,II,2026-06-16
 SS-ROM-0120,Via dei Campi Sportivi,Flaminio,giallo,3,strada secondaria area sportiva,no,2,no,1,II,
 SS-ROM-0121,Via Reni,Flaminio,giallo,3,senso unico area Flaminio,no,1,si,1,II,
 SS-ROM-0122,Via Masaccio,Flaminio,giallo,3,senso unico residenziale Flaminio,no,1,si,1,II,
@@ -130,16 +130,16 @@ SS-ROM-0128,Piazza Ungheria,Parioli,blu,2,piazza ZTL bassa velocità alto flusso
 SS-ROM-0129,Piazza Euclide,Parioli,blu,2,piazza ZTL bassa velocità,no,0,no,1,II,
 SS-ROM-0130,Via Antonelli,Parioli,giallo,3,senso unico residenziale,no,1,si,1,II,
 SS-ROM-0131,Via Mangili,Parioli,giallo,3,senso unico residenziale Parioli,no,1,si,1,II,
-SS-ROM-0132,Viale Bruno Buozzi,Parioli,giallo,3,segnalazione giallo - strada urbana tranquilla,no,4,no,2,II,2026-06-01
+SS-ROM-0132,Viale Bruno Buozzi,Parioli,giallo,3,segnalazione giallo - strada urbana tranquilla,no,4,no,4,II,2026-06-01
 SS-ROM-0133,Via Lima,Trieste,giallo,3,strada urbana traffico contenuto,no,2,no,1,II,
 SS-ROM-0134,Via Reggio Calabria,Trieste,giallo,3,senso unico residenziale,no,1,si,1,II,
 SS-ROM-0135,Via Alessandria,Trieste,rosso,4,trafficata 2 corsie nessuna ciclabile,no,2,no,1,II,
 SS-ROM-0136,Viale Regina Margherita,Trieste,rosso,4,arteria trafficata 4 corsie nessuna ciclabile,no,4,no,1,II,
 SS-ROM-0137,Viale Jonio,Montesacro,verde,1,ciclabile presente - aggiornamento segnalazione,si,4,no,2,III,
-SS-ROM-0138,Via Nomentana (tratto con ciclabile),Montesacro,verde,1,ciclabile presente su tratto specifico,si,4,no,2,III,
+SS-ROM-0138,Via Nomentana (tratto con ciclabile),Montesacro,verde,1,ciclabile presente su tratto specifico,si,4,no,3,III,2026-06-16
 SS-ROM-0139,Via Nomentana (tratto senza ciclabile),Tufello/Val Melaina,rosso,4,arteria trafficata tratto senza ciclabile,no,4,no,1,III,
-SS-ROM-0140,Via Salaria (tratto Mun III),Fidene,rosso,4,arteria radiale trafficata nessuna ciclabile,no,4,no,2,III,
-SS-ROM-0141,Via dei Prati Fiscali,Tufello,verde,1,pista ciclabile presente,si,2,no,3,III,
+SS-ROM-0140,Via Salaria (tratto Mun III),Fidene,rosso,4,arteria radiale trafficata nessuna ciclabile,no,4,no,3,III,2026-06-16
+SS-ROM-0141,Via dei Prati Fiscali,Tufello,verde,1,pista ciclabile presente,si,2,no,4,III,2026-06-16
 SS-ROM-0142,Via Ugo Ojetti,Montesacro,rosso,4,2 corsie trafficata nessuna ciclabile,no,2,no,2,III,
 SS-ROM-0143,Via Val Melaina,Val Melaina,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,1,III,
 SS-ROM-0144,Via Capraia,Tufello,giallo,3,strada residenziale traffico contenuto,no,2,no,1,III,
@@ -167,7 +167,7 @@ SS-ROM-0165,Via Potenza,Tufello,giallo,3,senso unico residenziale,no,1,si,1,III,
 SS-ROM-0166,Via Reggio Emilia,Tufello,giallo,3,strada urbana traffico contenuto,no,2,no,1,III,
 SS-ROM-0167,Via Vibo Valentia,Tufello,giallo,3,senso unico residenziale,no,1,si,1,III,
 SS-ROM-0168,Via Lodi,Tufello,giallo,3,senso unico residenziale,no,1,si,1,III,
-SS-ROM-0169,Via Cremona,Tufello,giallo,3,senso unico residenziale,no,1,si,1,III,
+SS-ROM-0169,Via Cremona,Tufello,giallo,3,senso unico residenziale,no,1,si,2,III,2026-06-16
 SS-ROM-0170,Via Brescia,Tufello,giallo,3,senso unico residenziale,no,1,si,1,III,
 SS-ROM-0171,Via Mantova,Tufello,giallo,3,senso unico residenziale,no,1,si,1,III,
 SS-ROM-0172,Via dei Monti Tiburtini,Fidene,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,1,III,
@@ -177,7 +177,7 @@ SS-ROM-0175,Via Settebagni,Settebagni,giallo,3,strada periferica traffico limita
 SS-ROM-0176,Via di Casal Boccone,Val Melaina,giallo,3,strada periferica residenziale,no,2,no,1,III,
 SS-ROM-0177,Via Sacco Pastore,Tufello,rosso,4,trafficata 2 corsie nessuna ciclabile,no,2,no,1,III,
 SS-ROM-0178,Viale Adriatico,Montesacro,rosso,4,arteria trafficata 4 corsie nessuna ciclabile,no,4,no,2,III,
-SS-ROM-0179,Viale Tirreno,Montesacro,rosso,4,arteria trafficata 4 corsie nessuna ciclabile,no,4,no,2,III,
+SS-ROM-0179,Viale Tirreno,Montesacro,rosso,4,arteria trafficata 4 corsie nessuna ciclabile,no,4,no,4,III,2026-06-16
 SS-ROM-0180,Via Arlanda,Montesacro,giallo,3,strada residenziale tranquilla,no,2,no,1,III,
 SS-ROM-0181,Via Gargano,Montesacro,giallo,3,senso unico residenziale,no,1,si,1,III,
 SS-ROM-0182,Via del Casale di San Basilio,Val Melaina,giallo,3,strada periferica traffico limitato,no,2,no,1,III,
@@ -191,21 +191,21 @@ SS-ROM-0189,Lungotevere degli Inventori,Marconi,verde,1,ciclabile presente lungo
 SS-ROM-0190,Via Grimaldi,Marconi,nero,5,multicarreggiata pericolosissima,no,4,no,1,XI,
 SS-ROM-0191,Via Quirino Majorana,Marconi,nero,5,multicarreggiata con cavalcavia pericolosissimo,no,4,no,1,XI,
 SS-ROM-0192,Viale dei Quattro Venti,Monteverde,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,1,XII,
-SS-ROM-0193,Circonvallazione Gianicolense,Monteverde,rosso,4,arteria trafficata nessuna ciclabile doppia fila traffico veloce,no,4,no,2,XII,
+SS-ROM-0193,Circonvallazione Gianicolense,Monteverde,rosso,4,arteria trafficata nessuna ciclabile doppia fila traffico veloce,no,4,no,3,XII,2026-06-13
 SS-ROM-0194,Via Barrili,Monteverde Vecchio,giallo,3,strada residenziale tranquilla,no,2,no,1,XII,
 SS-ROM-0195,Via Carini,Monteverde Vecchio,giallo,3,strada residenziale tranquilla,no,1,si,1,XII,
 SS-ROM-0196,Via Poerio,Monteverde Vecchio,giallo,3,strada residenziale senso unico,no,1,si,1,XII,
 SS-ROM-0197,Via della Magliana,Magliana,verde,1,ciclabile presente,si,2,no,1,XI,
 SS-ROM-0198,Viale Egeo,EUR,verde,1,ciclabile presente EUR,si,4,no,1,IX,
 SS-ROM-0199,Via dell Oceano Indiano,EUR,verde,1,ciclabile presente EUR,si,2,no,1,IX,
-SS-ROM-0200,Via Nomentana (ciclabile confermata),Nomentano,verde,1,ciclabile confermata da Sentinella,si,4,no,2,II,
+SS-ROM-0200,Via Nomentana (ciclabile confermata),Nomentano,verde,1,ciclabile confermata da Sentinella,si,4,no,3,II,2026-06-16
 SS-ROM-0201,Corso d Italia (Porta Pia - P.za Fiume),Salario,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,1,II,
 SS-ROM-0202,Villa Borghese (percorsi interni),Flaminio,verde,1,percorsi ciclabili interni bike friendly confermati,si,0,no,2,II,
 SS-ROM-0203,Viale Regina Elena,Policlinico,rosso,4,rettilineo con tendenza al traffico veloce - segnalazione @metaiyo,no,4,no,1,II,
 SS-ROM-0204,Via Tiburtina (tratto San Lorenzo),San Lorenzo,giallo,3,strada stretta traffico lento - segnalazione @metaiyo,no,2,no,1,II,
 SS-ROM-0205,Circonvallazione Tiburtina,San Lorenzo/Verano,nero,5,accesso vietato alle bici multicarreggiata - segnalazione @metaiyo,no,4,no,1,II,
 SS-ROM-0206,Via di Santa Bibiana,Castro Pretorio,rosso,4,breve ma con traffico veloce - segnalazione @metaiyo,no,2,no,1,I,
-SS-ROM-0207,Via di Porta Maggiore,Esquilino,rosso,4,strada trafficata con molte auto in doppia fila - segnalazione @hyperpigno,no,2,no,1,I,
+SS-ROM-0207,Via di Porta Maggiore,Esquilino,rosso,4,strada trafficata con molte auto in doppia fila - segnalazione @hyperpigno,no,2,no,2,I,2026-06-08
 SS-ROM-0208,Via Prenestina (tratto Mun V),Prenestino,rosso,4,corsia ciclabile spesso invasa da auto parcheggiate - segnalazione @hyperpigno,si,4,no,1,V,
 SS-ROM-0209,Via Erasmo Gattamelata,Prenestino,giallo,3,senso unico senza ciclabile poco traffico fuori ore di punta - segnalazione @hyperpigno,no,1,si,1,V,
 SS-ROM-0210,Ciclabile della Piramide Cestia,Ostiense/Testaccio,verde,1,ciclabile confermata - segnalazione @Sim1_71,si,0,no,1,I,
@@ -219,16 +219,16 @@ SS-ROM-0217,Via di Centocelle,Quadraro,rosso,4,strada larga invoglia alla guida 
 SS-ROM-0218,Via di Porta Furba,Tuscolano,rosso,4,strada stretta doppio senso no marciapiedi no piste invoglia alla velocita - segnalazione @metaiyo,no,2,no,1,VII,
 SS-ROM-0219,Via di Tor Carbone,Quarto Miglio/Vigna Murata,rosso,4,no marciapiede no pista no lampioni invoglia alla guida veloce - segnalazione @metaiyo,no,2,no,1,VIII,
 SS-ROM-0220,Via di Grotta Perfetta,Ardeatino,rosso,4,ciclabile che scompare nel traffico incrocio con Erminio Spalla pericoloso - segnalazione @mascarponsca,si,2,no,1,VIII,
-SS-ROM-0221,Via della Moletta,Ostiense,giallo,3,traffico locale scarso - segnalazione @Sim1_71,no,2,no,1,VIII,
+SS-ROM-0221,Via della Moletta,Ostiense,giallo,3,traffico locale scarso - segnalazione @Sim1_71,no,2,no,2,VIII,2026-06-16
 SS-ROM-0222,Piazza Attilio Pecile,Ostiense,verde,1,traffico locale piazza adibita a parcheggio - segnalazione @Sim1_71,no,0,no,1,VIII,
 SS-ROM-0223,Via Ciriaco d'Ancona,Ostiense,verde,1,strada locale traffico quasi nullo - segnalazione @Sim1_71,no,1,no,1,VIII,
 SS-ROM-0224,Via Girolamo Benzoni,Ostiense,giallo,3,traffico locale - segnalazione @Sim1_71,no,1,no,1,VIII,
 SS-ROM-0225,Via Gaetano Casati,Ostiense,verde,1,strada privata senza uscita traffico locale - segnalazione @Sim1_71,no,1,no,1,VIII,
-SS-ROM-0226,Via Prospero Alpino,Ostiense,giallo,3,traffico locale - segnalazione @Sim1_71,no,2,no,1,VIII,
+SS-ROM-0226,Via Prospero Alpino,Ostiense,verde,1,ciclabile presente - segnalazione @Sim-1,no,2,no,2,VIII,2026-06-16
 SS-ROM-0227,Circonvallazione Ostiense,Ostiense,rosso,4,traffico intenso molte intersezioni - segnalazione @Sim1_71,no,4,no,1,VIII,
-SS-ROM-0228,Via di Santa Galla,Ostiense,giallo,3,traffico locale - segnalazione @Sim1_71,no,2,no,1,VIII,
-SS-ROM-0229,Piazza Giovanni da Verrazzano,Ostiense,giallo,3,traffico locale - segnalazione @Sim1_71,no,0,no,1,VIII,
-SS-ROM-0230,Via Capitan Bavastro,Ostiense,giallo,3,traffico locale - segnalazione @Sim1_71,no,2,no,1,VIII,
+SS-ROM-0228,Via di Santa Galla,Ostiense,giallo,3,traffico locale - segnalazione @Sim1_71,no,2,no,2,VIII,2026-06-16
+SS-ROM-0229,Piazza Giovanni da Verrazzano,Ostiense,giallo,3,traffico locale - segnalazione @Sim1_71,no,0,no,2,VIII,2026-06-16
+SS-ROM-0230,Via Capitan Bavastro,Ostiense,giallo,3,traffico locale - segnalazione @Sim1_71,no,2,no,2,VIII,2026-06-16
 SS-ROM-0231,Via Cristoforo Colombo (lato centro ciclabile),Ostiense,verde,1,ciclabile su marciapiede lato direzione centro - segnalazione @Sim1_71,si,0,si,1,I,
 SS-ROM-0232,Via Cristoforo Colombo (lato EUR),Ostiense,nero,5,traffico intenso e veloce lato direzione EUR - segnalazione @Sim1_71,no,4,si,1,I,
 SS-ROM-0233,Piazzale Numa Pompilio,Celio,nero,5,molte corsie flussi veicolari intensi che si intersecano - segnalazione @Sim1_71,no,4,no,1,I,
@@ -260,7 +260,7 @@ SS-ROM-0258,Via Portuense (tratto Portuense),Portuense,rosso,4,strada larga traf
 SS-ROM-0259,Via Portuense (tratto Trullo),Trullo,nero,5,trappola mortale separa Trullo da Portuense - segnalazione @metaiyo,no,4,no,1,XII,
 SS-ROM-0260,Corso di Francia,Parioli,nero,5,trappola mortale - segnalazione @metaiyo,no,6,no,1,II,
 SS-ROM-0261,Viale del Muro Torto,Pinciano,nero,5,trappola mortale,no,4,no,2,II,
-SS-ROM-0262,Piazzale delle Provincie,Nomentano,rosso,4,piazza trafficata caotica - segnalazione @metaiyo,no,0,no,1,II,
+SS-ROM-0262,Piazzale delle Provincie,Nomentano,rosso,4,piazza trafficata caotica - segnalazione @metaiyo,no,0,no,2,II,2026-06-16
 SS-ROM-0263,Piazzale Aldo Moro,Nomentano,rosso,4,arteria trafficata nessuna ciclabile - segnalazione Nikolai Fissenko,no,4,no,1,II,
 SS-ROM-0264,Via di San Gregorio (tratto Circo Massimo-Via Labicana),Aventino,rosso,4,ciclabile assente traffico intenso e veloce - segnalazione @Sim1_71,no,4,no,1,I,
 SS-ROM-0265,Via di San Gregorio (lato Fori ciclabile),Aventino,verde,1,ciclabile presente su marciapiede - segnalazione @Sim1_71,si,0,no,1,I,
@@ -268,7 +268,7 @@ SS-ROM-0266,Piazza di Porta Capena,Aventino,rosso,4,ciclabile cancellata molti f
 SS-ROM-0267,Viale della Piramide Cestia,Ostiense,verde,1,pista ciclabile presente - segnalazione @Sim1_71,si,0,no,1,I,
 SS-ROM-0268,Piazza di Porta San Paolo,Ostiense,nero,5,molti flussi veicolari intersecanti anche se presente ciclabile - segnalazione @Sim1_71,si,0,no,1,I,
 SS-ROM-0269,Via Ostiense (tratto Porto Fluviale-Piazzale Ostiense),Ostiense,rosso,4,traffico intenso nessuna ciclabile - segnalazione @Sim1_71,no,4,no,1,VIII,
-SS-ROM-0270,Via Pellegrino Matteucci,Ostiense,giallo,3,strada urbana traffico contenuto - segnalazione @Sim1_71,no,2,no,1,VIII,
+SS-ROM-0270,Via Pellegrino Matteucci,Ostiense,giallo,3,strada urbana traffico contenuto - segnalazione @Sim1_71,no,2,no,2,VIII,2026-06-16
 SS-ROM-0271,Via dei Latini,Nomentano,giallo,3,strada urbana traffico contenuto - segnalazione Nikolai.fissenko,no,2,no,1,II,
 SS-ROM-0272,Via dei Marsi,Nomentano,giallo,3,strada urbana traffico contenuto - segnalazione Nikolai.fissenko,no,2,no,1,II,
 SS-ROM-0273,Via Giovanni Battista Tiepolo,Flaminio,giallo,3,traffico locale - segnalazione @Sim1_71,no,2,no,1,II,
@@ -301,7 +301,7 @@ SS-ROM-0299,Piazzale Labicano,Tuscolano,rosso,4,svincolo trafficato esperienza n
 SS-ROM-0300,Viale Carlo Felice,San Giovanni,giallo,3,poco traffico - segnalazione @nomad_valentine,no,2,no,1,I,
 SS-ROM-0301,Via del Mandrione (tratto giallo),Tuscolano,giallo,3,poche macchine in alcuni tratti assenti - segnalazione @nomad_valentine,no,1,no,1,VII,
 SS-ROM-0302,Piazza Ippolito Nievo,Monteverde,verde,1,area verde bike friendly - segnalazione @luca.tentorio,si,0,no,1,XII,
-SS-ROM-0303,Circonvallazione Casilina,Prenestino,rosso,4,stretta causa lavori macchine veloci - segnalazione @nomad_valentine,no,4,no,1,V,
+SS-ROM-0303,Circonvallazione Casilina,Prenestino,nero,5,corsia unica sorpassi azzardati - segnalazione @_light_rider,no,4,no,2,V,2026-06-09
 SS-ROM-0304,Lungotevere di Pietra Papa,Marconi,verde,1,pista ciclabile presente,si,0,no,2,XI,
 SS-ROM-0305,Via Gabriello Chiabrera,Ostiense,rosso,4,arteria trafficata nessuna ciclabile - segnalazione @luca.tentorio,no,4,no,1,VIII,
 SS-ROM-0306,Via Silvio D Amico,Ostiense,giallo,3,traffico contenuto - segnalazione @luca.tentorio,no,2,no,1,VIII,
@@ -360,7 +360,7 @@ SS-ROM-0358,Via Galvani,Testaccio,rosso,4,arteria trafficata nessuna ciclabile,n
 SS-ROM-0359,Via Beniamino Franklin,Testaccio,verde,1,traffico locale scarso,no,1,no,1,I,
 SS-ROM-0360,Lungotevere Testaccio,Testaccio,verde,1,pista ciclabile presente,si,0,no,1,I,
 SS-ROM-0361,Via Nicola Zabaglia,Testaccio,giallo,3,ciclabile inagibile traffico contenuto,no,2,no,1,I,
-SS-ROM-0362,Piazza di Santa Maria Liberatrice,Testaccio,giallo,3,traffico locale contenuto,no,2,no,1,I,
+SS-ROM-0362,Piazza di Santa Maria Liberatrice,Testaccio,giallo,3,traffico locale contenuto,no,2,no,2,I,2026-06-06
 SS-ROM-0363,Piazza Testaccio,Testaccio,blu,2,area pedonale,no,0,no,1,I,
 SS-ROM-0364,Lungotevere Vittorio Gassman,Marconi,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,1,XI,
 SS-ROM-0365,Via Giuseppe Veronese,Marconi,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,1,XI,
@@ -369,33 +369,79 @@ SS-ROM-0367,Via Giuseppe Parini,Monteverde,rosso,4,arteria trafficata nessuna ci
 SS-ROM-0368,Lungotevere degli Anguillara,Trastevere,nero,5,multicarreggiata pericolosissima,no,4,no,1,I,
 SS-ROM-0369,Via Giovanni Lanza,Esquilino,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,1,I,
 SS-ROM-0370,Via Luigi Luzzatti,Esquilino,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,1,I,
-SS-ROM-0371,Via di Porta Maggiore,Esquilino,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,1,I,
+SS-ROM-0371,Via di Porta Maggiore,Esquilino,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,2,I,2026-06-08
 SS-ROM-0372,Piazza Vittorio Emanuele II,Esquilino,rosso,4,piazza trafficata caotica,no,0,no,1,I,
 SS-ROM-0373,Piazza Sidney Sonnino,Trastevere,rosso,4,piazza trafficata nessuna ciclabile,no,0,no,1,I,
 SS-ROM-0374,Via del Foro Italico,Parioli,nero,5,multicarreggiata ad alta velocita pericolosissima,no,6,no,1,II,
-SS-ROM-0375,Viale della Moschea,Parioli,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,1,II,
+SS-ROM-0375,Viale della Moschea,Parioli,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,2,II,2026-06-16
 SS-ROM-0376,Via Guidubaldo del Monte,Pinciano,verde,1,traffico locale scarso,no,1,no,1,II,
 SS-ROM-0377,Via Luigi Settembrini,Della Vittoria,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,1,II,
-SS-ROM-0378,Viale Angelico,Prati,verde,1,pista ciclabile presente,si,0,no,2,I,2026-06-01
+SS-ROM-0378,Viale Angelico,Prati,verde,1,pista ciclabile presente,si,0,no,3,I,2026-06-01
 SS-ROM-0379,Circonvallazione Cornelia,Aurelio,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,1,XIII,
-SS-ROM-0380,Via di Boccea (tratto nero),Aurelio,nero,5,multicarreggiata pericolosissima,no,4,no,1,XIII,
+SS-ROM-0380,Via di Boccea (tratto nero),Aurelio,nero,5,multicarreggiata pericolosissima,no,4,no,2,XIII,2026-06-13
 SS-ROM-0381,Via Mattia Battistini,Aurelio,verde,1,pista ciclabile presente,si,0,no,1,XIII,
 SS-ROM-0382,Via Ennio Bonifazi,Aurelio,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,1,XIII,
-SS-ROM-0383,Via di Boccea (tratto rosso),Aurelio,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,1,XIII,
+SS-ROM-0383,Via di Boccea (tratto rosso),Aurelio,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,2,XIII,2026-06-13
 SS-ROM-0384,Via Gelasio Secondo,Aurelio,giallo,3,traffico contenuto,no,2,no,1,XIII,
 SS-ROM-0385,Lungotevere dei Sangallo,Prati,nero,5,multicarreggiata pericolosissima,no,4,no,1,I,
 SS-ROM-0386,Lungotevere Gianicolense,Trastevere,nero,5,multicarreggiata pericolosissima,no,4,no,1,I,
 SS-ROM-0387,Via Ennio Quirino Visconti,Prati,giallo,3,senso unico traffico contenuto,no,1,si,1,I,
 SS-ROM-0388,Piazza Adriana,Prati,rosso,4,piazza trafficata caotica,no,0,no,1,I,
-SS-ROM-0389,Via Nomentana (tratto Trieste),Trieste,verde,1,ciclabile presente,si,4,no,1,II,
+SS-ROM-0389,Via Nomentana (tratto Trieste),Trieste,verde,1,ciclabile presente,si,4,no,2,II,2026-06-16
 SS-ROM-0390,Viale Ventuno Aprile,Nomentano,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,1,II,
-SS-ROM-0391,Viale delle Provincie,Nomentano,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,1,II,
-SS-ROM-0392,Via Catania,Nomentano,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,1,II,
-SS-ROM-0393,Viale Ippocrate,Nomentano,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,1,II,
+SS-ROM-0391,Viale delle Provincie,Nomentano,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,3,II,2026-06-16
+SS-ROM-0392,Via Catania,Nomentano,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,2,II,2026-06-16
+SS-ROM-0393,Viale Ippocrate,Nomentano,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,2,II,2026-06-16
 SS-ROM-0394,Via della Renella,Trastevere,giallo,3,strada urbana tranquilla senza ciclabile,no,2,no,1,I,2026-06-02
-SS-ROM-0395,Piazza Santiago del Cile,Parioli,rosso,4,segnalazioni contrastanti verde/rosso,no,2,no,2,II,2026-06-01
+SS-ROM-0395,Piazza Santiago del Cile,Parioli,rosso,4,segnalazioni contrastanti verde/rosso,no,2,no,3,II,2026-06-01
 SS-ROM-0396,Via Sabotino,Prati,verde,1,pista ciclabile presente,si,2,no,1,I,2026-06-01
 SS-ROM-0397,Via Podgora,Prati,rosso,4,arteria trafficata nessuna ciclabile,no,2,no,1,I,2026-06-01
 SS-ROM-0398,Via Luisa di Savoia,Flaminio,rosso,4,arteria trafficata nessuna ciclabile,no,2,no,1,II,2026-06-01
-SS-ROM-0399,Piazza del Popolo,Centro Storico,blu,2,ZTL pedonale,no,0,no,1,I,2026-06-01
+SS-ROM-0399,Piazza del Popolo,Centro Storico,blu,2,ZTL pedonale,no,0,no,2,I,2026-06-01
 SS-ROM-0400,Via Ludovisi,Ludovisi,giallo,3,strada urbana tranquilla senza ciclabile,no,2,no,1,I,2026-06-02
+SS-ROM-0401,Via Cicerone,Prati,giallo,3,segnalazioni miste giallo/verde - strada urbana,no,2,no,3,I,2026-06-16
+SS-ROM-0402,Piazza Cavour,Prati,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,1,I,2026-06-16
+SS-ROM-0403,Via Vittoria Colonna,Prati,rosso,4,arteria trafficata nessuna ciclabile,no,2,no,1,I,2026-06-16
+SS-ROM-0404,Ponte Cavour,Centro Storico,rosso,4,ponte trafficato nessuna ciclabile,no,4,no,1,I,2026-06-16
+SS-ROM-0405,Piazza Augusto Imperatore,Centro Storico,giallo,3,piazza urbana traffico moderato,no,2,no,1,I,2026-06-16
+SS-ROM-0406,Via di Ripetta,Centro Storico,giallo,3,segnalazioni miste giallo/blu,no,2,no,2,I,2026-06-16
+SS-ROM-0407,Via Maria Cristina,Flaminio,rosso,4,arteria trafficata nessuna ciclabile,no,2,no,1,I,2026-06-16
+SS-ROM-0408,Via Domenico Alberto Azuni,Flaminio,giallo,3,strada urbana tranquilla senza ciclabile,no,2,no,1,II,2026-06-16
+SS-ROM-0409,Via Gaetano Filangieri,Flaminio,rosso,4,segnalazioni miste giallo/rosso - trafficata,no,2,no,2,II,2026-06-16
+SS-ROM-0410,Via Antonio Gramsci,Pinciano,giallo,3,strada urbana tranquilla senza ciclabile,no,2,no,1,II,2026-06-16
+SS-ROM-0411,Via di Villa San Filippo,Parioli,giallo,3,strada urbana tranquilla senza ciclabile,no,2,no,1,II,2026-06-16
+SS-ROM-0412,Via Eustachio Manfredi,Pinciano,giallo,3,strada urbana tranquilla senza ciclabile,no,2,no,1,II,2026-06-16
+SS-ROM-0413,Viale del Casale della Finanziera,Parioli,rosso,4,arteria trafficata nessuna ciclabile,no,2,no,1,II,2026-06-16
+SS-ROM-0414,Via Valle Vermiglio,Monte Sacro,giallo,3,strada urbana tranquilla senza ciclabile,no,2,no,1,III,2026-06-16
+SS-ROM-0415,Corso Sempione,Monte Sacro,rosso,4,arteria trafficata nessuna ciclabile,no,2,no,1,III,2026-06-16
+SS-ROM-0416,Via di Villa Ricotti,Nomentano,verde,1,pista ciclabile presente,si,2,no,1,II,2026-06-16
+SS-ROM-0417,Via Lorenzo il Magnifico,Nomentano,rosso,4,arteria trafficata nessuna ciclabile,no,2,no,1,II,2026-06-16
+SS-ROM-0418,Via Arduino,Nomentano,rosso,4,arteria trafficata nessuna ciclabile,no,2,no,1,II,2026-06-16
+SS-ROM-0419,Piazza dei Crociferi,Centro Storico,blu,2,ZTL pedonale,no,0,no,1,I,2026-06-16
+SS-ROM-0420,Via Martin Alonzo Pinzon,Ostiense,giallo,3,strada urbana tranquilla - segnalazione @Sim-1,no,2,no,1,VIII,2026-06-16
+SS-ROM-0421,Via Bartolomeo Diaz,Ostiense,giallo,3,strada urbana tranquilla - segnalazione @Sim-1,no,2,no,1,VIII,2026-06-16
+SS-ROM-0422,Via Fernando Colombo,Ostiense,blu,2,ZTL/pedonale - segnalazione @Sim-1,no,2,no,1,VIII,2026-06-16
+SS-ROM-0423,Via Ermenegildo Frediani,Ostiense,blu,2,ZTL/pedonale - segnalazione @Sim-1,no,2,no,1,VIII,2026-06-16
+SS-ROM-0424,Via Manfredo Camperio,Ostiense,giallo,3,strada urbana tranquilla - segnalazione @Sim-1,no,2,no,1,VIII,2026-06-16
+SS-ROM-0425,Via Francesco Antonio Pigafetta,Ostiense,verde,1,pista ciclabile presente - segnalazione @Sim-1,si,2,no,1,VIII,2026-06-16
+SS-ROM-0426,Piazzale 12 Ottobre 1492,Ostiense,giallo,3,strada urbana - segnalazione @Sim-1,no,4,no,1,VIII,2026-06-16
+SS-ROM-0427,Via Giacomo Bove,Ostiense,giallo,3,strada urbana tranquilla - segnalazione @Sim-1,no,2,no,1,VIII,2026-06-16
+SS-ROM-0428,Via Federico Nansen,Ostiense,blu,2,ZTL/pedonale - segnalazione @Sim-1,no,2,no,1,VIII,2026-06-16
+SS-ROM-0429,Via Vito Bering,Ostiense,blu,2,comprensorio - segnalazione @Sim-1,no,2,no,1,VIII,2026-06-16
+SS-ROM-0430,Via Francesco Negri,Ostiense,verde,1,strada locale senza uscita - segnalazione @Sim-1,si,2,no,1,VIII,2026-06-16
+SS-ROM-0431,Viale dei Bastioni di Michelangelo,Prati,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,1,I,2026-06-16
+SS-ROM-0432,Via Giovanni Vitelleschi,Borgo,rosso,4,arteria trafficata nessuna ciclabile,no,2,no,1,I,2026-06-16
+SS-ROM-0433,Via Plinio,Prati,giallo,3,strada urbana tranquilla senza ciclabile,no,2,no,1,I,2026-06-16
+SS-ROM-0434,Via Federico Cesi,Prati,giallo,3,strada urbana tranquilla senza ciclabile,no,2,no,1,I,2026-06-16
+SS-ROM-0435,Via Leone XIII,Aurelio,nero,5,multicarreggiata ad alta velocità,no,4,no,1,XII,2026-06-13
+SS-ROM-0436,Via del Casale di San Pio V,Aurelio,rosso,4,arteria trafficata nessuna ciclabile,no,2,no,1,XIII,2026-06-13
+SS-ROM-0437,Via Bartolo da Sassoferrato,Aurelio,rosso,4,arteria trafficata nessuna ciclabile,no,2,no,1,XIII,2026-06-13
+SS-ROM-0438,Via Principe Eugenio,Esquilino,rosso,4,carrefour dangereux - segnalazione Sophie,no,4,no,1,I,2026-06-12
+SS-ROM-0439,Piazza Armenia,Appio-Latino,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,1,VII,2026-06-12
+SS-ROM-0440,Via Cilicia,Appio-Latino,nero,5,multicarreggiata ad alta velocità,no,4,no,1,I,2026-06-12
+SS-ROM-0441,Via Guerrieri,Celio,giallo,3,strada urbana tranquilla senza ciclabile,no,2,no,1,I,2026-06-12
+SS-ROM-0442,Via Odoardo Beccari,Testaccio,rosso,4,spesso seconda fila con restringimento carreggiata,no,2,no,1,I,2026-06-12
+SS-ROM-0443,Via Ambrogio Contarini,Testaccio,giallo,3,strada urbana tranquilla senza ciclabile,no,2,no,1,I,2026-06-12
+SS-ROM-0444,Viale Marco Polo,Testaccio,rosso,4,larga ma spesso mezzi in seconda fila,no,4,no,1,I,2026-06-12
+SS-ROM-0445,Via Orazio Antinori,Testaccio,verde,1,pista ciclabile presente,si,2,no,1,I,2026-06-06
+SS-ROM-0446,Percorso Ciclopedonale Elettra Pollastrini,Aurelio,verde,1,percorso ciclopedonale dedicato,si,0,no,1,XIV,2026-06-02
