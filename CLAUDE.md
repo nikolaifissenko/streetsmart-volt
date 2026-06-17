@@ -21,8 +21,9 @@ Sviluppato da Nikolai.
 - **Schema colonne**: id, nome, quartiere, classificazione, score, note, ciclabile_presente, n_corsie, senso_unico, n_testimonianze, municipio, data_segnalazione
 - **ID formato**: SS-ROM-XXXX (ultimo usato: SS-ROM-0446)
 - **Hosting**: GitHub Pages — nikolaifissenko/streetsmart-volt
-- **Mappa live**: https://nikolaifissenko.github.io/streetsmart-volt/
-- **Form backend**: Formspree endpoint `xlgookeg`
+- **PWA live**: https://nikolaifissenko.github.io/streetsmart-volt/
+- **Form backend**: Formspree endpoint `xlgookeg` (sentinelle), `mrernnwd` (segnalazioni)
+- **PWA**: manifest.json + sw.js — installabile su home screen, caching offline
 
 ## File Master
 `data/master/streetsmart_roma_completo.csv` — source of truth.
@@ -37,8 +38,9 @@ Non modificare i CSV in data/municipio/ senza aggiornare il master.
 - Ultimo ID usato: SS-ROM-0446
 
 ## Community Sentinelle
-- Form iscrizione: nikolaifissenko.github.io/Streetsmart-Sentille/sentinelle_form.html
-- Form segnalazione: nikolaifissenko.github.io/Streetsmart-Sentille/segnalazione_form.html
+- Form iscrizione: https://nikolaifissenko.github.io/streetsmart-volt/#sentinelle
+- Form segnalazione: https://nikolaifissenko.github.io/streetsmart-volt/#segnala
+- Vecchi form standalone ancora in `web/sentinelle_form.html` e `web/segnalazione_form.html` (legacy)
 - Obiettivo: 100 Sentinelle, poi portare il database alle istituzioni
 
 ## Social
@@ -59,16 +61,22 @@ streetsmart/
 │       ├── municipio1_v1.csv
 │       ├── municipio1_v2.csv
 │       └── municipio1_v3.csv
+├── manifest.json                    # PWA manifest
+├── sw.js                            # service worker
 ├── web/
-│   ├── sentinelle_form.html
-│   └── segnalazione_form.html
+│   ├── sentinelle_form.html         # legacy (ora in index.html #sentinelle)
+│   └── segnalazione_form.html       # legacy (ora in index.html #segnala)
 ├── docs/
 │   └── pdf/                         # materiali presentazione
 └── scripts/                         # export GeoJSON, stats, API (futuro)
 ```
 
-## Mappa Web Interattiva
-- **File principale**: `index.html` (root) — mappa Leaflet.js con CartoDB Positron Light tiles
+## PWA Unificata
+- **File principale**: `index.html` (root) — PWA con 3 view: Mappa, Segnala, Sentinelle
+- **Navigazione**: bottom nav bar con 3 tab, deep linking via hash (#mappa, #segnala, #sentinelle)
+- **manifest.json**: configurazione PWA (installabile su home screen)
+- **sw.js**: service worker network-first con caching offline
+- **Mappa**: Leaflet.js con CartoDB Positron Light tiles
 - **GeoJSON**: `streetsmart_roma.geojson` (root) — generato da `scripts/build.py`
 - **Brand**: palette travertino (#EDE8DF background), font EB Garamond + Inter
 - **Colori mappa**: nero=#1a1a1a, rosso=#e53935, giallo=#e6940a, blu=#1976D2, verde=#27AE60

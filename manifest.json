@@ -1,0 +1,36 @@
+{
+  "name": "StreetSmart Roma",
+  "short_name": "StreetSmart",
+  "description": "Database pericolosità ciclistica delle strade di Roma",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#EDE8DF",
+  "theme_color": "#F7F2EA",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
