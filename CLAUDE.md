@@ -87,7 +87,7 @@ streetsmart/
 - **Cache geocode**: `data/master/.geocode_cache.json` (chiavi `v3|nome_clean`)
 - **Build**: `python scripts/build.py` — batch Overpass + Nominatim fallback → GeoJSON
 - **Filtri mappa**: 5 classi (nero, rosso, giallo, blu, verde); verde-giallo e verde-blu mappati a verde
-- **Mobile**: pannello bottom-sheet con filtri chip + legenda compatta (≤700px)
+- **Mobile**: pannello bottom-sheet con tab Filtri (chip + legenda) e Strade (lista scrollabile con zoom-to-street) (≤700px)
 - **PWA**: installabile, offline-first (cache HTML, GeoJSON, Leaflet, font)
 
 ## Workflow Aggiunta Strade
