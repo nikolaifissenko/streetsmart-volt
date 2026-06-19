@@ -17,7 +17,7 @@ Sviluppato da Nikolai.
 ## Stack Tecnico
 - **Database**: CSV → GeoJSON
 - **Schema colonne**: id, nome, quartiere, classificazione, score, note, ciclabile_presente, n_corsie, senso_unico, n_testimonianze, municipio, data_segnalazione
-- **ID formato**: SS-ROM-XXXX (ultimo usato: SS-ROM-0446)
+- **ID formato**: SS-ROM-XXXX (ultimo usato: SS-ROM-0574)
 - **Hosting**: GitHub Pages — nikolaifissenko/streetsmart-volt
 - **PWA live**: https://nikolaifissenko.github.io/streetsmart-volt/
 - **Form backend**: Formspree endpoint `xlgookeg` (sentinelle), `mrernnwd` (segnalazioni)
@@ -26,8 +26,8 @@ Sviluppato da Nikolai.
 `data/master/streetsmart_roma_completo.csv` — source of truth.
 
 ## Stato Database
-- **446 strade** classificate totali
-- Ultimo ID usato: SS-ROM-0446
+- **574 strade** classificate totali
+- Ultimo ID usato: SS-ROM-0574
 
 ## PWA
 - **File principale**: `index.html` (root) — PWA con 3 tab: Mappa, Segnala, Sentinelle
@@ -46,6 +46,6 @@ Sviluppato da Nikolai.
 
 ## Workflow Aggiunta Strade
 1. Aggiungere righe a `data/master/streetsmart_roma_completo.csv`
-2. Incrementare ID da SS-ROM-0446
+2. Incrementare ID da SS-ROM-0574
 3. Eseguire `python scripts/build.py` per rigenerare il GeoJSON
 4. Committare e pushare su main per deploy GitHub Pages
