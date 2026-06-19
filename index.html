@@ -707,8 +707,9 @@ function initSegnalaMap(data) {
   }).addTo(segnalaMap);
 
   let segnalaHighlight = null;
+  let segnalaMarker = null;
 
-  function onStreetClick(f) {
+  function onStreetClick(f, latlng) {
     const p = f.properties;
     document.getElementById('segnala-strada').value = p.nome || '';
     document.getElementById('segnala-quartiere').value = p.quartiere || '';
@@ -729,6 +730,14 @@ function initSegnalaMap(data) {
       pointToLayer: (feat, ll) => L.circleMarker(ll, { radius: 12, color: '#C0392B', weight: 3, fillOpacity: 0.3 })
     }).addTo(segnalaMap);
 
+    if (segnalaMarker) segnalaMap.removeLayer(segnalaMarker);
+    if (latlng) {
+      segnalaMarker = L.circleMarker(latlng, {
+        radius: 10, color: '#C0392B', weight: 3,
+        fillColor: '#C0392B', fillOpacity: 0.6,
+      }).addTo(segnalaMap);
+    }
+
     document.querySelector('.segnala-form-wrap').scrollTop = 0;
   }
 
@@ -736,7 +745,7 @@ function initSegnalaMap(data) {
     const c = COLORS[f.properties.classificazione] || COLORS['giallo'];
     L.geoJSON(f, {
       style: { color: c.stroke, weight: 10, opacity: 0.7 },
-      onEachFeature: (feat, layer) => { layer.on('click', () => onStreetClick(f)); }
+      onEachFeature: (feat, layer) => { layer.on('click', (e) => onStreetClick(f, e.latlng)); }
     }).addTo(segnalaMap);
   });
 
@@ -746,7 +755,7 @@ function initSegnalaMap(data) {
     L.circleMarker([lat, lng], {
       radius: 10, color: c.stroke, weight: 3, opacity: 0.7,
       fillColor: c.fill, fillOpacity: 0.3,
-    }).on('click', () => onStreetClick(f)).addTo(segnalaMap);
+    }).on('click', (e) => onStreetClick(f, e.latlng)).addTo(segnalaMap);
   });
 
   if (data.allCoords.length) segnalaMap.fitBounds(data.allCoords, { padding: [20,20] });
