@@ -440,6 +440,8 @@
         <h2>Segnalazione inviata.</h2>
         <p>Grazie — la verificheremo e la aggiungeremo al database con il tuo nome.</p>
         <span class="success-handle" style="color:#C0392B;">@streetsmart.nav</span>
+        <br><br>
+        <button class="btn-submit" onclick="resetSegnala()" style="background:#2E2820;">Segnala un'altra strada</button>
       </div>
     </div>
   </div>
@@ -833,6 +835,18 @@ document.querySelectorAll('.colore-btn').forEach(btn => {
     document.getElementById('color-error').style.display = 'none';
   });
 });
+
+function resetSegnala() {
+  const form = document.getElementById('form-segnala');
+  form.reset();
+  form.style.display = '';
+  document.getElementById('success-segnala').style.display = 'none';
+  document.getElementById('submit-segnala').disabled = false;
+  document.getElementById('submit-segnala').innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l2.5 2.5L16 9"/></svg> Invia segnalazione';
+  document.querySelectorAll('.colore-btn').forEach(b => b.classList.remove('selected'));
+  selectedColor = null;
+  document.getElementById('segnala-selected-bar').innerHTML = '<em>Tocca sulla mappa per selezionare una strada</em>';
+}
 
 document.getElementById('form-segnala').addEventListener('submit', async function(e) {
   e.preventDefault();
