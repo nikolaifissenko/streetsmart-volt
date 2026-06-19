@@ -223931,5 +223931,215 @@
   "v3|Piazza Lodi": null,
   "v3|Via La Spezia": null,
   "v3|Via Terni": null,
-  "v3|Via Voghera": null
+  "v3|Via Voghera": null,
+  "Via San Francesco a Ripa": {
+    "type": "Point",
+    "coordinates": [
+      12.4717104,
+      41.8873372
+    ]
+  },
+  "Via Lario": {
+    "type": "Point",
+    "coordinates": [
+      12.4643417,
+      42.0424477
+    ]
+  },
+  "Via Castel Giubileo": {
+    "type": "Point",
+    "coordinates": [
+      12.5126991,
+      41.9822752
+    ]
+  },
+  "Via Sacco Pastore": {
+    "type": "Point",
+    "coordinates": [
+      12.5272652,
+      41.9317999
+    ]
+  },
+  "Viale Marconi": {
+    "type": "Point",
+    "coordinates": [
+      12.4696372,
+      41.8626303
+    ]
+  },
+  "Via Grimaldi": {
+    "type": "Point",
+    "coordinates": [
+      12.4672182,
+      41.8648544
+    ]
+  },
+  "Via Barrili": {
+    "type": "Point",
+    "coordinates": [
+      12.4605325,
+      41.8774799
+    ]
+  },
+  "Via Poerio": {
+    "type": "Point",
+    "coordinates": [
+      12.4631336,
+      41.8792875
+    ]
+  },
+  "Via dell Esquilino": {
+    "type": "Point",
+    "coordinates": [
+      12.4979775,
+      41.8984225
+    ]
+  },
+  "Via Val D Ala": {
+    "type": "Point",
+    "coordinates": [
+      12.5197362,
+      41.941709
+    ]
+  },
+  "Piazza Conca d Oro": {
+    "type": "Point",
+    "coordinates": [
+      12.5285657,
+      41.9399543
+    ]
+  },
+  "Via Biberatica": {
+    "type": "Point",
+    "coordinates": [
+      12.4861083,
+      41.8961332
+    ]
+  },
+  "Via Baccina": {
+    "type": "Point",
+    "coordinates": [
+      12.4884161,
+      41.8944636
+    ]
+  },
+  "Corso del Rinascimento": {
+    "type": "Point",
+    "coordinates": [
+      12.4738319,
+      41.9001502
+    ]
+  },
+  "Via Giustiniani": {
+    "type": "Point",
+    "coordinates": [
+      12.4758123,
+      41.8994644
+    ]
+  },
+  "Piazza di Sant'Eustachio": {
+    "type": "Point",
+    "coordinates": [
+      12.475402,
+      41.8983538
+    ]
+  },
+  "Via di Tor Millina": {
+    "type": "Point",
+    "coordinates": [
+      12.4713288,
+      41.8992209
+    ]
+  },
+  "Via della Corda": {
+    "type": "Point",
+    "coordinates": [
+      12.4719814,
+      41.8952133
+    ]
+  },
+  "Via degli Ausoni": {
+    "type": "Point",
+    "coordinates": [
+      12.5178014,
+      41.8974955
+    ]
+  },
+  "Via dei Ramni": {
+    "type": "Point",
+    "coordinates": [
+      12.5117858,
+      41.8996069
+    ]
+  },
+  "Via dei Taurini": {
+    "type": "Point",
+    "coordinates": [
+      12.5103911,
+      41.9000166
+    ]
+  },
+  "Via dei Marrucini": {
+    "type": "Point",
+    "coordinates": [
+      12.5143861,
+      41.8995057
+    ]
+  },
+  "Via Pavia": {
+    "type": "Point",
+    "coordinates": [
+      12.5167796,
+      41.9080981
+    ]
+  },
+  "Piazza Vittorio Emanuele Secondo": {
+    "type": "Point",
+    "coordinates": [
+      12.5043232,
+      41.8945791
+    ]
+  },
+  "Via Rodolfo Lanciani": {
+    "type": "Point",
+    "coordinates": [
+      12.5217953,
+      41.9209253
+    ]
+  },
+  "Via Giovanni Giolitti": {
+    "type": "Point",
+    "coordinates": [
+      12.5104157,
+      41.8945331
+    ]
+  },
+  "Piazza Lodi": {
+    "type": "Point",
+    "coordinates": [
+      12.5212764,
+      41.8872289
+    ]
+  },
+  "Via La Spezia": {
+    "type": "Point",
+    "coordinates": [
+      12.5161535,
+      41.8864626
+    ]
+  },
+  "Via Terni": {
+    "type": "Point",
+    "coordinates": [
+      12.5196326,
+      41.8851338
+    ]
+  },
+  "Via Voghera": {
+    "type": "Point",
+    "coordinates": [
+      12.5195411,
+      41.8860479
+    ]
+  }
 }
