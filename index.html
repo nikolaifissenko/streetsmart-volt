@@ -218,7 +218,8 @@
     }
     .form-card textarea { resize: none; height: 84px; }
 
-    .colori { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 4px; }
+    .colori { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+    .colore-btn { min-width: 70px; flex: 1; }
     .colore-btn {
       border: 2px solid transparent; border-radius: 14px; padding: 14px 6px 10px;
       cursor: pointer; font-size: 9px; font-weight: 700; letter-spacing: 0.08em;
@@ -720,8 +721,27 @@ function initSegnalaMap() {
     }).addTo(segnalaMap);
 
     document.getElementById('segnala-selected-bar').innerHTML =
-      '<strong>Posizione selezionata</strong> &middot; ' +
+      '<strong>Cercando indirizzo...</strong> &middot; ' +
       e.latlng.lat.toFixed(5) + ', ' + e.latlng.lng.toFixed(5);
+
+    fetch('https://nominatim.openstreetmap.org/reverse?lat=' + e.latlng.lat + '&lon=' + e.latlng.lng + '&format=json&zoom=17&addressdetails=1', {
+      headers: { 'Accept-Language': 'it' }
+    })
+      .then(r => r.json())
+      .then(data => {
+        const addr = data.address || {};
+        const road = addr.road || addr.pedestrian || addr.footway || addr.cycleway || '';
+        const suburb = addr.suburb || addr.neighbourhood || addr.quarter || addr.hamlet || '';
+        if (road) document.getElementById('segnala-strada').value = road;
+        if (suburb) document.getElementById('segnala-quartiere').value = suburb;
+        document.getElementById('segnala-selected-bar').innerHTML =
+          '<strong>' + (road || 'Posizione selezionata') + '</strong>' +
+          (suburb ? ' &middot; ' + suburb : '');
+      })
+      .catch(() => {
+        document.getElementById('segnala-selected-bar').innerHTML =
+          '<strong>Posizione selezionata</strong> &middot; compila i campi manualmente';
+      });
   });
 
   if (navigator.geolocation) {
