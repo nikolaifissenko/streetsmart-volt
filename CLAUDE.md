@@ -21,6 +21,7 @@ Sviluppato da Nikolai.
 - **Hosting**: GitHub Pages — nikolaifissenko/streetsmart-volt
 - **PWA live**: https://nikolaifissenko.github.io/streetsmart-volt/
 - **Form backend**: Formspree endpoint `xlgookeg` (sentinelle), `mrernnwd` (segnalazioni)
+- **404.html**: redirect automatico alla PWA (fix per link da Instagram)
 
 ## File Master
 `data/master/streetsmart_roma_completo.csv` — source of truth.
@@ -32,10 +33,10 @@ Sviluppato da Nikolai.
 ## PWA
 - **File principale**: `index.html` (root) — PWA con 3 tab: Mappa, Segnala, Sentinelle
 - **Tab Mappa**: Leaflet.js con strade colorate per classificazione, filtri, sidebar con lista strade, popup con dettagli e bottone "Segnala questa strada"
-- **Tab Segnala**: mappa pulita (senza strade colorate), click per piazzare pin rosso, reverse geocoding Nominatim per auto-compilare strada/quartiere, form con 5 colori (nero, rosso, giallo, verde, blu)
+- **Tab Segnala**: mappa pulita (senza strade colorate), click per piazzare pin rosso, reverse geocoding Nominatim per auto-compilare strada/quartiere, form con 5 colori (nero, rosso, giallo, verde, blu). Dopo invio: bottone "Segnala un'altra strada" per reset immediato
 - **Tab Sentinelle**: form iscrizione comunità (obiettivo 100 sentinelle)
 - **Navigazione**: top tab nav, deep linking via hash (#mappa, #segnala, #sentinelle)
-- **PWA installabile**: manifest.json + sw.js (cache `streetsmart-v10`)
+- **PWA installabile**: manifest.json + sw.js (cache `streetsmart-v11`)
 - **Brand**: palette travertino (#EDE8DF), font EB Garamond + Inter
 - **Colori mappa**: nero=#1a1a1a, rosso=#e53935, giallo=#e6940a, blu=#1976D2, verde=#27AE60
 - **GeoJSON**: `streetsmart_roma.geojson` — generato da `scripts/build.py`
