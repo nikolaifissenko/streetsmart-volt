@@ -445,3 +445,131 @@ SS-ROM-0443,Via Ambrogio Contarini,Testaccio,giallo,3,strada urbana tranquilla s
 SS-ROM-0444,Viale Marco Polo,Testaccio,rosso,4,larga ma spesso mezzi in seconda fila,no,4,no,1,I,2026-06-12
 SS-ROM-0445,Via Orazio Antinori,Testaccio,verde,1,pista ciclabile presente,si,2,no,1,I,2026-06-06
 SS-ROM-0446,Percorso Ciclopedonale Elettra Pollastrini,Aurelio,verde,1,percorso ciclopedonale dedicato,si,0,no,1,XIV,2026-06-02
+SS-ROM-0447,Via Leone Tredicesimo,Municipio Roma XII,nero,5,"multicarreggiata ad alta velocità, pericolosissimo",no,2,no,1,XII,2026-06-13
+SS-ROM-0448,Via del Casale di San Pio Quinto,Municipio Roma XIII,rosso,4,strada trafficata senza ciclabile,no,2,no,1,XIII,2026-06-13
+SS-ROM-0449,Via di Boccea,Aurelio,rosso,4,strada trafficata senza ciclabile,no,2,no,1,XIII,2026-06-13
+SS-ROM-0450,Via Martin Alonzo Pinzòn,Municipio Roma VIII,giallo,3,strada urbana tranquilla senza ciclabile,no,2,no,1,VIII,2026-06-16
+SS-ROM-0451,Corso Vittorio Emanuele Secondo,Municipio Roma I,rosso,4,strada trafficata senza ciclabile,no,2,no,1,I,2026-06-16
+SS-ROM-0452,Via Tiburtina,Nomentano,verde,1,pista ciclabile presente,si,2,no,1,II,2026-06-16
+SS-ROM-0453,Via Nomentana,Nomentano,verde,1,pista ciclabile presente,si,2,no,1,II,2026-06-16
+SS-ROM-0454,Via Salaria,Parioli,nero,5,"multicarreggiata ad alta velocità, pericolosissimo",no,2,no,1,II,2026-06-16
+SS-ROM-0455,Piazzale Flaminio,Pinciano,rosso,4,strada trafficata senza ciclabile,no,2,no,1,II,2026-06-16
+SS-ROM-0456,Sottovia Ignazio Guidi,Salario,rosso,4,strada trafficata senza ciclabile,no,2,no,1,II,2026-06-17
+SS-ROM-0457,Viale del Policlinico,Nomentano,rosso,4,strada trafficata senza ciclabile,no,2,no,1,II,2026-06-17
+SS-ROM-0458,Viale Castro Pretorio,Municipio Roma I,verde,1,pista ciclabile presente,si,2,no,1,I,2026-06-17
+SS-ROM-0459,Viale Pretoriano,Municipio Roma I,verde,1,pista ciclabile presente,si,2,no,1,I,2026-06-17
+SS-ROM-0460,Via di Porta San Lorenzo,Municipio Roma I,verde,1,pista ciclabile presente,si,2,no,1,I,2026-06-17
+SS-ROM-0461,Via Marsala,Municipio Roma I,rosso,4,strada trafficata senza ciclabile,no,2,no,1,I,2026-06-17
+SS-ROM-0462,Viale Enrico De Nicola,Municipio Roma I,rosso,4,strada trafficata senza ciclabile,no,2,no,1,I,2026-06-17
+SS-ROM-0463,Viale Luigi Einaudi,Municipio Roma I,rosso,4,strada trafficata senza ciclabile,no,2,no,1,I,2026-06-17
+SS-ROM-0464,Piazza della Repubblica,Municipio Roma I,rosso,4,strada trafficata senza ciclabile,no,2,no,1,I,2026-06-17
+SS-ROM-0465,Via Napoli,Municipio Roma I,rosso,4,strada trafficata senza ciclabile,no,2,no,1,I,2026-06-17
+SS-ROM-0466,Largo Magnanapoli,Municipio Roma I,rosso,4,strada trafficata senza ciclabile,no,2,no,1,I,2026-06-17
+SS-ROM-0467,Via Biberatica,Municipio Roma I,rosso,4,strada trafficata senza ciclabile,no,2,no,1,I,2026-06-17
+SS-ROM-0468,Via Quattro Novembre,Municipio Roma I,rosso,4,strada trafficata senza ciclabile,no,2,no,1,I,2026-06-17
+SS-ROM-0469,Piazza di San Marco,Municipio Roma I,rosso,4,strada trafficata senza ciclabile,no,2,no,1,I,2026-06-17
+SS-ROM-0470,Largo di Torre Argentina,Municipio Roma I,rosso,4,strada trafficata senza ciclabile,no,2,no,1,I,2026-06-17
+SS-ROM-0471,Lungotevere in Augusta,Municipio Roma I,nero,5,"multicarreggiata ad alta velocità, pericolosissimo",no,2,no,1,I,2026-06-17
+SS-ROM-0472,Circonvallazione Salaria,Trieste,nero,5,"multicarreggiata ad alta velocità, pericolosissimo",no,2,no,1,II,2026-06-17
+SS-ROM-0473,Via Tripoli,Trieste,rosso,4,strada trafficata senza ciclabile,no,2,no,1,II,2026-06-17
+SS-ROM-0474,Piazza Bologna,Nomentano,rosso,4,strada trafficata senza ciclabile,no,2,no,1,II,2026-06-17
+SS-ROM-0475,Via Bari,Nomentano,rosso,4,strada trafficata senza ciclabile,no,2,no,1,II,2026-06-17
+SS-ROM-0476,Via della Lega Lombarda,Nomentano,rosso,4,strada trafficata senza ciclabile,no,2,no,1,II,2026-06-17
+SS-ROM-0477,Viale dell'Università,Nomentano,giallo,3,strada urbana tranquilla senza ciclabile,no,2,no,1,II,2026-06-17
+SS-ROM-0478,Ciclabile Roma Termini-Sapienza,Municipio Roma I,rosso,4,strada trafficata senza ciclabile,no,2,no,1,I,2026-06-17
+SS-ROM-0479,Via Celio Vibenna,Municipio Roma I,verde,1,pista ciclabile presente,si,2,no,1,I,2026-06-17
+SS-ROM-0480,Piazza del Colosseo,Municipio Roma I,verde,1,pista ciclabile presente,si,2,no,1,I,2026-06-17
+SS-ROM-0481,Via dei Cerchi,Municipio Roma I,rosso,4,strada trafficata senza ciclabile,no,2,no,1,I,2026-06-17
+SS-ROM-0482,Via del Circo Massimo,Municipio Roma I,rosso,4,strada trafficata senza ciclabile,no,2,no,1,I,2026-06-17
+SS-ROM-0483,Via dell'Ara Massima di Ercole,Municipio Roma I,rosso,4,strada trafficata senza ciclabile,no,2,no,1,I,2026-06-17
+SS-ROM-0484,Via della Greca,Municipio Roma I,rosso,4,strada trafficata senza ciclabile,no,2,no,1,I,2026-06-17
+SS-ROM-0485,Via Luigi Petroselli,Municipio Roma I,rosso,4,strada trafficata senza ciclabile,no,2,no,1,I,2026-06-17
+SS-ROM-0486,Piazza d'Aracoeli,Municipio Roma I,rosso,4,strada trafficata senza ciclabile,no,2,no,1,I,2026-06-17
+SS-ROM-0487,Via d'Aracoeli,Municipio Roma I,rosso,4,strada trafficata senza ciclabile,no,2,no,1,I,2026-06-17
+SS-ROM-0488,Via Nicola Salvi,Municipio Roma I,rosso,4,strada trafficata senza ciclabile,no,2,no,1,I,2026-06-17
+SS-ROM-0489,Via Vittorino da Feltre,Municipio Roma I,rosso,4,strada trafficata senza ciclabile,no,2,no,1,I,2026-06-17
+SS-ROM-0490,Via della Madonna dei Monti,Municipio Roma I,giallo,3,strada urbana tranquilla senza ciclabile,no,2,no,1,I,2026-06-17
+SS-ROM-0491,Via dei Capocci,Municipio Roma I,blu,2,ZTL / pedonale / alto flusso pedoni,no,2,no,1,I,2026-06-17
+SS-ROM-0492,Via dei Ciancaleoni,Municipio Roma I,blu,2,ZTL / pedonale / alto flusso pedoni,no,2,no,1,I,2026-06-17
+SS-ROM-0493,Via Tor de' Conti,Municipio Roma I,giallo,3,strada urbana tranquilla senza ciclabile,no,2,no,1,I,2026-06-17
+SS-ROM-0494,Via Baccina,Municipio Roma I,giallo,3,strada urbana tranquilla senza ciclabile,no,2,no,1,I,2026-06-17
+SS-ROM-0495,Corso del Rinascimento,Municipio Roma I,rosso,4,strada trafficata senza ciclabile,no,2,no,1,I,2026-06-17
+SS-ROM-0496,Via Giustiniani,Municipio Roma I,blu,2,ZTL / pedonale / alto flusso pedoni,no,2,no,1,I,2026-06-17
+SS-ROM-0497,Piazza di Sant'Eustachio,Municipio Roma I,blu,2,ZTL / pedonale / alto flusso pedoni,no,2,no,1,I,2026-06-17
+SS-ROM-0498,Via di Tor Millina,Municipio Roma I,blu,2,ZTL / pedonale / alto flusso pedoni,no,2,no,1,I,2026-06-17
+SS-ROM-0499,Via del Corallo,Municipio Roma I,blu,2,ZTL / pedonale / alto flusso pedoni,no,2,no,1,I,2026-06-17
+SS-ROM-0500,Via dei Coronari,Municipio Roma I,blu,2,ZTL / pedonale / alto flusso pedoni,no,2,no,1,I,2026-06-17
+SS-ROM-0501,Piazza dell'Orologio,Municipio Roma I,blu,2,ZTL / pedonale / alto flusso pedoni,no,2,no,1,I,2026-06-17
+SS-ROM-0502,Via del Pellegrino,Municipio Roma I,blu,2,ZTL / pedonale / alto flusso pedoni,no,2,no,1,I,2026-06-17
+SS-ROM-0503,Via di Montoro,Municipio Roma I,blu,2,ZTL / pedonale / alto flusso pedoni,no,2,no,1,I,2026-06-17
+SS-ROM-0504,Piazza di Monte Savello,Municipio Roma I,nero,5,"multicarreggiata ad alta velocità, pericolosissimo",no,2,no,1,I,2026-06-17
+SS-ROM-0505,Lungotevere dei Pierleoni,Municipio Roma I,nero,5,"multicarreggiata ad alta velocità, pericolosissimo",no,2,no,1,I,2026-06-17
+SS-ROM-0506,Via della Corda,Municipio Roma I,blu,2,ZTL / pedonale / alto flusso pedoni,no,2,no,1,I,2026-06-17
+SS-ROM-0507,Piazzale Enrico Dunant,Municipio Roma XII,rosso,4,strada trafficata senza ciclabile,no,2,no,1,XII,2026-06-17
+SS-ROM-0508,Via di Donna Olimpia,Municipio Roma XII,rosso,4,strada trafficata senza ciclabile,no,2,no,1,XII,2026-06-17
+SS-ROM-0509,Via Fonteiana,Municipio Roma XII,rosso,4,strada trafficata senza ciclabile,no,2,no,1,XII,2026-06-17
+SS-ROM-0510,Via Abate Ugone,Municipio Roma XII,rosso,4,strada trafficata senza ciclabile,no,2,no,1,XII,2026-06-17
+SS-ROM-0511,Clivo Rutario,Municipio Roma XII,rosso,4,strada trafficata senza ciclabile,no,2,no,1,XII,2026-06-17
+SS-ROM-0512,Vicolo delle Orsoline,Municipio Roma I,blu,2,ZTL / pedonale / alto flusso pedoni,no,2,no,1,I,2026-06-17
+SS-ROM-0513,Via Belsiana,Municipio Roma I,blu,2,ZTL / pedonale / alto flusso pedoni,no,2,no,1,I,2026-06-17
+SS-ROM-0514,Via di San Giacomo,Municipio Roma I,blu,2,ZTL / pedonale / alto flusso pedoni,no,2,no,1,I,2026-06-17
+SS-ROM-0515,Via di Gesù e Maria,Municipio Roma I,blu,2,ZTL / pedonale / alto flusso pedoni,no,2,no,1,I,2026-06-17
+SS-ROM-0516,Via Laurina,Municipio Roma I,blu,2,ZTL / pedonale / alto flusso pedoni,no,2,no,1,I,2026-06-17
+SS-ROM-0517,Via della Fontanella,Municipio Roma I,blu,2,ZTL / pedonale / alto flusso pedoni,no,2,no,1,I,2026-06-17
+SS-ROM-0518,Via Angelo Brunetti,Municipio Roma I,blu,2,ZTL / pedonale / alto flusso pedoni,no,2,no,1,I,2026-06-17
+SS-ROM-0519,Via del Vantaggio,Municipio Roma I,blu,2,ZTL / pedonale / alto flusso pedoni,no,2,no,1,I,2026-06-17
+SS-ROM-0520,Via del Tritone,Municipio Roma I,rosso,4,strada trafficata senza ciclabile,no,2,no,1,I,2026-06-17
+SS-ROM-0521,Via Poli,Municipio Roma I,blu,2,ZTL / pedonale / alto flusso pedoni,no,2,no,1,I,2026-06-17
+SS-ROM-0522,Via della Stamperia,Municipio Roma I,blu,2,ZTL / pedonale / alto flusso pedoni,no,2,no,1,I,2026-06-17
+SS-ROM-0523,Vicolo Scavolino,Municipio Roma I,blu,2,ZTL / pedonale / alto flusso pedoni,no,2,no,1,I,2026-06-17
+SS-ROM-0524,Via Bocca di Leone,Municipio Roma I,blu,2,ZTL / pedonale / alto flusso pedoni,no,2,no,1,I,2026-06-17
+SS-ROM-0525,Via Frattina,Municipio Roma I,blu,2,ZTL / pedonale / alto flusso pedoni,no,2,no,1,I,2026-06-17
+SS-ROM-0526,Via della Vite,Municipio Roma I,blu,2,ZTL / pedonale / alto flusso pedoni,no,2,no,1,I,2026-06-17
+SS-ROM-0527,Piazza di San Silvestro,Municipio Roma I,blu,2,ZTL / pedonale / alto flusso pedoni,no,2,no,1,I,2026-06-17
+SS-ROM-0528,Via della Frezza,Municipio Roma I,blu,2,ZTL / pedonale / alto flusso pedoni,no,2,no,1,I,2026-06-17
+SS-ROM-0529,Via dei Condotti,Municipio Roma I,blu,2,ZTL / pedonale / alto flusso pedoni,no,2,no,1,I,2026-06-17
+SS-ROM-0530,Via dell'Umiltà,Municipio Roma I,blu,2,ZTL / pedonale / alto flusso pedoni,no,2,no,1,I,2026-06-17
+SS-ROM-0531,Via della Dataria,Municipio Roma I,blu,2,ZTL / pedonale / alto flusso pedoni,no,2,no,1,I,2026-06-17
+SS-ROM-0532,Via de' Lucchesi,Municipio Roma I,blu,2,ZTL / pedonale / alto flusso pedoni,no,2,no,1,I,2026-06-17
+SS-ROM-0533,Via del Quirinale,Municipio Roma I,rosso,4,strada trafficata senza ciclabile,no,2,no,1,I,2026-06-17
+SS-ROM-0534,Salita di Montecavallo,Municipio Roma I,giallo,3,strada urbana tranquilla senza ciclabile,no,2,no,1,I,2026-06-17
+SS-ROM-0535,Piazza dei Tribunali,Municipio Roma I,rosso,4,strada trafficata senza ciclabile,no,2,no,1,I,2026-06-17
+SS-ROM-0536,Via Triboniano,Municipio Roma I,rosso,4,strada trafficata senza ciclabile,no,2,no,1,I,2026-06-17
+SS-ROM-0537,Via Ulpiano,Municipio Roma I,rosso,4,strada trafficata senza ciclabile,no,2,no,1,I,2026-06-17
+SS-ROM-0538,Piazza pia,Municipio Roma I,blu,2,ZTL / pedonale / alto flusso pedoni,no,2,no,1,I,2026-06-17
+SS-ROM-0539,Corso Italia,Flaminio,rosso,4,strada trafficata senza ciclabile,no,2,no,1,I,2026-06-17
+SS-ROM-0540,Via di Porta Labicana,Municipio Roma II,giallo,3,strada urbana tranquilla senza ciclabile,no,2,no,1,II,2026-06-18
+SS-ROM-0541,Via degli Equi,Municipio Roma II,giallo,3,strada urbana tranquilla senza ciclabile,no,2,no,1,II,2026-06-18
+SS-ROM-0542,Via dei Lucani,Municipio Roma II,giallo,3,strada urbana tranquilla senza ciclabile,no,2,no,1,II,2026-06-18
+SS-ROM-0543,Via dei Campani,Municipio Roma II,giallo,3,strada urbana tranquilla senza ciclabile,no,2,no,1,II,2026-06-18
+SS-ROM-0544,Via dei Rutoli,Municipio Roma II,giallo,3,strada urbana tranquilla senza ciclabile,no,2,no,1,II,2026-06-18
+SS-ROM-0545,Via degli Aurunci,Municipio Roma II,blu,2,ZTL / pedonale / alto flusso pedoni,no,2,no,1,II,2026-06-18
+SS-ROM-0546,Largo degli Osci,Municipio Roma II,blu,2,ZTL / pedonale / alto flusso pedoni,no,2,no,1,II,2026-06-18
+SS-ROM-0547,Via dei Volsci,Municipio Roma II,giallo,3,strada urbana tranquilla senza ciclabile,no,2,no,1,II,2026-06-18
+SS-ROM-0548,Via degli Etruschi,Municipio Roma II,giallo,3,strada urbana tranquilla senza ciclabile,no,2,no,1,II,2026-06-18
+SS-ROM-0549,Via dei Sabelli,Municipio Roma II,giallo,3,strada urbana tranquilla senza ciclabile,no,2,no,1,II,2026-06-18
+SS-ROM-0550,Via dei Sardi,Municipio Roma II,giallo,3,strada urbana tranquilla senza ciclabile,no,2,no,1,II,2026-06-18
+SS-ROM-0551,Via degli Ausoni,Municipio Roma II,giallo,3,strada urbana tranquilla senza ciclabile,no,2,no,1,II,2026-06-18
+SS-ROM-0552,Via dei Corsi,Municipio Roma II,giallo,3,strada urbana tranquilla senza ciclabile,no,2,no,1,II,2026-06-18
+SS-ROM-0553,Via dei Ramni,Municipio Roma II,giallo,3,strada urbana tranquilla senza ciclabile,no,2,no,1,II,2026-06-18
+SS-ROM-0554,Via dei Taurini,Municipio Roma II,giallo,3,strada urbana tranquilla senza ciclabile,no,2,no,1,II,2026-06-18
+SS-ROM-0555,Via dei Marrucini,Municipio Roma II,rosso,4,strada trafficata senza ciclabile,no,2,no,1,II,2026-06-18
+SS-ROM-0556,Viale Piero Gobetti,Municipio Roma II,rosso,4,strada trafficata senza ciclabile,no,2,no,1,II,2026-06-18
+SS-ROM-0557,Via Pavia,Nomentano,giallo,3,strada urbana tranquilla senza ciclabile,no,2,no,1,II,2026-06-18
+SS-ROM-0558,Via Treviso,Nomentano,giallo,3,strada urbana tranquilla senza ciclabile,no,2,no,1,II,2026-06-18
+SS-ROM-0559,Piazza Vittorio Emanuele Secondo,Municipio Roma I,rosso,4,strada trafficata senza ciclabile,no,2,no,1,I,2026-06-18
+SS-ROM-0560,Via Urbano Rattazzi,Municipio Roma I,rosso,4,strada trafficata senza ciclabile,no,2,no,1,I,2026-06-18
+SS-ROM-0561,Via Rodolfo Lanciani,Nomentano,rosso,4,strada trafficata senza ciclabile,no,2,no,1,II,2026-06-19
+SS-ROM-0562,Via Nomentana Nuova,Municipio Roma III,rosso,4,strada trafficata senza ciclabile,no,2,no,1,III,2026-06-19
+SS-ROM-0563,Piazzale Jonio,Municipio Roma III,verde,1,pista ciclabile presente,si,2,no,1,III,2026-06-19
+SS-ROM-0564,Piazza Capri,Municipio Roma III,verde,1,pista ciclabile presente,si,2,no,1,III,2026-06-19
+SS-ROM-0565,Via Domenico Comparetti,Monte Sacro Alto,rosso,4,strada trafficata senza ciclabile,no,2,no,1,III,2026-06-19
+SS-ROM-0566,Via Giovanni Giolitti,Municipio Roma I,rosso,4,strada trafficata senza ciclabile,no,2,no,1,I,2026-06-19
+SS-ROM-0567,Piazza Lodi,Municipio Roma VII,rosso,4,strada trafficata senza ciclabile,no,2,no,1,VII,2026-06-19
+SS-ROM-0568,Via La Spezia,Municipio Roma VII,verde,1,pista ciclabile presente,si,2,no,1,VII,2026-06-19
+SS-ROM-0569,Via Terni,Municipio Roma VII,giallo,3,strada urbana tranquilla senza ciclabile,no,2,no,1,VII,2026-06-19
+SS-ROM-0570,Via Voghera,Municipio Roma VII,giallo,3,strada urbana tranquilla senza ciclabile,no,2,no,1,VII,2026-06-19
+SS-ROM-0571,Via Pistoia,Municipio Roma VII,giallo,3,strada urbana tranquilla senza ciclabile,no,2,no,1,VII,2026-06-19
+SS-ROM-0572,Via Volterra,Municipio Roma VII,giallo,3,strada urbana tranquilla senza ciclabile,no,2,no,1,VII,2026-06-19
+SS-ROM-0573,Viale Gabriele D'Annunzio,Municipio Roma I,giallo,3,strada urbana tranquilla senza ciclabile,no,2,no,1,I,2026-06-19
+SS-ROM-0574,Viale di Trastevere,Municipio Roma I,rosso,4,strada trafficata senza ciclabile,no,2,no,1,I,2026-06-19
