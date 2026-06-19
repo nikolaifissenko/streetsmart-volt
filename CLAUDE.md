@@ -26,7 +26,7 @@ Sviluppato da Nikolai.
 `data/master/streetsmart_roma_completo.csv` — source of truth.
 
 ## Stato Database
-- **574 strade** classificate totali
+- **574 strade** nel CSV, **549 con geometria LineString** sulla mappa
 - Ultimo ID usato: SS-ROM-0574
 
 ## PWA
@@ -35,11 +35,15 @@ Sviluppato da Nikolai.
 - **Tab Segnala**: mappa pulita (senza strade colorate), click per piazzare pin rosso, reverse geocoding Nominatim per auto-compilare strada/quartiere, form con 5 colori (nero, rosso, giallo, verde, blu)
 - **Tab Sentinelle**: form iscrizione comunità (obiettivo 100 sentinelle)
 - **Navigazione**: top tab nav, deep linking via hash (#mappa, #segnala, #sentinelle)
-- **PWA installabile**: manifest.json + sw.js (cache `streetsmart-v7`)
+- **PWA installabile**: manifest.json + sw.js (cache `streetsmart-v10`)
 - **Brand**: palette travertino (#EDE8DF), font EB Garamond + Inter
 - **Colori mappa**: nero=#1a1a1a, rosso=#e53935, giallo=#e6940a, blu=#1976D2, verde=#27AE60
 - **GeoJSON**: `streetsmart_roma.geojson` — generato da `scripts/build.py`
-- **Build**: `python scripts/build.py` — batch Overpass + Nominatim fallback → GeoJSON
+- **Build**: `python scripts/build.py` — batch Overpass → GeoJSON
+
+## Regole GeoJSON
+- **Solo LineString/MultiLineString** nel GeoJSON — niente Point, niente strade senza geometria
+- Se Overpass non trova la geometria, la strada non va nel GeoJSON
 
 ## Social
 - Instagram: @streetsmart.nav
@@ -48,4 +52,5 @@ Sviluppato da Nikolai.
 1. Aggiungere righe a `data/master/streetsmart_roma_completo.csv`
 2. Incrementare ID da SS-ROM-0574
 3. Eseguire `python scripts/build.py` per rigenerare il GeoJSON
-4. Committare e pushare su main per deploy GitHub Pages
+4. Rimuovere Point e strade senza geometria dal GeoJSON
+5. Committare e pushare su main per deploy GitHub Pages
