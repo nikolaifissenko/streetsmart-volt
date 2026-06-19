@@ -373,13 +373,13 @@
 <div class="view" id="view-segnala">
   <div id="segnala-map"></div>
   <div class="segnala-selected-bar" id="segnala-selected-bar">
-    <span style="font-size:11px;color:#A09080;">Tocca una strada sulla mappa per selezionarla, oppure compila manualmente</span>
+    <span style="font-size:11px;color:#A09080;">Tocca sulla mappa per piazzare un pin, poi compila il form sotto</span>
   </div>
   <div class="segnala-form-wrap">
     <div class="form-card">
       <div class="form-eyebrow red">Segnalazione</div>
       <div class="form-title">Segnala una strada</div>
-      <div class="form-sub">Clicca una strada sulla mappa sopra, oppure compila i campi a mano.</div>
+      <div class="form-sub">Piazza un pin sulla mappa sopra per indicare la posizione, poi compila i campi.</div>
 
       <form id="form-segnala" action="https://formspree.io/f/mrernnwd" method="POST">
         <input type="hidden" name="form_type" value="segnalazione">
@@ -522,9 +522,9 @@ function switchView(name) {
     setTimeout(() => mapInstance.invalidateSize(), 50);
   }
   if (name === 'segnala') {
-    if (!segnalaMapInited && cachedGeoData) {
+    if (!segnalaMapInited) {
       setTimeout(() => {
-        initSegnalaMap(cachedGeoData);
+        initSegnalaMap();
         setTimeout(() => segnalaMap && segnalaMap.invalidateSize(), 200);
       }, 100);
     } else if (segnalaMap) {
@@ -697,68 +697,32 @@ function geolocateUser() {
   }, () => alert('Impossibile ottenere la posizione'));
 }
 
-function initSegnalaMap(data) {
+function initSegnalaMap() {
   if (segnalaMapInited) return;
   segnalaMapInited = true;
 
-  segnalaMap = L.map('segnala-map', { center: [41.9028, 12.4964], zoom: 12, tap: false });
+  segnalaMap = L.map('segnala-map', { center: [41.9028, 12.4964], zoom: 13, tap: false });
   L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
     attribution: '&copy; OSM &copy; CARTO', subdomains: 'abcd', maxZoom: 19,
   }).addTo(segnalaMap);
 
-  let segnalaHighlight = null;
   let segnalaMarker = null;
 
-  function onStreetClick(f, latlng) {
-    const p = f.properties;
-    document.getElementById('segnala-strada').value = p.nome || '';
-    document.getElementById('segnala-quartiere').value = p.quartiere || '';
-    const munSelect = document.getElementById('segnala-municipio');
-    if (p.municipio) {
-      for (const opt of munSelect.options) {
-        if (opt.text.startsWith(p.municipio)) { munSelect.value = opt.value; break; }
-      }
-    }
-    const c = COLORS[p.classificazione] || COLORS['giallo'];
-    document.getElementById('segnala-selected-bar').innerHTML =
-      '<strong>' + p.nome + '</strong> &middot; ' + p.quartiere +
-      (p.classificazione ? ' &middot; <span style="color:' + c.stroke + '">' + p.classificazione.toUpperCase() + '</span>' : '');
-
-    if (segnalaHighlight) segnalaMap.removeLayer(segnalaHighlight);
-    segnalaHighlight = L.geoJSON(f, {
-      style: { color: '#C0392B', weight: 6, opacity: 1, dashArray: '8,4' },
-      pointToLayer: (feat, ll) => L.circleMarker(ll, { radius: 12, color: '#C0392B', weight: 3, fillOpacity: 0.3 })
-    }).addTo(segnalaMap);
-
+  segnalaMap.on('click', function(e) {
     if (segnalaMarker) segnalaMap.removeLayer(segnalaMarker);
-    if (latlng) {
-      segnalaMarker = L.circleMarker(latlng, {
-        radius: 10, color: '#C0392B', weight: 3,
-        fillColor: '#C0392B', fillOpacity: 0.6,
-      }).addTo(segnalaMap);
-    }
-
-    document.querySelector('.segnala-form-wrap').scrollTop = 0;
-  }
-
-  data.lines.forEach(f => {
-    const c = COLORS[f.properties.classificazione] || COLORS['giallo'];
-    L.geoJSON(f, {
-      style: { color: c.stroke, weight: 10, opacity: 0.7 },
-      onEachFeature: (feat, layer) => { layer.on('click', (e) => onStreetClick(f, e.latlng)); }
+    segnalaMarker = L.marker(e.latlng, {
+      icon: L.divIcon({
+        className: '',
+        html: '<div style="width:20px;height:20px;background:#C0392B;border:3px solid #fff;border-radius:50%;box-shadow:0 2px 8px rgba(0,0,0,0.3);"></div>',
+        iconSize: [20, 20],
+        iconAnchor: [10, 10],
+      })
     }).addTo(segnalaMap);
-  });
 
-  data.pts.forEach(f => {
-    const c = COLORS[f.properties.classificazione] || COLORS['giallo'];
-    const [lng, lat] = f.geometry.coordinates;
-    L.circleMarker([lat, lng], {
-      radius: 10, color: c.stroke, weight: 3, opacity: 0.7,
-      fillColor: c.fill, fillOpacity: 0.3,
-    }).on('click', (e) => onStreetClick(f, e.latlng)).addTo(segnalaMap);
+    document.getElementById('segnala-selected-bar').innerHTML =
+      '<strong>Posizione selezionata</strong> &middot; ' +
+      e.latlng.lat.toFixed(5) + ', ' + e.latlng.lng.toFixed(5);
   });
-
-  if (data.allCoords.length) segnalaMap.fitBounds(data.allCoords, { padding: [20,20] });
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(pos => {
@@ -831,7 +795,7 @@ fetch('./streetsmart_roma.geojson')
 
     cachedGeoData = { lines, pts, allCoords };
     if (document.getElementById('view-segnala').classList.contains('active')) {
-      initSegnalaMap(cachedGeoData);
+      initSegnalaMap();
     }
   })
   .catch(err => {
