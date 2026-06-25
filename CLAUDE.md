@@ -17,7 +17,7 @@ Sviluppato da Nikolai.
 ## Stack Tecnico
 - **Database**: CSV → GeoJSON
 - **Schema colonne**: id, nome, quartiere, classificazione, score, note, ciclabile_presente, n_corsie, senso_unico, n_testimonianze, municipio, data_segnalazione
-- **ID formato**: SS-ROM-XXXX (ultimo usato: SS-ROM-0574)
+- **ID formato**: SS-ROM-XXXX (ultimo usato: SS-ROM-0609)
 - **Hosting**: GitHub Pages — nikolaifissenko/streetsmart-volt
 - **PWA live**: https://nikolaifissenko.github.io/streetsmart-volt/
 - **Form backend**: Formspree endpoint `xlgookeg` (sentinelle), `mrernnwd` (segnalazioni)
