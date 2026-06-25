@@ -27,8 +27,8 @@ Sviluppato da Nikolai.
 `data/master/streetsmart_roma_completo.csv` — source of truth.
 
 ## Stato Database
-- **574 strade** nel CSV, **549 con geometria LineString** sulla mappa
-- Ultimo ID usato: SS-ROM-0574
+- **609 strade** nel CSV
+- Ultimo ID usato: SS-ROM-0609
 
 ## PWA
 - **File principale**: `index.html` (root) — PWA con 3 tab: Mappa, Segnala, Sentinelle
@@ -51,7 +51,7 @@ Sviluppato da Nikolai.
 
 ## Workflow Aggiunta Strade
 1. Aggiungere righe a `data/master/streetsmart_roma_completo.csv`
-2. Incrementare ID da SS-ROM-0574
+2. Incrementare ID da SS-ROM-0609
 3. Eseguire `python scripts/build.py` per rigenerare il GeoJSON
 4. Rimuovere Point e strade senza geometria dal GeoJSON
 5. Committare e pushare su main per deploy GitHub Pages
