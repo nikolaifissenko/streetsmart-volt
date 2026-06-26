@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StreetSmart API Playground</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#FDFBF7;color:#2E2820;-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding:32px 20px 60px}
+h1{font-family:'EB Garamond',serif;font-size:32px;margin-bottom:6px}
+.sub{font-size:14px;color:#7A6F65;margin-bottom:32px;line-height:1.6}
+.sub a{color:#27AE60;text-decoration:none;font-weight:600}
+.tabs{display:flex;gap:8px;margin-bottom:24px}
+.tab{padding:10px 20px;border-radius:10px;border:2px solid #DDD6CA;background:none;font-size:13px;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;color:#7A6F65;transition:all .2s}
+.tab.active{border-color:#2E2820;color:#2E2820;background:#F7F2EA}
+.panel{display:none}
+.panel.active{display:block}
+label{display:block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:#9A9080;margin-bottom:6px;margin-top:18px}
+label:first-child{margin-top:0}
+input{width:100%;padding:12px 16px;border:1.5px solid #DDD6CA;border-radius:12px;font-size:15px;font-family:'Inter',sans-serif;background:#F7F2EA;color:#2E2820;outline:none}
+input:focus{border-color:#27AE60}
+.row{display:flex;gap:12px}
+.row>div{flex:1}
+.btn{margin-top:24px;width:100%;padding:14px;border:none;border-radius:12px;background:#2E2820;color:#F7F2EA;font-size:14px;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;transition:background .2s}
+.btn:hover{background:#1a1510}
+.btn:disabled{background:#C8C0B4;cursor:not-allowed}
+.result{margin-top:20px;background:#2E2820;color:#E8E1D8;border-radius:14px;padding:20px;font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.8;white-space:pre-wrap;word-break:break-word;display:none;max-height:500px;overflow-y:auto}
+.result.visible{display:block}
+.badge{display:inline-block;padding:4px 10px;border-radius:6px;font-size:11px;font-weight:700;color:#fff;margin-right:8px}
+.badge-score{font-size:20px;padding:8px 16px;border-radius:10px;margin-top:12px;display:inline-block}
+.card{background:#F7F2EA;border-radius:14px;padding:20px;margin-top:16px;display:none}
+.card.visible{display:block}
+.card-name{font-size:18px;font-weight:700}
+.card-detail{font-size:13px;color:#7A6F65;margin-top:4px}
+.card-row{display:flex;align-items:center;gap:12px;margin-top:10px}
+.score-colors{--nero:#1a1a1a;--rosso:#e53935;--giallo:#e6940a;--blu:#1976D2;--verde:#27AE60}
+.url-preview{margin-top:12px;padding:10px 14px;background:#F7F2EA;border-radius:10px;font-family:'JetBrains Mono',monospace;font-size:11px;color:#7A6F65;word-break:break-all}
+</style>
+</head>
+<body class="score-colors">
+<div class="wrap">
+  <h1>StreetSmart API</h1>
+  <div class="sub">Testa l'API in tempo reale. 549 strade di Roma. &nbsp;<a href="api.html">Documentazione completa &rarr;</a></div>
+
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('score')">Score</button>
+    <button class="tab" onclick="showTab('route')">Route</button>
+    <button class="tab" onclick="showTab('stats')">Stats</button>
+  </div>
+
+  <!-- SCORE -->
+  <div class="panel active" id="panel-score">
+    <label>Latitudine</label>
+    <input type="text" id="score-lat" placeholder="41.8902" value="41.8902">
+    <label>Longitudine</label>
+    <input type="text" id="score-lon" placeholder="12.4922" value="12.4922">
+    <div class="url-preview" id="url-score"></div>
+    <button class="btn" onclick="runScore()">Cerca strada</button>
+    <div class="card" id="card-score"></div>
+    <div class="result" id="result-score"></div>
+  </div>
+
+  <!-- ROUTE -->
+  <div class="panel" id="panel-route">
+    <div class="row">
+      <div><label>Da (lat)</label><input type="text" id="route-from-lat" placeholder="41.8902" value="41.8902"></div>
+      <div><label>Da (lon)</label><input type="text" id="route-from-lon" placeholder="12.4922" value="12.4922"></div>
+    </div>
+    <div class="row">
+      <div><label>A (lat)</label><input type="text" id="route-to-lat" placeholder="41.9028" value="41.9028"></div>
+      <div><label>A (lon)</label><input type="text" id="route-to-lon" placeholder="12.4964" value="12.4964"></div>
+    </div>
+    <div class="url-preview" id="url-route"></div>
+    <button class="btn" onclick="runRoute()">Analizza percorso</button>
+    <div class="card" id="card-route"></div>
+    <div class="result" id="result-route"></div>
+  </div>
+
+  <!-- STATS -->
+  <div class="panel" id="panel-stats">
+    <button class="btn" onclick="runStats()">Carica statistiche</button>
+    <div class="card" id="card-stats"></div>
+    <div class="result" id="result-stats"></div>
+  </div>
+</div>
+
+<script src="streetsmart_roma.geojson" type="application/json" id="geojson-src"></script>
+<script>
+let STREETS = [];
+
+const SCORE_COLORS = {1:'#27AE60',2:'#1976D2',3:'#e6940a',4:'#e53935',5:'#1a1a1a'};
+const SCORE_LABELS = {1:'Verde — Ciclabile',2:'Blu — ZTL/Pedonale',3:'Giallo — Tranquilla',4:'Rosso — Trafficata',5:'Nero — Pericolosissimo'};
+const API_BASE = 'https://nikolaifissenko.github.io/streetsmart-volt';
+
+function init() {
+  fetch('streetsmart_roma.geojson').then(r=>r.json()).then(geo=>{
+    for(const f of geo.features){
+      const p=f.properties;
+      const coords=f.geometry.type==='MultiLineString'?f.geometry.coordinates.flat():f.geometry.coordinates;
+      if(!coords||!coords.length)continue;
+      let minLon=Infinity,maxLon=-Infinity,minLat=Infinity,maxLat=-Infinity;
+      for(const[lon,lat]of coords){if(lon<minLon)minLon=lon;if(lon>maxLon)maxLon=lon;if(lat<minLat)minLat=lat;if(lat>maxLat)maxLat=lat}
+      STREETS.push({id:p.id,nome:p.nome,quartiere:p.quartiere,municipio:p.municipio,classificazione:p.classificazione,score:p.score,ciclabile:p.ciclabile,n_corsie:p.n_corsie,segments:coords,bbox:[minLon,minLat,maxLon,maxLat]});
+    }
+    updateUrls();
+  });
+  document.querySelectorAll('input').forEach(i=>i.addEventListener('input',updateUrls));
+}
+
+function updateUrls(){
+  const sLat=document.getElementById('score-lat').value,sLon=document.getElementById('score-lon').value;
+  document.getElementById('url-score').textContent=`GET /v1/score?lat=${sLat}&lon=${sLon}`;
+  const fLat=document.getElementById('route-from-lat').value,fLon=document.getElementById('route-from-lon').value;
+  const tLat=document.getElementById('route-to-lat').value,tLon=document.getElementById('route-to-lon').value;
+  document.getElementById('url-route').textContent=`GET /v1/route?from=${fLat},${fLon}&to=${tLat},${tLon}`;
+}
+
+function distToSeg(px,py,ax,ay,bx,by){const dx=bx-ax,dy=by-ay,l=dx*dx+dy*dy;if(l===0)return Math.hypot(px-ax,py-ay);let t=((px-ax)*dx+(py-ay)*dy)/l;t=Math.max(0,Math.min(1,t));return Math.hypot(px-(ax+t*dx),py-(ay+t*dy))}
+function degToM(d){return d*111320*Math.cos(41.9*Math.PI/180)}
+
+function findNearest(lon,lat){
+  let best=null,bestD=Infinity;
+  for(const s of STREETS){
+    const[a,b,c,d]=s.bbox;if(lon<a-.003||lon>c+.003||lat<b-.003||lat>d+.003)continue;
+    const seg=s.segments;for(let i=0;i<seg.length-1;i++){const dd=distToSeg(lon,lat,seg[i][0],seg[i][1],seg[i+1][0],seg[i+1][1]);if(dd<bestD){bestD=dd;best=s}}
+  }
+  return best?{street:best,dist:bestD}:null;
+}
+
+function showTab(name){
+  document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',t.textContent.trim().toLowerCase()===name));
+  document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('active',p.id==='panel-'+name));
+  updateUrls();
+}
+
+function runScore(){
+  const lat=parseFloat(document.getElementById('score-lat').value);
+  const lon=parseFloat(document.getElementById('score-lon').value);
+  if(isNaN(lat)||isNaN(lon)){alert('Inserisci coordinate valide');return}
+  const r=findNearest(lon,lat);
+  const card=document.getElementById('card-score'),res=document.getElementById('result-score');
+  if(!r){card.className='card';res.className='result visible';res.textContent=JSON.stringify({error:'Nessuna strada trovata'},null,2);return}
+  const s=r.street,dist=Math.round(degToM(r.dist));
+  const data={id:s.id,nome:s.nome,quartiere:s.quartiere,municipio:s.municipio,classificazione:s.classificazione,score:s.score,ciclabile:s.ciclabile,n_corsie:s.n_corsie,distanza_m:dist};
+  card.innerHTML=`<div class="card-row"><span class="badge-score" style="background:${SCORE_COLORS[s.score]};color:#fff">${s.score}/5</span><div><div class="card-name">${s.nome}</div><div class="card-detail">${s.quartiere} · Municipio ${s.municipio} · ${dist}m · ${SCORE_LABELS[s.score]}</div></div></div>`;
+  card.className='card visible';
+  res.textContent=JSON.stringify(data,null,2);res.className='result visible';
+}
+
+function runRoute(){
+  const fLat=parseFloat(document.getElementById('route-from-lat').value),fLon=parseFloat(document.getElementById('route-from-lon').value);
+  const tLat=parseFloat(document.getElementById('route-to-lat').value),tLon=parseFloat(document.getElementById('route-to-lon').value);
+  if([fLat,fLon,tLat,tLon].some(isNaN)){alert('Inserisci coordinate valide');return}
+  const scores=[],strade=[];
+  for(let i=0;i<=10;i++){const t=i/10,lat=fLat+t*(tLat-fLat),lon=fLon+t*(tLon-fLon),r=findNearest(lon,lat);if(r&&degToM(r.dist)<100){scores.push(r.street.score);if(!strade.find(x=>x.id===r.street.id))strade.push({id:r.street.id,nome:r.street.nome,classificazione:r.street.classificazione,score:r.street.score})}}
+  const card=document.getElementById('card-route'),res=document.getElementById('result-route');
+  if(!scores.length){card.className='card';res.className='result visible';res.textContent=JSON.stringify({error:'Nessuna strada trovata lungo il percorso'},null,2);return}
+  const avg=Math.round(scores.reduce((a,b)=>a+b,0)/scores.length*10)/10,max=Math.max(...scores);
+  const data={score_medio:avg,score_massimo:max,n_strade:strade.length,strade};
+  const avgColor=SCORE_COLORS[Math.round(avg)]||'#e6940a';
+  card.innerHTML=`<div class="card-row"><span class="badge-score" style="background:${avgColor};color:#fff">${avg}/5</span><div><div class="card-name">Score medio percorso</div><div class="card-detail">${strade.length} strade attraversate · Score massimo: ${max}/5</div></div></div><div style="margin-top:14px">${strade.map(s=>`<div style="display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid #E8E1D8"><span style="width:12px;height:12px;border-radius:50%;background:${SCORE_COLORS[s.score]};flex-shrink:0"></span><span style="font-size:13px;flex:1">${s.nome}</span><span style="font-size:12px;font-weight:700;color:${SCORE_COLORS[s.score]}">${s.score}/5</span></div>`).join('')}</div>`;
+  card.className='card visible';
+  res.textContent=JSON.stringify(data,null,2);res.className='result visible';
+}
+
+function runStats(){
+  const counts={nero:0,rosso:0,giallo:0,verde:0,blu:0};
+  for(const s of STREETS)if(counts[s.classificazione]!==undefined)counts[s.classificazione]++;
+  const data={totale_strade:STREETS.length,per_classificazione:counts,versione:'1.0.0'};
+  const card=document.getElementById('card-stats');
+  const colors={nero:'#1a1a1a',rosso:'#e53935',giallo:'#e6940a',verde:'#27AE60',blu:'#1976D2'};
+  card.innerHTML=`<div style="font-size:14px;font-weight:700;margin-bottom:14px">${STREETS.length} strade nel database</div>${Object.entries(counts).map(([k,v])=>`<div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #E8E1D8"><span style="width:14px;height:14px;border-radius:50%;background:${colors[k]};flex-shrink:0"></span><span style="flex:1;font-size:13px;text-transform:capitalize">${k}</span><span style="font-size:14px;font-weight:700">${v}</span></div>`).join('')}`;
+  card.className='card visible';
+  document.getElementById('result-stats').textContent=JSON.stringify(data,null,2);
+  document.getElementById('result-stats').className='result visible';
+}
+
+init();
+</script>
+</body>
+</html>
