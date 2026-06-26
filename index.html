@@ -265,6 +265,11 @@
     .counter-bar { flex: 1; height: 6px; background: #DDD6CA; border-radius: 10px; overflow: hidden; }
     .counter-fill { height: 100%; background: #27AE60; border-radius: 10px; width: 34%; }
 
+    .lb-row { display:flex; align-items:center; gap:10px; padding:10px 14px; background:#EDE8DF; border-radius:10px; }
+    .lb-rank { width:26px; height:26px; border-radius:50%; background:#3A3530; color:#fff; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .lb-name { flex:1; font-size:13px; font-weight:600; color:#2E2820; }
+    .lb-score { font-size:12px; font-weight:700; color:#27AE60; white-space:nowrap; }
+
     /* ── TOP TAB NAV ── */
     .tab-nav {
       display: flex; background: #F7F2EA; border-bottom: 1.5px solid #D5CBBF;
@@ -449,10 +454,12 @@
 
 <!-- ════════ SENTINELLE VIEW ════════ -->
 <div class="view" id="view-sentinelle">
-  <div class="form-card">
+
+  <!-- Hero + mission -->
+  <div class="form-card" style="margin-bottom:16px;">
     <div class="form-eyebrow green">Comunità</div>
     <div class="form-title">Diventa una Sentinella.</div>
-    <div class="form-sub">I primi 100 ciclisti che validano più di 10 strade entrano nella storia del progetto. Il loro nome resta nel database per sempre.</div>
+    <div class="form-sub" style="margin-bottom:20px;">Roma ha 15.000 strade. Noi ne abbiamo mappate 574. Servono ciclisti veri che pedalano ogni giorno per completare la mappa della pericolosità. I primi 100 entrano nella storia del progetto — il loro nome resta nel database per sempre.</div>
 
     <div class="counter">
       <div><div class="counter-num">34</div></div>
@@ -463,6 +470,61 @@
       <div style="flex:1"><div class="counter-bar"><div class="counter-fill"></div></div></div>
     </div>
 
+    <!-- Perks -->
+    <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:24px;">
+      <div style="display:flex;align-items:center;gap:12px;background:#EDE8DF;border-radius:12px;padding:12px 16px;">
+        <div style="width:36px;height:36px;border-radius:50%;background:#27AE60;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;font-size:16px;">&#9733;</div>
+        <div><div style="font-size:13px;font-weight:700;color:#2E2820;">Nome nel database</div><div style="font-size:11px;color:#7A6F65;">Il tuo nome associato a ogni strada che validi</div></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;background:#EDE8DF;border-radius:12px;padding:12px 16px;">
+        <div style="width:36px;height:36px;border-radius:50%;background:#E6940A;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;font-size:16px;">&#9650;</div>
+        <div><div style="font-size:13px;font-weight:700;color:#2E2820;">Classifica pubblica</div><div style="font-size:11px;color:#7A6F65;">Sali in classifica con ogni segnalazione</div></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;background:#EDE8DF;border-radius:12px;padding:12px 16px;">
+        <div style="width:36px;height:36px;border-radius:50%;background:#1976D2;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;font-size:16px;">&#9829;</div>
+        <div><div style="font-size:13px;font-weight:700;color:#2E2820;">Impatto reale</div><div style="font-size:11px;color:#7A6F65;">I tuoi dati aiutano a rendere Roma più sicura</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Leaderboard -->
+  <div class="form-card" style="margin-bottom:16px;">
+    <div class="form-eyebrow green">Classifica</div>
+    <div class="form-title" style="font-size:22px;">Top Sentinelle</div>
+    <div style="margin-top:16px;display:flex;flex-direction:column;gap:8px;" id="leaderboard">
+      <div class="lb-row"><span class="lb-rank" style="background:#E6940A;">1</span><span class="lb-name">@marta_pedala</span><span class="lb-score">47 strade</span></div>
+      <div class="lb-row"><span class="lb-rank" style="background:#9A9080;">2</span><span class="lb-name">@luca.bici.roma</span><span class="lb-score">38 strade</span></div>
+      <div class="lb-row"><span class="lb-rank" style="background:#B87333;">3</span><span class="lb-name">@giuly_wheels</span><span class="lb-score">31 strade</span></div>
+      <div class="lb-row"><span class="lb-rank">4</span><span class="lb-name">@ciclista_trastevere</span><span class="lb-score">24 strade</span></div>
+      <div class="lb-row"><span class="lb-rank">5</span><span class="lb-name">@bike_messenger_rm</span><span class="lb-score">19 strade</span></div>
+    </div>
+    <div style="text-align:center;margin-top:14px;font-size:11px;color:#A09080;">Valida 10+ strade per entrare in classifica</div>
+  </div>
+
+  <!-- Obiettivo community -->
+  <div class="form-card" style="margin-bottom:16px;">
+    <div class="form-eyebrow green">Obiettivo</div>
+    <div style="display:flex;align-items:center;gap:16px;">
+      <div style="text-align:center;">
+        <div style="font-family:'EB Garamond',serif;font-size:42px;font-weight:700;color:#2E2820;line-height:1;">574</div>
+        <div style="font-size:10px;color:#7A6F65;font-weight:600;">MAPPATE</div>
+      </div>
+      <div style="flex:1;">
+        <div style="font-size:13px;font-weight:600;color:#2E2820;margin-bottom:6px;">Prossimo traguardo: 1.000 strade</div>
+        <div style="height:8px;background:#DDD6CA;border-radius:10px;overflow:hidden;">
+          <div style="height:100%;background:linear-gradient(90deg,#27AE60,#E6940A);border-radius:10px;width:57%;"></div>
+        </div>
+        <div style="font-size:10px;color:#A09080;margin-top:4px;">426 strade mancanti — aiutaci a trovarle</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Form iscrizione -->
+  <div class="form-card">
+    <div class="form-eyebrow green">Iscriviti</div>
+    <div class="form-title" style="font-size:22px;">Unisciti alle Sentinelle</div>
+    <div class="form-sub" style="margin-bottom:20px;">Compila il form, inizia a segnalare strade dal tab "Segnala", e scala la classifica.</div>
+
     <form id="form-sentinelle" action="https://formspree.io/f/xlgookeg" method="POST">
       <input type="hidden" name="form_type" value="sentinella">
 
@@ -472,8 +534,8 @@
       <label>Instagram *</label>
       <input type="text" name="instagram" placeholder="@tuonome" required>
 
-      <label>Città *</label>
-      <input type="text" name="citta" placeholder="Roma" required>
+      <label>Quartiere dove pedali di più *</label>
+      <input type="text" name="quartiere" placeholder="Es: Trastevere, Prati, EUR..." required>
 
       <label>Pedali come...</label>
       <select name="tipo">
@@ -484,12 +546,17 @@
         <option>Saltuariamente</option>
       </select>
 
-      <label>Perché vuoi diventare una Sentinella?</label>
-      <textarea name="motivazione" placeholder="Facoltativo — ma ci fa piacere saperlo"></textarea>
+      <label>Quante strade pensi di poter segnalare al mese?</label>
+      <select name="impegno">
+        <option value="">Seleziona</option>
+        <option>5–10 strade</option>
+        <option>10–20 strade</option>
+        <option>20+ strade</option>
+      </select>
 
       <button type="submit" class="btn-submit" id="submit-sentinelle">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        Entra nel progetto
+        Diventa Sentinella
       </button>
       <div class="disclaimer">Nessuno spam. I tuoi dati servono solo per il progetto StreetSmart.</div>
     </form>
@@ -497,8 +564,9 @@
     <div class="success" id="success-sentinelle">
       <div class="success-icon" style="background:#27AE60;">&#10003;</div>
       <h2>Sei dentro.</h2>
-      <p>Ti contatteremo presto su Instagram.<br>Nel frattempo, continua a pedalare.</p>
-      <span class="success-handle" style="color:#27AE60;">@streetsmart.nav</span>
+      <p>Ora vai al tab <strong>Segnala</strong> e inizia a validare strade.<br>Ogni segnalazione ti porta più in alto in classifica.</p>
+      <a href="#segnala" onclick="switchView('segnala')" style="display:inline-block;margin-top:16px;padding:12px 28px;background:#3A3530;color:#F7F2EA;border-radius:12px;font-size:13px;font-weight:700;text-decoration:none;letter-spacing:0.04em;">Segnala la prima strada</a>
+      <div style="margin-top:14px;"><span class="success-handle" style="color:#27AE60;">@streetsmart.nav</span></div>
     </div>
   </div>
 </div>
