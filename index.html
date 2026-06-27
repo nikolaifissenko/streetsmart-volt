@@ -58,7 +58,9 @@
 
     .stats-bar { display: flex; gap: 20px; flex-wrap: wrap; }
     .stat { display: flex; flex-direction: column; align-items: center; min-width: 40px; }
-    .stat-num { font-size: 1.05rem; font-weight: 700; color: #2E2820; line-height: 1; }
+    .stat-num { font-size: 1.05rem; font-weight: 700; color: #2E2820; line-height: 1; transition: color 0.3s; }
+    .stat-num.danger { color: #e53935; }
+    .stat-num.safe { color: #27AE60; }
     .stat-label { font-size: 0.62rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #A09080; margin-top: 2px; }
 
     /* ── VIEWS ── */
@@ -769,6 +771,11 @@
       <span class="success-handle" style="color:#27AE60;">@streetsmart.nav</span>
     </div>
   </div>
+  <div style="margin-top:40px;text-align:center;font-size:11px;color:#A09080;line-height:1.6;">
+    <div style="font-weight:600;">StreetSmart Roma</div>
+    <div>Database open-source per la sicurezza ciclistica</div>
+    <div style="margin-top:4px;">Progetto di <strong style="color:#3A3530;">@streetsmart.nav</strong></div>
+  </div>
 </div>
 
 <!-- ════════ BOTTOM NAV ════════ -->
@@ -1173,10 +1180,20 @@ fetch('./streetsmart_roma.geojson')
 
     const danger = withGeom.filter(f => ['nero','rosso'].includes(f.properties.classificazione)).length;
     const safe = withGeom.filter(f => ['verde','verde-blu','verde-giallo'].includes(f.properties.classificazione)).length;
-    document.getElementById('stat-total').textContent = total;
-    document.getElementById('stat-mapped').textContent = lines.length + pts.length;
-    document.getElementById('stat-danger').textContent = danger;
-    document.getElementById('stat-safe').textContent = safe;
+    function animateCount(el, target, cls) {
+      if (cls) el.classList.add(cls);
+      let current = 0;
+      const step = Math.max(1, Math.floor(target / 30));
+      const interval = setInterval(() => {
+        current = Math.min(current + step, target);
+        el.textContent = current;
+        if (current >= target) clearInterval(interval);
+      }, 25);
+    }
+    animateCount(document.getElementById('stat-total'), total);
+    animateCount(document.getElementById('stat-mapped'), lines.length + pts.length);
+    animateCount(document.getElementById('stat-danger'), danger, 'danger');
+    animateCount(document.getElementById('stat-safe'), safe, 'safe');
     document.getElementById('no-geom-note').textContent =
       withoutGeom.length ? withoutGeom.length + ' strade non localizzate' : '';
 
