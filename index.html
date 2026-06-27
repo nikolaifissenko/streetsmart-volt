@@ -154,6 +154,40 @@
       padding: 0 0 0 8px; font-family: 'Inter', sans-serif;
     }
 
+    /* ── SEARCH COUNTER ── */
+    .search-count {
+      position: absolute; right: 28px; top: 50%; transform: translateY(-50%);
+      font-size: 10px; color: #A09080; font-weight: 500;
+    }
+    @media (max-width: 600px) {
+      .search-count { right: unset; }
+    }
+
+    /* ── SMOOTH TRANSITIONS ── */
+    .view { transition: opacity 0.2s; }
+    .street-item { animation: fadeSlide 0.15s ease-out both; }
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── SCROLL INDICATOR ── */
+    .scroll-top {
+      position: sticky; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, #F7F2EA); padding: 8px;
+      text-align: center; display: none;
+    }
+    .scroll-top button {
+      background: #3A3530; color: #F7F2EA; border: none; border-radius: 20px;
+      padding: 6px 16px; font-size: 11px; font-weight: 600; cursor: pointer;
+      font-family: 'Inter', sans-serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      .scroll-top { background: linear-gradient(transparent, #252119); }
+      .scroll-top button { background: #EDE8DF; color: #1a1714; }
+      .search-count { color: #7A6F65; }
+    }
+
     .leaflet-popup-content-wrapper {
       background: #F7F2EA; border: 1.5px solid #D5CBBF; border-radius: 12px;
       color: #3A3530; font-family: 'Inter', sans-serif;
@@ -526,6 +560,7 @@
     <div class="search-wrap">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       <input type="text" class="search-input" id="desktop-search" placeholder="Cerca strada...">
+      <span class="search-count" id="search-count"></span>
     </div>
     <div class="sidebar-section">
       <h3>Filtra per classe</h3>
@@ -1025,6 +1060,7 @@ function initSegnalaMap() {
         document.getElementById('segnala-selected-bar').innerHTML =
           '<strong>' + (road || 'Posizione selezionata') + '</strong>' +
           (suburb ? ' &middot; ' + suburb : '');
+        document.querySelector('.segnala-form-wrap')?.scrollTo({ top: 0, behavior: 'smooth' });
       })
       .catch(() => {
         document.getElementById('segnala-selected-bar').innerHTML =
@@ -1131,11 +1167,16 @@ function filterStreetList(query) {
   const q = query.toLowerCase().trim();
   const list = document.getElementById('street-list');
   const items = list.querySelectorAll('.street-item');
+  let visible = 0;
   items.forEach((item, i) => {
     const name = item.querySelector('.street-name')?.textContent?.toLowerCase() || '';
     const quarter = item.querySelector('.street-q')?.textContent?.toLowerCase() || '';
-    item.style.display = (!q || name.includes(q) || quarter.includes(q)) ? '' : 'none';
+    const show = !q || name.includes(q) || quarter.includes(q);
+    item.style.display = show ? '' : 'none';
+    if (show) visible++;
   });
+  const counter = document.getElementById('search-count');
+  counter.textContent = q ? visible + ' risultat' + (visible === 1 ? 'o' : 'i') : '';
 }
 
 document.getElementById('desktop-search').addEventListener('input', e => {

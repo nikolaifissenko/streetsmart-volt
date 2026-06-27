@@ -32,11 +32,21 @@ Sviluppato da Nikolai.
 
 ## PWA
 - **File principale**: `index.html` (root) — PWA con 3 tab: Mappa, Segnala, Sentinelle
-- **Tab Mappa**: Leaflet.js con strade colorate per classificazione, filtri, sidebar con lista strade, popup con dettagli e bottone "Segnala questa strada"
-- **Tab Segnala**: mappa pulita (senza strade colorate), click per piazzare pin rosso, reverse geocoding Nominatim per auto-compilare strada/quartiere, form con 5 colori (nero, rosso, giallo, verde, blu). Dopo invio: bottone "Segnala un'altra strada" per reset immediato
+- **Tab Mappa**: Leaflet.js con strade colorate per classificazione, filtri, sidebar con lista strade, popup con dettagli e bottoni "Segnala" e "Condividi"
+- **Tab Segnala**: mappa pulita (senza strade colorate), click per piazzare pin rosso, reverse geocoding Nominatim per auto-compilare strada/quartiere, form con 5 colori (nero, rosso, giallo, verde, blu). Coordinate lat/lng inviate col form. Dopo invio: bottone "Segnala un'altra strada" per reset immediato
 - **Tab Sentinelle**: form iscrizione comunità (obiettivo 100 sentinelle)
-- **Navigazione**: top tab nav, deep linking via hash (#mappa, #segnala, #sentinelle)
-- **PWA installabile**: manifest.json + sw.js (cache `streetsmart-v11`)
+- **Navigazione**: top tab nav con aria-labels, deep linking via hash (#mappa, #segnala, #sentinelle)
+- **PWA installabile**: manifest.json + sw.js (cache `streetsmart-v13`)
+- **Dark mode**: automatico via prefers-color-scheme, mappa CARTO dark, UI completa
+- **Ricerca**: barra di ricerca strade su desktop (sidebar) e mobile (toolbar) con contatore risultati
+- **Filtri mobile**: toggle per aprire sidebar a schermo intero con filtri e lista
+- **Ordinamento**: lista strade ordinabile A-Z, pericolose prima, sicure prima
+- **Statistiche municipio**: barre colorate per municipio nella sidebar
+- **Strade vicine**: dopo geolocalizzazione, alert con conteggio pericolose/sicure nel raggio 1 km
+- **Condivisione**: Web Share API su mobile, clipboard su desktop
+- **Toast**: notifiche animate al posto di alert()
+- **Loader**: spinner animato durante caricamento GeoJSON
+- **Open Graph**: meta tag OG e Twitter Card per condivisione social
 - **Brand**: palette travertino (#EDE8DF), font EB Garamond + Inter
 - **Colori mappa**: nero=#1a1a1a, rosso=#e53935, giallo=#e6940a, blu=#1976D2, verde=#27AE60
 - **GeoJSON**: `streetsmart_roma.geojson` — generato da `scripts/build.py`
