@@ -383,6 +383,83 @@
         font-weight: 600; cursor: pointer; text-align: center; flex-shrink: 0;
       }
     }
+
+    /* ── SORT TOGGLE ── */
+    .sort-toggle {
+      display: flex; gap: 0; margin-bottom: 8px; border-radius: 8px; overflow: hidden;
+      border: 1.5px solid #DDD6CA;
+    }
+    .sort-btn {
+      flex: 1; padding: 6px 0; font-size: 10px; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.08em; border: none; cursor: pointer; font-family: 'Inter', sans-serif;
+      background: #EDE8DF; color: #A09080; transition: background 0.15s, color 0.15s;
+    }
+    .sort-btn.active { background: #3A3530; color: #F7F2EA; }
+
+    /* ── MUNICIPIO STATS ── */
+    .muni-stats { display: flex; flex-direction: column; gap: 3px; }
+    .muni-row {
+      display: flex; align-items: center; gap: 8px; font-size: 0.75rem; padding: 3px 0;
+    }
+    .muni-name { flex: 1; color: #3A3530; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .muni-bar-wrap { width: 60px; height: 5px; background: #DDD6CA; border-radius: 3px; overflow: hidden; flex-shrink: 0; }
+    .muni-bar-fill { height: 100%; border-radius: 3px; }
+    .muni-count { font-size: 0.68rem; color: #A09080; font-weight: 500; min-width: 20px; text-align: right; }
+
+    /* ── DARK MODE ── */
+    @media (prefers-color-scheme: dark) {
+      body { background: #1a1714; color: #D5CBBF; }
+      header { background: #252119; border-bottom-color: #3A3530; }
+      .logo-title { color: #EDE8DF; }
+      .tab-nav { background: #252119; border-bottom-color: #3A3530; }
+      .nav-item { color: #7A6F65; }
+      .nav-item:hover, .nav-item.active { color: #EDE8DF; border-bottom-color: #EDE8DF; }
+      .sidebar { background: #252119; border-right-color: #3A3530; }
+      .sidebar-section { border-bottom-color: #3A3530; }
+      .filter-item:hover { background: #1a1714; }
+      .street-item { border-bottom-color: #2E2820; }
+      .street-item:hover { background: #1a1714; }
+      .street-name { color: #EDE8DF; }
+      .form-card { background: #252119; box-shadow: 0 8px 40px rgba(0,0,0,0.4); }
+      .form-card input, .form-card select, .form-card textarea {
+        background: #1a1714; border-color: #3A3530; color: #EDE8DF;
+      }
+      .form-card input:focus, .form-card select:focus, .form-card textarea:focus {
+        background: #2E2820; border-color: #C0392B;
+      }
+      #view-sentinelle .form-card input:focus, #view-sentinelle .form-card select:focus, #view-sentinelle .form-card textarea:focus {
+        border-color: #27AE60;
+      }
+      .form-title { color: #EDE8DF; }
+      .btn-submit { background: #EDE8DF; color: #1a1714; }
+      .btn-submit:hover { background: #D5CBBF; }
+      .colore-btn { background: #1a1714; color: #D5CBBF; }
+      .colore-btn.selected { border-color: #EDE8DF; }
+      .counter { background: #1a1714; }
+      .counter-num { color: #EDE8DF; }
+      .popup-name { color: #EDE8DF; }
+      .leaflet-popup-content-wrapper { background: #252119; border-color: #3A3530; color: #D5CBBF; }
+      .leaflet-popup-tip { background: #3A3530; }
+      .popup-val { color: #D5CBBF; }
+      .segnala-selected-bar { background: #252119; border-bottom-color: #3A3530; }
+      .search-input { background: #1a1714; border-color: #3A3530; color: #EDE8DF; }
+      .search-input:focus { border-color: #7A6F65; }
+      .mobile-toolbar { background: #252119; border-bottom-color: #3A3530; }
+      .btn-mobile-filter { background: #1a1714; border-color: #3A3530; color: #EDE8DF; }
+      .btn-mobile-close { background: #EDE8DF; color: #1a1714; }
+      .map-loader { background: rgba(26,23,20,0.9); }
+      .map-loader span { color: #A09080; }
+      .spinner { border-color: #3A3530; border-top-color: #EDE8DF; }
+      .sort-btn { background: #1a1714; color: #7A6F65; }
+      .sort-btn.active { background: #EDE8DF; color: #1a1714; }
+      .no-geom-note { border-top-color: #3A3530; }
+      .legend-row { color: #D5CBBF; }
+      .muni-name { color: #D5CBBF; }
+      .muni-bar-wrap { background: #3A3530; }
+      .btn-share-popup { background: #1a1714; border-color: #3A3530; color: #D5CBBF; }
+      .btn-segnala-popup { background: #C0392B; }
+      #view-sentinelle { background: #1a1714; }
+    }
   </style>
 </head>
 <body>
@@ -464,8 +541,17 @@
         <div class="legend-row"><div class="legend-swatch" style="background:#27AE60"></div><span>Verde — ciclabile presente</span><span class="legend-score">1/5</span></div>
       </div>
     </div>
+    <div class="sidebar-section" id="muni-section" style="display:none;">
+      <h3>Per municipio</h3>
+      <div class="muni-stats" id="muni-stats"></div>
+    </div>
     <div class="sidebar-section" style="flex:1;overflow:hidden;display:flex;flex-direction:column;padding-bottom:0;">
       <h3>Strade su mappa</h3>
+      <div class="sort-toggle" id="sort-toggle">
+        <button class="sort-btn active" data-sort="alpha">A–Z</button>
+        <button class="sort-btn" data-sort="danger">Pericolose</button>
+        <button class="sort-btn" data-sort="safe">Sicure</button>
+      </div>
       <div class="street-list" id="street-list"></div>
     </div>
     <div class="no-geom-note" id="no-geom-note"></div>
@@ -681,7 +767,11 @@ const LABELS = {
 };
 
 mapInstance = L.map('map', { center: [41.9028, 12.4964], zoom: 12, tap: false });
-L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const tileUrl = isDark
+  ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
+  : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
+L.tileLayer(tileUrl, {
   attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
   subdomains: 'abcd', maxZoom: 19,
 }).addTo(mapInstance);
@@ -750,6 +840,44 @@ function buildFilters(counts) {
     });
     container.appendChild(item);
   });
+}
+
+const SCORE_MAP = { 'nero': 5, 'rosso': 4, 'giallo': 3, 'blu': 2, 'verde': 1, 'verde-giallo': 1, 'verde-blu': 1 };
+let currentFeatures = [];
+let currentSort = 'alpha';
+
+function buildMuniStats(features) {
+  const munis = {};
+  features.forEach(f => {
+    const m = f.properties.municipio || 'N/D';
+    if (!munis[m]) munis[m] = { total: 0, danger: 0 };
+    munis[m].total++;
+    if (['nero','rosso'].includes(f.properties.classificazione)) munis[m].danger++;
+  });
+  const sorted = Object.entries(munis).sort((a, b) => b[1].danger - a[1].danger);
+  const maxTotal = Math.max(...sorted.map(([,v]) => v.total), 1);
+  const container = document.getElementById('muni-stats');
+  container.innerHTML = '';
+  sorted.forEach(([name, data]) => {
+    const pct = (data.total / maxTotal * 100).toFixed(0);
+    const dangerPct = data.total ? (data.danger / data.total * 100).toFixed(0) : 0;
+    const color = dangerPct > 60 ? '#e53935' : dangerPct > 30 ? '#e6940a' : '#27AE60';
+    const row = document.createElement('div');
+    row.className = 'muni-row';
+    row.innerHTML = '<span class="muni-name">' + name + '</span>' +
+      '<div class="muni-bar-wrap"><div class="muni-bar-fill" style="width:' + pct + '%;background:' + color + ';"></div></div>' +
+      '<span class="muni-count">' + data.total + '</span>';
+    container.appendChild(row);
+  });
+  document.getElementById('muni-section').style.display = '';
+}
+
+function sortFeatures(features, sort) {
+  const sorted = [...features];
+  if (sort === 'alpha') sorted.sort((a, b) => (a.properties.nome || '').localeCompare(b.properties.nome || ''));
+  else if (sort === 'danger') sorted.sort((a, b) => (SCORE_MAP[b.properties.classificazione] || 3) - (SCORE_MAP[a.properties.classificazione] || 3));
+  else if (sort === 'safe') sorted.sort((a, b) => (SCORE_MAP[a.properties.classificazione] || 3) - (SCORE_MAP[b.properties.classificazione] || 3));
+  return sorted;
 }
 
 function buildStreetList(features) {
@@ -860,7 +988,8 @@ function initSegnalaMap() {
   segnalaMapInited = true;
 
   segnalaMap = L.map('segnala-map', { center: [41.9028, 12.4964], zoom: 13, tap: false });
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+  const segnalaDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  L.tileLayer(segnalaDark ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png' : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
     attribution: '&copy; OSM &copy; CARTO', subdomains: 'abcd', maxZoom: 19,
   }).addTo(segnalaMap);
 
@@ -952,7 +1081,9 @@ fetch('./streetsmart_roma.geojson')
     });
 
     buildFilters(counts);
-    buildStreetList(withGeom);
+    currentFeatures = withGeom;
+    buildStreetList(sortFeatures(withGeom, currentSort));
+    buildMuniStats(withGeom);
 
     const danger = withGeom.filter(f => ['nero','rosso'].includes(f.properties.classificazione)).length;
     const safe = withGeom.filter(f => ['verde','verde-blu','verde-giallo'].includes(f.properties.classificazione)).length;
@@ -982,6 +1113,16 @@ fetch('./streetsmart_roma.geojson')
     document.getElementById('map-loader').innerHTML =
       '<span style="color:#e53935;">Errore: ' + err.message + '</span>';
   });
+
+/* ── SORT ── */
+document.querySelectorAll('.sort-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentSort = btn.dataset.sort;
+    if (currentFeatures.length) buildStreetList(sortFeatures(currentFeatures, currentSort));
+  });
+});
 
 /* ── SEARCH ── */
 let allFeatures = [];
