@@ -886,6 +886,8 @@ L.tileLayer(tileUrl, {
 
 let layersByClass = {};
 let activeFilters = new Set(Object.keys(COLORS));
+let mainGeoLayer = null;
+let allGeoFeatures = null;
 
 function makePopup(p) {
   const c = COLORS[p.classificazione] || COLORS['giallo'];
@@ -915,6 +917,29 @@ function makePopup(p) {
   `;
 }
 
+function rebuildMapLayer() {
+  if (!allGeoFeatures || !mainGeoLayer) return;
+  mapInstance.removeLayer(mainGeoLayer);
+  layersByClass = {};
+  mainGeoLayer = L.geoJSON(allGeoFeatures, {
+    style: styleFeature,
+    filter: function(feature) { return activeFilters.has(feature.properties.classificazione); },
+    onEachFeature: function(feature, layer) {
+      layer.bindPopup(makePopup(feature.properties), { maxWidth: 280 });
+      const cls = feature.properties.classificazione;
+      if (!layersByClass[cls]) layersByClass[cls] = [];
+      layersByClass[cls].push(layer);
+    },
+    pointToLayer: function(feature, latlng) {
+      const c = COLORS[feature.properties.classificazione] || COLORS['giallo'];
+      return L.circleMarker(latlng, {
+        radius: 8, color: c.stroke, weight: 3,
+        opacity: 0.65, fillColor: c.fill, fillOpacity: 0.3, dashArray: '4,3',
+      });
+    },
+  }).addTo(mapInstance);
+}
+
 function styleFeature(feature) {
   const c = COLORS[feature.properties.classificazione] || COLORS['giallo'];
   return { color: c.stroke, weight: Math.max(c.weight, 6), opacity: 0.85 };
@@ -941,10 +966,11 @@ function buildFilters(counts) {
       e.preventDefault();
       const isActive = activeFilters.has(cls);
       Object.keys(COLORS).filter(k => COLORS[k].stroke === c.stroke).forEach(k => {
-        if (isActive) { activeFilters.delete(k); layersByClass[k]?.forEach(l => mapInstance.removeLayer(l)); }
-        else          { activeFilters.add(k);    layersByClass[k]?.forEach(l => l.addTo(mapInstance)); }
+        if (isActive) activeFilters.delete(k);
+        else activeFilters.add(k);
       });
       item.classList.toggle('inactive', isActive);
+      rebuildMapLayer();
     });
     container.appendChild(item);
   });
@@ -988,10 +1014,40 @@ function sortFeatures(features, sort) {
   return sorted;
 }
 
+const STREET_LIST_PAGE_SIZE = 200;
+let streetListFeatures = [];
+let streetListShown = 0;
+
 function buildStreetList(features) {
   const list = document.getElementById('street-list');
   list.innerHTML = '';
-  features.forEach(f => {
+  streetListFeatures = features;
+  streetListShown = 0;
+  appendStreetItems(list, Math.min(STREET_LIST_PAGE_SIZE, features.length));
+  if (features.length > STREET_LIST_PAGE_SIZE) {
+    const more = document.createElement('div');
+    more.id = 'load-more-streets';
+    more.style.cssText = 'padding:10px 16px;text-align:center;';
+    more.innerHTML = '<button style="background:#3A3530;color:#F7F2EA;border:none;border-radius:8px;padding:8px 20px;font-size:12px;font-weight:600;cursor:pointer;font-family:Inter,sans-serif;">Mostra altre ' + Math.min(STREET_LIST_PAGE_SIZE, features.length - STREET_LIST_PAGE_SIZE) + ' strade</button>';
+    more.querySelector('button').addEventListener('click', () => {
+      const before = streetListShown;
+      appendStreetItems(list, Math.min(streetListShown + STREET_LIST_PAGE_SIZE, features.length));
+      const remaining = features.length - streetListShown;
+      if (remaining > 0) {
+        more.querySelector('button').textContent = 'Mostra altre ' + Math.min(STREET_LIST_PAGE_SIZE, remaining) + ' strade';
+      } else {
+        more.remove();
+      }
+    });
+    list.appendChild(more);
+  }
+}
+
+function appendStreetItems(list, upTo) {
+  const moreBtn = document.getElementById('load-more-streets');
+  for (let i = streetListShown; i < upTo; i++) {
+    const f = streetListFeatures[i];
+    if (!f) break;
     const p = f.properties;
     const c = COLORS[p.classificazione] || COLORS['giallo'];
     const item = document.createElement('div');
@@ -1006,8 +1062,8 @@ function buildStreetList(features) {
     item.addEventListener('mouseenter', () => {
       item.classList.add('highlighted');
       for (const l of (layersByClass[p.classificazione]||[])) {
-        if (l.feature?.properties?.id === p.id) {
-          l.eachLayer?.(sub => { if (sub.setStyle) sub.setStyle({ weight: 10, opacity: 1 }); });
+        if (l.feature?.properties?.id === p.id && l.setStyle) {
+          l.setStyle({ weight: 10, opacity: 1 });
           break;
         }
       }
@@ -1015,8 +1071,8 @@ function buildStreetList(features) {
     item.addEventListener('mouseleave', () => {
       item.classList.remove('highlighted');
       for (const l of (layersByClass[p.classificazione]||[])) {
-        if (l.feature?.properties?.id === p.id) {
-          l.eachLayer?.(sub => { if (sub.setStyle) sub.setStyle(styleFeature(f)); });
+        if (l.feature?.properties?.id === p.id && l.setStyle) {
+          l.setStyle(styleFeature(f));
           break;
         }
       }
@@ -1031,14 +1087,16 @@ function buildStreetList(features) {
       if (center) mapInstance.flyTo(center, 16, { duration: 0.8 });
       setTimeout(() => {
         for (const l of (layersByClass[p.classificazione]||[])) {
-          if (l.feature?.properties?.id === p.id) { l.openPopup?.(); break; }
+          if (l.feature?.properties?.id === p.id) { l.openPopup(); break; }
         }
       }, 850);
       const sidebar = document.getElementById('sidebar');
       if (sidebar.classList.contains('mobile-open')) sidebar.classList.remove('mobile-open');
     });
-    list.appendChild(item);
-  });
+    if (moreBtn) list.insertBefore(item, moreBtn);
+    else list.appendChild(item);
+  }
+  streetListShown = upTo;
 }
 
 function segnalaDaPopup(btn) {
@@ -1188,30 +1246,28 @@ fetch('./streetsmart_roma.geojson')
     const counts = {};
     withGeom.forEach(f => { const cls = f.properties.classificazione; counts[cls] = (counts[cls]||0)+1; });
 
-    Object.keys(COLORS).forEach(cls => { layersByClass[cls] = []; });
+    allGeoFeatures = { type: 'FeatureCollection', features: lines.concat(pts) };
 
-    lines.forEach(f => {
-      const cls = f.properties.classificazione;
-      const layer = L.geoJSON(f, { style: styleFeature })
-        .bindPopup(makePopup(f.properties), { maxWidth: 280 });
-      layer.feature = f;
-      layer.eachLayer(sub => { sub.feature = f; });
-      layer.addTo(mapInstance);
-      layersByClass[cls].push(layer);
-    });
-
-    pts.forEach(f => {
-      const cls = f.properties.classificazione;
-      const c = COLORS[cls] || COLORS['giallo'];
-      const [lng, lat] = f.geometry.coordinates;
-      const marker = L.circleMarker([lat, lng], {
-        radius: 8, color: c.stroke, weight: 3,
-        opacity: 0.65, fillColor: c.fill, fillOpacity: 0.3, dashArray: '4,3',
-      }).bindPopup(makePopup(f.properties), { maxWidth: 280 });
-      marker.feature = f;
-      marker.addTo(mapInstance);
-      layersByClass[cls].push(marker);
-    });
+    mainGeoLayer = L.geoJSON(allGeoFeatures, {
+      style: styleFeature,
+      filter: function(feature) {
+        const cls = feature.properties.classificazione;
+        return activeFilters.has(cls);
+      },
+      onEachFeature: function(feature, layer) {
+        layer.bindPopup(makePopup(feature.properties), { maxWidth: 280 });
+        const cls = feature.properties.classificazione;
+        if (!layersByClass[cls]) layersByClass[cls] = [];
+        layersByClass[cls].push(layer);
+      },
+      pointToLayer: function(feature, latlng) {
+        const c = COLORS[feature.properties.classificazione] || COLORS['giallo'];
+        return L.circleMarker(latlng, {
+          radius: 8, color: c.stroke, weight: 3,
+          opacity: 0.65, fillColor: c.fill, fillOpacity: 0.3, dashArray: '4,3',
+        });
+      },
+    }).addTo(mapInstance);
 
     buildFilters(counts);
     currentFeatures = withGeom;
