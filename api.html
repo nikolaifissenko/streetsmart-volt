@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StreetSmart API — Dati di Sicurezza Ciclistica per Roma</title>
+  <meta name="description" content="API e database B2B per la pericolosità ciclistica delle strade di Roma. Per operatori micromobilità, comuni e app di navigazione." />
+  <meta property="og:title" content="StreetSmart API" />
+  <meta property="og:description" content="Database B2B della pericolosità ciclistica di Roma. 15.000+ strade classificate." />
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #EDE8DF;
+      color: #3A3530;
+      line-height: 1.6;
+    }
+
+    .hero {
+      background: #2E2820;
+      color: #F7F2EA;
+      padding: 80px 20px 60px;
+      text-align: center;
+    }
+    .hero-eyebrow {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: #27AE60; margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-family: 'EB Garamond', serif; font-size: 48px;
+      font-weight: 700; line-height: 1.1; margin-bottom: 16px;
+    }
+    .hero p {
+      font-size: 18px; color: #A09080; max-width: 600px;
+      margin: 0 auto 32px; line-height: 1.7;
+    }
+    .hero-stat {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.08); border-radius: 10px;
+      padding: 10px 20px; margin: 0 8px;
+    }
+    .hero-stat strong { font-size: 24px; color: #F7F2EA; }
+    .hero-stat span { font-size: 12px; color: #A09080; text-transform: uppercase; letter-spacing: 0.08em; }
+
+    .section {
+      max-width: 900px; margin: 0 auto;
+      padding: 60px 20px;
+    }
+    .section h2 {
+      font-family: 'EB Garamond', serif; font-size: 32px;
+      font-weight: 700; margin-bottom: 12px; color: #2E2820;
+    }
+    .section p { font-size: 15px; color: #7A6F65; margin-bottom: 20px; }
+
+    .features {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px; margin-top: 30px;
+    }
+    .feature-card {
+      background: #F7F2EA; border-radius: 16px; padding: 28px 24px;
+      border: 1px solid #D5CBBF;
+    }
+    .feature-card h3 {
+      font-size: 16px; font-weight: 700; margin-bottom: 8px; color: #2E2820;
+    }
+    .feature-card p {
+      font-size: 13px; color: #7A6F65; line-height: 1.7; margin: 0;
+    }
+    .feature-icon {
+      width: 40px; height: 40px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 14px; font-size: 20px;
+    }
+
+    .use-cases { background: #F7F2EA; border-top: 1px solid #D5CBBF; border-bottom: 1px solid #D5CBBF; }
+
+    .pricing {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px; margin-top: 30px;
+    }
+    .price-card {
+      background: #F7F2EA; border-radius: 16px; padding: 32px 24px;
+      border: 1.5px solid #D5CBBF; text-align: center;
+    }
+    .price-card.featured {
+      border-color: #27AE60; background: #2E2820; color: #F7F2EA;
+    }
+    .price-card.featured p { color: #A09080; }
+    .price-card.featured .price { color: #F7F2EA; }
+    .price-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; margin-bottom: 8px;
+    }
+    .price-card.featured .price-label { color: #27AE60; }
+    .price {
+      font-family: 'EB Garamond', serif; font-size: 42px;
+      font-weight: 700; line-height: 1; margin-bottom: 4px;
+    }
+    .price-period { font-size: 12px; color: #A09080; margin-bottom: 16px; }
+    .price-features { list-style: none; text-align: left; margin-bottom: 24px; }
+    .price-features li {
+      font-size: 13px; padding: 6px 0;
+      border-bottom: 1px solid rgba(213,203,191,0.3);
+    }
+    .price-features li::before { content: '✓ '; color: #27AE60; font-weight: 700; }
+
+    .btn-cta {
+      display: inline-block; background: #27AE60; color: #fff;
+      border: none; border-radius: 12px; padding: 14px 32px;
+      font-size: 15px; font-weight: 700; cursor: pointer;
+      font-family: 'Inter', sans-serif; text-decoration: none;
+      letter-spacing: 0.02em; transition: background 0.2s;
+    }
+    .btn-cta:hover { background: #219a52; }
+    .btn-cta.outline {
+      background: transparent; border: 2px solid #3A3530;
+      color: #3A3530;
+    }
+    .btn-cta.outline:hover { background: #3A3530; color: #F7F2EA; }
+
+    .cta-section {
+      background: #2E2820; color: #F7F2EA; text-align: center;
+      padding: 60px 20px;
+    }
+    .cta-section h2 { color: #F7F2EA; }
+    .cta-section p { color: #A09080; max-width: 500px; margin: 0 auto 28px; }
+
+    .api-sample {
+      background: #1a1714; border-radius: 12px; padding: 20px;
+      margin-top: 20px; overflow-x: auto;
+      font-family: 'SF Mono', 'Fira Code', monospace; font-size: 12px;
+      color: #A09080; line-height: 1.8; text-align: left;
+    }
+    .api-sample .key { color: #e6940a; }
+    .api-sample .str { color: #27AE60; }
+    .api-sample .num { color: #4285F4; }
+
+    footer {
+      text-align: center; padding: 30px 20px;
+      font-size: 12px; color: #A09080;
+    }
+    footer a { color: #3A3530; }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 32px; }
+      .hero p { font-size: 15px; }
+      .hero-stat { display: flex; margin: 8px auto; max-width: 200px; }
+      .section h2 { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-eyebrow">API & Database B2B</div>
+  <h1>Dati di sicurezza ciclistica<br>per Roma.</h1>
+  <p>15.000+ strade classificate per pericolosità. Pronto per l'integrazione in app di navigazione, flotte di micromobilità e dashboard comunali.</p>
+  <div style="margin-top:24px;">
+    <div class="hero-stat"><strong>15.789</strong><span>Strade</span></div>
+    <div class="hero-stat"><strong>5</strong><span>Classi di rischio</span></div>
+    <div class="hero-stat"><strong>15</strong><span>Municipi</span></div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Cos'è StreetSmart</h2>
+  <p>Un database geospaziale che classifica ogni strada di Roma in 5 livelli di pericolosità ciclistica — dal nero (pericolosissimo) al verde (ciclabile presente). Alimentato da dati OpenStreetMap e validato da una comunità di ciclisti urbani.</p>
+
+  <div class="features">
+    <div class="feature-card">
+      <div class="feature-icon" style="background:#e5393522;">🛑</div>
+      <h3>Classificazione a 5 livelli</h3>
+      <p>Nero, rosso, giallo, blu, verde — ogni strada ha uno score 1-5 basato su corsie, velocità, presenza ciclabili e flusso pedonale.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" style="background:#1976D222;">📍</div>
+      <h3>Geometrie GeoJSON</h3>
+      <p>LineString reali da OpenStreetMap. Integrabili in Mapbox, Google Maps, Leaflet, QGIS e qualsiasi tool GIS.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" style="background:#27AE6022;">👥</div>
+      <h3>Validato dalla comunità</h3>
+      <p>Le Sentinelle — ciclisti urbani — validano e aggiornano le classificazioni con report dal campo.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section use-cases">
+  <h2>Per chi è</h2>
+  <div class="features">
+    <div class="feature-card">
+      <h3>Operatori Micromobilità</h3>
+      <p>Lime, Dott, Tier: ottimizza le zone di rilascio, evita aree pericolose, riduci incidenti e migliora i KPI di sicurezza per i regolatori.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Comuni e Municipi</h3>
+      <p>Identifica le strade più pericolose, pianifica nuove ciclabili con dati reali, monitora l'impatto degli interventi.</p>
+    </div>
+    <div class="feature-card">
+      <h3>App di Navigazione</h3>
+      <p>Routing sicuro per ciclisti: evita le strade nere e rosse, preferisci quelle verdi. Layer di sicurezza per Komoot, Strava, Google Maps.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Formato dati</h2>
+  <p>GeoJSON standard con proprietà strutturate per ogni strada.</p>
+  <div class="api-sample">
+    {<br>
+    &nbsp;&nbsp;<span class="key">"type"</span>: <span class="str">"Feature"</span>,<br>
+    &nbsp;&nbsp;<span class="key">"properties"</span>: {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"id"</span>: <span class="str">"SS-ROM-0002"</span>,<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"nome"</span>: <span class="str">"Lungotevere dei Mellini"</span>,<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"classificazione"</span>: <span class="str">"nero"</span>,<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"score"</span>: <span class="num">5</span>,<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"quartiere"</span>: <span class="str">"Prati"</span>,<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"municipio"</span>: <span class="str">"I"</span>,<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"n_corsie"</span>: <span class="num">4</span>,<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"ciclabile"</span>: <span class="str">"no"</span><br>
+    &nbsp;&nbsp;},<br>
+    &nbsp;&nbsp;<span class="key">"geometry"</span>: {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"type"</span>: <span class="str">"LineString"</span>,<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"coordinates"</span>: [[<span class="num">12.466</span>, <span class="num">41.908</span>], ...]<br>
+    &nbsp;&nbsp;}<br>
+    }
+  </div>
+</div>
+
+<div class="section">
+  <h2>Piani</h2>
+  <div class="pricing">
+    <div class="price-card">
+      <div class="price-label">Explorer</div>
+      <div class="price">Gratis</div>
+      <div class="price-period">per sempre</div>
+      <ul class="price-features">
+        <li>Mappa web interattiva</li>
+        <li>Download GeoJSON completo</li>
+        <li>Uso non commerciale</li>
+        <li>Community support</li>
+      </ul>
+      <a href="index.html" class="btn-cta outline">Apri la mappa</a>
+    </div>
+    <div class="price-card featured">
+      <div class="price-label">Business</div>
+      <div class="price">€199</div>
+      <div class="price-period">al mese</div>
+      <ul class="price-features">
+        <li>API REST con autenticazione</li>
+        <li>Aggiornamenti settimanali</li>
+        <li>Filtraggio per municipio/zona</li>
+        <li>Supporto integrazione</li>
+        <li>Licenza commerciale</li>
+      </ul>
+      <a href="mailto:nikolai.fissenko1@gmail.com?subject=StreetSmart%20API%20Business" class="btn-cta">Richiedi accesso</a>
+    </div>
+    <div class="price-card">
+      <div class="price-label">Enterprise</div>
+      <div class="price">Custom</div>
+      <div class="price-period">contattaci</div>
+      <ul class="price-features">
+        <li>API dedicata ad alte prestazioni</li>
+        <li>Dati real-time da Sentinelle</li>
+        <li>Espansione multi-città</li>
+        <li>SLA garantito</li>
+        <li>Account manager dedicato</li>
+      </ul>
+      <a href="mailto:nikolai.fissenko1@gmail.com?subject=StreetSmart%20API%20Enterprise" class="btn-cta outline" style="border-color:#D5CBBF;color:#F7F2EA;">Contattaci</a>
+    </div>
+  </div>
+</div>
+
+<div class="cta-section">
+  <h2>Pronto per integrare?</h2>
+  <p>Scrivici per ricevere le credenziali API e iniziare a costruire prodotti più sicuri per Roma.</p>
+  <a href="mailto:nikolai.fissenko1@gmail.com?subject=StreetSmart%20API%20-%20Richiesta%20Accesso" class="btn-cta">Richiedi accesso API</a>
+</div>
+
+<footer>
+  <p><strong>StreetSmart Roma</strong> — Database open-source per la sicurezza ciclistica</p>
+  <p style="margin-top:8px;"><a href="index.html">Mappa</a> · <a href="https://instagram.com/streetsmart.nav">Instagram</a></p>
+</footer>
+
+</body>
+</html>
