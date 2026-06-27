@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>StreetSmart Roma</title>
   <meta name="description" content="Database pericolosità ciclistica delle strade di Roma" />
+  <meta property="og:title" content="StreetSmart Roma" />
+  <meta property="og:description" content="Database pericolosità ciclistica delle strade di Roma — 574 strade classificate per sicurezza ciclistica." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://nikolaifissenko.github.io/streetsmart-volt/" />
+  <meta property="og:image" content="https://nikolaifissenko.github.io/streetsmart-volt/icon-512.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="StreetSmart Roma" />
+  <meta name="twitter:description" content="Database pericolosità ciclistica delle strade di Roma — 574 strade classificate." />
+  <meta name="twitter:image" content="https://nikolaifissenko.github.io/streetsmart-volt/icon-512.png" />
   <meta name="theme-color" content="#F7F2EA" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
@@ -282,12 +291,50 @@
     .nav-item.active { color: #3A3530; border-bottom-color: #3A3530; }
     .nav-item svg { width: 16px; height: 16px; }
 
+    /* ── SEARCH ── */
+    .search-wrap {
+      padding: 10px 16px; border-bottom: 1px solid #E8E1D8;
+    }
+    .search-input {
+      width: 100%; background: #EDE8DF; border: 1.5px solid #DDD6CA;
+      border-radius: 10px; padding: 9px 12px 9px 34px; font-size: 13px;
+      font-family: 'Inter', sans-serif; color: #2E2820; outline: none;
+      transition: border-color 0.2s;
+    }
+    .search-input:focus { border-color: #A09080; }
+    .search-input::placeholder { color: #B0A898; }
+    .search-wrap { position: relative; }
+    .search-wrap svg { position: absolute; left: 28px; top: 50%; transform: translateY(-50%); pointer-events: none; color: #A09080; }
+
     /* ── MOBILE ── */
+    .mobile-toolbar { display: none; }
     @media (max-width: 600px) {
       .sidebar { display: none; }
+      .sidebar.mobile-open { display: flex; position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1100; width: 100%; }
       .stats-bar { display: none; }
       .logo-subtitle { display: none; }
       header { padding: 8px 16px; }
+      .mobile-toolbar {
+        display: flex; gap: 8px; padding: 8px 12px;
+        background: #F7F2EA; border-bottom: 1px solid #D5CBBF;
+        flex-shrink: 0; z-index: 998;
+      }
+      .mobile-toolbar .search-input {
+        flex: 1; padding: 8px 12px 8px 32px; font-size: 13px;
+      }
+      .mobile-toolbar { position: relative; }
+      .mobile-toolbar .search-icon { position: absolute; left: 22px; top: 50%; transform: translateY(-50%); pointer-events: none; color: #A09080; }
+      .btn-mobile-filter {
+        background: #EDE8DF; border: 1.5px solid #DDD6CA; border-radius: 10px;
+        padding: 8px 12px; cursor: pointer; font-family: 'Inter', sans-serif;
+        font-size: 12px; font-weight: 600; color: #3A3530; white-space: nowrap;
+        display: flex; align-items: center; gap: 5px;
+      }
+      .btn-mobile-close {
+        display: block; padding: 12px 16px; background: #3A3530; color: #F7F2EA;
+        border: none; width: 100%; font-family: 'Inter', sans-serif; font-size: 14px;
+        font-weight: 600; cursor: pointer; text-align: center; flex-shrink: 0;
+      }
     }
   </style>
 </head>
@@ -342,7 +389,19 @@
 
 <!-- ════════ MAPPA VIEW ════════ -->
 <div class="view active" id="view-mappa">
-  <aside class="sidebar">
+  <div class="mobile-toolbar" id="mobile-toolbar">
+    <svg class="search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="text" class="search-input" id="mobile-search" placeholder="Cerca strada...">
+    <button class="btn-mobile-filter" id="btn-mobile-filter" onclick="toggleMobileSidebar()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
+      Filtri
+    </button>
+  </div>
+  <aside class="sidebar" id="sidebar">
+    <div class="search-wrap">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" class="search-input" id="desktop-search" placeholder="Cerca strada...">
+    </div>
     <div class="sidebar-section">
       <h3>Filtra per classe</h3>
       <div class="filters" id="filters"></div>
@@ -362,6 +421,7 @@
       <div class="street-list" id="street-list"></div>
     </div>
     <div class="no-geom-note" id="no-geom-note"></div>
+    <button class="btn-mobile-close" id="btn-mobile-close" onclick="toggleMobileSidebar()">Chiudi</button>
   </aside>
   <div id="map" style="position:relative;">
     <button class="btn-geolocate" onclick="geolocateUser()" title="La mia posizione">
@@ -372,7 +432,11 @@
 
 <!-- ════════ SEGNALA VIEW ════════ -->
 <div class="view" id="view-segnala">
-  <div id="segnala-map"></div>
+  <div id="segnala-map" style="position:relative;">
+    <button class="btn-geolocate" onclick="geolocateSegnala()" title="La mia posizione" style="z-index:1000;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg>
+    </button>
+  </div>
   <div class="segnala-selected-bar" id="segnala-selected-bar">
     <span style="font-size:11px;color:#A09080;">Tocca sulla mappa per piazzare un pin, poi compila il form sotto</span>
   </div>
@@ -384,6 +448,8 @@
 
       <form id="form-segnala" action="https://formspree.io/f/mrernnwd" method="POST">
         <input type="hidden" name="form_type" value="segnalazione">
+        <input type="hidden" name="latitudine" id="segnala-lat">
+        <input type="hidden" name="longitudine" id="segnala-lng">
 
         <label>Nome della strada *</label>
         <input type="text" name="strada" id="segnala-strada" placeholder="Es. Via Merulana" required>
@@ -720,6 +786,8 @@ function initSegnalaMap() {
       })
     }).addTo(segnalaMap);
 
+    document.getElementById('segnala-lat').value = e.latlng.lat.toFixed(6);
+    document.getElementById('segnala-lng').value = e.latlng.lng.toFixed(6);
     document.getElementById('segnala-selected-bar').innerHTML =
       '<strong>Cercando indirizzo...</strong> &middot; ' +
       e.latlng.lat.toFixed(5) + ', ' + e.latlng.lng.toFixed(5);
@@ -822,6 +890,41 @@ fetch('./streetsmart_roma.geojson')
     document.getElementById('map').innerHTML =
       '<div style="padding:40px;color:#e53935;font-family:Inter,sans-serif;">Errore: ' + err.message + '</div>';
   });
+
+/* ── SEARCH ── */
+let allFeatures = [];
+
+function filterStreetList(query) {
+  const q = query.toLowerCase().trim();
+  const list = document.getElementById('street-list');
+  const items = list.querySelectorAll('.street-item');
+  items.forEach((item, i) => {
+    const name = item.querySelector('.street-name')?.textContent?.toLowerCase() || '';
+    const quarter = item.querySelector('.street-q')?.textContent?.toLowerCase() || '';
+    item.style.display = (!q || name.includes(q) || quarter.includes(q)) ? '' : 'none';
+  });
+}
+
+document.getElementById('desktop-search').addEventListener('input', e => {
+  filterStreetList(e.target.value);
+  document.getElementById('mobile-search').value = e.target.value;
+});
+document.getElementById('mobile-search').addEventListener('input', e => {
+  filterStreetList(e.target.value);
+  document.getElementById('desktop-search').value = e.target.value;
+});
+
+function toggleMobileSidebar() {
+  document.getElementById('sidebar').classList.toggle('mobile-open');
+}
+
+function geolocateSegnala() {
+  if (!navigator.geolocation) return alert('Geolocalizzazione non supportata');
+  if (!segnalaMap) return;
+  navigator.geolocation.getCurrentPosition(pos => {
+    segnalaMap.setView([pos.coords.latitude, pos.coords.longitude], 16);
+  }, () => alert('Impossibile ottenere la posizione'));
+}
 
 /* ── SEGNALAZIONE FORM ── */
 let selectedColor = null;
