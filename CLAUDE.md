@@ -27,8 +27,10 @@ Sviluppato da Nikolai.
 `data/master/streetsmart_roma_completo.csv` — source of truth.
 
 ## Stato Database
-- **574 strade** nel CSV, **549 con geometria LineString** sulla mappa
-- Ultimo ID usato: SS-ROM-0574
+- **15.789 strade** nel CSV (574 manuali + 15.215 importate da OSM)
+- Ultimo ID usato: SS-ROM-15789
+- Import bulk: `python scripts/import_osm_bulk.py`
+- Build veloce: `python scripts/build_fast.py` (batch da 40, ~40 min per rebuild completo)
 
 ## PWA
 - **File principale**: `index.html` (root) — PWA con 3 tab: Mappa, Segnala, Sentinelle
