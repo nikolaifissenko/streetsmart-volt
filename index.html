@@ -182,10 +182,37 @@
       padding: 6px 16px; font-size: 11px; font-weight: 600; cursor: pointer;
       font-family: 'Inter', sans-serif;
     }
+    /* ── INSTALL BANNER ── */
+    .install-banner {
+      display: none; background: #2E2820; color: #F7F2EA; padding: 10px 20px;
+      font-size: 13px; font-weight: 500; font-family: 'Inter', sans-serif;
+      align-items: center; gap: 12px; flex-shrink: 0; z-index: 1001;
+    }
+    .install-banner.show { display: flex; }
+    .install-banner button {
+      background: #27AE60; color: #fff; border: none; border-radius: 8px;
+      padding: 6px 14px; font-size: 12px; font-weight: 700; cursor: pointer;
+      font-family: 'Inter', sans-serif; white-space: nowrap;
+    }
+    .install-banner .dismiss {
+      background: none; color: #7A6F65; font-size: 18px; padding: 0; margin-left: auto;
+    }
+
+    /* ── HIGHLIGHT STREET ── */
+    .street-item.highlighted { background: #E0D9CF; }
     @media (prefers-color-scheme: dark) {
+      .street-item.highlighted { background: #3A3530; }
       .scroll-top { background: linear-gradient(transparent, #252119); }
       .scroll-top button { background: #EDE8DF; color: #1a1714; }
       .search-count { color: #7A6F65; }
+      .install-banner { background: #252119; }
+    }
+
+    /* ── POPUP MOBILE ── */
+    @media (max-width: 600px) {
+      .leaflet-popup-content-wrapper { max-width: 280px; }
+      .leaflet-popup-content { margin: 10px 12px; }
+      .popup-grid { font-size: 0.7rem; }
     }
 
     .leaflet-popup-content-wrapper {
@@ -544,6 +571,11 @@
     Sentinelle
   </button>
 </nav>
+<div class="install-banner" id="install-banner">
+  <span>Installa StreetSmart sul tuo telefono</span>
+  <button id="install-btn" onclick="installPWA()">Installa</button>
+  <button class="dismiss" onclick="dismissInstall()">✕</button>
+</div>
 <div class="toast" id="toast"></div>
 
 <!-- ════════ MAPPA VIEW ════════ -->
@@ -930,6 +962,24 @@ function buildStreetList(features) {
         <div class="street-q">${p.quartiere}</div>
       </div>
     `;
+    item.addEventListener('mouseenter', () => {
+      item.classList.add('highlighted');
+      for (const l of (layersByClass[p.classificazione]||[])) {
+        if (l.feature?.properties?.id === p.id) {
+          l.eachLayer?.(sub => { if (sub.setStyle) sub.setStyle({ weight: 10, opacity: 1 }); });
+          break;
+        }
+      }
+    });
+    item.addEventListener('mouseleave', () => {
+      item.classList.remove('highlighted');
+      for (const l of (layersByClass[p.classificazione]||[])) {
+        if (l.feature?.properties?.id === p.id) {
+          l.eachLayer?.(sub => { if (sub.setStyle) sub.setStyle(styleFeature(f)); });
+          break;
+        }
+      }
+    });
     item.addEventListener('click', () => {
       const g = f.geometry;
       if (!g) return;
@@ -1212,11 +1262,11 @@ function shareStreet(name) {
 }
 
 function geolocateSegnala() {
-  if (!navigator.geolocation) return alert('Geolocalizzazione non supportata');
+  if (!navigator.geolocation) return showToast('Geolocalizzazione non supportata');
   if (!segnalaMap) return;
   navigator.geolocation.getCurrentPosition(pos => {
     segnalaMap.setView([pos.coords.latitude, pos.coords.longitude], 16);
-  }, () => alert('Impossibile ottenere la posizione'));
+  }, () => showToast('Impossibile ottenere la posizione'));
 }
 
 /* ── SEGNALAZIONE FORM ── */
@@ -1264,7 +1314,7 @@ document.getElementById('form-segnala').addEventListener('submit', async functio
   } catch {
     btn.disabled = false;
     btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l2.5 2.5L16 9"/></svg> Invia segnalazione';
-    alert('Errore. Riprova o scrivici in DM @streetsmart.nav');
+    showToast('Errore invio. Riprova o scrivici @streetsmart.nav');
   }
 });
 
@@ -1285,7 +1335,45 @@ document.getElementById('form-sentinelle').addEventListener('submit', async func
   } catch {
     btn.disabled = false;
     btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Entra nel progetto';
-    alert('Errore invio. Riprova o scrivici su Instagram @streetsmart.nav');
+    showToast('Errore invio. Riprova o scrivici @streetsmart.nav');
+  }
+});
+
+/* ── INSTALL PWA ── */
+let deferredPrompt = null;
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  deferredPrompt = e;
+  if (!localStorage.getItem('ss-install-dismissed')) {
+    document.getElementById('install-banner').classList.add('show');
+  }
+});
+
+function installPWA() {
+  if (!deferredPrompt) return;
+  deferredPrompt.prompt();
+  deferredPrompt.userChoice.then(result => {
+    if (result.outcome === 'accepted') showToast('App installata!');
+    deferredPrompt = null;
+    document.getElementById('install-banner').classList.remove('show');
+  });
+}
+
+function dismissInstall() {
+  document.getElementById('install-banner').classList.remove('show');
+  localStorage.setItem('ss-install-dismissed', '1');
+}
+
+/* ── KEYBOARD SHORTCUTS ── */
+document.addEventListener('keydown', e => {
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') return;
+  if (e.key === '1') switchView('mappa');
+  else if (e.key === '2') switchView('segnala');
+  else if (e.key === '3') switchView('sentinelle');
+  else if (e.key === '/' || e.key === 'f') {
+    e.preventDefault();
+    const search = document.getElementById('desktop-search') || document.getElementById('mobile-search');
+    if (search) search.focus();
   }
 });
 
@@ -1297,7 +1385,7 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('./sw.js');
   }).catch(() => {});
 }
-console.log('StreetSmart v6');
+console.log('StreetSmart v7');
 </script>
 </body>
 </html>
