@@ -30,7 +30,7 @@ SS-ROM-0028,Via del Plebiscito,Centro Storico,rosso,4,trafficata nessuna ciclabi
 SS-ROM-0029,Piazza Venezia (confluenza),Centro Storico,rosso,4,hub traffico nessuna protezione ciclisti,no,0,no,4,I,
 SS-ROM-0030,Via dei Fori Imperiali,Centro Storico,giallo,3,lavori appena terminati ciclabile dipinta ma velocita auto troppo alta - segnalazione @hyperpigno,si,4,no,4,I,
 SS-ROM-0031,Via del Teatro di Marcello,Centro Storico,rosso,4,trafficata curva pericolosa,no,2,no,4,I,
-SS-ROM-0032,Viale delle Milizie,Prati,rosso,4,4 corsie trafficata nessuna ciclabile,no,4,no,2,I,2026-06-16
+SS-ROM-0032,Viale delle Milizie,Prati,verde,1,ciclabile presente,si,4,no,2,I,2026-06-16
 SS-ROM-0033,Via Candia,Prati,giallo,3,strada urbana senso unico traffico medio,no,2,si,2,I,
 SS-ROM-0034,Via Crescenzio,Prati,giallo,3,strada urbana 2 corsie traffico contenuto,no,2,no,4,I,2026-06-16
 SS-ROM-0035,Via Germanico,Prati,giallo,3,senso unico residenziale,no,1,si,2,I,

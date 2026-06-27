@@ -122,7 +122,7 @@ def main():
     for row in rows:
         name = clean_name(row["nome"])
         cache_key = name.lower()
-        if cache_key in cache and cache[cache_key].get("type") in ("LineString", "MultiLineString"):
+        if cache_key in cache and cache[cache_key] and cache[cache_key].get("type") in ("LineString", "MultiLineString"):
             cached_count += 1
         else:
             need_geom.append(name)
