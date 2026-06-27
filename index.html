@@ -105,7 +105,30 @@
     .street-q { font-size: 0.68rem; color: #A09080; white-space: nowrap; }
     .no-geom-note { padding: 8px 16px; font-size: 0.7rem; color: #A09080; border-top: 1px solid #E8E1D8; }
 
-    #map { flex: 1; }
+    #map { flex: 1; position: relative; }
+
+    .map-loader {
+      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(237,232,223,0.85); z-index: 800;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 14px; transition: opacity 0.4s;
+    }
+    .map-loader.hidden { opacity: 0; pointer-events: none; }
+    .spinner {
+      width: 36px; height: 36px; border: 3px solid #DDD6CA;
+      border-top-color: #3A3530; border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .map-loader span { font-size: 12px; color: #7A6F65; font-weight: 500; letter-spacing: 0.06em; }
+
+    .btn-share-popup {
+      display: inline-flex; align-items: center; gap: 5px;
+      margin-top: 8px; padding: 6px 12px; background: #EDE8DF; border: 1.5px solid #DDD6CA;
+      border-radius: 8px; font-size: 0.72rem; font-weight: 600; color: #3A3530;
+      cursor: pointer; font-family: 'Inter', sans-serif; transition: background 0.15s;
+    }
+    .btn-share-popup:hover { background: #E0D9CF; }
 
     .leaflet-popup-content-wrapper {
       background: #F7F2EA; border: 1.5px solid #D5CBBF; border-radius: 12px;
@@ -423,7 +446,8 @@
     <div class="no-geom-note" id="no-geom-note"></div>
     <button class="btn-mobile-close" id="btn-mobile-close" onclick="toggleMobileSidebar()">Chiudi</button>
   </aside>
-  <div id="map" style="position:relative;">
+  <div id="map">
+    <div class="map-loader" id="map-loader"><div class="spinner"></div><span>Caricamento strade...</span></div>
     <button class="btn-geolocate" onclick="geolocateUser()" title="La mia posizione">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg>
     </button>
@@ -656,7 +680,13 @@ function makePopup(p) {
     </div>
     ${p.note?`<div class="popup-note">${p.note}</div>`:''}
     <div class="popup-id">${p.id}</div>
-    <button class="btn-segnala-popup" onclick="segnalaDaPopup(this)" ${dataAttr}>Segnala questa strada</button>
+    <div style="display:flex;gap:8px;margin-top:8px;">
+      <button class="btn-segnala-popup" onclick="segnalaDaPopup(this)" ${dataAttr} style="margin-top:0;flex:1;">Segnala</button>
+      <button class="btn-share-popup" onclick="shareStreet('${(p.nome||'').replace(/'/g,"\\'")}')">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        Condividi
+      </button>
+    </div>
   `;
 }
 
@@ -882,13 +912,14 @@ fetch('./streetsmart_roma.geojson')
     if (allCoords.length) mapInstance.fitBounds(allCoords, { padding: [20,20] });
 
     cachedGeoData = { lines, pts, allCoords };
+    document.getElementById('map-loader').classList.add('hidden');
     if (document.getElementById('view-segnala').classList.contains('active')) {
       initSegnalaMap();
     }
   })
   .catch(err => {
-    document.getElementById('map').innerHTML =
-      '<div style="padding:40px;color:#e53935;font-family:Inter,sans-serif;">Errore: ' + err.message + '</div>';
+    document.getElementById('map-loader').innerHTML =
+      '<span style="color:#e53935;">Errore: ' + err.message + '</span>';
   });
 
 /* ── SEARCH ── */
@@ -916,6 +947,18 @@ document.getElementById('mobile-search').addEventListener('input', e => {
 
 function toggleMobileSidebar() {
   document.getElementById('sidebar').classList.toggle('mobile-open');
+}
+
+function shareStreet(name) {
+  const url = window.location.origin + window.location.pathname;
+  const text = name + ' — StreetSmart Roma';
+  if (navigator.share) {
+    navigator.share({ title: 'StreetSmart Roma', text: text, url: url }).catch(() => {});
+  } else {
+    navigator.clipboard.writeText(text + ' ' + url).then(() => {
+      alert('Link copiato!');
+    }).catch(() => {});
+  }
 }
 
 function geolocateSegnala() {
