@@ -944,11 +944,11 @@ function styleFeature(feature) {
   const c = COLORS[feature.properties.classificazione] || COLORS['giallo'];
   const zoom = mapInstance.getZoom();
   let w;
-  if (zoom <= 12) w = 1.5;
-  else if (zoom <= 14) w = 2.5;
-  else if (zoom <= 16) w = 4;
-  else w = Math.max(c.weight, 5);
-  return { color: c.stroke, weight: w, opacity: 0.85 };
+  if (zoom <= 12) w = 0.8;
+  else if (zoom <= 14) w = 1.2;
+  else if (zoom <= 16) w = 2;
+  else w = 3;
+  return { color: c.stroke, weight: w, opacity: 0.75 };
 }
 
 mapInstance.on('zoomend', function() {
