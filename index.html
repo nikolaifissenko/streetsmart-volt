@@ -1195,25 +1195,6 @@ function initSegnalaMap() {
     attribution: '&copy; OSM &copy; CARTO', subdomains: 'abcd', maxZoom: 19,
   }).addTo(segnalaMap);
 
-  if (cachedGeoData) {
-    const segnalaFeatures = { type: 'FeatureCollection', features: cachedGeoData.lines.concat(cachedGeoData.pts || []) };
-    L.geoJSON(segnalaFeatures, {
-      style: function(feature) {
-        const c = COLORS[feature.properties.classificazione] || COLORS['giallo'];
-        return { color: c.stroke, weight: 2.5, opacity: 0.7 };
-      },
-      pointToLayer: function(feature, latlng) {
-        const c = COLORS[feature.properties.classificazione] || COLORS['giallo'];
-        return L.circleMarker(latlng, { radius: 5, color: c.stroke, weight: 2, fillColor: c.fill, fillOpacity: 0.3 });
-      },
-      onEachFeature: function(feature, layer) {
-        const p = feature.properties;
-        const c = COLORS[p.classificazione] || COLORS['giallo'];
-        layer.bindPopup('<strong>' + p.nome + '</strong><br><span style="color:' + c.stroke + '">' + (p.classificazione||'').toUpperCase() + '</span> — ' + (p.quartiere||''));
-      }
-    }).addTo(segnalaMap);
-  }
-
   let segnalaMarker = null;
 
   segnalaMap.on('click', function(e) {
