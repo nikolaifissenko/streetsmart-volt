@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grazie — StreetSmart API</title>
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #EDE8DF;
+      color: #3A3530;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    h1 {
+      font-family: 'EB Garamond', serif;
+      font-size: 42px;
+      font-weight: 700;
+      color: #2E2820;
+      margin-bottom: 16px;
+    }
+    p {
+      font-size: 16px;
+      color: #7A6F65;
+      max-width: 480px;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+    .check {
+      width: 64px; height: 64px;
+      background: #27AE60;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-size: 32px;
+      color: #fff;
+    }
+    .links {
+      margin-top: 32px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .links a {
+      display: inline-block;
+      padding: 12px 28px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .links a.primary {
+      background: #27AE60;
+      color: #fff;
+    }
+    .links a.primary:hover { background: #219a52; }
+    .links a.secondary {
+      background: transparent;
+      border: 1.5px solid #D5CBBF;
+      color: #3A3530;
+    }
+    .links a.secondary:hover { background: #F7F2EA; }
+  </style>
+</head>
+<body>
+  <div class="check">&#10003;</div>
+  <h1>Richiesta ricevuta.</h1>
+  <p>Ti contatteremo entro 24 ore per discutere il piano migliore per il tuo caso d'uso.</p>
+  <p style="font-size:13px;">Nel frattempo, esplora la mappa con tutte le 15.789 strade classificate.</p>
+  <div class="links">
+    <a href="index.html" class="primary">Apri la mappa</a>
+    <a href="https://instagram.com/streetsmart.nav" class="secondary">Seguici su Instagram</a>
+  </div>
+</body>
+</html>
