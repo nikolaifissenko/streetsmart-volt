@@ -1342,18 +1342,19 @@ let allFeatures = [];
 
 function filterStreetList(query) {
   const q = query.toLowerCase().trim();
-  const list = document.getElementById('street-list');
-  const items = list.querySelectorAll('.street-item');
-  let visible = 0;
-  items.forEach((item, i) => {
-    const name = item.querySelector('.street-name')?.textContent?.toLowerCase() || '';
-    const quarter = item.querySelector('.street-q')?.textContent?.toLowerCase() || '';
-    const show = !q || name.includes(q) || quarter.includes(q);
-    item.style.display = show ? '' : 'none';
-    if (show) visible++;
-  });
   const counter = document.getElementById('search-count');
-  counter.textContent = q ? visible + ' risultat' + (visible === 1 ? 'o' : 'i') : '';
+  if (!q) {
+    buildStreetList(sortFeatures(currentFeatures, currentSort));
+    counter.textContent = '';
+    return;
+  }
+  const filtered = currentFeatures.filter(f => {
+    const name = (f.properties.nome || '').toLowerCase();
+    const quarter = (f.properties.quartiere || '').toLowerCase();
+    return name.includes(q) || quarter.includes(q);
+  });
+  buildStreetList(sortFeatures(filtered, currentSort));
+  counter.textContent = filtered.length + ' risultat' + (filtered.length === 1 ? 'o' : 'i');
 }
 
 document.getElementById('desktop-search').addEventListener('input', e => {
