@@ -255,7 +255,7 @@
         <li>Supporto integrazione</li>
         <li>Licenza commerciale</li>
       </ul>
-      <a href="mailto:nikolai.fissenko1@gmail.com?subject=StreetSmart%20API%20Business" class="btn-cta">Richiedi accesso</a>
+      <a href="#richiedi" class="btn-cta">Richiedi accesso</a>
     </div>
     <div class="price-card">
       <div class="price-label">Enterprise</div>
@@ -268,15 +268,47 @@
         <li>SLA garantito</li>
         <li>Account manager dedicato</li>
       </ul>
-      <a href="mailto:nikolai.fissenko1@gmail.com?subject=StreetSmart%20API%20Enterprise" class="btn-cta outline" style="border-color:#D5CBBF;color:#F7F2EA;">Contattaci</a>
+      <a href="#richiedi" class="btn-cta outline" style="border-color:#D5CBBF;color:#F7F2EA;">Contattaci</a>
     </div>
   </div>
 </div>
 
-<div class="cta-section">
-  <h2>Pronto per integrare?</h2>
-  <p>Scrivici per ricevere le credenziali API e iniziare a costruire prodotti più sicuri per Roma.</p>
-  <a href="mailto:nikolai.fissenko1@gmail.com?subject=StreetSmart%20API%20-%20Richiesta%20Accesso" class="btn-cta">Richiedi accesso API</a>
+<div class="cta-section" id="richiedi">
+  <h2>Richiedi accesso</h2>
+  <p>Compila il form e ti contatteremo entro 24 ore con un piano su misura per il tuo caso d'uso.</p>
+  <form id="lead-form" action="https://formspree.io/f/xlgookeg" method="POST" style="max-width:440px;margin:0 auto;text-align:left;">
+    <input type="hidden" name="_subject" value="StreetSmart API — Nuovo Lead" />
+    <input type="hidden" name="_next" value="https://nikolaifissenko.github.io/streetsmart-volt/grazie.html" />
+    <label style="display:block;margin-bottom:16px;">
+      <span style="font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#A09080;display:block;margin-bottom:6px;">Nome e cognome</span>
+      <input type="text" name="nome" required style="width:100%;padding:12px 14px;border-radius:10px;border:1.5px solid #D5CBBF;background:#F7F2EA;font-family:'Inter',sans-serif;font-size:14px;color:#2E2820;" />
+    </label>
+    <label style="display:block;margin-bottom:16px;">
+      <span style="font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#A09080;display:block;margin-bottom:6px;">Email aziendale</span>
+      <input type="email" name="email" required style="width:100%;padding:12px 14px;border-radius:10px;border:1.5px solid #D5CBBF;background:#F7F2EA;font-family:'Inter',sans-serif;font-size:14px;color:#2E2820;" />
+    </label>
+    <label style="display:block;margin-bottom:16px;">
+      <span style="font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#A09080;display:block;margin-bottom:6px;">Azienda / Ente</span>
+      <input type="text" name="azienda" required style="width:100%;padding:12px 14px;border-radius:10px;border:1.5px solid #D5CBBF;background:#F7F2EA;font-family:'Inter',sans-serif;font-size:14px;color:#2E2820;" />
+    </label>
+    <label style="display:block;margin-bottom:16px;">
+      <span style="font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#A09080;display:block;margin-bottom:6px;">Caso d'uso</span>
+      <select name="caso_uso" required style="width:100%;padding:12px 14px;border-radius:10px;border:1.5px solid #D5CBBF;background:#F7F2EA;font-family:'Inter',sans-serif;font-size:14px;color:#2E2820;appearance:auto;">
+        <option value="">Seleziona...</option>
+        <option value="micromobilita">Operatore micromobilita</option>
+        <option value="comune">Comune / Municipio</option>
+        <option value="navigazione">App di navigazione</option>
+        <option value="assicurazione">Assicurazione / Fleet</option>
+        <option value="ricerca">Ricerca / Universita</option>
+        <option value="altro">Altro</option>
+      </select>
+    </label>
+    <label style="display:block;margin-bottom:24px;">
+      <span style="font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#A09080;display:block;margin-bottom:6px;">Messaggio (opzionale)</span>
+      <textarea name="messaggio" rows="3" style="width:100%;padding:12px 14px;border-radius:10px;border:1.5px solid #D5CBBF;background:#F7F2EA;font-family:'Inter',sans-serif;font-size:14px;color:#2E2820;resize:vertical;"></textarea>
+    </label>
+    <button type="submit" class="btn-cta" style="width:100%;text-align:center;">Richiedi accesso API</button>
+  </form>
 </div>
 
 <footer>
