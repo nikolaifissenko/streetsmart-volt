@@ -6,13 +6,13 @@
   <title>StreetSmart Roma</title>
   <meta name="description" content="Database pericolosità ciclistica delle strade di Roma" />
   <meta property="og:title" content="StreetSmart Roma" />
-  <meta property="og:description" content="Database pericolosità ciclistica delle strade di Roma — 15.789 strade classificate per sicurezza ciclistica." />
+  <meta property="og:description" content="Database pericolosità ciclistica delle strade di Roma — 15.790 strade classificate per sicurezza ciclistica." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://nikolaifissenko.github.io/streetsmart-volt/" />
   <meta property="og:image" content="https://nikolaifissenko.github.io/streetsmart-volt/icon-512.png" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="StreetSmart Roma" />
-  <meta name="twitter:description" content="Database pericolosità ciclistica delle strade di Roma — 15.789 strade classificate." />
+  <meta name="twitter:description" content="Database pericolosità ciclistica delle strade di Roma — 15.790 strade classificate." />
   <meta name="twitter:image" content="https://nikolaifissenko.github.io/streetsmart-volt/icon-512.png" />
   <meta name="theme-color" content="#F7F2EA" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -155,6 +155,18 @@
       background: none; border: none; color: #A09080; cursor: pointer; font-size: 16px;
       padding: 0 0 0 8px; font-family: 'Inter', sans-serif;
     }
+
+    /* ── DB META ── */
+    .db-meta {
+      position: absolute; bottom: 10px; right: 10px; z-index: 900;
+      background: rgba(247,242,234,0.92); border: 1px solid #D5CBBF;
+      border-radius: 10px; padding: 5px 10px; font-size: 11px; color: #7A6F65;
+      font-weight: 500; box-shadow: 0 2px 8px rgba(58,53,48,0.1); pointer-events: none;
+    }
+    @media (prefers-color-scheme: dark) {
+      .db-meta { background: rgba(37,33,25,0.92); border-color: #3A3530; color: #A09080; }
+    }
+    @media (max-width: 600px) { .db-meta { font-size: 10px; padding: 4px 8px; } }
 
     /* ── SEARCH COUNTER ── */
     .search-count {
@@ -662,6 +674,7 @@
     <button class="btn-geolocate" onclick="geolocateUser()" title="La mia posizione">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg>
     </button>
+    <div class="db-meta" id="db-meta"></div>
   </div>
 </div>
 
@@ -1307,6 +1320,12 @@ fetch('./streetsmart_roma.geojson')
     animateCount(document.getElementById('stat-safe'), safe, 'safe');
     document.getElementById('no-geom-note').textContent =
       withoutGeom.length ? withoutGeom.length + ' strade non localizzate' : '';
+
+    if (gj.meta && gj.meta.ultima_segnalazione) {
+      const d = new Date(gj.meta.ultima_segnalazione);
+      const dataFmt = isNaN(d) ? gj.meta.ultima_segnalazione : d.toLocaleDateString('it-IT', { day: 'numeric', month: 'short', year: 'numeric' });
+      document.getElementById('db-meta').textContent = (lines.length + pts.length) + ' strade · ultima segnalazione: ' + dataFmt;
+    }
 
     const allCoords = [];
     withGeom.forEach(f => {

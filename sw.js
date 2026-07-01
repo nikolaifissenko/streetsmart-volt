@@ -1,8 +1,9 @@
-const CACHE_NAME = 'streetsmart-v15';
+const CACHE_NAME = 'streetsmart-v16';
 const ASSETS = [
   './',
   './index.html',
   './manifest.json',
+  './streetsmart_roma.geojson',
   'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css',
   'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js',
   'https://fonts.googleapis.com/css2?family=EB+Garamond:wght@700&family=Inter:wght@300;400;500;600;700&display=swap',
