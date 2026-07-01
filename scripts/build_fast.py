@@ -11,6 +11,7 @@ import sys
 import time
 import urllib.request
 import urllib.parse
+from datetime import datetime, timezone
 from pathlib import Path
 from collections import defaultdict
 
@@ -20,6 +21,12 @@ DIST_DIR   = ROOT / "dist"
 OUTPUT_GJ  = DIST_DIR / "streetsmart_roma.geojson"
 ROOT_GJ    = ROOT / "streetsmart_roma.geojson"
 CACHE_FILE = ROOT / "data" / "master" / ".geocode_cache.json"
+SEGNALAZIONI_GEO_FILE = ROOT / "data" / "master" / "segnalazioni_geo_giugno.json"
+
+# Segnalazioni raccolte via Formspree (form mrernnwd) tra il 9 e il 30 giugno 2026:
+# 280 con coordinate GPS (vedi SEGNALAZIONI_GEO_FILE) + ~74 senza coordinate,
+# usate solo per la riconciliazione colori e non tracciate singolarmente qui.
+TOTALE_SEGNALAZIONI_RACCOLTE = 355
 
 OVERPASS_URL = "https://overpass-api.de/api/interpreter"
 USER_AGENT = "StreetSmart-Build/4.0 (nikolaifissenko@github)"
@@ -205,8 +212,19 @@ def main():
             "geometry": geom,
         })
 
+    meta = {
+        "generato_il": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "totale_segnalazioni_raccolte": TOTALE_SEGNALAZIONI_RACCOLTE,
+    }
+    if SEGNALAZIONI_GEO_FILE.exists():
+        with open(SEGNALAZIONI_GEO_FILE, encoding="utf-8") as f:
+            segnalazioni_geo = json.load(f)
+        meta["ultima_segnalazione"] = max(r["t"] for r in segnalazioni_geo)
+        meta["totale_segnalazioni_geolocalizzate"] = len(segnalazioni_geo)
+
     geojson = {
         "type": "FeatureCollection",
+        "meta": meta,
         "features": features,
     }
 

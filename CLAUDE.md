@@ -17,10 +17,10 @@ Sviluppato da Nikolai.
 Regola: arterie note e strade con 3+ corsie senza ciclabile → rosso, non giallo.
 
 ## Database
-- **15.789 strade** (574 manuali + 15.215 da OSM), **15.090 con geometria**
+- **15.790 strade** (575 manuali + 15.215 da OSM), **15.091 con geometria**
 - **Source of truth**: `data/master/streetsmart_roma_completo.csv`
 - **Schema**: id, nome, quartiere, classificazione, score, note, ciclabile_presente, n_corsie, senso_unico, n_testimonianze, municipio, data_segnalazione
-- **ID formato**: SS-ROM-XXXX (ultimo: SS-ROM-15789)
+- **ID formato**: SS-ROM-XXXX (ultimo: SS-ROM-15790)
 - **Build GeoJSON**: `python scripts/build_fast.py`
 - **Import OSM**: `python scripts/import_osm_bulk.py`
 - **Parse segnalazioni**: `python scripts/parse_segnalazioni.py`
