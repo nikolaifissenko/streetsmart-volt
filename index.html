@@ -1365,6 +1365,13 @@ document.getElementById('desktop-search').addEventListener('input', e => {
 document.getElementById('mobile-search').addEventListener('input', e => {
   filterStreetList(e.target.value);
   document.getElementById('desktop-search').value = e.target.value;
+  const sidebar = document.getElementById('sidebar');
+  if (e.target.value.trim() && !sidebar.classList.contains('mobile-open')) {
+    sidebar.classList.add('mobile-open');
+    const desktopSearch = document.getElementById('desktop-search');
+    desktopSearch.focus();
+    desktopSearch.setSelectionRange(desktopSearch.value.length, desktopSearch.value.length);
+  }
 });
 
 function toggleMobileSidebar() {
