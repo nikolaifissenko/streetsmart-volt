@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>StreetSmart — Napoli (anteprima automatica)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<style>
+  html, body { margin: 0; height: 100%; font-family: Inter, sans-serif; }
+  #map { position: absolute; top: 40px; left: 0; right: 0; bottom: 0; }
+  #banner {
+    height: 40px; display: flex; align-items: center; gap: 16px;
+    padding: 0 12px; background: #1a1714; color: #EDE8DF; font-size: 13px;
+  }
+  #banner b { color: #fff; }
+  .legend { display: flex; gap: 10px; margin-left: auto; }
+  .legend span { display: flex; align-items: center; gap: 4px; }
+  .sw { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+</style>
+</head>
+<body>
+<div id="banner">
+  <b>Napoli</b> — classificazione automatica da OpenStreetMap (nessuna revisione manuale)
+  <div class="legend">
+    <span><i class="sw" style="background:#1a1a1a"></i>nero</span>
+    <span><i class="sw" style="background:#e53935"></i>rosso</span>
+    <span><i class="sw" style="background:#e6940a"></i>giallo</span>
+    <span><i class="sw" style="background:#1976D2"></i>blu</span>
+    <span><i class="sw" style="background:#27AE60"></i>verde</span>
+  </div>
+</div>
+<div id="map"></div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const COLORS = {
+  nero: '#1a1a1a', rosso: '#e53935', giallo: '#e6940a',
+  blu: '#1976D2', verde: '#27AE60',
+};
+
+const map = L.map('map', { center: [40.8518, 14.2681], zoom: 13 });
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+  attribution: '&copy; OSM &copy; CARTO', subdomains: 'abcd', maxZoom: 19,
+}).addTo(map);
+
+fetch('./tiles/index.json')
+  .then(r => r.json())
+  .then(slugs => Promise.all(slugs.map(s => fetch('./tiles/zona-' + s + '.geojson').then(r => r.json()))))
+  .then(tiles => {
+    const features = tiles.flatMap(t => t.features);
+    const layer = L.geoJSON({ type: 'FeatureCollection', features }, {
+      style: f => ({ color: COLORS[f.properties.classificazione] || '#999', weight: 3, opacity: 0.85 }),
+      onEachFeature: (f, l) => l.bindPopup(
+        '<b>' + f.properties.nome + '</b><br>' +
+        f.properties.classificazione.toUpperCase() + ' — ' + f.properties.note
+      ),
+    }).addTo(map);
+    map.fitBounds(layer.getBounds(), { padding: [20, 20] });
+  });
+</script>
+</body>
+</html>
