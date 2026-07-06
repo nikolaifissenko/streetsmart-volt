@@ -1294,6 +1294,17 @@ function onCityChange(cityKey) {
   loadCity(cityKey);
 }
 
+function fetchJsonWithRetry(url, attemptsLeft) {
+  attemptsLeft = attemptsLeft === undefined ? 3 : attemptsLeft;
+  return fetch(url)
+    .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .catch(err => {
+      if (attemptsLeft <= 1) throw err;
+      return new Promise(resolve => setTimeout(resolve, 700))
+        .then(() => fetchJsonWithRetry(url, attemptsLeft - 1));
+    });
+}
+
 function loadCity(cityKey) {
   const city = CITIES[cityKey];
   currentCity = cityKey;
@@ -1314,13 +1325,19 @@ function loadCity(cityKey) {
     switchView('mappa');
   }
 
-  fetch(city.tilesBase + '/index.json')
-    .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-    .then(slugs => Promise.all(slugs.map(s =>
-      fetch(city.tilesBase + '/' + city.tilePrefix + encodeURIComponent(s) + '.geojson')
-        .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+  fetchJsonWithRetry(city.tilesBase + '/index.json')
+    .then(slugs => Promise.allSettled(slugs.map(s =>
+      fetchJsonWithRetry(city.tilesBase + '/' + city.tilePrefix + encodeURIComponent(s) + '.geojson')
     )))
-    .then(tiles => ({ features: tiles.flatMap(t => t.features) }))
+    .then(results => {
+      const tiles = results.filter(r => r.status === 'fulfilled').map(r => r.value);
+      const failedCount = results.length - tiles.length;
+      if (tiles.length === 0) throw new Error('Nessuna zona caricata (rete assente o instabile)');
+      if (failedCount > 0) {
+        showToast(failedCount + ' zona/e non caricate — controlla la connessione e ricarica');
+      }
+      return { features: tiles.flatMap(t => t.features) };
+    })
     .then(gj => {
       const total = gj.features.length;
       const withGeom = gj.features.filter(f => f.geometry !== null);
