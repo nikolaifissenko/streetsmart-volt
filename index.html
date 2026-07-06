@@ -1249,8 +1249,13 @@ function initSegnalaMap() {
   }
 }
 
-fetch('./streetsmart_roma.geojson')
+fetch('./tiles/index.json')
   .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+  .then(slugs => Promise.all(slugs.map(s =>
+    fetch('./tiles/municipio-' + encodeURIComponent(s) + '.geojson')
+      .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+  )))
+  .then(tiles => ({ features: tiles.flatMap(t => t.features) }))
   .then(gj => {
     const total = gj.features.length;
     const withGeom = gj.features.filter(f => f.geometry !== null);
@@ -1365,6 +1370,13 @@ document.getElementById('desktop-search').addEventListener('input', e => {
 document.getElementById('mobile-search').addEventListener('input', e => {
   filterStreetList(e.target.value);
   document.getElementById('desktop-search').value = e.target.value;
+  const sidebar = document.getElementById('sidebar');
+  if (e.target.value.trim() && !sidebar.classList.contains('mobile-open')) {
+    sidebar.classList.add('mobile-open');
+    const desktopSearch = document.getElementById('desktop-search');
+    desktopSearch.focus();
+    desktopSearch.setSelectionRange(desktopSearch.value.length, desktopSearch.value.length);
+  }
 });
 
 function toggleMobileSidebar() {

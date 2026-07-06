@@ -5,7 +5,7 @@ Legge data/master/streetsmart_roma_completo.csv
 → valida ogni riga
 → fetcha geometrie reali (LineString) da Overpass in batch da N strade
 → fallback Point da Nominatim per strade non trovate
-→ produce dist/streetsmart_roma.geojson + streetsmart_roma.geojson (root)
+→ produce dist/streetsmart_roma.geojson (interno) + tiles/municipio-*.geojson (pubblicati)
 """
 
 import csv
@@ -21,7 +21,6 @@ ROOT = Path(__file__).parent.parent
 MASTER_CSV = ROOT / "data" / "master" / "streetsmart_roma_completo.csv"
 DIST_DIR   = ROOT / "dist"
 OUTPUT_GJ  = DIST_DIR / "streetsmart_roma.geojson"
-ROOT_GJ    = ROOT / "streetsmart_roma.geojson"
 CACHE_FILE = ROOT / "data" / "master" / ".geocode_cache.json"
 
 VALID_CLASSIFICATIONS = {"nero","rosso","giallo","verde","blu","verde-giallo","verde-blu"}
@@ -266,13 +265,15 @@ def main():
         })
 
     gj = {"type": "FeatureCollection", "features": features}
-    for path in [OUTPUT_GJ, ROOT_GJ]:
-        with open(path, "w", encoding="utf-8") as f:
-            json.dump(gj, f, ensure_ascii=False, indent=2)
+    with open(OUTPUT_GJ, "w", encoding="utf-8") as f:
+        json.dump(gj, f, ensure_ascii=False, indent=2)
+
+    sys.path.insert(0, str(Path(__file__).parent))
+    from tiles import write_tiles
+    write_tiles(features)
 
     print(f"\nGeoJSON scritto in:")
-    print(f"  {OUTPUT_GJ}")
-    print(f"  {ROOT_GJ}")
+    print(f"  {OUTPUT_GJ} (non pubblicato — la PWA legge i tile in tiles/)")
     print(f"\n  LineString/Multi: {stats['linee']}")
     print(f"  Point (fallback): {stats['punti']}")
     print(f"  Senza geometria:  {stats['nessuna']}")

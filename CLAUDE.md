@@ -42,6 +42,11 @@ Regola: arterie note e strade con 3+ corsie senza ciclabile → rosso, non giall
 
 ## Regole GeoJSON
 - Solo LineString/MultiLineString — niente Point, niente strade senza geometria
+- Niente file unico col database intero servito in una richiesta sola (era scaricabile
+  con un solo URL). La PWA fetcha `tiles/index.json` (elenco slug municipio) poi i
+  tile `tiles/municipio-<slug>.geojson` in parallelo. `scripts/tiles.py` genera i
+  tile da `dist/streetsmart_roma.geojson` (non pubblicato, gitignored) — chiamato
+  automaticamente da `build_fast.py`/`build.py` a fine build.
 
 ## Struttura File
 ```
@@ -50,9 +55,11 @@ api.html                — Landing B2B con form lead capture
 grazie.html             — Thank-you page post-lead
 404.html                — Redirect PWA
 manifest.json / sw.js   — PWA
-streetsmart_roma.geojson — GeoJSON servito dalla PWA
+tiles/index.json        — elenco slug municipio
+tiles/municipio-*.geojson — GeoJSON per municipio, servito dalla PWA
 data/master/            — CSV source of truth + cache
 scripts/build_fast.py   — Build GeoJSON (batch, principale)
+scripts/tiles.py        — Divide il GeoJSON in tile per municipio
 scripts/import_osm_bulk.py — Import strade da OSM
 scripts/parse_segnalazioni.py — Parse segnalazioni
 ```
