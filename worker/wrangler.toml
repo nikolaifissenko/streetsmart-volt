@@ -1,0 +1,9 @@
+name = "streetsmart-api"
+main = "src/index.js"
+compatibility_date = "2024-11-01"
+
+# API_KEYS (comma-separated valid keys) is a secret, not a var — never
+# committed here. Set it with:
+#   wrangler secret put API_KEYS
+# For local dev, put a test value in worker/.dev.vars (gitignored):
+#   API_KEYS=dev-test-key

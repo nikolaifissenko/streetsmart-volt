@@ -39,6 +39,10 @@ Regola: arterie note e strade con 3+ corsie senza ciclabile → rosso, non giall
 - **Lead capture**: form Formspree (endpoint `xlgookeg`) su api.html → redirect `grazie.html`
 - **Form segnalazioni**: Formspree endpoint `mrernnwd`
 - **Instagram**: @streetsmart.nav (533 follower)
+- **API commerciale**: `worker/` (Cloudflare Worker), doc in `API.md`. Fa da
+  gateway con API key sopra gli stessi tile pubblici — nessun database
+  proprio, quindi i dati restano sempre sincronizzati con la mappa. Chiavi
+  gestite a mano via `wrangler secret put API_KEYS`.
 
 ## Regole GeoJSON
 - Solo LineString/MultiLineString — niente Point, niente strade senza geometria
@@ -62,4 +66,6 @@ scripts/build_fast.py   — Build GeoJSON (batch, principale)
 scripts/tiles.py        — Divide il GeoJSON in tile per municipio
 scripts/import_osm_bulk.py — Import strade da OSM
 scripts/parse_segnalazioni.py — Parse segnalazioni
+worker/                 — API commerciale (Cloudflare Worker), vedi API.md
+API.md                  — Doc dell'API commerciale
 ```
