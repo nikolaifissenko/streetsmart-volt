@@ -29,9 +29,17 @@ Regola: arterie note e strade con 3+ corsie senza ciclabile → rosso, non giall
 - **URL**: https://nikolaifissenko.github.io/streetsmart-volt/
 - **File**: `index.html` — 3 tab (Mappa, Segnala, Sentinelle) + bottone "Per aziende" nell'header
 - **Mappa**: Leaflet.js, strade colorate, filtri, ricerca 15k strade, sidebar, geolocalizzazione
+- **Selettore città**: dropdown "Roma ▾" sotto il logo (`CITIES` in index.html). Cambia
+  città = ricarica tile/stats/sidebar da zero; nasconde "Per municipio" e disabilita
+  Segnala/Sentinelle per città senza quelle feature (vedi sezione Altre città)
 - **Brand**: palette travertino (#EDE8DF), font EB Garamond + Inter
 - **Colori mappa**: nero=#1a1a1a, rosso=#e53935, giallo=#e6940a, blu=#1976D2, verde=#27AE60
-- **PWA**: manifest.json + sw.js (cache `streetsmart-v15`), dark mode automatico
+- **PWA**: manifest.json + sw.js (cache `streetsmart-v16`, bump ad ogni cambio
+  significativo di struttura file, altrimenti utenti che tornano sul sito
+  vedono asset/tile vecchi), dark mode automatico
+- **Caricamento tile**: ogni tile fetcha con retry (3 tentativi). Se un tile fallisce
+  dopo i retry la mappa carica comunque il resto e mostra un toast — non un errore
+  bloccante (regressione reale introdotta dal passaggio a tile paralleli, poi corretta)
 
 ## Monetizzazione
 - **Landing B2B**: `api.html` — posizionamento: "Il layer di pericolosità ciclistica per la tua app"
@@ -45,18 +53,22 @@ Regola: arterie note e strade con 3+ corsie senza ciclabile → rosso, non giall
   gestite a mano via `wrangler secret put API_KEYS`.
 
 ## Altre città
-- **Stato**: solo Roma è in produzione (PWA + API commerciale). Altre città sono
-  dataset sperimentali, non collegati alla PWA né all'API.
+- **Stato**: Roma è in produzione con dati curati (PWA + API commerciale). Napoli è
+  collegata alla PWA tramite il selettore città, ma è **solo classificazione
+  automatica OSM, senza revisione manuale/testimonianze** — qualità inferiore
+  a Roma finché non c'è un giro di revisione umano. L'API commerciale (`worker/`)
+  serve solo i tile di Roma, non ancora estesa alle altre città.
 - **Build**: `python scripts/build_city.py "<NomeCitta>" <PREFISSO>` (es. `"Napoli" NAP`)
-  — fetcha OSM in bulk e classifica automaticamente con le stesse regole di Roma,
-  ma **senza revisione manuale/testimonianze** (a differenza delle 574 strade
-  curate a mano di Roma). Qualità quindi inferiore a Roma finché non c'è un
-  giro di revisione umano.
+  — fetcha OSM in bulk e classifica automaticamente con le stesse regole di Roma.
 - **Output**: `cities/<slug>/streetsmart_<slug>.csv` + `cities/<slug>/tiles/zona-*.geojson`
   (raggruppate per griglia geografica generata dinamicamente, non per municipio
   reale — non esiste una mappatura amministrativa per città non-Roma).
-- **Anteprima**: `cities/<slug>/preview.html`, pagina Leaflet standalone,
-  non collegata a `index.html`.
+- **Aggiungere una città al selettore PWA**: dopo aver girato `build_city.py`,
+  aggiungere una entry a `CITIES` in `index.html` (tilesBase, tilePrefix,
+  zoneLabel, hasZoneStats: false, communityFeatures: false) e un `<option>`
+  nel `#city-select`.
+- **Anteprima standalone**: `cities/<slug>/preview.html`, pagina Leaflet
+  indipendente, utile per guardare i dati prima di collegarli alla PWA.
 
 ## Regole GeoJSON
 - Solo LineString/MultiLineString — niente Point, niente strade senza geometria
@@ -78,8 +90,10 @@ tiles/municipio-*.geojson — GeoJSON per municipio, servito dalla PWA
 data/master/            — CSV source of truth + cache
 scripts/build_fast.py   — Build GeoJSON (batch, principale)
 scripts/tiles.py        — Divide il GeoJSON in tile per municipio
+scripts/build_city.py   — Build automatico OSM per altre città (vedi Altre città)
 scripts/import_osm_bulk.py — Import strade da OSM
 scripts/parse_segnalazioni.py — Parse segnalazioni
+cities/<slug>/           — Dataset altre città (es. cities/napoli/), vedi Altre città
 worker/                 — API commerciale (Cloudflare Worker), vedi API.md
 API.md                  — Doc dell'API commerciale
 ```
