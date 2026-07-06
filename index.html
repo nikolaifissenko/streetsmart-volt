@@ -55,6 +55,16 @@
     .logo-icon { flex-shrink: 0; }
     .logo-title { font-family: 'EB Garamond', serif; font-size: 1.4rem; font-weight: 700; color: #2E2820; letter-spacing: 0.02em; }
     .logo-subtitle { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #A09080; }
+    .city-select {
+      font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase; color: #A09080;
+      background: transparent
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='6' viewBox='0 0 8 6'%3E%3Cpath d='M0 0l4 6 4-6z' fill='%23A09080'/%3E%3C/svg%3E")
+        no-repeat right center;
+      border: none; cursor: pointer; padding: 0 12px 0 0;
+      -webkit-appearance: none; appearance: none;
+    }
+    .city-select:focus { outline: none; color: #3A3530; }
 
     .stats-bar { display: flex; gap: 20px; flex-wrap: wrap; }
     .stat { display: flex; flex-direction: column; align-items: center; min-width: 40px; }
@@ -400,6 +410,7 @@
     }
     .nav-item:hover { color: #3A3530; }
     .nav-item.active { color: #3A3530; border-bottom-color: #3A3530; }
+    .nav-item.disabled { opacity: 0.4; cursor: not-allowed; }
     .nav-item svg { width: 16px; height: 16px; }
 
     /* ── SEARCH ── */
@@ -494,6 +505,8 @@
       body { background: #1a1714; color: #D5CBBF; }
       header { background: #252119; border-bottom-color: #3A3530; }
       .logo-title { color: #EDE8DF; }
+      .city-select { color: #7A6F65; }
+      .city-select option { background: #252119; color: #EDE8DF; }
       .tab-nav { background: #252119; border-bottom-color: #3A3530; }
       .nav-item { color: #7A6F65; }
       .nav-item:hover, .nav-item.active { color: #EDE8DF; border-bottom-color: #EDE8DF; }
@@ -566,7 +579,10 @@
     </svg>
     <div>
       <div class="logo-title">StreetSmart</div>
-      <div class="logo-subtitle">Roma</div>
+      <select class="city-select" id="city-select" onclick="event.stopPropagation()" onchange="onCityChange(this.value)">
+        <option value="roma">Roma</option>
+        <option value="napoli">Napoli</option>
+      </select>
     </div>
   </div>
   <div class="stats-bar">
@@ -816,6 +832,19 @@
 <!-- ════════ BOTTOM NAV ════════ -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
+/* ── CITTÀ ── */
+const CITIES = {
+  roma: {
+    label: 'Roma', tilesBase: './tiles', tilePrefix: 'municipio-',
+    zoneLabel: 'Municipio', hasZoneStats: true, communityFeatures: true,
+  },
+  napoli: {
+    label: 'Napoli', tilesBase: './cities/napoli/tiles', tilePrefix: 'zona-',
+    zoneLabel: 'Zona', hasZoneStats: false, communityFeatures: false,
+  },
+};
+let currentCity = 'roma';
+
 /* ── NAVIGATION ── */
 let mapInstance = null;
 let userLocationMarker = null;
@@ -824,6 +853,10 @@ let segnalaMapInited = false;
 let cachedGeoData = null;
 
 function switchView(name) {
+  if (['segnala', 'sentinelle'].includes(name) && !CITIES[currentCity].communityFeatures) {
+    showToast(CITIES[currentCity].label + ' non ha ancora segnalazioni della community');
+    return;
+  }
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
   document.querySelectorAll('.nav-item').forEach(n => { n.classList.remove('active'); n.setAttribute('aria-selected', 'false'); });
   document.getElementById('view-' + name).classList.add('active');
@@ -892,14 +925,21 @@ let allGeoFeatures = null;
 
 function makePopup(p) {
   const c = COLORS[p.classificazione] || COLORS['giallo'];
-  const dataAttr = 'data-nome="' + (p.nome||'').replace(/"/g,'&quot;') + '" data-quartiere="' + (p.quartiere||'').replace(/"/g,'&quot;') + '" data-municipio="' + (p.municipio||'') + '" data-classificazione="' + (p.classificazione||'') + '"';
+  const city = CITIES[currentCity];
+  const zoneValue = p.municipio || p.zona || '';
+  const whereLine = [p.quartiere, zoneValue ? (city.zoneLabel + ' ' + zoneValue) : '']
+    .filter(Boolean).join(' &middot; ');
+  const dataAttr = 'data-nome="' + (p.nome||'').replace(/"/g,'&quot;') + '" data-quartiere="' + (p.quartiere||'').replace(/"/g,'&quot;') + '" data-municipio="' + zoneValue + '" data-classificazione="' + (p.classificazione||'') + '"';
+  const segnalaBtn = city.communityFeatures
+    ? `<button class="btn-segnala-popup" onclick="segnalaDaPopup(this)" ${dataAttr} style="margin-top:0;flex:1;">Segnala</button>`
+    : '';
   return `
     <div class="popup-tag" style="background:${c.stroke}22;color:${c.stroke};border:1.5px solid ${c.stroke}55">
       <span style="width:8px;height:8px;border-radius:50%;background:${c.stroke};display:inline-block"></span>
       ${(p.classificazione||'').toUpperCase()} &middot; score ${p.score}/5
     </div>
     <div class="popup-name">${p.nome}</div>
-    <div class="popup-where">${p.quartiere} &middot; Municipio ${p.municipio}</div>
+    ${whereLine?`<div class="popup-where">${whereLine}</div>`:''}
     <div class="popup-grid">
       <span class="popup-key">Corsie</span><span class="popup-val">${p.n_corsie??'&mdash;'}</span>
       <span class="popup-key">Senso unico</span><span class="popup-val">${p.senso_unico||'&mdash;'}</span>
@@ -909,7 +949,7 @@ function makePopup(p) {
     ${p.note?`<div class="popup-note">${p.note}</div>`:''}
     <div class="popup-id">${p.id}</div>
     <div style="display:flex;gap:8px;margin-top:8px;">
-      <button class="btn-segnala-popup" onclick="segnalaDaPopup(this)" ${dataAttr} style="margin-top:0;flex:1;">Segnala</button>
+      ${segnalaBtn}
       <button class="btn-share-popup" onclick="shareStreet('${(p.nome||'').replace(/'/g,"\\'")}')">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
         Condividi
@@ -1249,89 +1289,118 @@ function initSegnalaMap() {
   }
 }
 
-fetch('./tiles/index.json')
-  .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-  .then(slugs => Promise.all(slugs.map(s =>
-    fetch('./tiles/municipio-' + encodeURIComponent(s) + '.geojson')
-      .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-  )))
-  .then(tiles => ({ features: tiles.flatMap(t => t.features) }))
-  .then(gj => {
-    const total = gj.features.length;
-    const withGeom = gj.features.filter(f => f.geometry !== null);
-    const withoutGeom = gj.features.filter(f => f.geometry === null);
-    const lines = withGeom.filter(f => f.geometry.type === 'LineString' || f.geometry.type === 'MultiLineString');
-    const pts = withGeom.filter(f => f.geometry.type === 'Point');
+function onCityChange(cityKey) {
+  if (cityKey === currentCity) return;
+  loadCity(cityKey);
+}
 
-    const counts = {};
-    withGeom.forEach(f => { const cls = f.properties.classificazione; counts[cls] = (counts[cls]||0)+1; });
+function loadCity(cityKey) {
+  const city = CITIES[cityKey];
+  currentCity = cityKey;
+  document.getElementById('city-select').value = cityKey;
 
-    allGeoFeatures = { type: 'FeatureCollection', features: lines.concat(pts) };
+  if (mainGeoLayer) { mapInstance.removeLayer(mainGeoLayer); mainGeoLayer = null; }
+  layersByClass = {};
+  activeFilters = new Set(Object.keys(COLORS));
+  document.getElementById('search-count').textContent = '';
+  document.getElementById('desktop-search').value = '';
+  document.getElementById('mobile-search').value = '';
+  document.getElementById('muni-section').style.display = 'none';
+  document.getElementById('map-loader').classList.remove('hidden');
+  document.getElementById('map-loader').innerHTML = '<div class="spinner"></div><span>Caricamento strade...</span>';
+  document.querySelectorAll('.nav-item[data-view="segnala"], .nav-item[data-view="sentinelle"]')
+    .forEach(n => n.classList.toggle('disabled', !city.communityFeatures));
+  if (!city.communityFeatures && ['segnala', 'sentinelle'].includes(location.hash.replace('#', ''))) {
+    switchView('mappa');
+  }
 
-    mainGeoLayer = L.geoJSON(allGeoFeatures, {
-      style: styleFeature,
-      filter: function(feature) {
-        const cls = feature.properties.classificazione;
-        return activeFilters.has(cls);
-      },
-      onEachFeature: function(feature, layer) {
-        layer.bindPopup(makePopup(feature.properties), { maxWidth: 280 });
-        const cls = feature.properties.classificazione;
-        if (!layersByClass[cls]) layersByClass[cls] = [];
-        layersByClass[cls].push(layer);
-      },
-      pointToLayer: function(feature, latlng) {
-        const c = COLORS[feature.properties.classificazione] || COLORS['giallo'];
-        return L.circleMarker(latlng, {
-          radius: 8, color: c.stroke, weight: 3,
-          opacity: 0.65, fillColor: c.fill, fillOpacity: 0.3, dashArray: '4,3',
-        });
-      },
-    }).addTo(mapInstance);
+  fetch(city.tilesBase + '/index.json')
+    .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(slugs => Promise.all(slugs.map(s =>
+      fetch(city.tilesBase + '/' + city.tilePrefix + encodeURIComponent(s) + '.geojson')
+        .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    )))
+    .then(tiles => ({ features: tiles.flatMap(t => t.features) }))
+    .then(gj => {
+      const total = gj.features.length;
+      const withGeom = gj.features.filter(f => f.geometry !== null);
+      const withoutGeom = gj.features.filter(f => f.geometry === null);
+      const lines = withGeom.filter(f => f.geometry.type === 'LineString' || f.geometry.type === 'MultiLineString');
+      const pts = withGeom.filter(f => f.geometry.type === 'Point');
 
-    buildFilters(counts);
-    currentFeatures = withGeom;
-    buildStreetList(sortFeatures(withGeom, currentSort));
-    buildMuniStats(withGeom);
+      const counts = {};
+      withGeom.forEach(f => { const cls = f.properties.classificazione; counts[cls] = (counts[cls]||0)+1; });
 
-    const danger = withGeom.filter(f => ['nero','rosso'].includes(f.properties.classificazione)).length;
-    const safe = withGeom.filter(f => ['verde','verde-blu','verde-giallo'].includes(f.properties.classificazione)).length;
-    function animateCount(el, target, cls) {
-      if (cls) el.classList.add(cls);
-      let current = 0;
-      const step = Math.max(1, Math.floor(target / 30));
-      const interval = setInterval(() => {
-        current = Math.min(current + step, target);
-        el.textContent = current;
-        if (current >= target) clearInterval(interval);
-      }, 25);
-    }
-    animateCount(document.getElementById('stat-total'), total);
-    animateCount(document.getElementById('stat-mapped'), lines.length + pts.length);
-    animateCount(document.getElementById('stat-danger'), danger, 'danger');
-    animateCount(document.getElementById('stat-safe'), safe, 'safe');
-    document.getElementById('no-geom-note').textContent =
-      withoutGeom.length ? withoutGeom.length + ' strade non localizzate' : '';
+      allGeoFeatures = { type: 'FeatureCollection', features: lines.concat(pts) };
 
-    const allCoords = [];
-    withGeom.forEach(f => {
-      const g = f.geometry;
-      if (g.type === 'Point') allCoords.push([g.coordinates[1], g.coordinates[0]]);
-      else if (g.type === 'LineString') g.coordinates.forEach(([ln,la]) => allCoords.push([la,ln]));
-      else if (g.type === 'MultiLineString') g.coordinates.forEach(seg => seg.forEach(([ln,la]) => allCoords.push([la,ln])));
+      mainGeoLayer = L.geoJSON(allGeoFeatures, {
+        style: styleFeature,
+        filter: function(feature) {
+          const cls = feature.properties.classificazione;
+          return activeFilters.has(cls);
+        },
+        onEachFeature: function(feature, layer) {
+          layer.bindPopup(makePopup(feature.properties), { maxWidth: 280 });
+          const cls = feature.properties.classificazione;
+          if (!layersByClass[cls]) layersByClass[cls] = [];
+          layersByClass[cls].push(layer);
+        },
+        pointToLayer: function(feature, latlng) {
+          const c = COLORS[feature.properties.classificazione] || COLORS['giallo'];
+          return L.circleMarker(latlng, {
+            radius: 8, color: c.stroke, weight: 3,
+            opacity: 0.65, fillColor: c.fill, fillOpacity: 0.3, dashArray: '4,3',
+          });
+        },
+      }).addTo(mapInstance);
+
+      buildFilters(counts);
+      currentFeatures = withGeom;
+      buildStreetList(sortFeatures(withGeom, currentSort));
+      if (city.hasZoneStats) buildMuniStats(withGeom);
+
+      const danger = withGeom.filter(f => ['nero','rosso'].includes(f.properties.classificazione)).length;
+      const safe = withGeom.filter(f => ['verde','verde-blu','verde-giallo'].includes(f.properties.classificazione)).length;
+      function animateCount(el, target, cls) {
+        el.classList.remove('danger', 'safe');
+        if (cls) el.classList.add(cls);
+        let current = 0;
+        const step = Math.max(1, Math.floor(target / 30));
+        const interval = setInterval(() => {
+          current = Math.min(current + step, target);
+          el.textContent = current;
+          if (current >= target) clearInterval(interval);
+        }, 25);
+      }
+      animateCount(document.getElementById('stat-total'), total);
+      animateCount(document.getElementById('stat-mapped'), lines.length + pts.length);
+      animateCount(document.getElementById('stat-danger'), danger, 'danger');
+      animateCount(document.getElementById('stat-safe'), safe, 'safe');
+      document.getElementById('no-geom-note').textContent =
+        withoutGeom.length ? withoutGeom.length + ' strade non localizzate' : '';
+
+      const allCoords = [];
+      withGeom.forEach(f => {
+        const g = f.geometry;
+        if (g.type === 'Point') allCoords.push([g.coordinates[1], g.coordinates[0]]);
+        else if (g.type === 'LineString') g.coordinates.forEach(([ln,la]) => allCoords.push([la,ln]));
+        else if (g.type === 'MultiLineString') g.coordinates.forEach(seg => seg.forEach(([ln,la]) => allCoords.push([la,ln])));
+      });
+      if (allCoords.length) mapInstance.fitBounds(allCoords, { padding: [20,20] });
+
+      cachedGeoData = { lines, pts, allCoords };
+      document.getElementById('map-loader').classList.add('hidden');
+      if (document.getElementById('view-segnala').classList.contains('active')) {
+        initSegnalaMap();
+      }
+    })
+    .catch(err => {
+      document.getElementById('map-loader').innerHTML =
+        '<span style="color:#e53935;">Errore: ' + err.message + '</span>';
     });
-    if (allCoords.length) mapInstance.fitBounds(allCoords, { padding: [20,20] });
+}
 
-    cachedGeoData = { lines, pts, allCoords };
-    document.getElementById('map-loader').classList.add('hidden');
-    if (document.getElementById('view-segnala').classList.contains('active')) {
-      initSegnalaMap();
-    }
-  })
-  .catch(err => {
-    document.getElementById('map-loader').innerHTML =
-      '<span style="color:#e53935;">Errore: ' + err.message + '</span>';
-  });
+loadCity('roma');
 
 /* ── SORT ── */
 document.querySelectorAll('.sort-btn').forEach(btn => {
