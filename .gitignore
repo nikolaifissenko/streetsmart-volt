@@ -3,5 +3,9 @@
 *.DS_Store
 Thumbs.db
 # La cache geocoding VA tracciata (persiste tra i run GitHub Action)
-# Il GeoJSON prodotto VA tracciato (serve per GitHub Pages)
+# Il GeoJSON combinato NON va tracciato: la PWA legge i tile in tiles/
+# invece di un unico file scaricabile con l'intero database
+dist/streetsmart_roma.geojson
+streetsmart_roma.geojson
 
+__pycache__/
