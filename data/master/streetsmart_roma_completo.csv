@@ -44,11 +44,11 @@ SS-ROM-0042,Via Panisperna,Rione Monti,giallo,3,senso unico storico traffico con
 SS-ROM-0043,Via del Boschetto,Rione Monti,giallo,3,senso unico residenziale Monti,no,1,si,1,I,
 SS-ROM-0044,Via Urbana,Rione Monti,giallo,3,senso unico residenziale Monti,no,1,si,2,I,
 SS-ROM-0045,Via Leonina,Rione Monti,giallo,3,senso unico Monti traffico contenuto,no,1,si,1,I,
-SS-ROM-0046,Via della Lungaretta,Trastevere,giallo,3,senso unico Trastevere traffico contenuto,no,1,si,1,I,
-SS-ROM-0047,Via della Scala,Trastevere,giallo,3,senso unico Trastevere,no,1,si,2,I,
-SS-ROM-0048,Via San Francesco a Ripa,Trastevere,giallo,3,2 corsie traffico contenuto,no,2,no,1,I,
+SS-ROM-0046,Via della Lungaretta,Trastevere,blu,2,"senso unico Trastevere, alto flusso pedonale serale",no,1,si,1,I,
+SS-ROM-0047,Via della Scala,Trastevere,blu,2,"senso unico Trastevere, alto flusso pedonale",no,1,si,2,I,
+SS-ROM-0048,Via San Francesco a Ripa,Trastevere,blu,2,"alto flusso pedonale, traffico contenuto",no,2,no,1,I,
 SS-ROM-0049,Via Garibaldi,Trastevere/Gianicolo,blu,2,ZTL - segnalazione sentinella,no,2,no,3,I,2026-06-02
-SS-ROM-0050,Via della Lungara,Trastevere,giallo,3,2 corsie traffico contenuto lungo mura,no,2,no,2,I,
+SS-ROM-0050,Via della Lungara,Trastevere,blu,2,alto flusso pedonale lungo mura,no,2,no,2,I,
 SS-ROM-0051,Via Giulia,Centro Storico,giallo,3,storica traffico contenuto,no,2,no,3,I,
 SS-ROM-0052,Via dei Banchi Vecchi,Centro Storico,giallo,3,senso unico storico,no,1,si,2,I,
 SS-ROM-0053,Via del Governo Vecchio,Centro Storico,giallo,3,senso unico storico traffico contenuto,no,1,si,2,I,2026-06-16
@@ -392,7 +392,7 @@ SS-ROM-0390,Viale Ventuno Aprile,Nomentano,rosso,4,arteria trafficata nessuna ci
 SS-ROM-0391,Viale delle Provincie,Nomentano,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,3,II,2026-06-16
 SS-ROM-0392,Via Catania,Nomentano,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,2,II,2026-06-16
 SS-ROM-0393,Viale Ippocrate,Nomentano,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,2,II,2026-06-16
-SS-ROM-0394,Via della Renella,Trastevere,giallo,3,strada urbana tranquilla senza ciclabile,no,2,no,1,I,2026-06-02
+SS-ROM-0394,Via della Renella,Trastevere,blu,2,"strada urbana tranquilla, alto flusso pedonale",no,2,no,1,I,2026-06-02
 SS-ROM-0395,Piazza Santiago del Cile,Parioli,rosso,4,segnalazioni contrastanti verde/rosso,no,2,no,3,II,2026-06-01
 SS-ROM-0396,Via Sabotino,Prati,verde,1,pista ciclabile presente,si,2,no,1,I,2026-06-01
 SS-ROM-0397,Via Podgora,Prati,rosso,4,arteria trafficata nessuna ciclabile,no,2,no,1,I,2026-06-01
@@ -4692,7 +4692,7 @@ SS-ROM-4690,Via Cassano al Jonio,Municipio Roma VII,giallo,3,strada urbana senza
 SS-ROM-4691,Via Cassano d'Adda,Municipio Roma XIV,giallo,3,strada urbana senza ciclabile,no,2,no,0,XIV,2026-06-27
 SS-ROM-4692,Via Cassano delle Murge,Municipio Roma V,giallo,3,strada urbana senza ciclabile,no,2,no,0,V,2026-06-27
 SS-ROM-4693,Via Cassaro,Municipio Roma VII,giallo,3,strada urbana senza ciclabile (2 corsie),no,2,no,0,VII,2026-06-27
-SS-ROM-4694,Via Cassia,Municipio Roma XIV,blu,2,accesso limitato (ZTL),no,1,no,0,XIV,2026-06-27
+SS-ROM-4694,Via Cassia,Municipio Roma XIV,rosso,4,"arteria trafficata, 2+ corsie, nessuna ciclabile",no,2,no,0,XIV,2026-06-27
 SS-ROM-4695,Via Cassia Nuova,Municipio Roma III,rosso,4,strada principale trafficata (3 corsie),no,3,no,0,III,2026-06-27
 SS-ROM-4696,Via Cassia Veientana,Municipio Roma XIV,nero,5,"strada ad alta velocità (trunk, 90 km/h)",no,2,si,0,XIV,2026-06-27
 SS-ROM-4697,Via Cassiano Beligatti,Municipio Roma XI,giallo,3,strada urbana senza ciclabile,no,2,no,0,XI,2026-06-27
