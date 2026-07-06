@@ -44,6 +44,20 @@ Regola: arterie note e strade con 3+ corsie senza ciclabile → rosso, non giall
   proprio, quindi i dati restano sempre sincronizzati con la mappa. Chiavi
   gestite a mano via `wrangler secret put API_KEYS`.
 
+## Altre città
+- **Stato**: solo Roma è in produzione (PWA + API commerciale). Altre città sono
+  dataset sperimentali, non collegati alla PWA né all'API.
+- **Build**: `python scripts/build_city.py "<NomeCitta>" <PREFISSO>` (es. `"Napoli" NAP`)
+  — fetcha OSM in bulk e classifica automaticamente con le stesse regole di Roma,
+  ma **senza revisione manuale/testimonianze** (a differenza delle 574 strade
+  curate a mano di Roma). Qualità quindi inferiore a Roma finché non c'è un
+  giro di revisione umano.
+- **Output**: `cities/<slug>/streetsmart_<slug>.csv` + `cities/<slug>/tiles/zona-*.geojson`
+  (raggruppate per griglia geografica generata dinamicamente, non per municipio
+  reale — non esiste una mappatura amministrativa per città non-Roma).
+- **Anteprima**: `cities/<slug>/preview.html`, pagina Leaflet standalone,
+  non collegata a `index.html`.
+
 ## Regole GeoJSON
 - Solo LineString/MultiLineString — niente Point, niente strade senza geometria
 - Niente file unico col database intero servito in una richiesta sola (era scaricabile
