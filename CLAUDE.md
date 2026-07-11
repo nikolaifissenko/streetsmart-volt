@@ -47,6 +47,7 @@ Regola: arterie note e strade con 3+ corsie senza ciclabile → rosso, non giall
 - **Lead capture**: form Formspree (endpoint `xlgookeg`) su api.html → redirect `grazie.html`
 - **Form segnalazioni**: Formspree endpoint `mrernnwd`
 - **Instagram**: @streetsmart.nav (533 follower)
+- **LinkedIn**: post di aggiornamento periodici sul progetto (trazione B2B, numeri, espansione città), profilo di Nikolai
 - **API commerciale**: `worker/` (Cloudflare Worker), doc in `API.md`. Fa da
   gateway con API key sopra gli stessi tile pubblici — nessun database
   proprio, quindi i dati restano sempre sincronizzati con la mappa. Chiavi
