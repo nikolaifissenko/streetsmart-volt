@@ -34,7 +34,14 @@ Regola: arterie note e strade con 3+ corsie senza ciclabile → rosso, non giall
 - **ID formato**: SS-ROM-XXXX (ultimo: SS-ROM-15789)
 - **Build GeoJSON**: `python scripts/build_fast.py`
 - **Import OSM**: `python scripts/import_osm_bulk.py`
-- **Parse segnalazioni**: `python scripts/parse_segnalazioni.py`
+- **Parse segnalazioni (vie nuove)**: `python scripts/parse_segnalazioni.py` — aggiunge
+  solo vie assenti dal dataset, non tocca quelle già presenti
+- **Riconcilia segnalazioni (vie esistenti)**: script una-tantum tipo
+  `scripts/reconcile_segnalazioni_luglio.py` — a differenza di `parse_segnalazioni.py`,
+  aggiorna classificazione/score/note/n_testimonianze/municipio delle vie già presenti
+  quando le segnalazioni reali (raggruppate per via, maggioranza vince) divergono dal
+  dato corrente; poi rigenerare con `build_fast.py`. Se ne scrive uno nuovo ad ogni
+  lotto di segnalazioni da riconciliare (nome file = periodo coperto)
 
 ## PWA
 - **URL**: https://nikolaifissenko.github.io/streetsmart-volt/
@@ -65,15 +72,26 @@ Regola: arterie note e strade con 3+ corsie senza ciclabile → rosso, non giall
 
 ## Altre città
 - **Stato**: Roma è in produzione con dati curati (PWA + API commerciale). Napoli è
-  collegata alla PWA tramite il selettore città, ma è **solo classificazione
-  automatica OSM, senza revisione manuale/testimonianze** — qualità inferiore
-  a Roma finché non c'è un giro di revisione umano. L'API commerciale (`worker/`)
-  serve solo i tile di Roma, non ancora estesa alle altre città.
+  collegata alla PWA tramite il selettore città ed è **prevalentemente classificazione
+  automatica OSM** — qualità inferiore a Roma finché non c'è un giro di revisione
+  manuale più ampio. Da luglio 2026 esiste però un primo layer di segnalazioni reali
+  anche per Napoli (vedi sotto), stesso meccanismo di Roma: l'obiettivo dichiarato è
+  portare Napoli allo stesso livello di dati "vivi" di Roma. L'API commerciale
+  (`worker/`) serve solo i tile di Roma, non ancora estesa alle altre città.
 - **Build**: `python scripts/build_city.py "<NomeCitta>" <PREFISSO>` (es. `"Napoli" NAP`)
   — fetcha OSM in bulk e classifica automaticamente con le stesse regole di Roma.
+  Rilanciarlo rigenera tutto da zero (nuovo fetch OSM, ID rinumerati) — se nel
+  frattempo sono state riconciliate segnalazioni reali, vanno riapplicate dopo.
 - **Output**: `cities/<slug>/streetsmart_<slug>.csv` + `cities/<slug>/tiles/zona-*.geojson`
   (raggruppate per griglia geografica generata dinamicamente, non per municipio
   reale — non esiste una mappatura amministrativa per città non-Roma).
+- **Segnalazioni reali per città non-Roma**: `cities/<slug>/segnalazioni_<slug>.csv`
+  (log grezzo) + `scripts/reconcile_segnalazioni_<slug>.py` — stesso meccanismo di
+  riconciliazione di Roma, ma patcha anche i tile già generati senza rifare il fetch
+  OSM completo. Nota: il form Formspree di Segnala è raggiungibile anche da città
+  diverse da Roma pur con `communityFeatures: false` in `index.html` (che disabilita
+  solo l'accesso dalla UI PWA) — prima segnalazione reale ricevuta così: Via Medina,
+  Napoli, luglio 2026.
 - **Aggiungere una città al selettore PWA**: dopo aver girato `build_city.py`,
   aggiungere una entry a `CITIES` in `index.html` (tilesBase, tilePrefix,
   zoneLabel, hasZoneStats: false, communityFeatures: false) e un `<option>`
@@ -103,8 +121,10 @@ scripts/build_fast.py   — Build GeoJSON (batch, principale)
 scripts/tiles.py        — Divide il GeoJSON in tile per municipio
 scripts/build_city.py   — Build automatico OSM per altre città (vedi Altre città)
 scripts/import_osm_bulk.py — Import strade da OSM
-scripts/parse_segnalazioni.py — Parse segnalazioni
+scripts/parse_segnalazioni.py — Parse segnalazioni (vie nuove)
+scripts/reconcile_segnalazioni_*.py — Riconcilia segnalazioni su vie esistenti (Roma e altre città)
 cities/<slug>/           — Dataset altre città (es. cities/napoli/), vedi Altre città
+cities/<slug>/segnalazioni_<slug>.csv — Log segnalazioni reali per città non-Roma
 worker/                 — API commerciale (Cloudflare Worker), vedi API.md
 API.md                  — Doc dell'API commerciale
 ```
