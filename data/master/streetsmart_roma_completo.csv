@@ -479,7 +479,7 @@ SS-ROM-0477,Viale dell'Università,Nomentano,rosso,4,arteria trafficata tranquil
 SS-ROM-0478,Ciclabile Roma Termini-Sapienza,Municipio Roma I,rosso,4,strada trafficata senza ciclabile,no,2,no,1,I,2026-06-17
 SS-ROM-0479,Via Celio Vibenna,Municipio Roma I,verde,1,pista ciclabile presente,si,2,no,1,I,2026-06-17
 SS-ROM-0480,Piazza del Colosseo,Municipio Roma I,verde,1,pista ciclabile presente,si,2,no,1,I,2026-06-17
-SS-ROM-0481,Via dei Cerchi,Municipio Roma I,rosso,4,strada trafficata senza ciclabile,no,2,no,1,I,2026-06-17
+SS-ROM-0481,Via dei Cerchi,Municipio Roma I,verde,1,strada trafficata senza ciclabile | Ricolorato da rosso a verde in base a 6 segnalazioni reali (ultima: 2026-07-15).,si,2,no,7,I,2026-07-15
 SS-ROM-0482,Via del Circo Massimo,Municipio Roma I,rosso,4,strada trafficata senza ciclabile,no,2,no,1,I,2026-06-17
 SS-ROM-0483,Via dell'Ara Massima di Ercole,Municipio Roma I,rosso,4,strada trafficata senza ciclabile,no,2,no,1,I,2026-06-17
 SS-ROM-0484,Via della Greca,Municipio Roma I,rosso,4,strada trafficata senza ciclabile,no,2,no,1,I,2026-06-17
@@ -1236,11 +1236,11 @@ SS-ROM-1234,Località Castel De' Ceveri,Municipio Roma XIV,giallo,3,strada urban
 SS-ROM-1235,Loma Street,Municipio Roma XI,giallo,3,strada urbana senza ciclabile,no,2,no,0,XI,2026-06-27
 SS-ROM-1236,Luciano Street,Municipio Roma XI,giallo,3,strada urbana senza ciclabile,no,2,no,0,XI,2026-06-27
 SS-ROM-1237,Lungolago di Polline,Municipio Roma XIV,rosso,4,strada secondaria trafficata (2 corsie),no,2,no,0,XIV,2026-06-27
-SS-ROM-1238,Lungomare Amerigo Vespucci,Municipio Roma XI,rosso,4,strada secondaria trafficata (2 corsie),no,2,si,0,XI,2026-06-27
+SS-ROM-1238,Lungomare Amerigo Vespucci,Municipio Roma X,verde,1,strada secondaria trafficata (2 corsie) | Ricolorato da rosso a verde in base a 2 segnalazioni reali (ultima: 2026-07-06).,si,2,si,2,X,2026-07-06
 SS-ROM-1239,Lungomare Duca degli Abruzzi,Municipio Roma XI,giallo,3,strada urbana senza ciclabile (2 corsie),no,2,no,0,XI,2026-06-27
-SS-ROM-1240,Lungomare Duilio,Municipio Roma XI,rosso,4,strada secondaria trafficata (2 corsie),no,2,si,0,XI,2026-06-27
+SS-ROM-1240,Lungomare Duilio,Municipio Roma X,verde,1,strada secondaria trafficata (2 corsie) | Ricolorato da rosso a verde in base a 1 segnalazione reale (ultima: 2026-07-06).,si,2,si,1,X,2026-07-06
 SS-ROM-1241,Lungomare Lutazio Catulo,Municipio Roma XI,rosso,4,strada secondaria trafficata (2 corsie),no,2,si,0,XI,2026-06-27
-SS-ROM-1242,Lungomare Paolo Toscanelli,Municipio Roma XI,rosso,4,strada secondaria trafficata (2 corsie),no,2,si,0,XI,2026-06-27
+SS-ROM-1242,Lungomare Paolo Toscanelli,Municipio Roma X,verde,1,strada secondaria trafficata (2 corsie) | Ricolorato da rosso a verde in base a 1 segnalazione reale (ultima: 2026-07-06).,si,2,si,1,X,2026-07-06
 SS-ROM-1243,Lungotevere Dante,Municipio Roma IX,rosso,4,arteria trafficata senza ciclabile (2 corsie),no,2,no,0,IX,2026-06-27
 SS-ROM-1244,Lungotevere De' Cenci,Municipio Roma II,rosso,4,strada principale trafficata (3 corsie),no,3,si,0,II,2026-06-27
 SS-ROM-1245,Lungotevere Federico Fellini,Municipio Roma I,nero,5,strada principale 4 corsie senza protezione ciclabile,no,4,si,0,I,2026-06-27
@@ -2020,7 +2020,7 @@ SS-ROM-2018,Piazzale Jurij Prestijacopo,Municipio Roma IX,blu,2,zona pedonale / 
 SS-ROM-2019,Piazzale Konrad Adenauer,Municipio Roma IX,giallo,3,strada urbana senza ciclabile (2 corsie),no,2,no,0,IX,2026-06-27
 SS-ROM-2020,Piazzale Lorenzo Gasparri,Municipio Roma XI,giallo,3,strada urbana senza ciclabile (2 corsie),no,2,si,0,XI,2026-06-27
 SS-ROM-2021,Piazzale Luigi Sturzo,Municipio Roma IX,giallo,3,strada urbana senza ciclabile (2 corsie),no,2,si,0,IX,2026-06-27
-SS-ROM-2022,Piazzale Magellano,Municipio Roma XI,rosso,4,strada secondaria trafficata (2 corsie),no,2,no,0,XI,2026-06-27
+SS-ROM-2022,Piazzale Magellano,Municipio Roma X,verde,1,strada secondaria trafficata (2 corsie) | Ricolorato da rosso a verde in base a 1 segnalazione reale (ultima: 2026-07-06).,si,2,no,1,X,2026-07-06
 SS-ROM-2023,Piazzale Manila,Municipio Roma II,rosso,4,strada principale trafficata (2 corsie),no,2,si,0,II,2026-06-27
 SS-ROM-2024,Piazzale Marcellino Champagnat,Municipio Roma VIII,giallo,3,strada urbana senza ciclabile (2 corsie),no,2,si,0,VIII,2026-06-27
 SS-ROM-2025,Piazzale Maresciallo Diaz,Municipio Roma III,rosso,4,strada principale trafficata (2 corsie),no,2,si,0,III,2026-06-27
@@ -3525,7 +3525,7 @@ SS-ROM-3523,Via Aulo Gabinio,Municipio Roma VII,giallo,3,strada urbana senza cic
 SS-ROM-3524,Via Aulo Plauzio,Municipio Roma VII,blu,2,zona pedonale / living street,no,1,no,0,VII,2026-06-27
 SS-ROM-3525,Via Aulo Postumio,Municipio Roma VII,giallo,3,strada urbana senza ciclabile,no,2,no,0,VII,2026-06-27
 SS-ROM-3526,Via Aurano,Municipio Roma XII,giallo,3,strada urbana senza ciclabile,no,2,no,0,XII,2026-06-27
-SS-ROM-3527,Via Aurelia Antica,Municipio Roma I,rosso,4,arteria trafficata senza ciclabile (2 corsie),no,2,no,0,I,2026-06-27
+SS-ROM-3527,Via Aurelia Antica,Municipio Roma I,nero,5,"arteria trafficata senza ciclabile (2 corsie) | Ricolorato da rosso a nero in base a 1 segnalazione reale (ultima: 2026-07-18). | Nota utente: ""Una corsia per senso di marcia molto strette; con traffico moderato/intenso diventa quasi impossibile sorpassare in sicurezza una bici""",no,2,no,1,I,2026-07-18
 SS-ROM-3528,Via Aureliana,Municipio Roma II,giallo,3,strada urbana senza ciclabile (1 corsie),no,1,si,0,II,2026-06-27
 SS-ROM-3529,Via Aureliano Pertile,Municipio Roma XIII,giallo,3,strada urbana senza ciclabile,no,2,no,0,XIII,2026-06-27
 SS-ROM-3530,Via Aurelio Bacciarini,Municipio Roma I,giallo,3,strada urbana senza ciclabile (2 corsie),no,2,no,0,I,2026-06-27
@@ -5162,7 +5162,7 @@ SS-ROM-5160,Via Colfiorito,Municipio Roma IV,giallo,3,strada urbana senza ciclab
 SS-ROM-5161,Via Collalto Sabino,Municipio Roma III,giallo,3,strada urbana senza ciclabile (1 corsie),no,1,si,0,III,2026-06-27
 SS-ROM-5162,Via Collarmele,Municipio Roma IV,giallo,3,strada urbana senza ciclabile,no,2,no,0,IV,2026-06-27
 SS-ROM-5163,Via Collatina,Municipio Roma V,rosso,4,arteria trafficata senza ciclabile (2 corsie),no,2,no,0,V,2026-06-27
-SS-ROM-5164,Via Collatina Vecchia,Municipio Roma V,rosso,4,arteria trafficata senza ciclabile (2 corsie),no,2,no,0,V,2026-06-27
+SS-ROM-5164,Via Collatina Vecchia,Municipio Roma IV,giallo,3,"arteria trafficata senza ciclabile (2 corsie) | Ricolorato da rosso a giallo in base a 1 segnalazione reale (ultima: 2026-07-18). | Nota utente: ""Molto poco trafficata""",no,2,no,1,IV,2026-07-18
 SS-ROM-5165,Via Collazia,Municipio Roma IX,giallo,3,strada urbana senza ciclabile (1 corsie),no,1,si,0,IX,2026-06-27
 SS-ROM-5166,Via Colle Gentilesco,Municipio Roma VII,giallo,3,strada urbana senza ciclabile,no,2,no,0,VII,2026-06-27
 SS-ROM-5167,Via Colle Pizzuto,Municipio Roma VI,giallo,3,strada urbana senza ciclabile (2 corsie),no,2,no,0,VI,2026-06-27
@@ -9212,7 +9212,7 @@ SS-ROM-9210,Via Maria Rygier,Municipio Roma XIV,giallo,3,strada urbana senza cic
 SS-ROM-9211,Via Maria Saveria Sanzi,Municipio Roma XII,giallo,3,strada urbana senza ciclabile,no,2,no,0,XII,2026-06-27
 SS-ROM-9212,Via Maria Teresa Casini,Municipio Roma XI,blu,2,accesso limitato (ZTL),no,1,no,0,XI,2026-06-27
 SS-ROM-9213,Via Maria Theodoli,Municipio Roma XI,giallo,3,strada urbana senza ciclabile (2 corsie),no,2,no,0,XI,2026-06-27
-SS-ROM-9214,Via Marianna Dionigi,Municipio Roma II,giallo,3,strada urbana senza ciclabile (1 corsie),no,1,si,0,II,2026-06-27
+SS-ROM-9214,Via Marianna Dionigi,Municipio Roma I,giallo,3,strada urbana senza ciclabile (1 corsie) | Confermato giallo da 1 segnalazione reale (ultima: 2026-07-08).,no,1,si,1,I,2026-07-08
 SS-ROM-9215,Via Marianna de Fusco,Municipio Roma V,giallo,3,strada urbana senza ciclabile,no,2,no,0,V,2026-06-27
 SS-ROM-9216,Via Mariano Fortuny,Municipio Roma II,giallo,3,strada urbana senza ciclabile (2 corsie),no,2,no,0,II,2026-06-27
 SS-ROM-9217,Via Mariano Luigi Patrizi,Municipio Roma XIII,giallo,3,strada urbana senza ciclabile (1 corsie),no,1,si,0,XIII,2026-06-27
@@ -12328,7 +12328,7 @@ SS-ROM-12326,Via Tasmania,Municipio Roma IV,giallo,3,strada urbana senza ciclabi
 SS-ROM-12327,Via Tassarolo,Municipio Roma XIII,giallo,3,strada urbana senza ciclabile,no,2,no,0,XIII,2026-06-27
 SS-ROM-12328,Via Tasso,Municipio Roma II,giallo,3,strada urbana senza ciclabile (1 corsie),no,1,si,0,II,2026-06-27
 SS-ROM-12329,Via Tassullo,Municipio Roma XI,giallo,3,strada urbana senza ciclabile,no,2,no,0,XI,2026-06-27
-SS-ROM-12330,Via Tata Giovanni,Municipio Roma IX,rosso,4,strada secondaria trafficata (4 corsie),no,4,no,0,IX,2026-06-27
+SS-ROM-12330,Via Tata Giovanni,Municipio Roma I,verde,1,strada secondaria trafficata (4 corsie) | Ricolorato da rosso a verde in base a 1 segnalazione reale (ultima: 2026-07-15).,si,4,no,1,I,2026-07-15
 SS-ROM-12331,Via Taurano,Municipio Roma V,giallo,3,strada urbana senza ciclabile,no,2,si,0,V,2026-06-27
 SS-ROM-12332,Via Taurasia,Municipio Roma IX,giallo,3,strada urbana senza ciclabile (1 corsie),no,1,si,0,IX,2026-06-27
 SS-ROM-12333,Via Taurianova,Municipio Roma VII,giallo,3,strada urbana senza ciclabile,no,2,si,0,VII,2026-06-27
@@ -15558,7 +15558,7 @@ SS-ROM-15556,Viale delle Scienze,Municipio Roma II,giallo,3,strada urbana senza 
 SS-ROM-15557,Viale dello Stadio Olimpico,Municipio Roma I,rosso,4,strada principale trafficata (2 corsie),no,2,si,0,I,2026-06-27
 SS-ROM-15558,Viale di Castel Porziano,Municipio Roma XI,giallo,3,strada urbana senza ciclabile (2 corsie),no,2,no,0,XI,2026-06-27
 SS-ROM-15559,Viale di Pescina Gagliarda,Municipio Roma XI,giallo,3,strada urbana senza ciclabile,no,2,no,0,XI,2026-06-27
-SS-ROM-15560,Viale di Porta Ardeatina,Municipio Roma IX,giallo,3,strada urbana senza ciclabile (1 corsie),no,1,si,0,IX,2026-06-27
+SS-ROM-15560,Viale di Porta Ardeatina,Municipio Roma I,verde,1,strada urbana senza ciclabile (1 corsie) | Ricolorato da giallo a verde in base a 1 segnalazione reale (ultima: 2026-07-15).,si,1,si,1,I,2026-07-15
 SS-ROM-15561,Viale di Porta Tiburtina,Municipio Roma II,giallo,3,strada urbana senza ciclabile (1 corsie),no,1,si,0,II,2026-06-27
 SS-ROM-15562,Viale di San Paolo,Municipio Roma IX,giallo,3,strada urbana senza ciclabile (2 corsie),no,2,si,0,IX,2026-06-27
 SS-ROM-15563,Viale di Terra Santa,Municipio Roma XIII,blu,2,accesso limitato (ZTL),no,1,no,0,XIII,2026-06-27
