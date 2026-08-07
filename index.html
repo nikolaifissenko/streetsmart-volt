@@ -1388,6 +1388,26 @@ function geolocateUser() {
   }, () => showToast(t('toast.geoFailed')));
 }
 
+function geolocateOnLoad() {
+  if (!navigator.geolocation) return;
+  navigator.geolocation.getCurrentPosition(pos => {
+    const latlng = [pos.coords.latitude, pos.coords.longitude];
+    const applyView = () => {
+      mapInstance.stop();
+      mapInstance.setView(latlng, 16, { animate: false });
+      if (userLocationMarker) mapInstance.removeLayer(userLocationMarker);
+      userLocationMarker = L.circleMarker(latlng, {
+        radius: 8, color: '#4285F4', weight: 2, fillColor: '#4285F4', fillOpacity: 0.5,
+      }).addTo(mapInstance).bindPopup(t('map.yourLocation'));
+      showNearbyAlert(pos.coords.latitude, pos.coords.longitude);
+    };
+    // fitBounds() from the just-finished city load may still have an animated
+    // pan/zoom in flight; let it settle before snapping to the user's location,
+    // otherwise its finalize step can silently overwrite this view right after.
+    setTimeout(applyView, 350);
+  }, () => {});
+}
+
 function initSegnalaMap() {
   if (segnalaMapInited) return;
   segnalaMapInited = true;
@@ -1571,6 +1591,10 @@ function loadCity(cityKey) {
       if (document.getElementById('view-segnala').classList.contains('active')) {
         initSegnalaMap();
       }
+      if (!hasAutoGeolocated) {
+        hasAutoGeolocated = true;
+        geolocateOnLoad();
+      }
     })
     .catch(err => {
       document.getElementById('map-loader').innerHTML =
@@ -1578,6 +1602,7 @@ function loadCity(cityKey) {
     });
 }
 
+let hasAutoGeolocated = false;
 loadCity('roma');
 
 /* ── SORT ── */
