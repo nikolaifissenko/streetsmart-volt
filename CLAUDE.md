@@ -28,10 +28,10 @@ da richiedere ogni volta.
 Regola: arterie note e strade con 3+ corsie senza ciclabile → rosso, non giallo.
 
 ## Database
-- **15.789 strade** (574 manuali + 15.215 da OSM), **15.090 con geometria**
+- **15.791 strade** (576 manuali + 15.215 da OSM), **15.091 con geometria**
 - **Source of truth**: `data/master/streetsmart_roma_completo.csv`
 - **Schema**: id, nome, quartiere, classificazione, score, note, ciclabile_presente, n_corsie, senso_unico, n_testimonianze, municipio, data_segnalazione
-- **ID formato**: SS-ROM-XXXX (ultimo: SS-ROM-15789)
+- **ID formato**: SS-ROM-XXXX (ultimo: SS-ROM-15791)
 - **Build GeoJSON**: `python scripts/build_fast.py`
 - **Import OSM**: `python scripts/import_osm_bulk.py`
 - **Parse segnalazioni (vie nuove)**: `python scripts/parse_segnalazioni.py` — aggiunge
@@ -47,6 +47,20 @@ Regola: arterie note e strade con 3+ corsie senza ciclabile → rosso, non giall
 - **URL**: https://nikolaifissenko.github.io/streetsmart-volt/
 - **File**: `index.html` — 3 tab (Mappa, Segnala, Sentinelle) + bottone "Per aziende" nell'header
 - **Mappa**: Leaflet.js, strade colorate, filtri, ricerca 15k strade, sidebar, geolocalizzazione
+- **Geolocalizzazione automatica**: alla prima apertura, dopo che le strade sono caricate,
+  la mappa tenta la geolocalizzazione in silenzio (nessun toast se negata/non disponibile)
+  e centra la vista sulla posizione dell'utente invece di lasciarla sull'inquadratura
+  dell'intera città. Applicata con ~350ms di ritardo rispetto al fix GPS: il `fitBounds()`
+  sul dataset appena caricato può avere ancora un'animazione di pan/zoom in corso quando
+  arriva la posizione (spesso quasi istantanea), e il suo step di completamento
+  sovrascrive silenziosamente una vista impostata troppo presto
+- **Localizzazione IT/EN**: rileva `navigator.language` e mostra tutta l'interfaccia
+  (Mappa, Segnala, Sentinelle) in inglese se il browser/dispositivo è in inglese,
+  altrimenti in italiano — solo l'etichetta visiva cambia, i valori di classificazione
+  nel database e le note curate delle strade restano sempre in italiano. Meccanismo:
+  dizionario `I18N` + attributi `data-i18n`/`data-i18n-html`/`data-i18n-placeholder`/
+  `data-i18n-title`/`data-i18n-aria-label` in `index.html`, applicati da `applyStaticI18n()`
+  al caricamento; le stringhe generate via JS (popup, toast, contatori) chiamano `t(key)`
 - **Selettore città**: dropdown "Roma ▾" sotto il logo (`CITIES` in index.html). Cambia
   città = ricarica tile/stats/sidebar da zero; nasconde "Per municipio" e disabilita
   Segnala/Sentinelle per città senza quelle feature (vedi sezione Altre città)
