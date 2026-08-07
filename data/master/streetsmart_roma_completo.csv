@@ -52,12 +52,12 @@ SS-ROM-0050,Via della Lungara,Trastevere,blu,2,alto flusso pedonale lungo mura,n
 SS-ROM-0051,Via Giulia,Centro Storico,blu,2,storica traffico contenuto | Ricolorato da giallo a blu in base a 1 segnalazione reale (ultima: 2026-06-17).,no,2,no,4,I,2026-06-17
 SS-ROM-0052,Via dei Banchi Vecchi,Centro Storico,blu,2,senso unico storico | Ricolorato da giallo a blu in base a 1 segnalazione reale (ultima: 2026-06-17).,no,1,si,3,I,2026-06-17
 SS-ROM-0053,Via del Governo Vecchio,Centro Storico,blu,2,senso unico storico traffico contenuto | Ricolorato da giallo a blu in base a 1 segnalazione reale (ultima: 2026-06-16).,no,1,si,3,I,2026-06-16
-SS-ROM-0054,Via della Conciliazione,Borgo,rosso,4,larga ma traffico parzialmente controllato,no,4,no,4,I,
+SS-ROM-0054,Via della Conciliazione,Borgo,blu,2,larga ma traffico parzialmente controllato | Ricolorato da rosso a blu in base a 1 segnalazione reale (ultima: 2026-07-20).,no,4,no,5,I,2026-07-20
 SS-ROM-0055,Via Angelo Emo,Prati,giallo,3,senso unico residenziale,no,1,si,2,I,
 SS-ROM-0056,Via Gregorio VII,Aurelio,rosso,4,trafficata ma senso unico tratti,no,2,no,3,I,
 SS-ROM-0057,Via Aurelia (tratto urbano),Aurelio,rosso,4,arteria radiale trafficata,no,4,no,1,I,
 SS-ROM-0058,Via di Porta Cavalleggeri,Borgo,giallo,3,strada secondaria borgo vaticano,no,1,si,2,I,
-SS-ROM-0059,Viale Aventino,Aventino,verde,1,pista ciclabile separata presente,si,4,no,1,I,
+SS-ROM-0059,Viale Aventino,Aventino,rosso,4,"pista ciclabile separata presente | Ricolorato da verde a rosso in base a 1 segnalazione reale (ultima: 2026-07-20). | Nota utente: ""Non c'è più la ciclabile su questo tratto e il traffico è intenso (ma il marciapiede è ampio ;-) )""",si,4,no,2,I,2026-07-20
 SS-ROM-0060,Ciclabile Testaccio (Via Marmorata/area),Testaccio,verde,1,pista ciclabile area Testaccio,si,0,no,3,I,
 SS-ROM-0061,Lungotevere ciclabile (tratto Villa Borghese),Flaminio,verde,1,pista ciclabile separata lungo il Tevere,si,0,no,2,I,
 SS-ROM-0060,Lungotevere ciclabile (tratto Aventino-Ostiense),Testaccio,verde,1,pista ciclabile separata,si,0,no,4,I,
@@ -232,7 +232,7 @@ SS-ROM-0230,Via Capitan Bavastro,Ostiense,giallo,3,traffico locale - segnalazion
 SS-ROM-0231,Via Cristoforo Colombo (lato centro ciclabile),Ostiense,verde,1,ciclabile su marciapiede lato direzione centro - segnalazione @Sim1_71,si,0,si,1,I,
 SS-ROM-0232,Via Cristoforo Colombo (lato EUR),Ostiense,nero,5,traffico intenso e veloce lato direzione EUR - segnalazione @Sim1_71,no,4,si,1,I,
 SS-ROM-0233,Piazzale Numa Pompilio,Celio,nero,5,molte corsie flussi veicolari intensi che si intersecano - segnalazione @Sim1_71,no,4,no,1,I,
-SS-ROM-0234,Via Druso,Celio,rosso,4,traffico intenso - segnalazione @Sim1_71,no,2,no,1,I,
+SS-ROM-0234,Via Druso,Celio,nero,5,"traffico intenso - segnalazione @Sim1_71 | Ricolorato da rosso a nero in base a 1 segnalazione reale (ultima: 2026-07-20). | Nota utente: ""Traffico molto intenso, con auto che, provenendo da 3-4 corsie, fanno a gara per spartirsi le 2 di via Druso. Solo con traffico bloccato la via diventa meno pericolosa""",no,2,no,2,I,2026-07-20
 SS-ROM-0235,Piazza di Porta Metronia,Celio,rosso,4,traffico intenso - segnalazione @Sim1_71,no,0,no,1,I,
 SS-ROM-0236,Via dell'Amba Aradam,Celio,rosso,4,traffico intenso - segnalazione @Sim1_71,no,4,no,1,I,
 SS-ROM-0237,Piazza di San Giovanni in Laterano,San Giovanni,nero,5,molti flussi veicolari che si incrociano - segnalazione @Sim1_71,no,0,no,1,I,
@@ -339,7 +339,7 @@ SS-ROM-0337,Via Pietro Mascagni,Trieste,giallo,3,traffico contenuto,no,2,no,1,II
 SS-ROM-0338,Viale Somalia,Trieste,rosso,4,arteria trafficata nessuna ciclabile | Confermato rosso da 1 segnalazione reale (ultima: 2026-06-17).,no,4,no,2,II,2026-06-17
 SS-ROM-0339,Viale Libia,Trieste,rosso,4,arteria trafficata nessuna ciclabile | Confermato rosso da 1 segnalazione reale (ultima: 2026-06-17).,no,4,no,2,II,2026-06-17
 SS-ROM-0340,Via Pontina,EUR,rosso,4,arteria trafficata quasi autostrada urbana,no,4,no,1,IX,
-SS-ROM-0341,Viale dell Oceano Atlantico,Fonte Ostiense,verde,1,pista ciclabile presente,si,0,no,1,IX,
+SS-ROM-0341,Viale dell Oceano Atlantico,Fonte Ostiense,verde,1,"pista ciclabile presente | Confermato verde da 1 segnalazione reale (ultima: 2026-07-21). | Nota utente: ""Adesso ci sono le ciclabili ma con punti di attenzione importanti al semaforo""",si,0,no,2,IX,2026-07-21
 SS-ROM-0342,Via Cortona,Castel Giubileo,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,1,III,
 SS-ROM-0343,Via Altagnana,Castel Giubileo,verde,1,traffico locale scarso,no,1,no,1,III,
 SS-ROM-0344,Via Monte Grimano,Castel Giubileo,rosso,4,arteria trafficata nessuna ciclabile,no,4,no,1,III,
@@ -731,8 +731,8 @@ SS-ROM-0729,Galleria Giovanni Ventitreesimo,Municipio Roma III,nero,5,"strada ad
 SS-ROM-0730,Galleria Ing. Mario Spezzaferro,Municipio Roma V,nero,5,"strada ad alta velocità (trunk, 50 km/h)",no,2,si,0,V,2026-06-27
 SS-ROM-0731,Galleria Mario Mafai,Municipio Roma IX,blu,2,zona pedonale / living street,no,1,no,0,IX,2026-06-27
 SS-ROM-0732,Galleria Michele Cammarano,Municipio Roma IX,blu,2,zona pedonale / living street,no,1,no,0,IX,2026-06-27
-SS-ROM-0733,Galleria Principe Amedeo Savoia - Aosta,Municipio Roma I,rosso,4,strada principale trafficata (2 corsie),no,2,si,0,I,2026-06-27
-SS-ROM-0734,Galleria Principe Amedeo Savoia Aosta,Municipio Roma I,verde,1,ciclabile presente (da OpenStreetMap),si,2,si,0,I,2026-06-27
+SS-ROM-0733,Galleria Principe Amedeo Savoia - Aosta,Municipio Roma I,rosso,4,"strada principale trafficata (2 corsie) | Confermato rosso da 1 segnalazione reale, direzione coerente con la riga esistente (ultima: 2026-07-20).",no,2,si,1,I,2026-07-20
+SS-ROM-0734,Galleria Principe Amedeo Savoia Aosta,Municipio Roma I,verde,1,"ciclabile presente (da OpenStreetMap) | Confermato verde da 1 segnalazione reale, direzione coerente con la riga esistente (ultima: 2026-07-20).",si,2,si,1,I,2026-07-20
 SS-ROM-0735,Galleria Regina Margherita,Municipio Roma II,blu,2,zona pedonale / living street,no,1,no,0,II,2026-06-27
 SS-ROM-0736,Galleria Sciarra,Municipio Roma II,blu,2,zona pedonale / living street,no,1,no,0,II,2026-06-27
 SS-ROM-0737,Galleria Villa Alberici,Municipio Roma I,verde,1,ciclabile presente (da OpenStreetMap),si,2,no,0,I,2026-06-27
@@ -13534,7 +13534,7 @@ SS-ROM-13532,Via dei Faggella,Municipio Roma XIII,giallo,3,strada urbana senza c
 SS-ROM-13533,Via dei Faggi,Municipio Roma V,giallo,3,strada urbana senza ciclabile (2 corsie),no,2,no,0,V,2026-06-27
 SS-ROM-13534,Via dei Fagiani,Municipio Roma VII,giallo,3,strada urbana senza ciclabile (1 corsie),no,1,no,0,VII,2026-06-27
 SS-ROM-13535,Via dei Fagnani,Municipio Roma XIII,giallo,3,strada urbana senza ciclabile,no,2,si,0,XIII,2026-06-27
-SS-ROM-13536,Via dei Falegnami,Municipio Roma II,blu,2,zona pedonale / living street,no,1,si,0,II,2026-06-27
+SS-ROM-13536,Via dei Falegnami,Municipio Roma II,giallo,3,"zona pedonale / living street | Ricolorato da blu a giallo in base a 1 segnalazione reale (ultima: 2026-07-20). | Nota utente: ""Non è pedonale""",no,1,si,1,II,2026-07-20
 SS-ROM-13537,Via dei Falisci,Municipio Roma II,giallo,3,strada urbana senza ciclabile (1 corsie),no,1,si,0,II,2026-06-27
 SS-ROM-13538,Via dei Farnesi,Municipio Roma II,giallo,3,strada urbana senza ciclabile (1 corsie),no,1,si,0,II,2026-06-27
 SS-ROM-13539,Via dei Feltreschi,Municipio Roma I,giallo,3,strada urbana senza ciclabile,no,2,si,0,I,2026-06-27
@@ -15504,9 +15504,9 @@ SS-ROM-15502,Viale dell'Esercito,Municipio Roma VIII,giallo,3,strada urbana senz
 SS-ROM-15503,Viale dell'Esperanto,Municipio Roma VIII,giallo,3,strada urbana senza ciclabile,no,2,no,0,VIII,2026-06-27
 SS-ROM-15504,Viale dell'Industria,Municipio Roma IX,rosso,4,strada secondaria trafficata (4 corsie),no,4,no,0,IX,2026-06-27
 SS-ROM-15505,Viale dell'Obelisco,Municipio Roma II,giallo,3,strada urbana senza ciclabile (2 corsie),no,2,no,0,II,2026-06-27
-SS-ROM-15506,Viale dell'Oceano Atlantico,Municipio Roma VIII,rosso,4,strada secondaria trafficata (2 corsie),no,2,si,0,VIII,2026-06-27
+SS-ROM-15506,Viale dell'Oceano Atlantico,Municipio Roma IX,verde,1,"strada secondaria trafficata (2 corsie) | Ricolorato da rosso a verde in base a 1 segnalazione reale (ultima: 2026-07-21). | Nota utente: ""Adesso ci sono le ciclabili ma con punti di attenzione importanti al semaforo""",si,2,si,1,IX,2026-07-21
 SS-ROM-15507,Viale dell'Oceano Indiano,Municipio Roma VIII,verde,1,ciclabile presente (da OpenStreetMap),si,4,no,0,VIII,2026-06-27
-SS-ROM-15508,Viale dell'Oceano Pacifico,Municipio Roma VIII,rosso,4,strada secondaria trafficata (4 corsie),no,4,no,0,VIII,2026-06-27
+SS-ROM-15508,Viale dell'Oceano Pacifico,Municipio Roma IX,verde,1,"strada secondaria trafficata (4 corsie) | Ricolorato da rosso a verde in base a 1 segnalazione reale (ultima: 2026-07-21). | Nota utente: ""Adesso ci sono le ciclabili""",si,4,no,1,IX,2026-07-21
 SS-ROM-15509,Viale dell'Orologio,Municipio Roma II,blu,2,zona pedonale / living street,no,1,no,0,II,2026-06-27
 SS-ROM-15510,Viale dell'Uccelliera,Municipio Roma II,blu,2,zona pedonale / living street,no,1,no,0,II,2026-06-27
 SS-ROM-15511,Viale dell'Umanesimo,Municipio Roma VIII,rosso,4,strada secondaria trafficata (2 corsie),no,2,si,0,VIII,2026-06-27
@@ -15788,3 +15788,5 @@ SS-ROM-15786,via Pietro Audisio,Municipio Roma XI,giallo,3,strada urbana senza c
 SS-ROM-15787,via casale ghella,Municipio Roma XIV,giallo,3,strada urbana senza ciclabile,no,2,si,0,XIV,2026-06-27
 SS-ROM-15788,via della Pennacchiera,Municipio Roma XIV,giallo,3,strada urbana senza ciclabile,no,2,no,0,XIV,2026-06-27
 SS-ROM-15789,via di Monteverde,Municipio Roma XII,giallo,3,strada urbana senza ciclabile (1 corsie),no,1,si,0,XII,2026-06-27
+SS-ROM-15790,Via Grottaperfetta,Ardeatino,verde,1,"Su parte c'è la ciclabile. Nota utente: quartiere segnalato come ""Ardeatino"", non Ostia/Ostiense.",si,,,1,VIII,2026-07-21
+SS-ROM-15791,Via Aurelia,Aurelio,nero,5,"Strada molto dissestata che costringe a stare distante dal marciapiede, con auto e camion che corrono per sopravanzare le altre prima della strettoia e del semaforo. | Nota utente (tratto diverso, corsia laterale): ""Corsia laterale con traffico limitato e lento""",no,,,2,XIII,2026-07-20
