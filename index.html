@@ -586,40 +586,40 @@
     </div>
   </div>
   <div class="stats-bar">
-    <div class="stat"><span class="stat-num" id="stat-total">—</span><span class="stat-label">strade</span></div>
-    <div class="stat"><span class="stat-num" id="stat-mapped">—</span><span class="stat-label">su mappa</span></div>
-    <div class="stat"><span class="stat-num" id="stat-danger">—</span><span class="stat-label">pericolose</span></div>
-    <div class="stat"><span class="stat-num" id="stat-safe">—</span><span class="stat-label">sicure</span></div>
+    <div class="stat"><span class="stat-num" id="stat-total">—</span><span class="stat-label" data-i18n="stat.total">strade</span></div>
+    <div class="stat"><span class="stat-num" id="stat-mapped">—</span><span class="stat-label" data-i18n="stat.mapped">su mappa</span></div>
+    <div class="stat"><span class="stat-num" id="stat-danger">—</span><span class="stat-label" data-i18n="stat.danger">pericolose</span></div>
+    <div class="stat"><span class="stat-num" id="stat-safe">—</span><span class="stat-label" data-i18n="stat.safe">sicure</span></div>
   </div>
-  <a href="api.html" style="font-size:0.72rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:#F7F2EA;background:#27AE60;padding:6px 14px;border-radius:8px;text-decoration:none;white-space:nowrap;">Per aziende</a>
+  <a href="api.html" data-i18n="nav.business" style="font-size:0.72rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:#F7F2EA;background:#27AE60;padding:6px 14px;border-radius:8px;text-decoration:none;white-space:nowrap;">Per aziende</a>
 </header>
 
 <!-- ════════ TOP TAB NAV ════════ -->
-<nav class="tab-nav" role="tablist" aria-label="Navigazione principale">
+<nav class="tab-nav" role="tablist" data-i18n-aria-label="nav.aria" aria-label="Navigazione principale">
   <button class="nav-item active" data-view="mappa" role="tab" aria-selected="true" aria-controls="view-mappa">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/>
       <line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/>
     </svg>
-    Mappa
+    <span data-i18n="nav.mappa">Mappa</span>
   </button>
   <button class="nav-item" data-view="segnala" role="tab" aria-selected="false" aria-controls="view-segnala">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
       <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
     </svg>
-    Segnala
+    <span data-i18n="nav.segnala">Segnala</span>
   </button>
   <button class="nav-item" data-view="sentinelle" role="tab" aria-selected="false" aria-controls="view-sentinelle">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
     </svg>
-    Sentinelle
+    <span data-i18n="nav.sentinelle">Sentinelle</span>
   </button>
 </nav>
 <div class="install-banner" id="install-banner">
-  <span>Installa StreetSmart sul tuo telefono</span>
-  <button id="install-btn" onclick="installPWA()">Installa</button>
+  <span data-i18n="install.text">Installa StreetSmart sul tuo telefono</span>
+  <button id="install-btn" onclick="installPWA()" data-i18n="install.btn">Installa</button>
   <button class="dismiss" onclick="dismissInstall()">✕</button>
 </div>
 <div class="toast" id="toast"></div>
@@ -628,54 +628,54 @@
 <div class="view active" id="view-mappa">
   <div class="mobile-toolbar" id="mobile-toolbar">
     <svg class="search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-    <input type="text" class="search-input" id="mobile-search" placeholder="Cerca strada...">
+    <input type="text" class="search-input" id="mobile-search" data-i18n-placeholder="search.placeholder" placeholder="Cerca strada...">
     <button class="btn-mobile-filter" id="btn-mobile-filter" onclick="toggleMobileSidebar()">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
-      Filtri
+      <span data-i18n="sidebar.filters">Filtri</span>
     </button>
   </div>
   <aside class="sidebar" id="sidebar">
     <div class="search-wrap">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      <input type="text" class="search-input" id="desktop-search" placeholder="Cerca strada...">
+      <input type="text" class="search-input" id="desktop-search" data-i18n-placeholder="search.placeholder" placeholder="Cerca strada...">
       <span class="search-count" id="search-count"></span>
     </div>
     <div class="sidebar-section">
-      <h3>Filtra per classe</h3>
+      <h3 data-i18n="sidebar.filterByClass">Filtra per classe</h3>
       <div class="filters" id="filters"></div>
     </div>
     <div class="sidebar-section">
-      <h3>Legenda</h3>
+      <h3 data-i18n="sidebar.legend">Legenda</h3>
       <div class="legend">
-        <div class="legend-row"><div class="legend-swatch" style="background:#1a1a1a"></div><span>Nero — pericolosissimo</span><span class="legend-score">5/5</span></div>
-        <div class="legend-row"><div class="legend-swatch" style="background:#e53935"></div><span>Rosso — trafficato</span><span class="legend-score">4/5</span></div>
-        <div class="legend-row"><div class="legend-swatch" style="background:#e6940a"></div><span>Giallo — senza ciclabile</span><span class="legend-score">3/5</span></div>
-        <div class="legend-row"><div class="legend-swatch" style="background:#1976D2"></div><span>Blu — ZTL / pedonale</span><span class="legend-score">2/5</span></div>
-        <div class="legend-row"><div class="legend-swatch" style="background:#27AE60"></div><span>Verde — ciclabile presente</span><span class="legend-score">1/5</span></div>
+        <div class="legend-row"><div class="legend-swatch" style="background:#1a1a1a"></div><span data-i18n="legend.nero">Nero — pericolosissimo</span><span class="legend-score">5/5</span></div>
+        <div class="legend-row"><div class="legend-swatch" style="background:#e53935"></div><span data-i18n="legend.rosso">Rosso — trafficato</span><span class="legend-score">4/5</span></div>
+        <div class="legend-row"><div class="legend-swatch" style="background:#e6940a"></div><span data-i18n="legend.giallo">Giallo — senza ciclabile</span><span class="legend-score">3/5</span></div>
+        <div class="legend-row"><div class="legend-swatch" style="background:#1976D2"></div><span data-i18n="legend.blu">Blu — ZTL / pedonale</span><span class="legend-score">2/5</span></div>
+        <div class="legend-row"><div class="legend-swatch" style="background:#27AE60"></div><span data-i18n="legend.verde">Verde — ciclabile presente</span><span class="legend-score">1/5</span></div>
       </div>
     </div>
     <div class="sidebar-section" id="muni-section" style="display:none;">
-      <h3>Per municipio</h3>
+      <h3 data-i18n="sidebar.byDistrict">Per municipio</h3>
       <div class="muni-stats" id="muni-stats"></div>
     </div>
     <div class="sidebar-section" style="flex:1;overflow:hidden;display:flex;flex-direction:column;padding-bottom:0;">
-      <h3>Strade su mappa</h3>
+      <h3 data-i18n="sidebar.streetsOnMap">Strade su mappa</h3>
       <div class="sort-toggle" id="sort-toggle">
-        <button class="sort-btn active" data-sort="alpha">A–Z</button>
-        <button class="sort-btn" data-sort="danger">Pericolose</button>
-        <button class="sort-btn" data-sort="safe">Sicure</button>
+        <button class="sort-btn active" data-sort="alpha" data-i18n="sort.alpha">A–Z</button>
+        <button class="sort-btn" data-sort="danger" data-i18n="sort.danger">Pericolose</button>
+        <button class="sort-btn" data-sort="safe" data-i18n="sort.safe">Sicure</button>
       </div>
       <div class="street-list" id="street-list"></div>
     </div>
     <div class="no-geom-note" id="no-geom-note"></div>
-    <button class="btn-mobile-close" id="btn-mobile-close" onclick="toggleMobileSidebar()">Chiudi</button>
+    <button class="btn-mobile-close" id="btn-mobile-close" onclick="toggleMobileSidebar()" data-i18n="sidebar.close">Chiudi</button>
   </aside>
   <div id="map">
-    <div class="map-loader" id="map-loader"><div class="spinner"></div><span>Caricamento strade...</span></div>
-    <button class="btn-geolocate" onclick="resetMapView()" title="Vista completa" style="top:56px;">
+    <div class="map-loader" id="map-loader"><div class="spinner"></div><span data-i18n="map.loading">Caricamento strade...</span></div>
+    <button class="btn-geolocate" onclick="resetMapView()" data-i18n-title="map.resetView" title="Vista completa" style="top:56px;">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
     </button>
-    <button class="btn-geolocate" onclick="geolocateUser()" title="La mia posizione">
+    <button class="btn-geolocate" onclick="geolocateUser()" data-i18n-title="map.myLocation" title="La mia posizione">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg>
     </button>
   </div>
@@ -686,35 +686,35 @@
   <div id="segnala-map" style="position:relative;">
     <div id="segnala-map-hint" style="position:absolute;bottom:12px;left:50%;transform:translateX(-50%);z-index:1000;background:rgba(46,40,32,0.9);color:#F7F2EA;padding:8px 16px;border-radius:10px;font-size:12px;font-weight:500;font-family:'Inter',sans-serif;pointer-events:none;display:flex;align-items:center;gap:8px;white-space:nowrap;">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      Tocca per piazzare un pin
+      <span data-i18n="segnala.tapHint">Tocca per piazzare un pin</span>
     </div>
-    <button class="btn-geolocate" onclick="geolocateSegnala()" title="La mia posizione" style="z-index:1000;">
+    <button class="btn-geolocate" onclick="geolocateSegnala()" data-i18n-title="map.myLocation" title="La mia posizione" style="z-index:1000;">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg>
     </button>
   </div>
   <div class="segnala-selected-bar" id="segnala-selected-bar">
-    <span style="font-size:11px;color:#A09080;">Tocca sulla mappa per piazzare un pin, poi compila il form sotto</span>
+    <span style="font-size:11px;color:#A09080;" data-i18n="segnala.barDefault">Tocca sulla mappa per piazzare un pin, poi compila il form sotto</span>
   </div>
   <div class="segnala-form-wrap">
     <div class="form-card">
-      <div class="form-eyebrow red">Segnalazione</div>
-      <div class="form-title">Segnala una strada</div>
-      <div class="form-sub">Piazza un pin sulla mappa sopra per indicare la posizione, poi compila i campi.</div>
+      <div class="form-eyebrow red" data-i18n="segnala.eyebrow">Segnalazione</div>
+      <div class="form-title" data-i18n="segnala.title">Segnala una strada</div>
+      <div class="form-sub" data-i18n="segnala.sub">Piazza un pin sulla mappa sopra per indicare la posizione, poi compila i campi.</div>
 
       <form id="form-segnala" action="https://formspree.io/f/mrernnwd" method="POST">
         <input type="hidden" name="form_type" value="segnalazione">
         <input type="hidden" name="latitudine" id="segnala-lat">
         <input type="hidden" name="longitudine" id="segnala-lng">
 
-        <label>Nome della strada *</label>
-        <input type="text" name="strada" id="segnala-strada" placeholder="Es. Via Merulana" required>
+        <label data-i18n="segnala.streetName">Nome della strada *</label>
+        <input type="text" name="strada" id="segnala-strada" data-i18n-placeholder="segnala.streetNamePh" placeholder="Es. Via Merulana" required>
 
-        <label>Quartiere *</label>
-        <input type="text" name="quartiere" id="segnala-quartiere" placeholder="Es. Esquilino" required>
+        <label data-i18n="segnala.neighborhood">Quartiere *</label>
+        <input type="text" name="quartiere" id="segnala-quartiere" data-i18n-placeholder="segnala.neighborhoodPh" placeholder="Es. Esquilino" required>
 
-        <label>Municipio</label>
+        <label data-i18n="segnala.district">Municipio</label>
         <select name="municipio" id="segnala-municipio">
-          <option value="">Seleziona</option>
+          <option value="" data-i18n="common.select">Seleziona</option>
           <option>I — Centro Storico</option>
           <option>II — Parioli / Flaminio</option>
           <option>III — Montesacro</option>
@@ -732,37 +732,37 @@
           <option>XV — Cassia / Flaminia</option>
         </select>
 
-        <label>Com'è questa strada? *</label>
+        <label data-i18n="segnala.howIsIt">Com'è questa strada? *</label>
         <div class="colori" id="colori">
-          <button type="button" class="colore-btn" data-value="nero"><div class="colore-dot" style="background:#1C1C1A;"></div><span>Nero</span><small style="font-size:8px;font-weight:400;letter-spacing:0;text-transform:none;color:#A09080;margin-top:2px;">Pericolosissimo</small></button>
-          <button type="button" class="colore-btn" data-value="rosso"><div class="colore-dot" style="background:#C0392B;"></div><span>Rosso</span><small style="font-size:8px;font-weight:400;letter-spacing:0;text-transform:none;color:#A09080;margin-top:2px;">Trafficata</small></button>
-          <button type="button" class="colore-btn" data-value="giallo"><div class="colore-dot" style="background:#E8A020;"></div><span>Giallo</span><small style="font-size:8px;font-weight:400;letter-spacing:0;text-transform:none;color:#A09080;margin-top:2px;">Senza ciclabile</small></button>
-          <button type="button" class="colore-btn" data-value="verde"><div class="colore-dot" style="background:#27AE60;"></div><span>Verde</span><small style="font-size:8px;font-weight:400;letter-spacing:0;text-transform:none;color:#A09080;margin-top:2px;">Ciclabile</small></button>
-          <button type="button" class="colore-btn" data-value="blu"><div class="colore-dot" style="background:#2980B9;"></div><span>Blu</span><small style="font-size:8px;font-weight:400;letter-spacing:0;text-transform:none;color:#A09080;margin-top:2px;">ZTL/Pedonale</small></button>
+          <button type="button" class="colore-btn" data-value="nero"><div class="colore-dot" style="background:#1C1C1A;"></div><span data-i18n="color.nero">Nero</span><small style="font-size:8px;font-weight:400;letter-spacing:0;text-transform:none;color:#A09080;margin-top:2px;" data-i18n="color.nero.desc">Pericolosissimo</small></button>
+          <button type="button" class="colore-btn" data-value="rosso"><div class="colore-dot" style="background:#C0392B;"></div><span data-i18n="color.rosso">Rosso</span><small style="font-size:8px;font-weight:400;letter-spacing:0;text-transform:none;color:#A09080;margin-top:2px;" data-i18n="color.rosso.desc">Trafficata</small></button>
+          <button type="button" class="colore-btn" data-value="giallo"><div class="colore-dot" style="background:#E8A020;"></div><span data-i18n="color.giallo">Giallo</span><small style="font-size:8px;font-weight:400;letter-spacing:0;text-transform:none;color:#A09080;margin-top:2px;" data-i18n="color.giallo.desc">Senza ciclabile</small></button>
+          <button type="button" class="colore-btn" data-value="verde"><div class="colore-dot" style="background:#27AE60;"></div><span data-i18n="color.verde">Verde</span><small style="font-size:8px;font-weight:400;letter-spacing:0;text-transform:none;color:#A09080;margin-top:2px;" data-i18n="color.verde.desc">Ciclabile</small></button>
+          <button type="button" class="colore-btn" data-value="blu"><div class="colore-dot" style="background:#2980B9;"></div><span data-i18n="color.blu">Blu</span><small style="font-size:8px;font-weight:400;letter-spacing:0;text-transform:none;color:#A09080;margin-top:2px;" data-i18n="color.blu.desc">ZTL/Pedonale</small></button>
         </div>
         <input type="hidden" name="classificazione" id="classificazione_input">
-        <div class="error-msg" id="color-error">Seleziona una classificazione per continuare</div>
+        <div class="error-msg" id="color-error" data-i18n="segnala.colorError">Seleziona una classificazione per continuare</div>
 
-        <label>Perché questa classificazione?</label>
-        <textarea name="note" placeholder="Es. 4 corsie, traffico veloce, nessuna ciclabile, incrocio pericoloso..."></textarea>
+        <label data-i18n="segnala.why">Perché questa classificazione?</label>
+        <textarea name="note" data-i18n-placeholder="segnala.whyPh" placeholder="Es. 4 corsie, traffico veloce, nessuna ciclabile, incrocio pericoloso..."></textarea>
 
-        <label>Il tuo Instagram</label>
+        <label data-i18n="segnala.instagram">Il tuo Instagram</label>
         <input type="text" name="instagram" placeholder="@tuonome">
 
         <button type="submit" class="btn-submit" id="submit-segnala">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l2.5 2.5L16 9"/></svg>
-          Invia segnalazione
+          <span data-i18n="segnala.submit">Invia segnalazione</span>
         </button>
-        <div class="disclaimer">Nessuno spam. I dati servono solo per il database StreetSmart.</div>
+        <div class="disclaimer" data-i18n="segnala.disclaimer">Nessuno spam. I dati servono solo per il database StreetSmart.</div>
       </form>
 
       <div class="success" id="success-segnala">
         <div class="success-icon" style="background:#27AE60;">&#10003;</div>
-        <h2>Segnalazione inviata.</h2>
-        <p>Grazie — la verificheremo e la aggiungeremo al database con il tuo nome.</p>
+        <h2 data-i18n="segnala.successTitle">Segnalazione inviata.</h2>
+        <p data-i18n="segnala.successText">Grazie — la verificheremo e la aggiungeremo al database con il tuo nome.</p>
         <span class="success-handle" style="color:#C0392B;">@streetsmart.nav</span>
         <br><br>
-        <button class="btn-submit" onclick="resetSegnala()" style="background:#2E2820;">Segnala un'altra strada</button>
+        <button class="btn-submit" onclick="resetSegnala()" style="background:#2E2820;" data-i18n="segnala.another">Segnala un'altra strada</button>
       </div>
     </div>
   </div>
@@ -771,15 +771,15 @@
 <!-- ════════ SENTINELLE VIEW ════════ -->
 <div class="view" id="view-sentinelle">
   <div class="form-card">
-    <div class="form-eyebrow green">Comunità</div>
-    <div class="form-title">Diventa una Sentinella.</div>
-    <div class="form-sub">I primi 100 ciclisti che validano più di 10 strade entrano nella storia del progetto. Il loro nome resta nel database per sempre.</div>
+    <div class="form-eyebrow green" data-i18n="sentinelle.eyebrow">Comunità</div>
+    <div class="form-title" data-i18n="sentinelle.title">Diventa una Sentinella.</div>
+    <div class="form-sub" data-i18n="sentinelle.sub">I primi 100 ciclisti che validano più di 10 strade entrano nella storia del progetto. Il loro nome resta nel database per sempre.</div>
 
     <div class="counter">
       <div><div class="counter-num">34</div></div>
       <div>
-        <div class="counter-label">Sentinelle attive su 100</div>
-        <div class="counter-sub">66 posti rimasti</div>
+        <div class="counter-label" data-i18n="sentinelle.counterLabel">Sentinelle attive su 100</div>
+        <div class="counter-sub" data-i18n="sentinelle.counterSub">66 posti rimasti</div>
       </div>
       <div style="flex:1"><div class="counter-bar"><div class="counter-fill"></div></div></div>
     </div>
@@ -787,60 +787,222 @@
     <form id="form-sentinelle" action="https://formspree.io/f/xlgookeg" method="POST">
       <input type="hidden" name="form_type" value="sentinella">
 
-      <label>Nome e cognome *</label>
+      <label data-i18n="sentinelle.fullName">Nome e cognome *</label>
       <input type="text" name="nome" placeholder="Mario Rossi" required>
 
-      <label>Instagram *</label>
+      <label data-i18n="sentinelle.instagram">Instagram *</label>
       <input type="text" name="instagram" placeholder="@tuonome" required>
 
-      <label>Città *</label>
+      <label data-i18n="sentinelle.city">Città *</label>
       <input type="text" name="citta" placeholder="Roma" required>
 
-      <label>Pedali come...</label>
+      <label data-i18n="sentinelle.rideAs">Pedali come...</label>
       <select name="tipo">
-        <option value="">Seleziona</option>
-        <option>Ogni giorno (commuter)</option>
-        <option>Spesso (3–4 volte a settimana)</option>
-        <option>Nel weekend</option>
-        <option>Saltuariamente</option>
+        <option value="" data-i18n="common.select">Seleziona</option>
+        <option data-i18n="sentinelle.rideDaily">Ogni giorno (commuter)</option>
+        <option data-i18n="sentinelle.rideOften">Spesso (3–4 volte a settimana)</option>
+        <option data-i18n="sentinelle.rideWeekend">Nel weekend</option>
+        <option data-i18n="sentinelle.rideRarely">Saltuariamente</option>
       </select>
 
-      <label>Perché vuoi diventare una Sentinella?</label>
-      <textarea name="motivazione" placeholder="Facoltativo — ma ci fa piacere saperlo"></textarea>
+      <label data-i18n="sentinelle.why">Perché vuoi diventare una Sentinella?</label>
+      <textarea name="motivazione" data-i18n-placeholder="sentinelle.whyPh" placeholder="Facoltativo — ma ci fa piacere saperlo"></textarea>
 
       <button type="submit" class="btn-submit" id="submit-sentinelle">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        Entra nel progetto
+        <span data-i18n="sentinelle.submit">Entra nel progetto</span>
       </button>
-      <div class="disclaimer">Nessuno spam. I tuoi dati servono solo per il progetto StreetSmart.</div>
+      <div class="disclaimer" data-i18n="sentinelle.disclaimer">Nessuno spam. I tuoi dati servono solo per il progetto StreetSmart.</div>
     </form>
 
     <div class="success" id="success-sentinelle">
       <div class="success-icon" style="background:#27AE60;">&#10003;</div>
-      <h2>Sei dentro.</h2>
-      <p>Ti contatteremo presto su Instagram.<br>Nel frattempo, continua a pedalare.</p>
+      <h2 data-i18n="sentinelle.successTitle">Sei dentro.</h2>
+      <p data-i18n-html="sentinelle.successText">Ti contatteremo presto su Instagram.<br>Nel frattempo, continua a pedalare.</p>
       <span class="success-handle" style="color:#27AE60;">@streetsmart.nav</span>
     </div>
   </div>
   <div style="margin-top:40px;text-align:center;font-size:11px;color:#A09080;line-height:1.6;">
     <div style="font-weight:600;">StreetSmart Roma</div>
-    <div>Database open-source per la sicurezza ciclistica</div>
-    <div style="margin-top:4px;">Progetto di <strong style="color:#3A3530;">@streetsmart.nav</strong></div>
+    <div data-i18n="footer.tagline">Database open-source per la sicurezza ciclistica</div>
+    <div style="margin-top:4px;"><span data-i18n="footer.by">Progetto di</span> <strong style="color:#3A3530;">@streetsmart.nav</strong></div>
   </div>
 </div>
 
 <!-- ════════ BOTTOM NAV ════════ -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
+/* ── I18N ── */
+const LANG = (navigator.language || navigator.userLanguage || 'it').toLowerCase().startsWith('en') ? 'en' : 'it';
+document.documentElement.lang = LANG;
+
+const I18N = {
+  it: {
+    'stat.total': 'strade', 'stat.mapped': 'su mappa', 'stat.danger': 'pericolose', 'stat.safe': 'sicure',
+    'nav.business': 'Per aziende', 'nav.aria': 'Navigazione principale',
+    'nav.mappa': 'Mappa', 'nav.segnala': 'Segnala', 'nav.sentinelle': 'Sentinelle',
+    'install.text': 'Installa StreetSmart sul tuo telefono', 'install.btn': 'Installa',
+    'search.placeholder': 'Cerca strada...', 'sidebar.filters': 'Filtri',
+    'sidebar.filterByClass': 'Filtra per classe', 'sidebar.legend': 'Legenda',
+    'legend.nero': 'Nero — pericolosissimo', 'legend.rosso': 'Rosso — trafficato',
+    'legend.giallo': 'Giallo — senza ciclabile', 'legend.blu': 'Blu — ZTL / pedonale',
+    'legend.verde': 'Verde — ciclabile presente',
+    'sidebar.byDistrict': 'Per municipio', 'sidebar.streetsOnMap': 'Strade su mappa',
+    'sort.alpha': 'A–Z', 'sort.danger': 'Pericolose', 'sort.safe': 'Sicure', 'sidebar.close': 'Chiudi',
+    'map.loading': 'Caricamento strade...', 'map.resetView': 'Vista completa', 'map.myLocation': 'La mia posizione',
+    'segnala.tapHint': 'Tocca per piazzare un pin',
+    'segnala.barDefault': 'Tocca sulla mappa per piazzare un pin, poi compila il form sotto',
+    'segnala.eyebrow': 'Segnalazione', 'segnala.title': 'Segnala una strada',
+    'segnala.sub': 'Piazza un pin sulla mappa sopra per indicare la posizione, poi compila i campi.',
+    'segnala.streetName': 'Nome della strada *', 'segnala.streetNamePh': 'Es. Via Merulana',
+    'segnala.neighborhood': 'Quartiere *', 'segnala.neighborhoodPh': 'Es. Esquilino',
+    'segnala.district': 'Municipio', 'segnala.howIsIt': "Com'è questa strada? *",
+    'color.nero': 'Nero', 'color.nero.desc': 'Pericolosissimo',
+    'color.rosso': 'Rosso', 'color.rosso.desc': 'Trafficata',
+    'color.giallo': 'Giallo', 'color.giallo.desc': 'Senza ciclabile',
+    'color.verde': 'Verde', 'color.verde.desc': 'Ciclabile',
+    'color.blu': 'Blu', 'color.blu.desc': 'ZTL/Pedonale',
+    'segnala.colorError': 'Seleziona una classificazione per continuare',
+    'segnala.why': 'Perché questa classificazione?',
+    'segnala.whyPh': 'Es. 4 corsie, traffico veloce, nessuna ciclabile, incrocio pericoloso...',
+    'segnala.instagram': 'Il tuo Instagram', 'segnala.submit': 'Invia segnalazione',
+    'segnala.sending': 'Invio in corso...',
+    'segnala.disclaimer': 'Nessuno spam. I dati servono solo per il database StreetSmart.',
+    'segnala.successTitle': 'Segnalazione inviata.',
+    'segnala.successText': 'Grazie — la verificheremo e la aggiungeremo al database con il tuo nome.',
+    'segnala.another': "Segnala un'altra strada",
+    'sentinelle.eyebrow': 'Comunità', 'sentinelle.title': 'Diventa una Sentinella.',
+    'sentinelle.sub': 'I primi 100 ciclisti che validano più di 10 strade entrano nella storia del progetto. Il loro nome resta nel database per sempre.',
+    'sentinelle.counterLabel': 'Sentinelle attive su 100', 'sentinelle.counterSub': '66 posti rimasti',
+    'sentinelle.fullName': 'Nome e cognome *', 'sentinelle.instagram': 'Instagram *',
+    'sentinelle.city': 'Città *', 'sentinelle.rideAs': 'Pedali come...',
+    'sentinelle.rideDaily': 'Ogni giorno (commuter)', 'sentinelle.rideOften': 'Spesso (3–4 volte a settimana)',
+    'sentinelle.rideWeekend': 'Nel weekend', 'sentinelle.rideRarely': 'Saltuariamente',
+    'sentinelle.why': 'Perché vuoi diventare una Sentinella?',
+    'sentinelle.whyPh': 'Facoltativo — ma ci fa piacere saperlo',
+    'sentinelle.submit': 'Entra nel progetto', 'sentinelle.sending': 'Invio in corso...',
+    'sentinelle.disclaimer': 'Nessuno spam. I tuoi dati servono solo per il progetto StreetSmart.',
+    'sentinelle.successTitle': 'Sei dentro.',
+    'sentinelle.successText': 'Ti contatteremo presto su Instagram.<br>Nel frattempo, continua a pedalare.',
+    'footer.tagline': 'Database open-source per la sicurezza ciclistica', 'footer.by': 'Progetto di',
+    'common.select': 'Seleziona',
+    'toast.geoUnsupported': 'Geolocalizzazione non supportata',
+    'toast.geoFailed': 'Impossibile ottenere la posizione',
+    'toast.linkCopied': 'Link copiato negli appunti',
+    'toast.appInstalled': 'App installata!',
+    'toast.submitError': 'Errore invio. Riprova o scrivici @streetsmart.nav',
+    'toast.noCommunity': '{city} non ha ancora segnalazioni della community',
+    'toast.tilesFailed': '{n} zona/e non caricate — controlla la connessione e ricarica',
+    'map.noZonesLoaded': 'Nessuna zona caricata (rete assente o instabile)',
+    'map.yourLocation': 'La tua posizione',
+    'popup.lanes': 'Corsie', 'popup.oneWay': 'Senso unico', 'popup.bikeLane': 'Ciclabile', 'popup.reports': 'Testimonianze',
+    'popup.report': 'Segnala', 'popup.share': 'Condividi',
+    'nearby.text': '<strong>{danger}</strong> pericolose e <strong>{safe}</strong> sicure nel raggio di 1 km',
+    'search.result': 'risultato', 'search.results': 'risultati',
+    'streetList.showMore': 'Mostra altre {n} strade',
+    'noGeom.note': '{n} strade non localizzate',
+    'map.error': 'Errore: {msg}',
+    'segnala.lookingUp': 'Cercando indirizzo...',
+    'segnala.locationSelected': 'Posizione selezionata',
+    'segnala.locationManual': '<strong>Posizione selezionata</strong> &middot; compila i campi manualmente',
+    'zone.municipio': 'Municipio', 'zone.zona': 'Zona',
+  },
+  en: {
+    'stat.total': 'streets', 'stat.mapped': 'mapped', 'stat.danger': 'dangerous', 'stat.safe': 'safe',
+    'nav.business': 'For businesses', 'nav.aria': 'Main navigation',
+    'nav.mappa': 'Map', 'nav.segnala': 'Report', 'nav.sentinelle': 'Sentinels',
+    'install.text': 'Install StreetSmart on your phone', 'install.btn': 'Install',
+    'search.placeholder': 'Search street...', 'sidebar.filters': 'Filters',
+    'sidebar.filterByClass': 'Filter by class', 'sidebar.legend': 'Legend',
+    'legend.nero': 'Black — extremely dangerous', 'legend.rosso': 'Red — heavy traffic',
+    'legend.giallo': 'Yellow — no bike lane', 'legend.blu': 'Blue — restricted / pedestrian zone',
+    'legend.verde': 'Green — bike lane present',
+    'sidebar.byDistrict': 'By district', 'sidebar.streetsOnMap': 'Streets on map',
+    'sort.alpha': 'A–Z', 'sort.danger': 'Dangerous', 'sort.safe': 'Safe', 'sidebar.close': 'Close',
+    'map.loading': 'Loading streets...', 'map.resetView': 'Full view', 'map.myLocation': 'My location',
+    'segnala.tapHint': 'Tap to place a pin',
+    'segnala.barDefault': 'Tap on the map to place a pin, then fill in the form below',
+    'segnala.eyebrow': 'Report', 'segnala.title': 'Report a street',
+    'segnala.sub': 'Place a pin on the map above to indicate the location, then fill in the fields.',
+    'segnala.streetName': 'Street name *', 'segnala.streetNamePh': 'E.g. Via Merulana',
+    'segnala.neighborhood': 'Neighborhood *', 'segnala.neighborhoodPh': 'E.g. Esquilino',
+    'segnala.district': 'District', 'segnala.howIsIt': "What's this street like? *",
+    'color.nero': 'Black', 'color.nero.desc': 'Extremely dangerous',
+    'color.rosso': 'Red', 'color.rosso.desc': 'Heavy traffic',
+    'color.giallo': 'Yellow', 'color.giallo.desc': 'No bike lane',
+    'color.verde': 'Green', 'color.verde.desc': 'Bike lane',
+    'color.blu': 'Blue', 'color.blu.desc': 'Restricted/Pedestrian',
+    'segnala.colorError': 'Select a classification to continue',
+    'segnala.why': 'Why this classification?',
+    'segnala.whyPh': 'E.g. 4 lanes, fast traffic, no bike lane, dangerous intersection...',
+    'segnala.instagram': 'Your Instagram', 'segnala.submit': 'Submit report',
+    'segnala.sending': 'Sending...',
+    'segnala.disclaimer': 'No spam. Data is used only for the StreetSmart database.',
+    'segnala.successTitle': 'Report submitted.',
+    'segnala.successText': "Thanks — we'll verify it and add it to the database under your name.",
+    'segnala.another': 'Report another street',
+    'sentinelle.eyebrow': 'Community', 'sentinelle.title': 'Become a Sentinel.',
+    'sentinelle.sub': "The first 100 cyclists who validate more than 10 streets become part of the project's history. Their name stays in the database forever.",
+    'sentinelle.counterLabel': 'Active Sentinels out of 100', 'sentinelle.counterSub': '66 spots left',
+    'sentinelle.fullName': 'Full name *', 'sentinelle.instagram': 'Instagram *',
+    'sentinelle.city': 'City *', 'sentinelle.rideAs': 'You ride...',
+    'sentinelle.rideDaily': 'Every day (commuter)', 'sentinelle.rideOften': 'Often (3–4 times a week)',
+    'sentinelle.rideWeekend': 'On weekends', 'sentinelle.rideRarely': 'Occasionally',
+    'sentinelle.why': 'Why do you want to become a Sentinel?',
+    'sentinelle.whyPh': "Optional — but we'd love to know",
+    'sentinelle.submit': 'Join the project', 'sentinelle.sending': 'Sending...',
+    'sentinelle.disclaimer': 'No spam. Your data is used only for the StreetSmart project.',
+    'sentinelle.successTitle': "You're in.",
+    'sentinelle.successText': "We'll contact you soon on Instagram.<br>In the meantime, keep riding.",
+    'footer.tagline': 'Open-source database for cycling safety', 'footer.by': 'A project by',
+    'common.select': 'Select',
+    'toast.geoUnsupported': 'Geolocation not supported',
+    'toast.geoFailed': "Couldn't get your location",
+    'toast.linkCopied': 'Link copied to clipboard',
+    'toast.appInstalled': 'App installed!',
+    'toast.submitError': 'Submission error. Try again or message us @streetsmart.nav',
+    'toast.noCommunity': "{city} doesn't have community reports yet",
+    'toast.tilesFailed': '{n} zone(s) failed to load — check your connection and reload',
+    'map.noZonesLoaded': 'No zones loaded (no or unstable connection)',
+    'map.yourLocation': 'Your location',
+    'popup.lanes': 'Lanes', 'popup.oneWay': 'One-way', 'popup.bikeLane': 'Bike lane', 'popup.reports': 'Reports',
+    'popup.report': 'Report', 'popup.share': 'Share',
+    'nearby.text': '<strong>{danger}</strong> dangerous and <strong>{safe}</strong> safe within 1 km',
+    'search.result': 'result', 'search.results': 'results',
+    'streetList.showMore': 'Show {n} more streets',
+    'noGeom.note': '{n} streets not located',
+    'map.error': 'Error: {msg}',
+    'segnala.lookingUp': 'Looking up address...',
+    'segnala.locationSelected': 'Location selected',
+    'segnala.locationManual': '<strong>Location selected</strong> &middot; fill in the fields manually',
+    'zone.municipio': 'District', 'zone.zona': 'Zone',
+  },
+};
+
+function t(key, vars) {
+  let str = (I18N[LANG] && I18N[LANG][key]) ?? (I18N.it[key] ?? key);
+  if (vars) for (const k in vars) str = str.replace('{' + k + '}', vars[k]);
+  return str;
+}
+
+function applyStaticI18n() {
+  document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = t(el.dataset.i18n); });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => { el.innerHTML = t(el.dataset.i18nHtml); });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => { el.placeholder = t(el.dataset.i18nPlaceholder); });
+  document.querySelectorAll('[data-i18n-title]').forEach(el => { el.title = t(el.dataset.i18nTitle); });
+  document.querySelectorAll('[data-i18n-aria-label]').forEach(el => { el.setAttribute('aria-label', t(el.dataset.i18nAriaLabel)); });
+}
+applyStaticI18n();
+
 /* ── CITTÀ ── */
 const CITIES = {
   roma: {
     label: 'Roma', tilesBase: './tiles', tilePrefix: 'municipio-',
-    zoneLabel: 'Municipio', hasZoneStats: true, communityFeatures: true,
+    zoneLabel: t('zone.municipio'), hasZoneStats: true, communityFeatures: true,
   },
   napoli: {
     label: 'Napoli', tilesBase: './cities/napoli/tiles', tilePrefix: 'zona-',
-    zoneLabel: 'Zona', hasZoneStats: false, communityFeatures: false,
+    zoneLabel: t('zone.zona'), hasZoneStats: false, communityFeatures: false,
   },
 };
 let currentCity = 'roma';
@@ -854,7 +1016,7 @@ let cachedGeoData = null;
 
 function switchView(name) {
   if (['segnala', 'sentinelle'].includes(name) && !CITIES[currentCity].communityFeatures) {
-    showToast(CITIES[currentCity].label + ' non ha ancora segnalazioni della community');
+    showToast(t('toast.noCommunity', { city: CITIES[currentCity].label }));
     return;
   }
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
@@ -901,11 +1063,11 @@ const COLORS = {
 
 const FILTER_CLASSES = ['nero', 'rosso', 'giallo', 'blu', 'verde'];
 const LABELS = {
-  'nero':  'Nero — pericolosissimo',
-  'rosso': 'Rosso — trafficato',
-  'giallo':'Giallo — senza ciclabile',
-  'blu':   'Blu — ZTL / pedonale',
-  'verde': 'Verde — ciclabile',
+  'nero':  t('legend.nero'),
+  'rosso': t('legend.rosso'),
+  'giallo':t('legend.giallo'),
+  'blu':   t('legend.blu'),
+  'verde': t('legend.verde'),
 };
 
 mapInstance = L.map('map', { center: [41.9028, 12.4964], zoom: 12, tap: false });
@@ -931,7 +1093,7 @@ function makePopup(p) {
     .filter(Boolean).join(' &middot; ');
   const dataAttr = 'data-nome="' + (p.nome||'').replace(/"/g,'&quot;') + '" data-quartiere="' + (p.quartiere||'').replace(/"/g,'&quot;') + '" data-municipio="' + zoneValue + '" data-classificazione="' + (p.classificazione||'') + '"';
   const segnalaBtn = city.communityFeatures
-    ? `<button class="btn-segnala-popup" onclick="segnalaDaPopup(this)" ${dataAttr} style="margin-top:0;flex:1;">Segnala</button>`
+    ? `<button class="btn-segnala-popup" onclick="segnalaDaPopup(this)" ${dataAttr} style="margin-top:0;flex:1;">${t('popup.report')}</button>`
     : '';
   return `
     <div class="popup-tag" style="background:${c.stroke}22;color:${c.stroke};border:1.5px solid ${c.stroke}55">
@@ -941,10 +1103,10 @@ function makePopup(p) {
     <div class="popup-name">${p.nome}</div>
     ${whereLine?`<div class="popup-where">${whereLine}</div>`:''}
     <div class="popup-grid">
-      <span class="popup-key">Corsie</span><span class="popup-val">${p.n_corsie??'&mdash;'}</span>
-      <span class="popup-key">Senso unico</span><span class="popup-val">${p.senso_unico||'&mdash;'}</span>
-      <span class="popup-key">Ciclabile</span><span class="popup-val">${p.ciclabile||'&mdash;'}</span>
-      <span class="popup-key">Testimonianze</span><span class="popup-val">${p.n_testimonianze??'&mdash;'}</span>
+      <span class="popup-key">${t('popup.lanes')}</span><span class="popup-val">${p.n_corsie??'&mdash;'}</span>
+      <span class="popup-key">${t('popup.oneWay')}</span><span class="popup-val">${p.senso_unico||'&mdash;'}</span>
+      <span class="popup-key">${t('popup.bikeLane')}</span><span class="popup-val">${p.ciclabile||'&mdash;'}</span>
+      <span class="popup-key">${t('popup.reports')}</span><span class="popup-val">${p.n_testimonianze??'&mdash;'}</span>
     </div>
     ${p.note?`<div class="popup-note">${p.note}</div>`:''}
     <div class="popup-id">${p.id}</div>
@@ -952,7 +1114,7 @@ function makePopup(p) {
       ${segnalaBtn}
       <button class="btn-share-popup" onclick="shareStreet('${(p.nome||'').replace(/'/g,"\\'")}')">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-        Condividi
+        ${t('popup.share')}
       </button>
     </div>
   `;
@@ -1083,13 +1245,13 @@ function buildStreetList(features) {
     const more = document.createElement('div');
     more.id = 'load-more-streets';
     more.style.cssText = 'padding:10px 16px;text-align:center;';
-    more.innerHTML = '<button style="background:#3A3530;color:#F7F2EA;border:none;border-radius:8px;padding:8px 20px;font-size:12px;font-weight:600;cursor:pointer;font-family:Inter,sans-serif;">Mostra altre ' + Math.min(STREET_LIST_PAGE_SIZE, features.length - STREET_LIST_PAGE_SIZE) + ' strade</button>';
+    more.innerHTML = '<button style="background:#3A3530;color:#F7F2EA;border:none;border-radius:8px;padding:8px 20px;font-size:12px;font-weight:600;cursor:pointer;font-family:Inter,sans-serif;">' + t('streetList.showMore', { n: Math.min(STREET_LIST_PAGE_SIZE, features.length - STREET_LIST_PAGE_SIZE) }) + '</button>';
     more.querySelector('button').addEventListener('click', () => {
       const before = streetListShown;
       appendStreetItems(list, Math.min(streetListShown + STREET_LIST_PAGE_SIZE, features.length));
       const remaining = features.length - streetListShown;
       if (remaining > 0) {
-        more.querySelector('button').textContent = 'Mostra altre ' + Math.min(STREET_LIST_PAGE_SIZE, remaining) + ' strade';
+        more.querySelector('button').textContent = t('streetList.showMore', { n: Math.min(STREET_LIST_PAGE_SIZE, remaining) });
       } else {
         more.remove();
       }
@@ -1208,22 +1370,22 @@ function showNearbyAlert(lat, lon) {
   const el = document.createElement('div');
   el.className = 'nearby-alert';
   el.innerHTML = '<div class="dot" style="background:#e53935;"></div>' +
-    '<span><strong>' + danger + '</strong> pericolose e <strong>' + safe + '</strong> sicure nel raggio di 1 km</span>' +
+    '<span>' + t('nearby.text', { danger: danger, safe: safe }) + '</span>' +
     '<button class="close-nearby" onclick="this.parentElement.remove()">✕</button>';
   document.getElementById('map').appendChild(el);
 }
 
 function geolocateUser() {
-  if (!navigator.geolocation) return showToast('Geolocalizzazione non supportata');
+  if (!navigator.geolocation) return showToast(t('toast.geoUnsupported'));
   navigator.geolocation.getCurrentPosition(pos => {
     const latlng = [pos.coords.latitude, pos.coords.longitude];
     mapInstance.setView(latlng, 16);
     if (userLocationMarker) mapInstance.removeLayer(userLocationMarker);
     userLocationMarker = L.circleMarker(latlng, {
       radius: 8, color: '#4285F4', weight: 2, fillColor: '#4285F4', fillOpacity: 0.5,
-    }).addTo(mapInstance).bindPopup('La tua posizione').openPopup();
+    }).addTo(mapInstance).bindPopup(t('map.yourLocation')).openPopup();
     showNearbyAlert(pos.coords.latitude, pos.coords.longitude);
-  }, () => showToast('Impossibile ottenere la posizione'));
+  }, () => showToast(t('toast.geoFailed')));
 }
 
 function initSegnalaMap() {
@@ -1254,7 +1416,7 @@ function initSegnalaMap() {
     document.getElementById('segnala-lat').value = e.latlng.lat.toFixed(6);
     document.getElementById('segnala-lng').value = e.latlng.lng.toFixed(6);
     document.getElementById('segnala-selected-bar').innerHTML =
-      '<strong>Cercando indirizzo...</strong> &middot; ' +
+      '<strong>' + t('segnala.lookingUp') + '</strong> &middot; ' +
       e.latlng.lat.toFixed(5) + ', ' + e.latlng.lng.toFixed(5);
 
     fetch('https://nominatim.openstreetmap.org/reverse?lat=' + e.latlng.lat + '&lon=' + e.latlng.lng + '&format=json&zoom=17&addressdetails=1', {
@@ -1268,13 +1430,12 @@ function initSegnalaMap() {
         if (road) document.getElementById('segnala-strada').value = road;
         if (suburb) document.getElementById('segnala-quartiere').value = suburb;
         document.getElementById('segnala-selected-bar').innerHTML =
-          '<strong>' + (road || 'Posizione selezionata') + '</strong>' +
+          '<strong>' + (road || t('segnala.locationSelected')) + '</strong>' +
           (suburb ? ' &middot; ' + suburb : '');
         document.querySelector('.segnala-form-wrap')?.scrollTo({ top: 0, behavior: 'smooth' });
       })
       .catch(() => {
-        document.getElementById('segnala-selected-bar').innerHTML =
-          '<strong>Posizione selezionata</strong> &middot; compila i campi manualmente';
+        document.getElementById('segnala-selected-bar').innerHTML = t('segnala.locationManual');
       });
   });
 
@@ -1284,7 +1445,7 @@ function initSegnalaMap() {
       segnalaMap.setView(latlng, 15);
       L.circleMarker(latlng, {
         radius: 8, color: '#4285F4', weight: 2, fillColor: '#4285F4', fillOpacity: 0.5,
-      }).addTo(segnalaMap).bindPopup('La tua posizione');
+      }).addTo(segnalaMap).bindPopup(t('map.yourLocation'));
     }, () => {});
   }
 }
@@ -1318,7 +1479,7 @@ function loadCity(cityKey) {
   document.getElementById('mobile-search').value = '';
   document.getElementById('muni-section').style.display = 'none';
   document.getElementById('map-loader').classList.remove('hidden');
-  document.getElementById('map-loader').innerHTML = '<div class="spinner"></div><span>Caricamento strade...</span>';
+  document.getElementById('map-loader').innerHTML = '<div class="spinner"></div><span>' + t('map.loading') + '</span>';
   document.querySelectorAll('.nav-item[data-view="segnala"], .nav-item[data-view="sentinelle"]')
     .forEach(n => n.classList.toggle('disabled', !city.communityFeatures));
   if (!city.communityFeatures && ['segnala', 'sentinelle'].includes(location.hash.replace('#', ''))) {
@@ -1332,9 +1493,9 @@ function loadCity(cityKey) {
     .then(results => {
       const tiles = results.filter(r => r.status === 'fulfilled').map(r => r.value);
       const failedCount = results.length - tiles.length;
-      if (tiles.length === 0) throw new Error('Nessuna zona caricata (rete assente o instabile)');
+      if (tiles.length === 0) throw new Error(t('map.noZonesLoaded'));
       if (failedCount > 0) {
-        showToast(failedCount + ' zona/e non caricate — controlla la connessione e ricarica');
+        showToast(t('toast.tilesFailed', { n: failedCount }));
       }
       return { features: tiles.flatMap(t => t.features) };
     })
@@ -1394,7 +1555,7 @@ function loadCity(cityKey) {
       animateCount(document.getElementById('stat-danger'), danger, 'danger');
       animateCount(document.getElementById('stat-safe'), safe, 'safe');
       document.getElementById('no-geom-note').textContent =
-        withoutGeom.length ? withoutGeom.length + ' strade non localizzate' : '';
+        withoutGeom.length ? t('noGeom.note', { n: withoutGeom.length }) : '';
 
       const allCoords = [];
       withGeom.forEach(f => {
@@ -1413,7 +1574,7 @@ function loadCity(cityKey) {
     })
     .catch(err => {
       document.getElementById('map-loader').innerHTML =
-        '<span style="color:#e53935;">Errore: ' + err.message + '</span>';
+        '<span style="color:#e53935;">' + t('map.error', { msg: err.message }) + '</span>';
     });
 }
 
@@ -1446,7 +1607,7 @@ function filterStreetList(query) {
     return name.includes(q) || quarter.includes(q);
   });
   buildStreetList(sortFeatures(filtered, currentSort));
-  counter.textContent = filtered.length + ' risultat' + (filtered.length === 1 ? 'o' : 'i');
+  counter.textContent = filtered.length + ' ' + t(filtered.length === 1 ? 'search.result' : 'search.results');
 }
 
 document.getElementById('desktop-search').addEventListener('input', e => {
@@ -1483,7 +1644,7 @@ function shareStreet(name) {
     navigator.share({ title: 'StreetSmart Roma', text: text, url: url }).catch(() => {});
   } else {
     navigator.clipboard.writeText(text + ' ' + url).then(() => {
-      showToast('Link copiato negli appunti');
+      showToast(t('toast.linkCopied'));
     }).catch(() => {});
   }
 }
@@ -1497,11 +1658,11 @@ function resetMapView() {
 }
 
 function geolocateSegnala() {
-  if (!navigator.geolocation) return showToast('Geolocalizzazione non supportata');
+  if (!navigator.geolocation) return showToast(t('toast.geoUnsupported'));
   if (!segnalaMap) return;
   navigator.geolocation.getCurrentPosition(pos => {
     segnalaMap.setView([pos.coords.latitude, pos.coords.longitude], 16);
-  }, () => showToast('Impossibile ottenere la posizione'));
+  }, () => showToast(t('toast.geoFailed')));
 }
 
 /* ── SEGNALAZIONE FORM ── */
@@ -1523,12 +1684,12 @@ function resetSegnala() {
   form.style.display = '';
   document.getElementById('success-segnala').style.display = 'none';
   document.getElementById('submit-segnala').disabled = false;
-  document.getElementById('submit-segnala').innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l2.5 2.5L16 9"/></svg> Invia segnalazione';
+  document.getElementById('submit-segnala').innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l2.5 2.5L16 9"/></svg> ' + t('segnala.submit');
   document.querySelectorAll('.colore-btn').forEach(b => b.classList.remove('selected'));
   selectedColor = null;
   document.getElementById('segnala-lat').value = '';
   document.getElementById('segnala-lng').value = '';
-  document.getElementById('segnala-selected-bar').innerHTML = '<span style="font-size:11px;color:#A09080;">Tocca sulla mappa per piazzare un pin, poi compila il form sotto</span>';
+  document.getElementById('segnala-selected-bar').innerHTML = '<span style="font-size:11px;color:#A09080;">' + t('segnala.barDefault') + '</span>';
   const hint = document.getElementById('segnala-map-hint');
   if (hint) hint.style.display = '';
   if (segnalaMap) {
@@ -1547,7 +1708,7 @@ document.getElementById('form-segnala').addEventListener('submit', async functio
   }
   const btn = document.getElementById('submit-segnala');
   btn.disabled = true;
-  btn.textContent = 'Invio in corso...';
+  btn.textContent = t('segnala.sending');
   try {
     const response = await fetch(e.target.action, {
       method: 'POST', body: new FormData(e.target), headers: { 'Accept': 'application/json' }
@@ -1558,8 +1719,8 @@ document.getElementById('form-segnala').addEventListener('submit', async functio
     } else { throw new Error(); }
   } catch {
     btn.disabled = false;
-    btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l2.5 2.5L16 9"/></svg> Invia segnalazione';
-    showToast('Errore invio. Riprova o scrivici @streetsmart.nav');
+    btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l2.5 2.5L16 9"/></svg> ' + t('segnala.submit');
+    showToast(t('toast.submitError'));
   }
 });
 
@@ -1568,7 +1729,7 @@ document.getElementById('form-sentinelle').addEventListener('submit', async func
   e.preventDefault();
   const btn = document.getElementById('submit-sentinelle');
   btn.disabled = true;
-  btn.textContent = 'Invio in corso...';
+  btn.textContent = t('sentinelle.sending');
   try {
     const response = await fetch(e.target.action, {
       method: 'POST', body: new FormData(e.target), headers: { 'Accept': 'application/json' }
@@ -1579,8 +1740,8 @@ document.getElementById('form-sentinelle').addEventListener('submit', async func
     } else { throw new Error(); }
   } catch {
     btn.disabled = false;
-    btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Entra nel progetto';
-    showToast('Errore invio. Riprova o scrivici @streetsmart.nav');
+    btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> ' + t('sentinelle.submit');
+    showToast(t('toast.submitError'));
   }
 });
 
@@ -1598,7 +1759,7 @@ function installPWA() {
   if (!deferredPrompt) return;
   deferredPrompt.prompt();
   deferredPrompt.userChoice.then(result => {
-    if (result.outcome === 'accepted') showToast('App installata!');
+    if (result.outcome === 'accepted') showToast(t('toast.appInstalled'));
     deferredPrompt = null;
     document.getElementById('install-banner').classList.remove('show');
   });
