@@ -86,6 +86,10 @@ Regola: arterie note e strade con 3+ corsie senza ciclabile → rosso, non giall
 - **Lead capture**: form Formspree (endpoint `xlgookeg`) su api.html → redirect `grazie.html`
 - **Form segnalazioni**: Formspree endpoint `mrernnwd`
 - **Instagram**: @streetsmart.nav (533 follower)
+- **Rassegna stampa**: primo articolo, La Capitale, 16 luglio 2026 (di Giacomo Zito) —
+  "Le strade di Roma colorate come piste da sci", copertura positiva e accurata (colori,
+  meccanismo Sentinelle, numero iscritti). Usato come prova sociale per post social e
+  potenzialmente per la landing B2B (`api.html`)
 - **API commerciale**: `worker/` (Cloudflare Worker), doc in `API.md`. Fa da
   gateway con API key sopra gli stessi tile pubblici — nessun database
   proprio, quindi i dati restano sempre sincronizzati con la mappa. Chiavi
