@@ -46,6 +46,13 @@ Regola: arterie note e strade con 3+ corsie senza ciclabile → rosso, non giall
 ## PWA
 - **URL**: https://nikolaifissenko.github.io/streetsmart-volt/
 - **File**: `index.html` — 3 tab (Mappa, Segnala, Sentinelle) + bottone "Per aziende" nell'header
+- **Onboarding Sentinelle**: le iscrizioni arrivano via form Formspree (endpoint `xlgookeg`,
+  `form_type=sentinella`) — nessuna integrazione Instagram automatica, quindi ogni nuova
+  Sentinella va contattata a mano su @streetsmart.nav con un DM di benvenuto che spiega
+  come installare la PWA (Android: bottone "Installa"; iPhone: Condividi → Aggiungi a Home)
+  e come segnalare strade dalla tab Segnala. Il contatore "Sentinelle attive" in pagina
+  (`index.html`, sezione Sentinelle) è un numero scritto a mano, va aggiornato manualmente
+  a ogni iscrizione confermata
 - **Mappa**: Leaflet.js, strade colorate, filtri, ricerca 15k strade, sidebar, geolocalizzazione
 - **Geolocalizzazione automatica**: alla prima apertura, dopo che le strade sono caricate,
   la mappa tenta la geolocalizzazione in silenzio (nessun toast se negata/non disponibile)
