@@ -95,6 +95,30 @@ Regola: arterie note e strade con 3+ corsie senza ciclabile → rosso, non giall
   proprio, quindi i dati restano sempre sincronizzati con la mappa. Chiavi
   gestite a mano via `wrangler secret put API_KEYS`.
 
+## Contenuti social
+- **Carousel "Logica Italiota"** (settembre 2026): 10 slide satiriche — comportamenti
+  car-centric (doppia fila, ingorgo, tagliare le strisce pedonali, correre in città
+  in auto) ricevono un timbro verde "APPROVATO" con pollice in su; mobilità
+  sostenibile (bici, città verde pedonale/ciclabile, monopattino) riceve un timbro
+  rosso "VIETATO" con pollice in giù. Copertina: "Logica Italiota" a bande tricolore
+  (niente volti di politici reali riconoscibili — rischio diritto d'immagine/rifiuto
+  del modello). Chiusura: "L'Italia pensa solo a correre ma alla fine va solo in
+  marcia indietro" (primo piano leva del cambio su "R").
+- **Immagini generate con Gemini**: funziona meglio UN prompt unico e completo per
+  immagine (scena + timbro + pollice + testo insieme), non la scena da sola con
+  overlay aggiunto dopo — la generazione compositata in due passaggi si è rivelata
+  più complicata da gestire che il prompt singolo ben scritto. Punti che hanno
+  richiesto iterazione: (1) inquadratura stretta su UN'unica auto/azione, non su
+  tutta la strada, altrimenti il concetto si perde nel caos generale della scena;
+  (2) colori del brand indicati per nome + hex approssimato nel prompt (es. "verde
+  brillante, colore simile a #27AE60"), mai come vincolo hex esatto isolato — i
+  modelli immagine non seguono hex code alla lettera; (3) niente persone reali/
+  riconoscibili nei meme satirici.
+- **Caption**: struttura hook → corpo (elenco 🟢/🔴) → punchline → CTA a commentare →
+  5 hashtag misti reach/nicchia (incluso uno branded, `#StreetSmart`). Con 533
+  follower, 5 hashtag sono pochi per la resa ottimale (meglio 10-15, mix niche/medio/
+  largo) — usati 5 solo perché richiesto esplicitamente per questo post.
+
 ## Altre città
 - **Stato**: Roma è in produzione con dati curati (PWA + API commerciale). Napoli è
   collegata alla PWA tramite il selettore città ed è **prevalentemente classificazione
