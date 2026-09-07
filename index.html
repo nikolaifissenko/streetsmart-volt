@@ -1056,8 +1056,6 @@ const COLORS = {
   'rosso':        { stroke: '#e53935', fill: '#e53935', weight: 4 },
   'giallo':       { stroke: '#e6940a', fill: '#e6940a', weight: 3 },
   'blu':          { stroke: '#1976D2', fill: '#1976D2', weight: 3 },
-  'verde-giallo': { stroke: '#27AE60', fill: '#27AE60', weight: 3 },
-  'verde-blu':    { stroke: '#27AE60', fill: '#27AE60', weight: 3 },
   'verde':        { stroke: '#27AE60', fill: '#27AE60', weight: 4 },
 };
 
@@ -1193,7 +1191,7 @@ function buildFilters(counts) {
   });
 }
 
-const SCORE_MAP = { 'nero': 5, 'rosso': 4, 'giallo': 3, 'blu': 2, 'verde': 1, 'verde-giallo': 1, 'verde-blu': 1 };
+const SCORE_MAP = { 'nero': 5, 'rosso': 4, 'giallo': 3, 'blu': 2, 'verde': 1 };
 let currentFeatures = [];
 let currentSort = 'alpha';
 
@@ -1558,7 +1556,7 @@ function loadCity(cityKey) {
       if (city.hasZoneStats) buildMuniStats(withGeom);
 
       const danger = withGeom.filter(f => ['nero','rosso'].includes(f.properties.classificazione)).length;
-      const safe = withGeom.filter(f => ['verde','verde-blu','verde-giallo'].includes(f.properties.classificazione)).length;
+      const safe = withGeom.filter(f => f.properties.classificazione === 'verde').length;
       function animateCount(el, target, cls) {
         el.classList.remove('danger', 'safe');
         if (cls) el.classList.add(cls);
