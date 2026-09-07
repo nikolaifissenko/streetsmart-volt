@@ -583,6 +583,7 @@
         <option value="roma">Roma</option>
         <option value="napoli">Napoli</option>
         <option value="bologna">Bologna</option>
+        <option value="tutte" data-i18n="city.tutte">Tutte le città</option>
       </select>
     </div>
   </div>
@@ -907,6 +908,7 @@ const I18N = {
     'segnala.locationSelected': 'Posizione selezionata',
     'segnala.locationManual': '<strong>Posizione selezionata</strong> &middot; compila i campi manualmente',
     'zone.municipio': 'Municipio', 'zone.zona': 'Zona',
+    'city.tutte': 'Tutte le città',
   },
   en: {
     'stat.total': 'streets', 'stat.mapped': 'mapped', 'stat.danger': 'dangerous', 'stat.safe': 'safe',
@@ -977,6 +979,7 @@ const I18N = {
     'segnala.locationSelected': 'Location selected',
     'segnala.locationManual': '<strong>Location selected</strong> &middot; fill in the fields manually',
     'zone.municipio': 'District', 'zone.zona': 'Zone',
+    'city.tutte': 'All cities',
   },
 };
 
@@ -1007,6 +1010,10 @@ const CITIES = {
   },
   bologna: {
     label: 'Bologna', tilesBase: './cities/bologna/tiles', tilePrefix: 'zona-',
+    zoneLabel: t('zone.zona'), hasZoneStats: false, communityFeatures: false,
+  },
+  tutte: {
+    label: 'Tutte le città', cities: ['roma', 'napoli', 'bologna'],
     zoneLabel: t('zone.zona'), hasZoneStats: false, communityFeatures: false,
   },
 };
@@ -1509,18 +1516,25 @@ function loadCity(cityKey) {
     switchView('mappa');
   }
 
-  fetchJsonWithRetry(city.tilesBase + '/index.json')
-    .then(slugs => Promise.allSettled(slugs.map(s =>
-      fetchJsonWithRetry(city.tilesBase + '/' + city.tilePrefix + encodeURIComponent(s) + '.geojson')
-    )))
+  const citiesToLoad = city.cities ? city.cities.map(k => CITIES[k]) : [city];
+
+  Promise.allSettled(citiesToLoad.map(c =>
+    fetchJsonWithRetry(c.tilesBase + '/index.json')
+      .then(slugs => Promise.allSettled(slugs.map(s =>
+        fetchJsonWithRetry(c.tilesBase + '/' + c.tilePrefix + encodeURIComponent(s) + '.geojson')
+      )))
+      .then(results => {
+        const tiles = results.filter(r => r.status === 'fulfilled').map(r => r.value);
+        const failedCount = results.length - tiles.length;
+        if (failedCount > 0) showToast(t('toast.tilesFailed', { n: failedCount }));
+        return tiles.flatMap(t => t.features);
+      })
+  ))
     .then(results => {
-      const tiles = results.filter(r => r.status === 'fulfilled').map(r => r.value);
-      const failedCount = results.length - tiles.length;
-      if (tiles.length === 0) throw new Error(t('map.noZonesLoaded'));
-      if (failedCount > 0) {
-        showToast(t('toast.tilesFailed', { n: failedCount }));
-      }
-      return { features: tiles.flatMap(t => t.features) };
+      const anyOk = results.some(r => r.status === 'fulfilled');
+      if (!anyOk) throw new Error(t('map.noZonesLoaded'));
+      const features = results.filter(r => r.status === 'fulfilled').flatMap(r => r.value);
+      return { features };
     })
     .then(gj => {
       const total = gj.features.length;
