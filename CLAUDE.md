@@ -73,7 +73,7 @@ Regola: arterie note e strade con 3+ corsie senza ciclabile → rosso, non giall
   Segnala/Sentinelle per città senza quelle feature (vedi sezione Altre città)
 - **Brand**: palette travertino (#EDE8DF), font EB Garamond + Inter
 - **Colori mappa**: nero=#1a1a1a, rosso=#e53935, giallo=#e6940a, blu=#1976D2, verde=#27AE60
-- **PWA**: manifest.json + sw.js (cache `streetsmart-v16`, bump ad ogni cambio
+- **PWA**: manifest.json + sw.js (cache `streetsmart-v18`, bump ad ogni cambio
   significativo di struttura file, altrimenti utenti che tornano sul sito
   vedono asset/tile vecchi), dark mode automatico
 - **Caricamento tile**: ogni tile fetcha con retry (3 tentativi). Se un tile fallisce
@@ -131,6 +131,12 @@ Regola: arterie note e strade con 3+ corsie senza ciclabile → rosso, non giall
   — fetcha OSM in bulk e classifica automaticamente con le stesse regole di Roma.
   Rilanciarlo rigenera tutto da zero (nuovo fetch OSM, ID rinumerati) — se nel
   frattempo sono state riconciliate segnalazioni reali, vanno riapplicate dopo.
+  Prova 3 mirror Overpass in sequenza (mail.ru, overpass-api.de, kumi.systems) —
+  overpass-api.de da solo si è dimostrato inaffidabile da alcuni ambienti di
+  build. **Milano non ancora fatta**: la query per una città di quella scala ha
+  dato timeout/504 su tutti i mirror nella sessione in cui è stato provato —
+  da riprovare, eventualmente spezzando la query per zona invece che sull'intera
+  area amministrativa in un colpo.
 - **Output**: `cities/<slug>/streetsmart_<slug>.csv` + `cities/<slug>/tiles/zona-*.geojson`
   (raggruppate per griglia geografica generata dinamicamente, non per municipio
   reale — non esiste una mappatura amministrativa per città non-Roma).
@@ -147,6 +153,43 @@ Regola: arterie note e strade con 3+ corsie senza ciclabile → rosso, non giall
   nel `#city-select`.
 - **Anteprima standalone**: `cities/<slug>/preview.html`, pagina Leaflet
   indipendente, utile per guardare i dati prima di collegarli alla PWA.
+- **Vista "Tutte le città"**: entry `tutte` in `CITIES` (index.html) con
+  `cities: ['roma','napoli','bologna']` invece di `tilesBase`/`tilePrefix`
+  diretti — `loadCity()` fetcha e unisce i tile di ogni città elencata.
+  Funziona senza deduplicare perché gli ID restano univoci tra città grazie
+  ai prefissi diversi (SS-ROM-/SS-NAP-/SS-BOL-). Aggiungere una nuova città
+  qui significa anche aggiungerla all'array `cities` di questa entry.
+- **Audit dati città automatiche**: a differenza di Roma (CSV curato a mano nel
+  tempo, ha accumulato ID duplicati e classificazioni non standard, corretti
+  in questa sessione), Napoli e Bologna sono generate in un solo passaggio da
+  `build_city.py` — controllate (ID duplicati, classificazione fuori dalle 5
+  classi, mismatch score/colore, geometria mancante, coordinate fuori zona)
+  e risultano pulite. Ripetere lo stesso controllo per ogni nuova città prima
+  di fidarsi del dataset.
+
+## Concorrenza — stressinbici.it
+Mappa nazionale gratuita/open-source dello stress ciclistico (LTS 1-4,
+progetto LTSBikePlan di Maurizio Napolitano/TOP-IX), copre tutta Italia
+incluse Roma e Napoli, derivata algoritmicamente da tag OSM (no verifica
+umana). Confronto fatto su alcune arterie di Roma (via i tile pmtiles
+pubblici, licenza ODbL): il loro output sottostima il rischio dove OSM non
+ha il tag giusto (es. Via Aurelia Antica non raggiunge mai lo score massimo)
+ed esclude dalla rete le strade con `bicycle=no` invece di segnalarle come
+pericolose (es. Circonvallazione Tiburtina, 95% dei segmenti esclusi così).
+Punto di forza reale di StreetSmart verso questo tipo di concorrenza: dato
+verificato da segnalazioni umane (Sentinelle), non solo inferenza da tag.
+Sezione dedicata già in `api.html`.
+**Importante — licenza ODbL**: i loro valori LTS calcolati NON si possono
+copiare dentro il CSV commerciale — l'ODbL ha clausola share-alike, quindi
+un database derivato dal loro andrebbe ripubblicato con la stessa licenza
+(gratis), incompatibile col modello a pagamento. Uso legittimo: la loro
+mappa come segnale su dove concentrare la revisione manuale — la
+classificazione finale scritta nel CSV deve restare una conclusione
+indipendente (OSM verificato a mano, segnalazione Sentinelle, giudizio
+diretto), mai il loro numero copiato. Attribuzione OSM/ODbL al dataset
+(non solo ai tile di sfondo mappa) aggiunta in `api.html` — obbligo
+preesistente per tutto il DB (in gran parte derivato da OSM), non solo
+per un eventuale uso dei loro dati.
 
 ## Regole GeoJSON
 - Solo LineString/MultiLineString — niente Point, niente strade senza geometria
