@@ -35,7 +35,15 @@ from pathlib import Path
 from collections import defaultdict, Counter
 
 ROOT = Path(__file__).parent.parent
-OVERPASS_URL = "https://overpass-api.de/api/interpreter"
+# Tried in order — some networks/proxies reset overpass-api.de and its
+# lz4/kumi mirrors mid-response (seen consistently from the Claude Code
+# sandbox); maps.mail.ru runs the same Overpass QL engine and answered
+# reliably there, so it's kept as a fallback rather than the default.
+OVERPASS_URLS = [
+    "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
+    "https://overpass-api.de/api/interpreter",
+    "https://overpass.kumi.systems/api/interpreter",
+]
 USER_AGENT = "StreetSmart-Import/1.0 (nikolaifissenko@github)"
 TARGET_FEATURES_PER_TILE = 1000
 
@@ -128,10 +136,17 @@ area["name"="{city_name}"]["admin_level"="{admin_level}"]->.city;
 out geom;
 """
     data = urllib.parse.urlencode({"data": query}).encode("utf-8")
-    req = urllib.request.Request(OVERPASS_URL, data=data, headers={"User-Agent": USER_AGENT})
-    with urllib.request.urlopen(req, timeout=320) as resp:
-        result = json.loads(resp.read().decode("utf-8"))
-    return result.get("elements", [])
+    last_err = None
+    for url in OVERPASS_URLS:
+        req = urllib.request.Request(url, data=data, headers={"User-Agent": USER_AGENT})
+        try:
+            with urllib.request.urlopen(req, timeout=320) as resp:
+                result = json.loads(resp.read().decode("utf-8"))
+            return result.get("elements", [])
+        except Exception as e:
+            print(f"  Overpass mirror {url} fallita ({e}), provo la successiva...")
+            last_err = e
+    raise last_err
 
 
 def group_by_name(elements):

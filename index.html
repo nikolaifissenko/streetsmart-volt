@@ -582,6 +582,7 @@
       <select class="city-select" id="city-select" onclick="event.stopPropagation()" onchange="onCityChange(this.value)">
         <option value="roma">Roma</option>
         <option value="napoli">Napoli</option>
+        <option value="bologna">Bologna</option>
       </select>
     </div>
   </div>
@@ -1002,6 +1003,10 @@ const CITIES = {
   },
   napoli: {
     label: 'Napoli', tilesBase: './cities/napoli/tiles', tilePrefix: 'zona-',
+    zoneLabel: t('zone.zona'), hasZoneStats: false, communityFeatures: false,
+  },
+  bologna: {
+    label: 'Bologna', tilesBase: './cities/bologna/tiles', tilePrefix: 'zona-',
     zoneLabel: t('zone.zona'), hasZoneStats: false, communityFeatures: false,
   },
 };

@@ -120,11 +120,11 @@ Regola: arterie note e strade con 3+ corsie senza ciclabile → rosso, non giall
   largo) — usati 5 solo perché richiesto esplicitamente per questo post.
 
 ## Altre città
-- **Stato**: Roma è in produzione con dati curati (PWA + API commerciale). Napoli è
-  collegata alla PWA tramite il selettore città ed è **prevalentemente classificazione
-  automatica OSM** — qualità inferiore a Roma finché non c'è un giro di revisione
-  manuale più ampio. Da luglio 2026 esiste però un primo layer di segnalazioni reali
-  anche per Napoli (vedi sotto), stesso meccanismo di Roma: l'obiettivo dichiarato è
+- **Stato**: Roma è in produzione con dati curati (PWA + API commerciale). Napoli e
+  Bologna sono collegate alla PWA tramite il selettore città e sono **prevalentemente
+  classificazione automatica OSM** — qualità inferiore a Roma finché non c'è un giro di
+  revisione manuale più ampio. Da luglio 2026 esiste però un primo layer di segnalazioni
+  reali anche per Napoli (vedi sotto), stesso meccanismo di Roma: l'obiettivo dichiarato è
   portare Napoli allo stesso livello di dati "vivi" di Roma. L'API commerciale
   (`worker/`) serve solo i tile di Roma, non ancora estesa alle altre città.
 - **Build**: `python scripts/build_city.py "<NomeCitta>" <PREFISSO>` (es. `"Napoli" NAP`)
