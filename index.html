@@ -583,6 +583,7 @@
         <option value="roma">Roma</option>
         <option value="napoli">Napoli</option>
         <option value="bologna">Bologna</option>
+        <option value="milano">Milano</option>
         <option value="tutte" data-i18n="city.tutte">Tutte le città</option>
       </select>
     </div>
@@ -1012,8 +1013,12 @@ const CITIES = {
     label: 'Bologna', tilesBase: './cities/bologna/tiles', tilePrefix: 'zona-',
     zoneLabel: t('zone.zona'), hasZoneStats: false, communityFeatures: false,
   },
+  milano: {
+    label: 'Milano', tilesBase: './cities/milano/tiles', tilePrefix: 'zona-',
+    zoneLabel: t('zone.zona'), hasZoneStats: false, communityFeatures: true,
+  },
   tutte: {
-    label: 'Tutte le città', cities: ['roma', 'napoli', 'bologna'],
+    label: 'Tutte le città', cities: ['roma', 'napoli', 'bologna', 'milano'],
     zoneLabel: t('zone.zona'), hasZoneStats: false, communityFeatures: false,
   },
 };
