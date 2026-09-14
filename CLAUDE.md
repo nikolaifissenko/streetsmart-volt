@@ -133,10 +133,13 @@ Regola: arterie note e strade con 3+ corsie senza ciclabile → rosso, non giall
   frattempo sono state riconciliate segnalazioni reali, vanno riapplicate dopo.
   Prova 3 mirror Overpass in sequenza (mail.ru, overpass-api.de, kumi.systems) —
   overpass-api.de da solo si è dimostrato inaffidabile da alcuni ambienti di
-  build. **Milano non ancora fatta**: la query per una città di quella scala ha
-  dato timeout/504 su tutti i mirror nella sessione in cui è stato provato —
-  da riprovare, eventualmente spezzando la query per zona invece che sull'intera
-  area amministrativa in un colpo.
+  build. **Milano fatta** (settembre 2026) con `scripts/build_milano.py`, non
+  `build_city.py`: la query sull'intera area amministrativa andava in
+  timeout/504 su tutti i mirror per una città di quella scala, come previsto.
+  Lo script spezza il bbox del comune in una griglia 4x4 (16 query, deduplica
+  per id way) invece di interrogare l'area amministrativa in un colpo solo —
+  5050 strade risultanti. Riusabile per altre città grandi che vanno in
+  timeout con `build_city.py`.
 - **Output**: `cities/<slug>/streetsmart_<slug>.csv` + `cities/<slug>/tiles/zona-*.geojson`
   (raggruppate per griglia geografica generata dinamicamente, non per municipio
   reale — non esiste una mappatura amministrativa per città non-Roma).
@@ -146,7 +149,12 @@ Regola: arterie note e strade con 3+ corsie senza ciclabile → rosso, non giall
   OSM completo. Nota: il form Formspree di Segnala è raggiungibile anche da città
   diverse da Roma pur con `communityFeatures: false` in `index.html` (che disabilita
   solo l'accesso dalla UI PWA) — prima segnalazione reale ricevuta così: Via Medina,
-  Napoli, luglio 2026.
+  Napoli, luglio 2026. **Milano è l'eccezione**: `communityFeatures: true` fin
+  dal lancio (settembre 2026) perché una Sentinella di Milano ha chiesto di poter
+  segnalare strade — i tab Segnala/Sentinelle sono accessibili dalla UI PWA per
+  questa città, mentre restano disabilitati per Napoli/Bologna. Non esiste ancora
+  `cities/milano/segnalazioni_milano.csv` né uno script di riconciliazione — si
+  creano, come per Napoli, al primo lotto di segnalazioni reali da processare.
 - **Aggiungere una città al selettore PWA**: dopo aver girato `build_city.py`,
   aggiungere una entry a `CITIES` in `index.html` (tilesBase, tilePrefix,
   zoneLabel, hasZoneStats: false, communityFeatures: false) e un `<option>`
@@ -154,18 +162,18 @@ Regola: arterie note e strade con 3+ corsie senza ciclabile → rosso, non giall
 - **Anteprima standalone**: `cities/<slug>/preview.html`, pagina Leaflet
   indipendente, utile per guardare i dati prima di collegarli alla PWA.
 - **Vista "Tutte le città"**: entry `tutte` in `CITIES` (index.html) con
-  `cities: ['roma','napoli','bologna']` invece di `tilesBase`/`tilePrefix`
+  `cities: ['roma','napoli','bologna','milano']` invece di `tilesBase`/`tilePrefix`
   diretti — `loadCity()` fetcha e unisce i tile di ogni città elencata.
   Funziona senza deduplicare perché gli ID restano univoci tra città grazie
-  ai prefissi diversi (SS-ROM-/SS-NAP-/SS-BOL-). Aggiungere una nuova città
+  ai prefissi diversi (SS-ROM-/SS-NAP-/SS-BOL-/SS-MIL-). Aggiungere una nuova città
   qui significa anche aggiungerla all'array `cities` di questa entry.
 - **Audit dati città automatiche**: a differenza di Roma (CSV curato a mano nel
   tempo, ha accumulato ID duplicati e classificazioni non standard, corretti
-  in questa sessione), Napoli e Bologna sono generate in un solo passaggio da
-  `build_city.py` — controllate (ID duplicati, classificazione fuori dalle 5
-  classi, mismatch score/colore, geometria mancante, coordinate fuori zona)
-  e risultano pulite. Ripetere lo stesso controllo per ogni nuova città prima
-  di fidarsi del dataset.
+  in questa sessione), Napoli, Bologna e Milano sono generate in un solo
+  passaggio automatico (`build_city.py` o `build_milano.py`) — controllate
+  (ID duplicati, classificazione fuori dalle 5 classi, mismatch score/colore,
+  geometria mancante, coordinate fuori zona) e risultano pulite. Ripetere lo
+  stesso controllo per ogni nuova città prima di fidarsi del dataset.
 
 ## Concorrenza — stressinbici.it
 Mappa nazionale gratuita/open-source dello stress ciclistico (LTS 1-4,
