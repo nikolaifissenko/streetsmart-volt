@@ -95,6 +95,37 @@ Regola: arterie note e strade con 3+ corsie senza ciclabile → rosso, non giall
   proprio, quindi i dati restano sempre sincronizzati con la mappa. Chiavi
   gestite a mano via `wrangler secret put API_KEYS`.
 
+## Outreach B2B
+- **Primo giro cold outreach** (15 settembre 2026): mandate 5 email da
+  nikolai.fissenko1@gmail.com via Gmail a Dott, Lime e Comune di Roma, più
+  richieste di collegamento LinkedIn (senza nota — l'opzione "aggiungi nota"
+  non è sempre disponibile su account free) a Giaretta e Cioffi.
+  - **Dott**: `press@ridedott.com` + Andrea Giaretta (VP Assosharing,
+    Director South-East Europe, l'interfaccia storica di Dott con Roma
+    Capitale dal 2019) `andrea.giaretta@ridedott.com`. LinkedIn:
+    linkedin.com/in/andgiaretta
+  - **Lime**: Hannah Landau (contatto reale trovato via comunicato stampa)
+    `hannah.landau@li.me` + Matteo Cioffi (Regional Director Central Europe,
+    ex GM Italia) `matteo.cioffi@li.me`. LinkedIn:
+    linkedin.com/in/matteo-cioffi-095a098a (non verificato a mano)
+  - **Comune di Roma**: Monica Zelinotti, Direttrice Innovazione e
+    Sostenibilità — l'ufficio che gestisce la sharing mobility —
+    `monica.zelinotti@comune.roma.it`, cc `mobilita@comune.roma.it`
+    (casella generale Dipartimento Mobilità Sostenibile e Trasporti)
+  - **Nota importante**: Tier e Dott si sono fusi a marzo 2024, oggi è
+    un'unica azienda sotto il brand Dott — niente outreach separato a "Tier"
+    in futuro, sarebbe un doppione.
+  - **Indirizzi email ricostruiti dal formato aziendale** (non da fonte che
+    li elenca esplicitamente): `nome.cognome@ridedott.com` per Dott,
+    `nome.cognome@li.me` per Lime — pattern confermato da almeno un
+    indirizzo reale noto per dominio, ma da verificare se rimbalzano.
+  - **Pitch diverso per target**: a Dott/Lime taglio commerciale (routing,
+    riduzione incidenti, API a pagamento); al Comune taglio dato pubblico/
+    sicurezza cittadina, con offerta di condivisione dati gratuita in una
+    prima fase invece della licenza a pagamento.
+  - **Follow-up**: promemoria fissato per il 19 settembre 2026 per
+    ricontrollare chi ha risposto e scrivere i follow-up ai silenzi.
+
 ## Contenuti social
 - **Carousel "Logica Italiota"** (settembre 2026): 10 slide satiriche — comportamenti
   car-centric (doppia fila, ingorgo, tagliare le strisce pedonali, correre in città
