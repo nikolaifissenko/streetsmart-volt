@@ -1088,11 +1088,11 @@ const LABELS = {
 mapInstance = L.map('map', { center: [41.9028, 12.4964], zoom: 12, tap: false });
 const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 const tileUrl = isDark
-  ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
-  : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
+  ? 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}'
+  : 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}';
 L.tileLayer(tileUrl, {
-  attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
-  subdomains: 'abcd', maxZoom: 19,
+  attribution: 'Esri, HERE, Garmin, &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+  maxZoom: 19, maxNativeZoom: 16,
 }).addTo(mapInstance);
 
 let layersByClass = {};
@@ -1429,8 +1429,10 @@ function initSegnalaMap() {
 
   segnalaMap = L.map('segnala-map', { center: [41.9028, 12.4964], zoom: 13, tap: false });
   const segnalaDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  L.tileLayer(segnalaDark ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png' : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; OSM &copy; CARTO', subdomains: 'abcd', maxZoom: 19,
+  L.tileLayer(segnalaDark
+    ? 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}'
+    : 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Esri, HERE, Garmin, &copy; OpenStreetMap contributors', maxZoom: 19, maxNativeZoom: 16,
   }).addTo(segnalaMap);
 
   let segnalaMarker = null;
