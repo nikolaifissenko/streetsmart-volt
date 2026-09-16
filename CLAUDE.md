@@ -73,12 +73,20 @@ Regola: arterie note e strade con 3+ corsie senza ciclabile → rosso, non giall
   Segnala/Sentinelle per città senza quelle feature (vedi sezione Altre città)
 - **Brand**: palette travertino (#EDE8DF), font EB Garamond + Inter
 - **Colori mappa**: nero=#1a1a1a, rosso=#e53935, giallo=#e6940a, blu=#1976D2, verde=#27AE60
-- **PWA**: manifest.json + sw.js (cache `streetsmart-v18`, bump ad ogni cambio
+- **PWA**: manifest.json + sw.js (cache `streetsmart-v20`, bump ad ogni cambio
   significativo di struttura file, altrimenti utenti che tornano sul sito
   vedono asset/tile vecchi), dark mode automatico
 - **Caricamento tile**: ogni tile fetcha con retry (3 tentativi). Se un tile fallisce
   dopo i retry la mappa carica comunque il resto e mostra un toast — non un errore
   bloccante (regressione reale introdotta dal passaggio a tile paralleli, poi corretta)
+- **Basemap**: Esri World Light/Dark Gray Base (`server.arcgisonline.com`),
+  `maxNativeZoom: 16` (oltre non ha tile native, Leaflet fa upscaling). **Non
+  CARTO** (`basemaps.cartocdn.com`) — usato fino a settembre 2026, poi CARTO ha
+  iniziato a richiedere una API key anche sulle tile anonime e la PWA live ha
+  iniziato a mostrare "API KEY REQUIRED" al posto dello sfondo mappa (su tutte
+  le città, light e dark). Se in futuro si vuole tornare allo stile CARTO serve
+  un account CARTO gratuito con una API key propria — non reintrodurre
+  `basemaps.cartocdn.com` senza key, si rompe di nuovo
 
 ## Monetizzazione
 - **Landing B2B**: `api.html` — posizionamento: "Il layer di pericolosità ciclistica per la tua app"
@@ -149,6 +157,23 @@ Regola: arterie note e strade con 3+ corsie senza ciclabile → rosso, non giall
   5 hashtag misti reach/nicchia (incluso uno branded, `#StreetSmart`). Con 533
   follower, 5 hashtag sono pochi per la resa ottimale (meglio 10-15, mix niche/medio/
   largo) — usati 5 solo perché richiesto esplicitamente per questo post.
+- **Post mappa Napoli** (settembre 2026): a differenza del carousel "Logica Italiota"
+  (immagini generate), qui il visual è uno screenshot reale della mappa — genuino,
+  non un meme. Prodotto con Playwright: apre `index.html` in locale, seleziona
+  Napoli, aspetta che i path SVG delle strade colorate siano renderizzati (non
+  basta un timeout fisso, il caricamento tile/dati è a volte lento/flaky — meglio
+  `waitForFunction` su `document.querySelectorAll('#map path').length > 500`),
+  poi inietta via JS un card overlay brandizzato (logo SVG dell'header, "Napoli"
+  in EB Garamond 64px, stat in badge verde pillola) posizionato sull'area vuota
+  del Golfo di Napoli per non coprire le strade colorate, infine crop con PIL
+  sulla porzione della mappa più densa (formato ~4:5 per IG). Stat scelta come
+  hook: solo 7 strade su 2.681 hanno una pista ciclabile (0,3%) — dato reale dal
+  CSV, non inventato. CTA nella caption punta ai commenti, non al tab Segnala
+  in-app, perché per Napoli quel tab è disabilitato nella UI (vedi comunityFeatures
+  in sezione Altre città). Hashtag finali ridotti a 5 su richiesta: `#StreetSmart
+  #Napoli #NapoliInBici #ciclabili #mobilitasostenibile`. Scritta anche una
+  versione LinkedIn dello stesso post, registro B2B (operatori/comuni/nav app,
+  niente emoji, CTA verso `api.html` invece che verso i commenti).
 
 ## Altre città
 - **Stato**: Roma è in produzione con dati curati (PWA + API commerciale). Napoli e
