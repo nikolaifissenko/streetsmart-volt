@@ -125,6 +125,33 @@ Regola: arterie note e strade con 3+ corsie senza ciclabile → rosso, non giall
     prima fase invece della licenza a pagamento.
   - **Follow-up**: promemoria fissato per il 19 settembre 2026 per
     ricontrollare chi ha risposto e scrivere i follow-up ai silenzi.
+- **Giaretta (Dott) ha accettato il collegamento LinkedIn** (16 settembre
+  2026). Messaggio da mandargli, testato in più versioni prima di arrivare
+  a questa (niente invito a call — è una persona molto occupata, meglio
+  smistare la conversazione via mail dove ha già ricevuto il pitch):
+  > Gentile Andrea, Le scrivo perché è tra le poche persone in Dott ad aver
+  > seguito da vicino cosa significa sicurezza nel rapporto con Roma
+  > Capitale, dal 2019 a oggi. Ho passato l'ultimo anno a costruire
+  > StreetSmart: 15.791 strade di Roma classificate per pericolosità
+  > ciclistica, non per inferenza da tag OSM come le mappe esistenti, ma
+  > verificate sul campo da una rete di ciclisti reali — abbastanza solido
+  > da finire su La Capitale a luglio. Per Dott significa routing più
+  > sicuro e un argomento concreto nel dialogo con il Comune. Le ho
+  > scritto anche una mail con i dettagli (andrea.giaretta@ridedott.com) —
+  > mi faccia pure sapere lì se Le interessa approfondire, quando ha un
+  > minuto.
+  - **Principi che hanno reso il messaggio buono** (riusabili per i
+    prossimi contatti simili): aggancio personalizzato specifico al suo
+    ruolo, non un generico "mi presento"; prova sociale (l'articolo)
+    prima della richiesta, non dopo; spiegazione vera del progetto, non
+    solo un pitch da tre righe, quando il destinatario non ha ancora
+    contesto; l'ask finale adattato a quanto è probabile che la persona
+    abbia tempo — verso un dirigente molto occupato meglio smistare su
+    email già mandata che chiedere una call a freddo su LinkedIn.
+  - Da fare alla prossima sessione: mandare questo messaggio a Giaretta
+    (richiede l'interfaccia LinkedIn, non automatizzabile da qui);
+    aspettare che Cioffi (Lime) accetti il collegamento e scrivergli con
+    lo stesso approccio una volta connesso.
 
 ## Contenuti social
 - **Carousel "Logica Italiota"** (settembre 2026): 10 slide satiriche — comportamenti
