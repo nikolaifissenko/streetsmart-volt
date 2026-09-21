@@ -201,6 +201,27 @@ Regola: arterie note e strade con 3+ corsie senza ciclabile → rosso, non giall
   #Napoli #NapoliInBici #ciclabili #mobilitasostenibile`. Scritta anche una
   versione LinkedIn dello stesso post, registro B2B (operatori/comuni/nav app,
   niente emoji, CTA verso `api.html` invece che verso i commenti).
+- **Post mappa Roma** (settembre 2026): stesso schema del post Napoli, screenshot
+  reale via Playwright con card overlay brandizzata. Differenze pratiche emerse:
+  (1) Roma è già la città di default in `index.html`, non serve selezionare nulla;
+  (2) con 15.791 strade la soglia di attesa path SVG va alzata (`> 3000` invece di
+  `> 500`, altrimenti lo screenshot parte a mappa ancora incompleta); (3) dopo aver
+  nascosto header/sidebar/nav via CSS e portato `#map` a piena pagina, servono
+  **2-3 secondi** dopo `mapInstance.invalidateSize()` prima dello screenshot —
+  con meno attesa la mappa risulta vuota (tile e strade non ancora ridisegnati sul
+  contenitore ridimensionato, anche se il DOM path-count è già alto); (4) niente
+  crop successivo con PIL: viewport Playwright impostato direttamente a 1080×1350
+  (formato 4:5 IG) con `device_scale_factor=2`. Vista centrata su
+  `mapInstance.setView([41.9028, 12.4964], 14)` (centro storico) per massimizzare
+  densità e varietà di colori nell'inquadratura — a Roma non esiste un'area vuota
+  tipo il Golfo di Napoli su cui posizionare la card, quindi la card usa uno sfondo
+  travertino semi-opaco con ombra che resta leggibile sopra qualunque densità di
+  strade sottostante. Stat scelta come hook: solo 168 strade su 15.791 hanno una
+  pista ciclabile a Roma (1,1%) — dato reale dal CSV. Caption e post LinkedIn salvati
+  in `social/2026-09-post-mappa-roma.md` (a differenza del post Napoli, non salvato
+  su file): hashtag portati a 10 invece dei 5 usati per Napoli, seguendo la nota
+  sulla resa ottimale per un account a 533 follower. CTA nei commenti punta anche
+  al tab Segnala in-app (a differenza di Napoli, per Roma è abilitato).
 
 ## Altre città
 - **Stato**: Roma è in produzione con dati curati (PWA + API commerciale). Napoli e
