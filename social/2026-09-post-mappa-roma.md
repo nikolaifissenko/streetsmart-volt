@@ -29,6 +29,35 @@ della PWA, o scrivilo nei commenti 👇
 **Hashtag:** #StreetSmart #Roma #ciclabili #bicicletta #mobilitasostenibile
 #ciclismourbano #RomaInBici #urbanplanning #micromobilita #stradesicure
 
+## Caption Instagram (v2, alternativa)
+
+712 strade di Roma sono classificate come pericolose per chi va in bici.
+Solo 153 sono sicure. 🚴
+
+Non è una sensazione — è il risultato di 15.791 strade verificate una
+per una:
+⚫ 78 nerissime — multicarreggiata, zero protezione
+🔴 634 rosse — trafficate, senza ciclabile
+🟡 13.397 gialle — urbane, senza ciclabile
+🔵 829 blu — ZTL, zone pedonali
+🟢 153 verdi — le uniche con una pista ciclabile vera
+
+Il rapporto è quasi 5 a 1: per ogni strada sicura, quasi 5 sono
+pericolose.
+
+Non è un algoritmo che indovina dai tag di OpenStreetMap. È verificato
+sul campo, strada per strada, anche grazie alle segnalazioni delle
+nostre Sentinelle.
+
+La mappa è gratuita — guarda la tua strada prima di uscire di casa
+(link in bio).
+
+Manca una strada pericolosa che conosci? Segnalacela dalla tab Segnala,
+o scrivilo nei commenti 👇
+
+**Hashtag:** #StreetSmart #Roma #ciclabili #bicicletta #mobilitasostenibile
+#ciclismourbano #RomaInBici #sicurezzastradale #micromobilita #cityplanning
+
 ## Post LinkedIn
 
 15.791 strade di Roma classificate per pericolosità ciclistica. Solo
@@ -87,3 +116,7 @@ scrivimi pure.
   ottimale per un account a 533 follower.
 - File immagine finale consegnato direttamente all'utente in sessione,
   non versionato in questo repo (stessa convenzione del post Napoli).
+- Stat alternativa per la v2: 712 strade nero+rosso (78+634) vs 153
+  verdi, stesso CSV, campo `classificazione`/`ciclabile_presente` — numeri
+  coerenti con i contatori "Dangerous"/"Safe" già mostrati in header su
+  `index.html`.
