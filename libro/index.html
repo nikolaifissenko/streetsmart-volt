@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Italian Cycling Survival Guide · Il Codice della Sopravvivenza</title>
+  <meta name="description" content="A satirical code for urban cyclists, by Nikolai Fissenko. Il Codice della Sopravvivenza per ciclisti urbani." />
+  <meta property="og:title" content="Italian Cycling Survival Guide · Il Codice della Sopravvivenza" />
+  <meta property="og:description" content="A satirical code for urban cyclists — 16 articles to survive Rome by bike." />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://nikolaifissenko.github.io/streetsmart-volt/libro/" />
+  <meta property="og:image" content="https://nikolaifissenko.github.io/streetsmart-volt/libro/cover-en.jpg" />
+  <meta name="theme-color" content="#EDE8DF" />
+  <link rel="icon" type="image/png" sizes="192x192" href="../icon-192.png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;600;700&family=Permanent+Marker&display=swap" rel="stylesheet" />
+  <style>
+    :root { --trav: #EDE8DF; --card: #F7F3EC; --ink: #2E2820; --mute: #6b6255; --red: #D32F2F; --line: #2E2820; }
+    @media (prefers-color-scheme: dark) {
+      :root { --trav: #1d1a16; --card: #27231e; --ink: #EDE8DF; --mute: #b3a998; --red: #ef5350; --line: #4a4338; }
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: var(--trav); color: var(--ink); font-family: 'EB Garamond', serif; font-size: 18px; line-height: 1.4; }
+    .wrap { max-width: 860px; margin: 0 auto; padding: 16px 18px 40px; }
+    .top { display: flex; justify-content: space-between; align-items: center; gap: 12px; border-bottom: 1px solid var(--line); padding-bottom: 10px; }
+    .top img { width: 38px; height: 38px; }
+    .langs { display: flex; flex-wrap: wrap; gap: 4px; }
+    .langs button { font: 600 12px 'Inter', sans-serif; letter-spacing: .06em; background: none; color: var(--ink); border: 1px solid var(--line); border-radius: 999px; padding: 5px 9px; cursor: pointer; }
+    .langs button[aria-pressed="true"] { background: var(--ink); color: var(--trav); border-color: var(--ink); }
+    .kick { font: 11px 'Inter', sans-serif; letter-spacing: .18em; text-transform: uppercase; color: var(--mute); margin: 18px 0 6px; }
+    .hero { display: flex; gap: 26px; align-items: center; margin-top: 8px; }
+    .cover { width: 210px; flex: none; transform: rotate(-3deg); border: 1px solid #cfc7b8; }
+    h1 { font-size: 40px; line-height: 1.05; font-weight: 700; }
+    h1 s { color: #8a8174; text-decoration-color: var(--red); text-decoration-thickness: 3px; }
+    .mk { font-family: 'Permanent Marker', cursive; color: var(--red); font-weight: 400; font-size: .86em; }
+    .sub { font-style: italic; font-size: 20px; margin: 6px 0 14px; }
+    .hook2 { font-style: italic; color: var(--mute); margin-top: 10px; }
+    h2 { font: 600 12px 'Inter', sans-serif; letter-spacing: .2em; text-transform: uppercase; margin: 34px 0 12px; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .card { background: var(--card); border-top: 7px solid var(--c); padding: 12px 14px 14px; border-radius: 0 0 8px 8px; }
+    .badge { display: inline-block; background: var(--c); color: #fff; font: 700 11px 'Inter', sans-serif; padding: 2px 7px; border-radius: 4px; letter-spacing: .05em; }
+    .ct { font-style: italic; font-size: 15px; color: var(--mute); margin: 5px 0; }
+    .c1 { font-weight: 700; line-height: 1.2; }
+    .c2 { font-size: 16px; margin-top: 6px; }
+    .buy { margin-top: 34px; border-top: 1px solid var(--line); padding-top: 22px; }
+    .buy h3, .map h3 { font-size: 24px; margin-bottom: 6px; }
+    .btns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+    .btn { display: inline-flex; flex-direction: column; text-decoration: none; background: var(--ink); color: var(--trav); padding: 10px 16px; border-radius: 8px; font-weight: 700; font-size: 18px; }
+    .btn small { font: 400 12px 'Inter', sans-serif; opacity: .75; }
+    .btn.alt { background: none; color: var(--ink); border: 1.5px solid var(--ink); }
+    .map { margin-top: 30px; background: var(--card); border-radius: 10px; padding: 18px; display: flex; gap: 16px; align-items: center; }
+    .map img { width: 64px; height: 64px; flex: none; }
+    .map .btn { margin-top: 10px; font-size: 16px; padding: 8px 14px; }
+    .by { margin-top: 30px; text-align: center; font-size: 14px; color: var(--mute); letter-spacing: .04em; }
+    .by a { color: inherit; }
+    @media (max-width: 640px) {
+      .hero { flex-direction: column; align-items: flex-start; }
+      .cover { width: 170px; align-self: center; }
+      h1 { font-size: 32px; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <img src="../logo-header.png" alt="StreetSmart" />
+    <div class="langs" id="langs"></div>
+  </div>
+  <p class="kick" id="kick"></p>
+  <div class="hero">
+    <img class="cover" id="cover" src="cover-en.jpg" alt="" />
+    <div>
+      <h1 id="title"></h1>
+      <p class="sub" id="sub"></p>
+      <p id="hook"></p>
+      <p class="hook2" id="hook2"></p>
+    </div>
+  </div>
+  <h2 id="sec"></h2>
+  <div class="grid" id="grid"></div>
+  <div class="buy">
+    <h3 id="buyh"></h3>
+    <p id="buyp"></p>
+    <div class="btns" id="btns"></div>
+  </div>
+  <div class="map">
+    <img src="../logo-header.png" alt="" />
+    <div>
+      <h3 id="maph"></h3>
+      <p id="mapp"></p>
+      <a class="btn" href="../" id="mapb"></a>
+    </div>
+  </div>
+  <p class="by"><span id="by"></span> · <a href="https://www.instagram.com/streetsmart.nav/">@streetsmart.nav</a></p>
+</div>
+<script>
+const COL = ['#1f1f1f', '#3E9A4B', '#B8352A', '#386BA4', '#B8352A', '#B8352A'];
+const NUM = [1, 3, 5, 7, 9, 13];
+const T_IT = 'Il Codice della<br><s>Strada</s> <span class="mk">Sopravvivenza</span>';
+const T_EN = 'Italian <s>Driving</s> <span class="mk">Cycling</span><br>Survival Guide';
+const Q_IT = 'Il Codice della Sopravvivenza Fissenko';
+const Q_EN = 'Italian Cycling Survival Guide Fissenko';
+const L = {
+  it: { name: 'IT', title: T_IT, cover: 'it', amazon: 'amazon.it', art: 'ART.',
+    kick: 'Dalle strade di Roma · direttamente dalla tua guida in bici',
+    sub: 'per ciclisti urbani',
+    hook: 'Nei miei tour in bici per Roma passo metà del tempo a spiegare come non morire. Qui c’è tutto, nero su bianco: <b>16 articoli</b> di un Codice della Strada satirico per chi pedala in un Paese dove quello vero non lo rispetta nessuno.',
+    hook2: 'Fa ridere, sì. Ma ogni regola è qualcosa che per le strade di Roma ti tiene vivo davvero.',
+    sec: 'Sei articoli dal Codice',
+    arts: [['Principio fondamentale', 'Tutti sono idioti.', 'Te compreso.'],
+      ['Della carreggiata', 'La strada è più sicura del marciapiede: le auto hanno l’obbligo legale di non ucciderti.', 'Il pedone sul marciapiede gode del medesimo diritto nei tuoi confronti.'],
+      ['Dei semafori', 'Fermati ai semafori… quando serve.', ''],
+      ['Dell’andatura pedonale', 'Nelle zone centrali, tra i pedoni, si procede a passo d’uomo con la marcia alta.', 'Il turista con il gelato ha la precedenza assoluta.'],
+      ['Dell’indecisione', 'L’indecisione è vietata.', 'L’indeciso viene asfaltato.'],
+      ['Della portiera', 'Ogni auto parcheggiata contiene una portiera che sta per aprirsi.', '']],
+    buyh: 'Il libro', buyp: 'Cartaceo in formato tascabile, a colori e illustrato, oppure eBook Kindle. Esiste anche in inglese.',
+    ed_it: 'Edizione italiana', ed_en: 'Edizione inglese', on: 'su Amazon', first: 'it',
+    maph: 'La mappa viva', mapp: 'Mappa gratuita delle strade di Roma colorate in base al pericolo, segnalate dai ciclisti.', mapb: 'Apri la mappa',
+    by: 'Nikolai Fissenko · guida in bici a Roma, creatore di StreetSmart' },
+  en: { name: 'EN', title: T_EN, cover: 'en', amazon: 'amazon.com', art: 'ART.',
+    kick: 'From the streets of Rome · straight from your bike guide',
+    sub: 'A satirical code for urban cyclists',
+    hook: 'On my bike tours of Rome I spend half the time explaining how not to die. Here it all is, in writing: <b>16 articles</b> of a satirical Highway Code for anyone who rides in a country where nobody follows the real one.',
+    hook2: 'Funny, yes. But every rule is something that actually keeps you alive on Roman streets.',
+    sec: 'Six articles from the Code',
+    arts: [['Fundamental principle', 'Everyone is an idiot.', 'Including you.'],
+      ['On the roadway', 'The road is safer than the sidewalk: cars are legally obliged not to kill you.', 'Pedestrians on the sidewalk enjoy the same right with respect to you.'],
+      ['On traffic lights', 'Stop at red lights… when necessary.', ''],
+      ['On walking pace', 'In the historic centre, among pedestrians, proceed at walking pace in a high gear.', 'Tourists holding a gelato have absolute right of way.'],
+      ['On indecision', 'Indecision is prohibited.', 'The undecided get flattened.'],
+      ['On car doors', 'Every parked car contains a door that is about to open.', '']],
+    buyh: 'Get the book', buyp: 'Pocket-size paperback, full colour and illustrated, or Kindle eBook. Also available in Italian.',
+    ed_it: 'Italian edition', ed_en: 'English edition', on: 'on Amazon', first: 'en',
+    maph: 'The live map', mapp: 'Free map of Rome’s streets, coloured by danger and reported by local cyclists.', mapb: 'Open the map',
+    by: 'Nikolai Fissenko · bike guide in Rome, creator of StreetSmart' },
+  fr: { name: 'FR', title: T_EN, cover: 'en', amazon: 'amazon.fr', art: 'ART.',
+    kick: 'Des rues de Rome · directement de ton guide à vélo',
+    sub: 'Un code satirique pour cyclistes urbains',
+    hook: 'Pendant mes visites de Rome à vélo, je passe la moitié du temps à expliquer comment ne pas mourir. Tout est là, noir sur blanc : <b>16 articles</b> d’un Code de la route satirique, pour ceux qui pédalent dans un pays où personne ne respecte le vrai.',
+    hook2: 'C’est drôle, oui. Mais chaque règle est ce qui te garde vraiment en vie dans les rues de Rome.',
+    sec: 'Six articles du Code',
+    arts: [['Principe fondamental', 'Tout le monde est idiot.', 'Toi compris.'],
+      ['De la chaussée', 'La route est plus sûre que le trottoir : les voitures ont l’obligation légale de ne pas te tuer.', 'Le piéton sur le trottoir jouit du même droit à ton égard.'],
+      ['Des feux', 'Arrête-toi aux feux rouges… quand il le faut.', ''],
+      ['De l’allure piétonne', 'Dans le centre historique, parmi les piétons, on roule au pas, sur un grand braquet.', 'Le touriste avec une glace a la priorité absolue.'],
+      ['De l’indécision', 'L’indécision est interdite.', 'L’indécis se fait écraser.'],
+      ['De la portière', 'Chaque voiture garée contient une portière sur le point de s’ouvrir.', '']],
+    buyh: 'Le livre', buyp: 'Disponible en anglais et en italien : format poche broché, en couleurs et illustré, ou ebook Kindle.',
+    ed_it: 'Édition italienne', ed_en: 'Édition anglaise', on: 'sur Amazon', first: 'en',
+    maph: 'La carte vivante', mapp: 'Carte gratuite des rues de Rome, colorées selon le danger et signalées par les cyclistes.', mapb: 'Ouvrir la carte',
+    by: 'Nikolai Fissenko · guide à vélo à Rome, créateur de StreetSmart' },
+  nl: { name: 'NL', title: T_EN, cover: 'en', amazon: 'amazon.nl', art: 'ART.',
+    kick: 'Uit de straten van Rome · rechtstreeks van je fietsgids',
+    sub: 'Een satirisch reglement voor stadsfietsers',
+    hook: 'Tijdens mijn fietstours door Rome besteed ik de helft van de tijd aan uitleggen hoe je niet doodgaat. Hier staat het allemaal zwart op wit: <b>16 artikelen</b> van een satirisch verkeersreglement voor iedereen die fietst in een land waar niemand zich aan het echte houdt.',
+    hook2: 'Grappig, ja. Maar elke regel is iets dat je in de straten van Rome echt in leven houdt.',
+    sec: 'Zes artikelen uit het Reglement',
+    arts: [['Grondbeginsel', 'Iedereen is een idioot.', 'Jij ook.'],
+      ['Over de rijbaan', 'De weg is veiliger dan de stoep: auto’s zijn wettelijk verplicht je niet dood te rijden.', 'Voetgangers op de stoep hebben tegenover jou hetzelfde recht.'],
+      ['Over verkeerslichten', 'Stop voor rood… als het nodig is.', ''],
+      ['Over wandeltempo', 'In het historische centrum, tussen voetgangers, rijd je stapvoets in een hoge versnelling.', 'Toeristen met een ijsje hebben altijd voorrang.'],
+      ['Over besluiteloosheid', 'Twijfelen is verboden.', 'Wie twijfelt, wordt platgereden.'],
+      ['Over portieren', 'Elke geparkeerde auto bevat een portier dat op het punt staat open te gaan.', '']],
+    buyh: 'Het boek', buyp: 'Verkrijgbaar in het Engels en het Italiaans: pocketformaat paperback, in kleur en geïllustreerd, of Kindle-e-book.',
+    ed_it: 'Italiaanse editie', ed_en: 'Engelse editie', on: 'op Amazon', first: 'en',
+    maph: 'De levende kaart', mapp: 'Gratis kaart van de straten van Rome, gekleurd naar gevaar en gemeld door fietsers.', mapb: 'Open de kaart',
+    by: 'Nikolai Fissenko · fietsgids in Rome, maker van StreetSmart' },
+  es: { name: 'ES', title: T_EN, cover: 'en', amazon: 'amazon.es', art: 'ART.',
+    kick: 'De las calles de Roma · directamente de tu guía en bici',
+    sub: 'Un código satírico para ciclistas urbanos',
+    hook: 'En mis tours en bici por Roma paso la mitad del tiempo explicando cómo no morir. Aquí está todo, por escrito: <b>16 artículos</b> de un Código de Circulación satírico para quien pedalea en un país donde nadie respeta el de verdad.',
+    hook2: 'Da risa, sí. Pero cada regla es algo que de verdad te mantiene vivo en las calles de Roma.',
+    sec: 'Seis artículos del Código',
+    arts: [['Principio fundamental', 'Todos son idiotas.', 'Tú incluido.'],
+      ['De la calzada', 'La calzada es más segura que la acera: los coches tienen la obligación legal de no matarte.', 'El peatón en la acera goza del mismo derecho respecto a ti.'],
+      ['De los semáforos', 'Para en los semáforos… cuando haga falta.', ''],
+      ['Del paso peatonal', 'En el centro histórico, entre peatones, se circula a paso de persona con una marcha larga.', 'El turista con helado tiene prioridad absoluta.'],
+      ['De la indecisión', 'La indecisión está prohibida.', 'Al indeciso lo atropellan.'],
+      ['De la puerta', 'Todo coche aparcado contiene una puerta a punto de abrirse.', '']],
+    buyh: 'El libro', buyp: 'Disponible en inglés y en italiano: tapa blanda de bolsillo, a color e ilustrado, o ebook Kindle.',
+    ed_it: 'Edición en italiano', ed_en: 'Edición en inglés', on: 'en Amazon', first: 'en',
+    maph: 'El mapa vivo', mapp: 'Mapa gratuito de las calles de Roma, coloreadas según el peligro y señaladas por los ciclistas.', mapb: 'Abrir el mapa',
+    by: 'Nikolai Fissenko · guía en bici en Roma, creador de StreetSmart' },
+  ru: { name: 'RU', title: T_EN, cover: 'en', amazon: 'amazon.com', art: 'СТ.',
+    kick: 'С улиц Рима · от твоего велогида',
+    sub: 'Сатирический кодекс для городских велосипедистов',
+    hook: 'На моих велотурах по Риму я половину времени объясняю, как не погибнуть. Здесь всё это записано: <b>16 статей</b> сатирических правил дорожного движения для тех, кто ездит на велосипеде в стране, где настоящие правила никто не соблюдает.',
+    hook2: 'Смешно — да. Но каждое правило действительно помогает выжить на улицах Рима.',
+    sec: 'Шесть статей из Кодекса',
+    arts: [['Основной принцип', 'Все вокруг идиоты.', 'Включая тебя.'],
+      ['О проезжей части', 'Дорога безопаснее тротуара: водители по закону обязаны тебя не убивать.', 'Пешеход на тротуаре обладает тем же правом по отношению к тебе.'],
+      ['О светофорах', 'Останавливайся на красный… когда нужно.', ''],
+      ['О пешеходном темпе', 'В историческом центре, среди пешеходов, едешь со скоростью пешехода на высокой передаче.', 'Турист с мороженым имеет абсолютный приоритет.'],
+      ['О нерешительности', 'Нерешительность запрещена.', 'Нерешительного закатывают в асфальт.'],
+      ['О дверях', 'В каждой припаркованной машине есть дверь, которая вот-вот откроется.', '']],
+    buyh: 'Книга', buyp: 'Доступна на английском и итальянском: карманное печатное издание в цвете, с иллюстрациями, или электронная книга Kindle.',
+    ed_it: 'Итальянское издание', ed_en: 'Английское издание', on: 'на Amazon', first: 'en',
+    maph: 'Живая карта', mapp: 'Бесплатная карта улиц Рима, раскрашенных по степени опасности, по сообщениям велосипедистов.', mapb: 'Открыть карту',
+    by: 'Nikolai Fissenko · велогид в Риме, создатель StreetSmart' },
+};
+const ORDER = ['it', 'en', 'fr', 'nl', 'es', 'ru'];
+const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const $ = id => document.getElementById(id);
+
+function pickLang() {
+  const q = new URLSearchParams(location.search).get('lang');
+  if (q && L[q]) return q;
+  for (const l of navigator.languages || [navigator.language || 'en']) {
+    const k = (l || '').slice(0, 2).toLowerCase();
+    if (L[k]) return k;
+  }
+  return 'en';
+}
+
+function render(k) {
+  const d = L[k];
+  document.documentElement.lang = k;
+  $('kick').textContent = d.kick;
+  $('title').innerHTML = d.title;
+  $('sub').textContent = d.sub;
+  $('hook').innerHTML = d.hook;
+  $('hook2').textContent = d.hook2;
+  $('cover').src = `cover-${d.cover}.jpg`;
+  $('sec').textContent = d.sec;
+  $('grid').innerHTML = d.arts.map(([t, a, b], i) =>
+    `<div class="card" style="--c:${COL[i]}"><span class="badge">${d.art} ${NUM[i]}</span><div class="ct">${esc(t)}</div>` +
+    `<p class="c1">${esc(a)}</p>${b ? `<p class="c2">${esc(b)}</p>` : ''}</div>`).join('');
+  $('buyh').textContent = d.buyh;
+  $('buyp').textContent = d.buyp;
+  const url = q => `https://www.${d.amazon}/s?k=${encodeURIComponent(q)}`;
+  const it = `<a class="btn${d.first === 'it' ? '' : ' alt'}" href="${url(Q_IT)}" target="_blank" rel="noopener">${esc(d.ed_it)}<small>${esc(d.on)}</small></a>`;
+  const en = `<a class="btn${d.first === 'en' ? '' : ' alt'}" href="${url(Q_EN)}" target="_blank" rel="noopener">${esc(d.ed_en)}<small>${esc(d.on)}</small></a>`;
+  $('btns').innerHTML = d.first === 'it' ? it + en : en + it;
+  $('maph').textContent = d.maph;
+  $('mapp').textContent = d.mapp;
+  $('mapb').textContent = d.mapb;
+  $('by').textContent = d.by;
+  document.querySelectorAll('#langs button').forEach(b => b.setAttribute('aria-pressed', b.dataset.l === k));
+}
+
+$('langs').innerHTML = ORDER.map(k => `<button type="button" data-l="${k}">${L[k].name}</button>`).join('');
+$('langs').addEventListener('click', e => {
+  const k = e.target.dataset && e.target.dataset.l;
+  if (!k) return;
+  render(k);
+  history.replaceState(null, '', `?lang=${k}`);
+});
+render(pickLang());
+</script>
+</body>
+</html>
