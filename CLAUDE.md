@@ -223,6 +223,19 @@ Regola: arterie note e strade con 3+ corsie senza ciclabile → rosso, non giall
   sulla resa ottimale per un account a 533 follower. CTA nei commenti punta anche
   al tab Segnala in-app (a differenza di Napoli, per Roma è abilitato).
 
+## Libro — Il Codice della Sopravvivenza (ottobre 2026)
+Libro satirico per ciclisti urbani di Nikolai, brandizzato StreetSmart, nato dai suoi tour in
+bici a Roma: 16 articoli, Vantaggi/Rischi, cartelli parodia. Amazon KDP cartaceo (tascabile
+5×8, 24 pagine) + Kindle, in italiano ("Il Codice della ~~Strada~~ Sopravvivenza") e in
+inglese ("Italian ~~Driving~~ Cycling Survival Guide").
+- **Sorgenti, file KDP/Kindle, volantini e QR**: NON in questo repo (è pubblico e servito da
+  GitHub Pages, sarebbe il libro scaricabile gratis) ma nel repo privato `Nikolai-Life-`,
+  cartella `libro-codice-sopravvivenza/`. Leggere il suo README.md prima di modificare
+  qualunque cosa del libro: ci sono le scelte fatte, i comandi di build e i problemi noti.
+- **Qui c'è solo** `libro/` (pagina promozionale in 6 lingue, target del QR dei volantini).
+- Il **QR del libro** (rosso, logo con stella tricolore) è volutamente diverso dal **QR dell'app**
+  (nero, logo originale): non unificarli.
+
 ## Altre città
 - **Stato**: Roma è in produzione con dati curati (PWA + API commerciale). Napoli e
   Bologna sono collegate alla PWA tramite il selettore città e sono **prevalentemente
