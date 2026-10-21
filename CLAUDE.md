@@ -222,6 +222,11 @@ Regola: arterie note e strade con 3+ corsie senza ciclabile → rosso, non giall
   su file): hashtag portati a 10 invece dei 5 usati per Napoli, seguendo la nota
   sulla resa ottimale per un account a 533 follower. CTA nei commenti punta anche
   al tab Segnala in-app (a differenza di Napoli, per Roma è abilitato).
+- **Storia "Il sistema"** (ottobre 2026): legenda dei 5 colori in formato storia IG,
+  rifatta col logo ufficiale (`streetsmart_logo.png`) dopo una prima versione con logo
+  sbagliato. Testi, HTML sorgente e nota aperta in `social/2026-10-storia-il-sistema.md`:
+  i testi di giallo ("senso unico") e rosso ("doppio senso") scelti per la storia
+  divergono dalla classificazione reale del CSV — da riallineare se si riusa la legenda.
 
 ## Libro — Il Codice della Sopravvivenza (ottobre 2026)
 Libro satirico per ciclisti urbani di Nikolai, brandizzato StreetSmart, nato dai suoi tour in
