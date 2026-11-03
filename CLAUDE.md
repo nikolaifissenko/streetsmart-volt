@@ -337,8 +337,9 @@ grazie.html             — Thank-you page post-lead
 404.html                — Redirect PWA
 libro/index.html        — Pagina del libro (Codice della Sopravvivenza / Italian Cycling Survival Guide)
                           in 6 lingue (IT/EN/FR/NL/ES/RU, auto da navigator.language, ?lang=xx forza),
-                          target del QR sui volantini dei tour in bici. Link Amazon = ricerca per titolo
-                          finché non ci sono gli ASIN: sostituirli con i link diretti quando i libri sono live
+                          target del QR sui volantini dei tour in bici. Link Amazon: costanti ASIN_IT/ASIN_EN;
+                          IT Kindle live (B0HQ4WYSWS, novembre 2026), EN ancora ricerca per titolo finché
+                          non arriva il suo ASIN
 manifest.json / sw.js   — PWA
 tiles/index.json        — elenco slug municipio
 tiles/municipio-*.geojson — GeoJSON per municipio, servito dalla PWA
