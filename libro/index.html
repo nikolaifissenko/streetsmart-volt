@@ -101,6 +101,9 @@ const T_IT = 'Il Codice della<br><s>Strada</s> <span class="mk">Sopravvivenza</s
 const T_EN = 'Italian <s>Driving</s> <span class="mk">Cycling</span><br>Survival Guide';
 const Q_IT = 'Il Codice della Sopravvivenza Fissenko';
 const Q_EN = 'Italian Cycling Survival Guide Fissenko';
+// ASIN diretti (Kindle). Vuoto = link di ricerca per titolo finché il libro non è live.
+const ASIN_IT = 'B0HQ4WYSWS';
+const ASIN_EN = '';
 const L = {
   it: { name: 'IT', title: T_IT, cover: 'it', amazon: 'amazon.it', art: 'ART.',
     kick: 'Dalle strade di Roma · direttamente dalla tua guida in bici',
@@ -228,9 +231,9 @@ function render(k) {
     `<p class="c1">${esc(a)}</p>${b ? `<p class="c2">${esc(b)}</p>` : ''}</div>`).join('');
   $('buyh').textContent = d.buyh;
   $('buyp').textContent = d.buyp;
-  const url = q => `https://www.${d.amazon}/s?k=${encodeURIComponent(q)}`;
-  const it = `<a class="btn${d.first === 'it' ? '' : ' alt'}" href="${url(Q_IT)}" target="_blank" rel="noopener">${esc(d.ed_it)}<small>${esc(d.on)}</small></a>`;
-  const en = `<a class="btn${d.first === 'en' ? '' : ' alt'}" href="${url(Q_EN)}" target="_blank" rel="noopener">${esc(d.ed_en)}<small>${esc(d.on)}</small></a>`;
+  const url = (q, asin) => asin ? `https://www.${d.amazon}/dp/${asin}` : `https://www.${d.amazon}/s?k=${encodeURIComponent(q)}`;
+  const it = `<a class="btn${d.first === 'it' ? '' : ' alt'}" href="${url(Q_IT, ASIN_IT)}" target="_blank" rel="noopener">${esc(d.ed_it)}<small>${esc(d.on)}</small></a>`;
+  const en = `<a class="btn${d.first === 'en' ? '' : ' alt'}" href="${url(Q_EN, ASIN_EN)}" target="_blank" rel="noopener">${esc(d.ed_en)}<small>${esc(d.on)}</small></a>`;
   $('btns').innerHTML = d.first === 'it' ? it + en : en + it;
   $('maph').textContent = d.maph;
   $('mapp').textContent = d.mapp;
