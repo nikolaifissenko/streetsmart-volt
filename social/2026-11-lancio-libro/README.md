@@ -45,7 +45,7 @@ Durante il lancio il libro sta primo. Finito il lancio (~4 settimane) rimettere 
 ```
 Il Codice della Strada a Roma è un suggerimento. Questo no. 📕
 
-Dopo centinaia di tour in bici per Roma ho messo nero su bianco le vere regole per uscirne vivi:
+Nei miei tour in bici per Roma ripeto sempre le stesse regole. Le ho messe nero su bianco:
 
 🔴 Ogni auto parcheggiata contiene una portiera che sta per aprirsi
 🔴 L'indeciso viene asfaltato
