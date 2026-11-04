@@ -123,6 +123,36 @@ Così le ho scritte io. "Il Codice della Sopravvivenza" è un manuale satirico i
 Link al libro nel primo commento.
 ```
 
+**Versione bilingue IT + EN** (un solo post, IT sopra / EN sotto — il libro esce in entrambe le lingue):
+```
+Ho scritto un libro. Non è un libro sui dati.
+
+Da più di un anno costruisco StreetSmart: 15.791 strade di Roma classificate per pericolosità ciclistica, verificate da una rete di ciclisti che segnalano quello che vedono ogni giorno.
+
+Nei tour in bici che guido per Roma passo metà del tempo a spiegare ai turisti come non farsi male. Sempre le stesse regole, nessuna scritta in un codice ufficiale. Così le ho scritte io: "Il Codice della Sopravvivenza", 16 articoli satirici. Fa ridere, ma ogni regola descrive un rischio reale:
+
+— Ogni auto parcheggiata contiene una portiera che sta per aprirsi.
+— L'indeciso viene asfaltato.
+— Tutti sono idioti. Te compreso.
+
+Chi pedala in città sa cose che le mappe non sanno. Il libro le racconta alle persone, StreetSmart le dà a chi progetta mobilità.
+
+🇬🇧
+I wrote a book. It's not a book about data.
+
+For over a year I've been building StreetSmart: 15,791 streets in Rome classified by cycling danger, verified by a network of cyclists reporting what they see every day.
+
+On the bike tours I guide around Rome, I spend half the time explaining to tourists how not to get hurt. Always the same rules, none of them written in any official code. So I wrote them down: "Italian Cycling Survival Guide", 16 satirical articles. It's funny, but every rule describes a real risk:
+
+— Every parked car contains a door about to open.
+— The hesitant get flattened.
+— Everyone is an idiot. Including you.
+
+People who ride in cities know things maps don't. The book tells people; StreetSmart gives it to those who design mobility.
+
+Link in the first comment · Link nel primo commento.
+```
+
 **Primo commento** (link fuori dal post: LinkedIn penalizza la portata dei post con link esterni):
 ```
 📕 Il libro (IT + EN): https://nikolaifissenko.github.io/streetsmart-volt/libro/
