@@ -237,6 +237,9 @@ Regola: arterie note e strade con 3+ corsie senza ciclabile → rosso, non giall
   CTA "Commenta CODICE" → link in DM (consigliato ManyChat). Nota strategica: il canale
   di vendita con margine reale sono i tour (copie d'autore KDP vendute a mano), IG fa
   awareness; il link EN punta ancora alla ricerca Amazon finché manca `ASIN_EN`.
+  Post LinkedIn disponibile anche in versione bilingue IT + EN (un solo post, IT sopra /
+  EN sotto, citazioni EN prese testuali da `libro/index.html`); `linkedin.png` ha in fondo
+  "IT + EN · Cartaceo e Kindle · Su Amazon" invece dell'handle IG (inutile su LinkedIn).
 
 ## Libro — Il Codice della Sopravvivenza (ottobre 2026)
 Libro satirico per ciclisti urbani di Nikolai, brandizzato StreetSmart, nato dai suoi tour in
