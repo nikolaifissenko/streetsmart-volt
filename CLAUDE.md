@@ -228,6 +228,16 @@ Regola: arterie note e strade con 3+ corsie senza ciclabile → rosso, non giall
   i testi di giallo ("senso unico") e rosso ("doppio senso") scelti per la storia
   divergono dalla classificazione reale del CSV — da riallineare se si riusa la legenda.
 
+- **Lancio libro su IG + LinkedIn** (novembre 2026): kit completo in
+  `social/2026-11-lancio-libro/` — `README.md` (bio IG + link, caption carousel e reel,
+  format reel POV, post LinkedIn, piano di uscita su 2 settimane), `slide-1..8.png`
+  (carousel 1080×1350), `linkedin.png`, sorgente `carousel.html`. Il reel POV riusa il
+  format già collaudato (commento d'odio → POV nel traffico), ma al posto dei puntini colorati
+  compaiono a schermo gli articoli del libro, e si chiude sul libro invece che sulla legenda.
+  CTA "Commenta CODICE" → link in DM (consigliato ManyChat). Nota strategica: il canale
+  di vendita con margine reale sono i tour (copie d'autore KDP vendute a mano), IG fa
+  awareness; il link EN punta ancora alla ricerca Amazon finché manca `ASIN_EN`.
+
 ## Libro — Il Codice della Sopravvivenza (ottobre 2026)
 Libro satirico per ciclisti urbani di Nikolai, brandizzato StreetSmart, nato dai suoi tour in
 bici a Roma: 16 articoli, Vantaggi/Rischi, cartelli parodia. Amazon KDP cartaceo (tascabile
