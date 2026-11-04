@@ -100,6 +100,7 @@ Commenta CODICE e ti mando il link 👇
 **Audio:** trend audio a volume basso sotto + nessuna voce, oppure voce tua che legge l'articolo
 (la voce dell'autore converte meglio su un prodotto). Copertina reel = frame del libro in mano con
 testo grosso "Art. 9 — L'indeciso viene asfaltato".
+Versione grafica pronta: `reel-cover.png` (1080×1920, sorgente `reel-cover.html`; contenuto chiave nella fascia centrale 3:4 visibile in griglia profilo).
 
 ---
 
