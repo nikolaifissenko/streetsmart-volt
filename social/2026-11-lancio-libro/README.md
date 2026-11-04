@@ -144,8 +144,8 @@ For over a year I've been building StreetSmart: 15,791 streets in Rome classifie
 
 On the bike tours I guide around Rome, I spend half the time explaining to tourists how not to get hurt. Always the same rules, none of them written in any official code. So I wrote them down: "Italian Cycling Survival Guide", 16 satirical articles. It's funny, but every rule describes a real risk:
 
-— Every parked car contains a door about to open.
-— The hesitant get flattened.
+— Every parked car contains a door that is about to open.
+— The undecided get flattened.
 — Everyone is an idiot. Including you.
 
 People who ride in cities know things maps don't. The book tells people; StreetSmart gives it to those who design mobility.
