@@ -240,7 +240,7 @@ Regola: arterie note e strade con 3+ corsie senza ciclabile → rosso, non giall
   Post LinkedIn disponibile anche in versione bilingue IT + EN (un solo post, IT sopra /
   EN sotto, citazioni EN prese testuali da `libro/index.html`); `linkedin.png` ha in fondo
   "IT + EN · Cartaceo e Kindle · Su Amazon" invece dell'handle IG (inutile su LinkedIn).
-  Reel POV: copertina grafica 9:16 `reel-cover.png` (sorgente `reel-cover.html`) e caption IG + TikTok
+  Reel POV: tutto riassunto in `reel-pov.md` (prompt Gemini, caption IG + TikTok, note); copertina grafica 9:16 `reel-cover.png` (sorgente `reel-cover.html`), caption anche
   nel README. Versione fotorealistica (POV bici nel traffico, libro in mano) da generare con Gemini
   allegando `libro/cover-it.jpg`: se le scritte escono storpiate, sovrapporre la copertina vera in
   prospettiva sulla foto. Ancora da fare (novembre 2026): ricevere la foto e comporre la copertina finale.
