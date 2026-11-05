@@ -97,6 +97,27 @@ Commenta CODICE e ti mando il link 👇
 #StreetSmart #RomaInBici #ciclistiurbani #Roma #pov
 ```
 
+**Caption Instagram (versione estesa, 10 hashtag per un account a 533 follower):**
+```
+Avevano ragione: il codice della strada non lo rispetto. Rispetto questo. 📕
+
+Art. 9 — L'indeciso viene asfaltato.
+Art. 13 — Ogni auto parcheggiata contiene una portiera che sta per aprirsi.
+
+Il Codice della Sopravvivenza: 16 articoli per uscire vivi dalle strade di Roma. Cartaceo e Kindle, IT + EN.
+
+Commenta CODICE e ti mando il link 👇
+Qual è l'articolo 17 che manca? Scrivilo qui sotto.
+
+#StreetSmart #RomaInBici #ciclistiurbani #Roma #pov #biciclettaroma #mobilitasostenibile #ciclismourbano #libri #romacentro
+```
+
+**Caption TikTok** (corta: su TikTok conta il testo a schermo, la caption serve alla ricerca):
+```
+POV: pedali a Roma e hai letto l'unico codice che funziona 📕 Qual è l'articolo 17? #roma #bici #pov #ciclisti #booktokitalia
+```
+Su TikTok il link in bio richiede account business o 1.000 follower: finché non c'è, CTA "Cerca Il Codice della Sopravvivenza su Amazon" fissata come primo commento.
+
 **Audio:** trend audio a volume basso sotto + nessuna voce, oppure voce tua che legge l'articolo
 (la voce dell'autore converte meglio su un prodotto). Copertina reel = frame del libro in mano con
 testo grosso "Art. 9 — L'indeciso viene asfaltato".
