@@ -244,6 +244,8 @@ Regola: arterie note e strade con 3+ corsie senza ciclabile → rosso, non giall
   nel README. Versione fotorealistica (POV bici nel traffico, libro in mano) da generare con Gemini
   allegando `libro/cover-it.jpg`: se le scritte escono storpiate, sovrapporre la copertina vera in
   prospettiva sulla foto. Ancora da fare (novembre 2026): ricevere la foto e comporre la copertina finale.
+  Immagine "Disponibile su Amazon" (1080×1350, copertina IT + bande colorate): `amazon-ad.png`,
+  sorgente `amazon-ad.html` (render Playwright a deviceScaleFactor 2).
 
 ## Libro — Il Codice della Sopravvivenza (ottobre 2026)
 Libro satirico per ciclisti urbani di Nikolai, brandizzato StreetSmart, nato dai suoi tour in
