@@ -247,6 +247,10 @@ Regola: arterie note e strade con 3+ corsie senza ciclabile → rosso, non giall
   Immagine "Disponibile su Amazon" (1080×1350, copertina IT + bande colorate): `amazon-ad.png`,
   sorgente `amazon-ad.html` (render Playwright a deviceScaleFactor 2).
 
+- **Banca prompt copertine reel** (novembre 2026): `social/reel-cover-prompts.md` — 10 prompt Gemini
+  POV bici a Roma (stagioni/meteo/ambienti diversi, terzo superiore libero per il titolo), da ruotare
+  invece di rigenerarne di nuovi ogni volta. Colonna "Last used" per non ripetere.
+
 ## Libro — Il Codice della Sopravvivenza (ottobre 2026)
 Libro satirico per ciclisti urbani di Nikolai, brandizzato StreetSmart, nato dai suoi tour in
 bici a Roma: 16 articoli, Vantaggi/Rischi, cartelli parodia. Amazon KDP cartaceo (tascabile
