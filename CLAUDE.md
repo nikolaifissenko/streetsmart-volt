@@ -250,6 +250,9 @@ Regola: arterie note e strade con 3+ corsie senza ciclabile → rosso, non giall
 - **Banca prompt copertine reel** (novembre 2026): `social/reel-cover-prompts.md` — 10 prompt Gemini
   POV bici a Roma (stagioni/meteo/ambienti diversi, terzo superiore libero per il titolo), da ruotare
   invece di rigenerarne di nuovi ogni volta. Colonna "Last used" per non ripetere.
+  v2 dopo il primo test: solo giorno (max tramonto, mai notte), molto traffico/caos/ansia, strade
+  reali con traffico italiano credibile (taxi BIANCHI, non gialli), niente Appia né Fori Imperiali
+  (chiusi alle auto). Se Gemini inventa la strada: allegare una foto reale come riferimento.
 
 ## Libro — Il Codice della Sopravvivenza (ottobre 2026)
 Libro satirico per ciclisti urbani di Nikolai, brandizzato StreetSmart, nato dai suoi tour in
